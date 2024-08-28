@@ -1,0 +1,48 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX dlp: <http://www.ontologydesignpatterns.org/ont/dlp/dlp.owl#>
+PREFIX lrm: <http://iflastandards.info/ns/lrm/lrmoo/>
+PREFIX crminf: <http://www.ics.forth.gr/isl/CRMinf/>
+PREFIX dl: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#>
+PREFIX dns: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#>
+PREFIX gd: <https://data.golemlab.eu/entity/>
+prefix gc: <https://ontology.golemlab.eu/>
+
+gd:narrativeStatement a crminf:I4_Proposition_Set .
+gd:narrativeStatement a rdf:Statement .
+gd:narrativeStatement a gc:narrative .
+
+gd:narrativeStatement crm:P129_is_about gd:narrativePerdurant .
+gd:narrativePerdurant crm:P129i_is_subject_of gd:narrativeStatement .
+
+gd:narrativePerdurant a dl:perdurant .
+crm:E5_Event rdfs:subClassOf dl:perdurant .
+
+gc:narrative rdfs:subClassOf crm:E89_Propositional_Object .
+gc:narrative rdfs:subClassOf dns:description .
+gc:narrative skos:closeMatch dlp:narrative .
+
+gd:narrative a gc:narrative .
+gd:narrative dl:part gd:narrativeStatement .
+gd:narrativeStatement dl:part-of gd:narrative .
+
+gd:workExpresion dns:expresses gd:narrative .
+gd:narrative dns:expressed-by gd:workExpresion .
+
+gd:work lrm:R3_is_realised_in gd:workExpresion .
+gd:workExpresion lrm:R3i_realises gd:work .
+
+gd:work a lrm:F1_Work .
+gd:workExpresion a lrm:F2_Expression .
+
+gd:narrative dns:d-uses gd:narrativeStatementSequence .
+gd:narrativeStatementSequence dns:d-used-by gd:narrative .
+
+gd:narrativeStatementSequence a dlp:course .
+gd:narrativeStatementSequence a rdf:Seq .
+gd:narrativeStatementSequence rdfs:member gd:narrativeStatement .
+
+gd:narrativeStatementSequence dns:sequences gd:narrativePerdurant .
+gd:narrativePerdurant dns:sequenced-by gd:narrativeStatementSequence .
