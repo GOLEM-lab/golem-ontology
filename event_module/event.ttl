@@ -1,0 +1,53 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+PREFIX dlp: <http://www.ontologydesignpatterns.org/ont/dlp/dlp.owl#>
+PREFIX lrm: <http://iflastandards.info/ns/lrm/lrmoo/>
+PREFIX crminf: <http://www.ics.forth.gr/isl/CRMinf/>
+PREFIX dl: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#>
+PREFIX dns: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#>
+PREFIX gd: <https://data.golemlab.eu/entity/>
+prefix gc: <https://ontology.golemlab.eu/>
+
+gd:perdurant a dl:perdurant .
+gd:perdurant crm:P2_has_type gd:perdurantType .
+gd:perdurantType crm:P2i_is_type_of gd:perdurant .
+
+gd:nextPerdurant a dl:perdurant .
+gd:nextPerdurant crm:P2_has_type gd:perdurantType .
+gd:perdurantType crm:P2i_is_type_of gd:perdurant .
+
+gd:perdurant crm:P175_starts_before_or_with_the_start_of gd:nextPerdurant .
+
+gd:character dl:participant-in gd:perdurant .
+gd:perdurant dl:participant gd:character .
+
+gd:character dl:participant-in gd:nextPerdurant .
+gd:nextPerdurant dl:participant gd:character .
+
+gd:character dns:involved-in gd:narrative .
+gd:narrative dns:involves gd:character .
+
+gd:character a gc:G1_Character .
+
+gd:narrative a gc:narrative .
+gd:workExpresion dns:expresses gd:narrative .
+gd:narrative dns:expressed-by gd:workExpresion .
+
+gd:work lrm:R3_is_realised_in gd:workExpresion .
+gd:workExpresion lrm:R3i_realises gd:work .
+
+gd:work a lrm:F1_Work .
+gd:workExpresion a lrm:F2_Expression .
+
+gd:narrative dns:d-uses gd:narrativeStatementSequence .
+gd:narrativeStatementSequence dns:d-used-by gd:narrative .
+
+gd:narrativeStatementSequence a dlp:course .
+
+gd:narrativeStatementSequence dns:sequences gd:perdurant .
+gd:perdurant dns:sequenced-by gd:narrativeStatementSequence .
+
+gd:nextPerdurant dns:sequenced-by gd:narrativeStatementSequence .
+gd:narrativeStatementSequence dns:sequences gd:nextPerdurant .
