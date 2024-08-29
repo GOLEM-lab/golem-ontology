@@ -5,7 +5,7 @@ PREFIX dlp: <http://www.ontologydesignpatterns.org/ont/dlp/dlp.owl#>
 PREFIX dl: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#>
 PREFIX dns: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#>
 PREFIX gd: <https://data.golemlab.eu/entity/>
-PREFIX gc: <https://ontology.golemlab.eu/>
+prefix gc: <https://ontology.golemlab.eu/>
 
 gd:relationship dns:involves gd:character .
 gd:character dns:involved-in gd:relationship .
@@ -44,3 +44,6 @@ gd:relationshipEvent a dl:perdurant .
 
 gd:relationship crm:P2_has_type gd:relationshipType .
 gd:relationshipType crm:P2i_is_type_of gd:relationship .
+
+gd:character dl:participant-in gd:relationshipEvent .
+gd:relationshipEvent dl:participant gd:character .
