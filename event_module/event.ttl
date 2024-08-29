@@ -51,3 +51,7 @@ gd:perdurant dns:sequenced-by gd:narrativeStatementSequence .
 
 gd:nextPerdurant dns:sequenced-by gd:narrativeStatementSequence .
 gd:narrativeStatementSequence dns:sequences gd:nextPerdurant .
+
+dl:stative rdfs:subClassOf dl:perdurant .
+dl:event rdfs:subClassOf dl:perdurant .
+dl:event skos:closeMatch crm:E5_Event .
