@@ -1,3 +1,5 @@
+!!! WORK IN PROGRESS !!!
+
 # Golem Ontology for Narrative and Fiction
 
 Ontology of fiction and narrative, developed as an extension of [CIDOC-CRM](https://cidoc-crm.org/versions-of-the-cidoc-crm) and [LRMoo](https://cidoc-crm.org/frbroo/fm_releases), and aligned to [DOLCE-Lite-Plus](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).
