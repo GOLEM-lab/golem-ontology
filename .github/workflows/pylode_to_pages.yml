@@ -1,4 +1,4 @@
-name: PyLODE to GitHub Pages
+name: PyLODE to GitHub Pages 
 
 on:
   push:
