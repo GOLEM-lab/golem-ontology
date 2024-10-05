@@ -1,0 +1,43 @@
+name: PyLODE to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  pull_request:
+
+jobs:
+  pylode-to-pages:
+    runs-on: ubuntu-20.04
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install pyLODE and Dependencies
+        run: |
+          pip install pylode jinja2
+
+      - name: Build Pages with pyLODE
+        uses: vliz-be-opsci/pylode-to-pages@v0
+        with:
+          baseuri: http://golem-lab.github.io/golem-ontology/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # Directory to publish (adjust if necessary)
