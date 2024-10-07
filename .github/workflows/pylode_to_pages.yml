@@ -36,8 +36,7 @@ jobs:
           baseuri: http://golem-lab.github.io/golem-ontology
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: actions/deploy-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Directory to publish (adjust if necessary)
+          publish_dir: ./golem  # Pointing to the golem directory
