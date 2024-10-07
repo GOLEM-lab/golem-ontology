@@ -33,7 +33,7 @@ jobs:
       - name: Build Pages with pyLODE
         uses: vliz-be-opsci/pylode-to-pages@v0
         with:
-          baseuri: http://golem-lab.github.io/golem-ontology
+          baseuri: http://ontology.golemlab.eu
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
