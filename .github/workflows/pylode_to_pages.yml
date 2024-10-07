@@ -33,7 +33,7 @@ jobs:
       - name: Build Pages with pyLODE
         uses: vliz-be-opsci/pylode-to-pages@v0
         with:
-          baseuri: http://golem-lab.github.io/golem-ontology/golem
+          baseuri: http://golem-lab.github.io/golem-ontology/
       - name: Rename HTML to Index
         run: |
           mv golem.html index.html  # Renaming golem.html to index.html
