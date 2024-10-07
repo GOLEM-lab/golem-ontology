@@ -34,9 +34,7 @@ jobs:
         uses: vliz-be-opsci/pylode-to-pages@v0
         with:
           baseuri: http://ontology.golemlab.eu
-      - name: Rename HTML to Index
-        run: |
-          mv golem.html index.html  # Renaming golem.html to index.html
+      
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
