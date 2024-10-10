@@ -27,6 +27,9 @@ Pianzola, F. (2018). Looking at narrative as a complex system: The proteus princ
 
 Pianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.
 
+# Technical implementation
 
-
+- Ontology development: Protégé 
+- Diagrams: Lucidchart
+- Documentation: PyLode + custom GitHub action to publish im HTML via GiHub Pages (you can clone this repo, add your own RDF, TTL, or OWL file and publish it easily as HTML!)
 
