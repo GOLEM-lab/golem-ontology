@@ -421,6 +421,26 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                             rdfs:label "P67i is referred to by" .
 
 
+###  http://www.cidoc-crm.org/cidoc-crm/P91_has_unit
+<http://www.cidoc-crm.org/cidoc-crm/P91_has_unit> rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of> ;
+                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
+                                                  rdfs:comment "This property shows the type of unit an instance of E54 Dimension was expressed in." ;
+                                                  rdfs:label "P91 has unit" ;
+                                                  skos:example """Kudos (E54) has unit kudos (E58).
+(Smile as Bright as the Sun as You Fade into Darkness from AO3)""" ,
+                                                               "Word count (E54) has unit word count (E58)." .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of
+<http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
+                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+                                                     rdfs:comment "This property shows the type of unit an instance of E54 Dimension was expressed in." ;
+                                                     rdfs:label "P91i is unit of" .
+
+
 ###  http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration
 <http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration> rdf:type owl:ObjectProperty ;
                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location> ;
@@ -889,6 +909,21 @@ gc:GP1i_has_Character rdf:type owl:ObjectProperty ;
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://www.cidoc-crm.org/cidoc-crm/P90_has_value
+<http://www.cidoc-crm.org/cidoc-crm/P90_has_value> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+                                                   rdfs:range rdfs:Literal ;
+                                                   rdfs:comment "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive." ;
+                                                   rdfs:label "P90 has value" ;
+                                                   skos:example """Kudos (E54) has value 59 (E60).
+(Smile as Bright as the Sun as You Fade into Darkness from AO3)""" ,
+                                                                "Word count (E54) has value 1,337 (E60)." .
+
+
+#################################################################
 #    Classes
 #################################################################
 
@@ -1004,7 +1039,8 @@ They cannot be destroyed. They exist as long as they can be found on at least on
 An instance of E54 Dimension represents the empirical or theoretically derived quantity, including the precision tolerances resulting from the particular method or calculation. The identity of an instance of E54 Dimension depends on the method of its determination because each method may produce different values even when determining comparable qualities. For instance, the wingspan of a bird alive or dead is a different dimension. Thermoluminescence dating and Rehydroxylation [RHX] dating are different dimensions of temporal distance from now, even if they aim at dating the same object. The method of determination should be expressed using the property P2 has type (is type of). Note that simple terms such as “diameter” or “length” are normally insufficient to unambiguously describe a respective dimension. In contrast, “maximum linear extent” may be sufficient.
 The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of instances of E54 Dimension adequate to the precision of the applied method of determination. If the respective quantity belongs to a non-discrete space according to the laws of physics, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that comparability of values described in different units depends critically on the representation as value regions.
 Numerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension, as appropriate ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
-                                                   rdfs:label "E54 Dimension"@en .
+                                                   rdfs:label "E54 Dimension"@en ;
+                                                   skos:example "The word count and kudos on AO3." .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
@@ -1025,6 +1061,17 @@ Numerical approximations in archaic instances of E58 Measurement Unit used in hi
 E55 Type provides an interface to domain specific ontologies and thesauri. These can be represented in the CIDOC CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader term (has narrower term): E55 Type. Such hierarchies may be extended with additional properties ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                               rdfs:label "E55 Type"@en ;
                                               skos:example "The Tag categories on AO3, e.g. character tag or relationship tag." .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit
+<http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> rdf:type owl:Class ;
+                                                          rdfs:comment """This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.
+
+This type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.
+
+Système International (SI) units or internationally recognized non-SI terms should be used whenever possible, such as those defined by ISO80000:2009. Archaic Measurement Units used in historical records should be preserved.""" ;
+                                                          rdfs:label "E58 Measurement Unit" ;
+                                                          skos:example "word counts, kudos." .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E70_Thing
