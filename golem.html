@@ -819,6 +819,14 @@ Numerical approximations in archaic instances of E58 Measurement Unit used in hi
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>The word count and kudos on AO3.</pre>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
@@ -833,10 +841,26 @@ Numerical approximations in archaic instances of E58 Measurement Unit used in hi
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
               </th>
               <td>
-                <span>
-                  <a href="http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of">P43i is dimension of</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of">P43i is dimension of</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit">P91 has unit</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/P90_has_value">P90 has value</a>
+                      <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
             <tr>
@@ -844,10 +868,20 @@ Numerical approximations in archaic instances of E58 Measurement Unit used in hi
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
               </th>
               <td>
-                <span>
-                  <a href="http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension">P43 has dimension</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension">P43 has dimension</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of">P91i is unit of</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
           </table>
@@ -1008,6 +1042,57 @@ E55 Type provides an interface to domain specific ontologies and thesauri. These
                     </span>
                   </li>
                 </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="E58MeasurementUnit">
+          <h3>E58 Measurement Unit
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.</p>
+<p>This type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.</p>
+<p>Système International (SI) units or internationally recognized non-SI terms should be used whenever possible, such as those defined by ISO80000:2009. Archaic Measurement Units used in historical records should be preserved.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>word counts, kudos.</pre>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of">P91i is unit of</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit">P91 has unit</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -6324,6 +6409,104 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  (<a href="
             </tr>
           </table>
         </div>
+        <div class="property entity" id="P91hasunit">
+          <h3>P91 has unit
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.cidoc-crm.org/cidoc-crm/P91_has_unit</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>This property shows the type of unit an instance of E54 Dimension was expressed in.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <pre>Kudos (E54) has unit kudos (E58).
+(Smile as Bright as the Sun as You Fade into Darkness from AO3)</pre>
+                  </li>
+                  <li>
+                    <pre>Word count (E54) has unit word count (E58).</pre>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">E54 Dimension</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit">E58 Measurement Unit</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="P91iisunitof">
+          <h3>P91i is unit of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>This property shows the type of unit an instance of E54 Dimension was expressed in.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit">E58 Measurement Unit</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">E54 Dimension</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="duration">
           <h3>duration
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -8651,6 +8834,63 @@ perspective (G18).</pre>
           </table>
         </div>
       </div>
+      <div class="section" id="datatypeproperties">
+        <h2>Datatype Properties</h2>
+        <div class="property entity" id="P90hasvalue">
+          <h3>P90 has value
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.cidoc-crm.org/cidoc-crm/P90_has_value</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <pre>Kudos (E54) has value 59 (E60).
+(Smile as Bright as the Sun as You Fade into Darkness from AO3)</pre>
+                  </li>
+                  <li>
+                    <pre>Word count (E54) has value 1,337 (E60).</pre>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">E54 Dimension</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
       <div class="section" id="annotationproperties">
         <h2>Annotation Properties</h2>
         <div class="property entity" id="date">
@@ -8782,6 +9022,12 @@ perspective (G18).</pre>
           </tr>
           <tr>
             <td>
+              <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+            </td>
+            <td>Datatype Properties</td>
+          </tr>
+          <tr>
+            <td>
               <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
             </td>
             <td>Annotation Properties</td>
@@ -8835,6 +9081,9 @@ perspective (G18).</pre>
             </li>
             <li>
               <a href="#E55Type">E55 Type</a>
+            </li>
+            <li>
+              <a href="#E58MeasurementUnit">E58 Measurement Unit</a>
             </li>
             <li>
               <a href="#E70Thing">E70 Thing</a>
@@ -9030,6 +9279,12 @@ perspective (G18).</pre>
               <a href="#P67iisreferredtoby">P67i is referred to by</a>
             </li>
             <li>
+              <a href="#P91hasunit">P91 has unit</a>
+            </li>
+            <li>
+              <a href="#P91iisunitof">P91i is unit of</a>
+            </li>
+            <li>
               <a href="#duration">duration</a>
             </li>
             <li>
@@ -9160,6 +9415,16 @@ perspective (G18).</pre>
             </li>
             <li>
               <a href="#GP1i_has_Character">has character</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#datatypeproperties">Datatype Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#P90hasvalue">P90 has value</a>
             </li>
           </ul>
         </li>
