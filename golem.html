@@ -263,7 +263,7 @@ The main purpose of this class is to enable bringing together intellectually equ
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G7_Fabula">G7 Fabula</a>
+                              <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2282,7 +2282,7 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
-                      <a href="#G7_Fabula">G7 Fabula</a>
+                      <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -2648,7 +2648,7 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
-                      <a href="#G7_Fabula">G7 Fabula</a>
+                      <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -2808,7 +2808,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G7_Fabula">G7 Fabula</a>
+                              <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2931,7 +2931,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G7_Fabula">G7 Fabula</a>
+                              <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3385,7 +3385,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                       <span class="cardinality">some</span>
                       <span>
                         <span>
-                          <a href="#G7_Fabula">G7 Fabula</a>
+                          <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
                           <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                         </span>
                       </span>
@@ -4714,22 +4714,22 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G7_Fabula">
-          <h3>G7 Fabula
+        <div class="property entity" id="G7_Narrative_Sequence">
+          <h3>G7 Narrative Sequence
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
           <table>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G7_Fabula</code>
+                <code>https://ontology.golemlab.eu/G7_Narrative_Sequence</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Fabula refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
+              <td><p>G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as "plot" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
             </tr>
             <tr>
               <th>
@@ -4748,7 +4748,19 @@ H5: Zephyros is the West Wind. (durative-constant)
 H7: The discus hits Hyacinthus (single-event)
 H8: Apollo fails to save Hyacinthus (single-event)
 H9: [Hyacinthus] is dead (durative-resultative)
-[H10: Hyacinthus is a flower (durative-resultative)]</pre>
+[H10: Hyacinthus is a flower (durative-resultative)]
+
+Syuthet (sequence of hylemes, a type of G9_Narrative_Unit): 
+H4: [Apollo and Hyacinthus] play the game of discus (single-event)
+H6: Zephyros causes the wind to change. (single-event)
+H7: The discus hits Hyacinthus (single-event)
+H8: Apollo fails to save Hyacinthus (single-event)
+H9: [Hyacinthus] is dead (durative-resultative)
+H10: Hyacinthus is a flower (durative-resultative)
+H1: [Apollo] loves [Hyacinthus] (durative-constant)
+H3: [Hyacinthus] loves [Apollo] (durative-initial)
+H2: Zephyros loves Hyacinthus (durative-constant)
+H5: Zephyros is the West Wind. (durative-constant)</pre>
               </td>
             </tr>
             <tr>
@@ -9197,7 +9209,7 @@ perspective (G18).</pre>
               <a href="#G6_Relationship_Role">G6 Relationship Role</a>
             </li>
             <li>
-              <a href="#G7_Fabula">G7 Fabula</a>
+              <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
             </li>
             <li>
               <a href="#G8_Syuzhet">G8 Syuzhet</a>
