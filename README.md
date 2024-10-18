@@ -12,12 +12,13 @@ The GOLEM project developed an ontology that models narratives and fiction indep
 
 Furthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time ([Pianzola et al., 2020](https://ceur-ws.org/Vol-2723/short8.pdf)).
 
-The figure below is an overview of the main classes and their relationships.
-![GOLEM Core](GOLEM_core.png)
-
 - The detailed description of each module can be read in the [Wiki](https://github.com/GOLEM-lab/golem-ontology/wiki).
 
 - The complete description of classes and properties can be read in the [formal documentation](https://ontology.golemlab.eu/).
+
+The figure below is an overview of the main classes and their relationships.
+
+![GOLEM Core](GOLEM_core.png)
 
 ### References
 
