@@ -32,5 +32,5 @@ Pianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improve
 
 - Ontology development: Protégé 
 - Diagrams: Lucidchart
-- Documentation: PyLode + custom GitHub action to publish im HTML via GiHub Pages (you can clone this repo, add your own RDF, TTL, or OWL file and publish it easily as HTML!)
+- Documentation: PyLode + custom GitHub action to publish im HTML via GiHub Pages
 
