@@ -1,4 +1,6 @@
-!!! WORK IN PROGRESS !!!
+Cite as:
+
+Pianzola, F., Pannach, F., Cheng, L. and Yang, X. (2024). GOLEM Ontology for Narrative and Fiction.
 
 # Golem Ontology for Narrative and Fiction
 
