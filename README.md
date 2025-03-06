@@ -1,6 +1,8 @@
+![DOI](https://zenodo.org/badge/631064567.svg)
+
 Cite as:
 
-Pianzola, F., Pannach, F., Cheng, L. and Yang, X. (2024). GOLEM Ontology for Narrative and Fiction.
+Pianzola, F., Pannach, F., Cheng, L. and Yang, X. (2024). GOLEM Ontology for Narrative and Fiction. https://doi.org/10.5281/zenodo.14911392
 
 # Golem Ontology for Narrative and Fiction
 
