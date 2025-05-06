@@ -599,7 +599,7 @@ from his rebounded curse” (G9).""" ,
                                                                              rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
                                                                              rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
                                                                              rdfs:comment "The relation between roles and courses. Modal target subrelations can be seen as 'reifications' of the operators of modal logics  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ,
-                                                                                          "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its target narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to specify the relationship roles (G6) of a social relationship (G4)." ;
+                                                                                          "In GOLEM, it relates a narrative function (G10) or narrative role (G11) to their target sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to specify the relationship roles (G6) of a social relationship (G4)." ;
                                                                              rdfs:label "modal target"@en .
 
 
@@ -608,7 +608,7 @@ from his rebounded curse” (G9).""" ,
                                                                                 rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
                                                                                 rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
                                                                                 rdfs:comment "The relation between roles and courses. Modal target subrelations can be seen as 'reifications' of the operators of modal logics  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ,
-                                                                                             "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its target narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to link a social relationship (G4) to its relationship roles (G6)." ;
+                                                                                             "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to link a social relationship (G4) to its relationship roles (G6)." ;
                                                                                 rdfs:label "modal target of"@en ;
                                                                                 skos:example "Proppian function “Victory” (G10) is the modal target of the fabula  (G7) of Harry Potter and the Deathly Hallows (Rowling, 2007)." ,
                                                                                              "“Hero” (G11) is modal target of the syuzhet (G8) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)." .
@@ -1343,10 +1343,6 @@ gc:G10_Narrative_Function rdf:type owl:Class ;
                                             owl:someValuesFrom gc:G7_Narrative_Sequence
                                           ] ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
-                                            owl:someValuesFrom gc:G8_Syuzhet
-                                          ] ,
-                                          [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by> ;
                                             owl:someValuesFrom gc:G9_Narrative_Unit
                                           ] ;
@@ -1373,10 +1369,6 @@ gc:G11_Narrative_Role rdf:type owl:Class ;
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
                                         owl:someValuesFrom gc:G7_Narrative_Sequence
-                                      ] ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
-                                        owl:someValuesFrom gc:G8_Syuzhet
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by> ;
