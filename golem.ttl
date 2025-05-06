@@ -1339,11 +1339,11 @@ gc:G10_Narrative_Function rdf:type owl:Class ;
                                             owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
                                           ] ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
+                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
                                             owl:someValuesFrom gc:G7_Narrative_Sequence
                                           ] ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
+                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
                                             owl:someValuesFrom gc:G8_Syuzhet
                                           ] ,
                                           [ rdf:type owl:Restriction ;
@@ -1371,11 +1371,11 @@ gc:G11_Narrative_Role rdf:type owl:Class ;
                                         owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
+                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
                                         owl:someValuesFrom gc:G7_Narrative_Sequence
                                       ] ,
                                       [ rdf:type owl:Restriction ;
-                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
+                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
                                         owl:someValuesFrom gc:G8_Syuzhet
                                       ] ,
                                       [ rdf:type owl:Restriction ;
@@ -1770,11 +1770,11 @@ gc:G7_Narrative_Sequence rdf:type owl:Class ;
                                            owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
+                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
                                            owl:someValuesFrom gc:G10_Narrative_Function
                                          ] ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
+                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
                                            owl:someValuesFrom gc:G11_Narrative_Role
                                          ] ,
                                          [ rdf:type owl:Restriction ;
@@ -1824,11 +1824,11 @@ gc:G8_Syuzhet rdf:type owl:Class ;
                                 owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
+                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
                                 owl:someValuesFrom gc:G10_Narrative_Function
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
+                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
                                 owl:someValuesFrom gc:G11_Narrative_Role
                               ] ,
                               [ rdf:type owl:Restriction ;
