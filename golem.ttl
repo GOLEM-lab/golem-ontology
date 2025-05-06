@@ -554,7 +554,7 @@ from his rebounded curse” (G9).""" ,
                                                                           rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept> ,
                                                                                       <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
                                                                           rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ;
-                                                                          rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula (G7) or syuzhet (G8)."@en ,
+                                                                          rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                        """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
 ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).""" ;
                                                                           rdfs:label "d-used-by"@en .
@@ -565,7 +565,7 @@ from his rebounded curse” (G9).""" ,
                                                                        rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ;
                                                                        rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept> ,
                                                                                   <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
-                                                                       rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula (G7) or syuzhet (G8)."@en ,
+                                                                       rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                     """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
 ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).""" ;
                                                                        rdfs:label "d-uses"@en ;
@@ -599,7 +599,7 @@ from his rebounded curse” (G9).""" ,
                                                                              rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
                                                                              rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
                                                                              rdfs:comment "The relation between roles and courses. Modal target subrelations can be seen as 'reifications' of the operators of modal logics  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ,
-                                                                                          "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula (G7) or syuzhet (G8), to its target narrative function (G10) or relationship role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story." ;
+                                                                                          "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its target narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to specify the relationship roles (G6) of a social relationship (G4)." ;
                                                                              rdfs:label "modal target"@en .
 
 
@@ -608,7 +608,7 @@ from his rebounded curse” (G9).""" ,
                                                                                 rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
                                                                                 rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ;
                                                                                 rdfs:comment "The relation between roles and courses. Modal target subrelations can be seen as 'reifications' of the operators of modal logics  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ,
-                                                                                             "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula (G7) or syuzhet (G8), to its target narrative function (G10) or relationship role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story." ;
+                                                                                             "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its target narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to link a social relationship (G4) to its relationship roles (G6)." ;
                                                                                 rdfs:label "modal target of"@en ;
                                                                                 skos:example "Proppian function “Victory” (G10) is the modal target of the fabula  (G7) of Harry Potter and the Deathly Hallows (Rowling, 2007)." ,
                                                                                              "“Hero” (G11) is modal target of the syuzhet (G8) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)." .
@@ -673,7 +673,7 @@ and the Goblet of Fire (F1).""" .
                                                                              owl:inverseOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences> ;
                                                                              rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
                                                                              rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
-                                                                             rdfs:comment "In GOLEM, indicates that a fabula (G7) or syuzhet (G8) sequences narrative events in a specific order." ,
+                                                                             rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
                                                                                           "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                              rdfs:label "sequenced-by"@en .
 
@@ -682,10 +682,10 @@ and the Goblet of Fire (F1).""" .
 <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences> rdf:type owl:ObjectProperty ;
                                                                           rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
                                                                           rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ;
-                                                                          rdfs:comment "In GOLEM, indicates that a fabula (G7) or syuzhet (G8) sequences narrative events in a specific order." ,
+                                                                          rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
                                                                                        "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                           rdfs:label "sequences"@en ;
-                                                                          skos:example "The fabula (G7) and syuzhet (G8) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
+                                                                          skos:example "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting
@@ -861,7 +861,7 @@ and the Goblet of Fire (F1).""" .
 ###  http://www.w3.org/2000/01/rdf-schema#member
 rdfs:member rdf:type owl:ObjectProperty ;
             rdfs:comment "A member of the subject resource." ,
-                         "In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula (G7) or syuzhet (G8)." ;
+                         "In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula or syuzhet (G7)." ;
             rdfs:isDefinedBy rdfs: ;
             rdfs:label "member" ;
             skos:example """The fabula of Battle of Hogwarts in Harry Potter and the Deathly Hallows orders events as follows:
@@ -1489,7 +1489,7 @@ gc:G14_Narrative-Stoff rdf:type owl:Class ;
                                         gc:G6_Relationship_Role ,
                                         gc:G7_Narrative_Sequence ,
                                         gc:G8_Syuzhet ;
-                       rdfs:comment "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (gc:G7_Fabula) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."@en ;
+                       rdfs:comment "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (gc:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."@en ;
                        rdfs:label "G14 Narrative-Stoff"@en ;
                        skos:example "Apollo and Zephyros love Hyacinthus. While Apollo and Hyacinthus are playing a game with a discus, Zephyros uses the wind to change its direction, causing the discus to hit Hyacinthus and resulting in his death. Afterward, Hyacinthus transforms into a flower." .
 
