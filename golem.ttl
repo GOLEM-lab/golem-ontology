@@ -1,6 +1,6 @@
-@prefix : <https://ontology.golemlab.eu/> .
+@prefix : <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix gc: <https://ontology.golemlab.eu/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dlp: <http://www.ontologydesignpatterns.org/ont/dlp/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,12 +8,31 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix golem: <https://golemlab.eu/graph/> .
-@base <https://ontology.golemlab.eu/> .
+@prefix golem: <https://w3id.org/golem/ontology#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@base <https://w3id.org/golem/ontology> .
 
-<https://ontology.golemlab.eu/> rdf:type owl:Ontology ;
-                                 dc:title "GOLEM Ontology" ;
+<https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
+                                 dc:title "GOLEM Ontology";
+                                 owl:versionIRI <https://w3id.org/golem/ontology/v1.0> ;
+                                 owl:versionInfo "1.0" ;
+                                 dc:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                 dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                 dc:creator "GOLEM Lab" ;
+                                 dcterms:created "2024-10-10"^^xsd:date ;
+                                 dcterms:issued "2024-10-10"^^xsd:date ;
+                                 dcterms:publisher "GOLEM Lab" ;
+                                 dcterms:creator "GOLEM Lab" ;
+                                 dcterms:bibliographicCitation "GOLEM Lab. (2024). GOLEM Ontology v1.0. https://w3id.org/golem/ontology" ;
+                                 dc:created "2024-10-10"^^xsd:date ;
+                                 dcterms:source <https://golemlab.eu/> ;
+                                 vs:term_status "stable" ;
+                                 vann:preferredNamespacePrefix "golem" ;
+                                 vann:preferredNamespaceUri "https://w3id.org/golem/ontology#" ;
+                                 rdfs:label "GOLEM Ontology"@en ;
                                  rdfs:comment """# Golem Ontology for Narrative and Fiction
+                                 
 
 ### GOLEM v1.0
 
@@ -870,11 +889,11 @@ rdf:_2 Harry casts \"Expelliarmus\"
 rdf:_3 The spells collide in midair, etc.""" .
 
 
-###  https://ontology.golemlab.eu/GP0_has_feature
-gc:GP0_has_feature rdf:type owl:ObjectProperty ;
-                   owl:inverseOf gc:GP0i_is_feature_of ;
+###  https://w3id.org/golem/ontology/GP0_has_feature
+golem:GP0_has_feature rdf:type owl:ObjectProperty ;
+                   owl:inverseOf golem:GP0i_is_feature_of ;
                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
-                   rdfs:range gc:G2_Feature ;
+                   rdfs:range golem:G2_Feature ;
                    rdfs:comment "Indicates that a narrative or character has certain features." ;
                    rdfs:label "has feature" ;
                    skos:example "Harry Potter (G1) has feature bravery (G17)." ,
@@ -882,28 +901,28 @@ gc:GP0_has_feature rdf:type owl:ObjectProperty ;
 perspective (G18).""" .
 
 
-###  https://ontology.golemlab.eu/GP0i_is_feature_of
-gc:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
-                      rdfs:domain gc:G2_Feature ;
+###  https://w3id.org/golem/ontology/GP0i_is_feature_of
+golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
+                      rdfs:domain golem:G2_Feature ;
                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
                       rdfs:comment "Indicates that a narrative or character has certain features." ;
                       rdfs:label "is feature of" .
 
 
-###  https://ontology.golemlab.eu/GP1_is_character_in
-gc:GP1_is_character_in rdf:type owl:ObjectProperty ;
-                       owl:inverseOf gc:GP1i_has_Character ;
-                       rdfs:domain gc:G1_Character ;
+###  https://w3id.org/golem/ontology/GP1_is_character_in
+golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
+                       owl:inverseOf golem:GP1i_has_Character ;
+                       rdfs:domain golem:G1_Character ;
                        rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
                        rdfs:comment "Indicates that a character appears in a work."@en ;
                        rdfs:label "is character in"@en ;
                        skos:example "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)." .
 
 
-###  https://ontology.golemlab.eu/GP1i_has_Character
-gc:GP1i_has_Character rdf:type owl:ObjectProperty ;
+###  https://w3id.org/golem/ontology/GP1i_has_Character
+golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
                       rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
-                      rdfs:range gc:G1_Character ;
+                      rdfs:range golem:G1_Character ;
                       rdfs:comment "Indicates that a character appears in a work." ;
                       rdfs:label "has character" .
 
@@ -937,23 +956,23 @@ gc:GP1i_has_Character rdf:type owl:ObjectProperty ;
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
-                                                                   owl:someValuesFrom gc:G15_Fandom
+                                                                   owl:someValuesFrom golem:G15_Fandom
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part> ;
-                                                                   owl:someValuesFrom gc:G9_Narrative_Unit
+                                                                   owl:someValuesFrom golem:G9_Narrative_Unit
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses> ;
-                                                                   owl:someValuesFrom gc:G7_Narrative_Sequence
+                                                                   owl:someValuesFrom golem:G7_Narrative_Sequence
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses> ;
-                                                                   owl:someValuesFrom gc:G8_Syuzhet
+                                                                   owl:someValuesFrom golem:G8_Syuzhet
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#satisfied-by> ;
-                                                                   owl:someValuesFrom gc:G12_Setting
+                                                                   owl:someValuesFrom golem:G12_Setting
                                                                  ] ;
                                                  rdfs:comment """Scope note:
 This class comprises distinct intellectual ideas conveyed in artistic and intellectual creations, such a poems, stories or musical compositions.
@@ -1108,22 +1127,22 @@ This class also comprises items that are “about” something in the sense of a
                                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
                                                                                              [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent> ;
-                                                                                               owl:someValuesFrom gc:G13_Narrative_Location
+                                                                                               owl:someValuesFrom golem:G13_Narrative_Location
                                                                                              ] ;
                                                                              owl:disjointWith <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship> ,
                                                                                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                                                                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                                                                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                                                                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                              gc:G10_Narrative_Function ,
-                                                                                              gc:G11_Narrative_Role ,
-                                                                                              gc:G12_Setting ,
-                                                                                              gc:G14_Narrative-Stoff ,
-                                                                                              gc:G4_Social_Relationship ,
-                                                                                              gc:G6_Relationship_Role ,
-                                                                                              gc:G7_Narrative_Sequence ,
-                                                                                              gc:G8_Syuzhet ,
-                                                                                              gc:G9_Narrative_Unit ;
+                                                                                              golem:G10_Narrative_Function ,
+                                                                                              golem:G11_Narrative_Role ,
+                                                                                              golem:G12_Setting ,
+                                                                                              golem:G14_Narrative-Stoff ,
+                                                                                              golem:G4_Social_Relationship ,
+                                                                                              golem:G6_Relationship_Role ,
+                                                                                              golem:G7_Narrative_Sequence ,
+                                                                                              golem:G8_Syuzhet ,
+                                                                                              golem:G9_Narrative_Unit ;
                                                                              rdfs:comment "A non-physical place, generically dependent on some (physical) geographical object ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                              rdfs:label "Geographical place" .
 
@@ -1139,14 +1158,14 @@ This class also comprises items that are “about” something in the sense of a
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                        gc:G10_Narrative_Function ,
-                                                                                        gc:G11_Narrative_Role ,
-                                                                                        gc:G12_Setting ,
-                                                                                        gc:G13_Narrative_Location ,
-                                                                                        gc:G1_Character ,
-                                                                                        gc:G6_Relationship_Role ,
-                                                                                        gc:G7_Narrative_Sequence ,
-                                                                                        gc:G8_Syuzhet ;
+                                                                                        golem:G10_Narrative_Function ,
+                                                                                        golem:G11_Narrative_Role ,
+                                                                                        golem:G12_Setting ,
+                                                                                        golem:G13_Narrative_Location ,
+                                                                                        golem:G1_Character ,
+                                                                                        golem:G6_Relationship_Role ,
+                                                                                        golem:G7_Narrative_Sequence ,
+                                                                                        golem:G8_Syuzhet ;
                                                                        rdfs:comment "A social description defining roles for the interaction of rational agents  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                        rdfs:label "social relationship" .
 
@@ -1157,15 +1176,15 @@ This class also comprises items that are “about” something in the sense of a
                                                                                                            <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                                                                                            <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                                                                                            <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                                           gc:G10_Narrative_Function ,
-                                                                                                           gc:G11_Narrative_Role ,
-                                                                                                           gc:G12_Setting ,
-                                                                                                           gc:G14_Narrative-Stoff ,
-                                                                                                           gc:G4_Social_Relationship ,
-                                                                                                           gc:G6_Relationship_Role ,
-                                                                                                           gc:G7_Narrative_Sequence ,
-                                                                                                           gc:G8_Syuzhet ,
-                                                                                                           gc:G9_Narrative_Unit ;
+                                                                                                           golem:G10_Narrative_Function ,
+                                                                                                           golem:G11_Narrative_Role ,
+                                                                                                           golem:G12_Setting ,
+                                                                                                           golem:G14_Narrative-Stoff ,
+                                                                                                           golem:G4_Social_Relationship ,
+                                                                                                           golem:G6_Relationship_Role ,
+                                                                                                           golem:G7_Narrative_Sequence ,
+                                                                                                           golem:G8_Syuzhet ,
+                                                                                                           golem:G9_Narrative_Unit ;
                                                                                           rdfs:comment "A figure (e.g. Italy) for non-physical (i.e. socially- or cognitively-constructed) places. Non-physical places generically depend on physical places  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                                           rdfs:label "non physical place" .
 
@@ -1204,11 +1223,11 @@ This class also comprises items that are “about” something in the sense of a
 <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> rdf:type owl:Class ;
                                                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting> ;
-                                                                                               owl:someValuesFrom gc:G12_Setting
+                                                                                               owl:someValuesFrom golem:G12_Setting
                                                                                              ] ,
                                                                                              [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location-of> ;
-                                                                                               owl:someValuesFrom gc:G5_Narrative_Event
+                                                                                               owl:someValuesFrom golem:G5_Narrative_Event
                                                                                              ] ;
                                                                              rdfs:comment """A temporal region, measured according to a calendar
 ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).""" ,
@@ -1222,14 +1241,14 @@ This class also comprises items that are “about” something in the sense of a
                                                                                        owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
-                                                                                                        gc:G10_Narrative_Function ,
-                                                                                                        gc:G11_Narrative_Role ,
-                                                                                                        gc:G14_Narrative-Stoff ,
-                                                                                                        gc:G4_Social_Relationship ,
-                                                                                                        gc:G6_Relationship_Role ,
-                                                                                                        gc:G7_Narrative_Sequence ,
-                                                                                                        gc:G8_Syuzhet ,
-                                                                                                        gc:G9_Narrative_Unit ;
+                                                                                                        golem:G10_Narrative_Function ,
+                                                                                                        golem:G11_Narrative_Role ,
+                                                                                                        golem:G14_Narrative-Stoff ,
+                                                                                                        golem:G4_Social_Relationship ,
+                                                                                                        golem:G6_Relationship_Role ,
+                                                                                                        golem:G7_Narrative_Sequence ,
+                                                                                                        golem:G8_Syuzhet ,
+                                                                                                        golem:G9_Narrative_Unit ;
                                                                                        rdfs:comment "A social object that is assumed to internally represent a plan. Since social objects are dependent on physical ones, it is not trivial to interpret the local sense in which a social object 'internally represents' a plan. For example, an institution can have the plan to promote or regulate some activities, but this is possible by means of the powers conferred to it by some legal system, through its representatives, and that plan has to be executed by means of the physical agents that 'act for' the institution ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                                        rdfs:label "agentive social object"@en .
 
@@ -1245,15 +1264,15 @@ This class also comprises items that are “about” something in the sense of a
                                                                        owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                        gc:G10_Narrative_Function ,
-                                                                                        gc:G11_Narrative_Role ,
-                                                                                        gc:G12_Setting ,
-                                                                                        gc:G13_Narrative_Location ,
-                                                                                        gc:G14_Narrative-Stoff ,
-                                                                                        gc:G1_Character ,
-                                                                                        gc:G4_Social_Relationship ,
-                                                                                        gc:G6_Relationship_Role ,
-                                                                                        gc:G9_Narrative_Unit ;
+                                                                                        golem:G10_Narrative_Function ,
+                                                                                        golem:G11_Narrative_Role ,
+                                                                                        golem:G12_Setting ,
+                                                                                        golem:G13_Narrative_Location ,
+                                                                                        golem:G14_Narrative-Stoff ,
+                                                                                        golem:G1_Character ,
+                                                                                        golem:G4_Social_Relationship ,
+                                                                                        golem:G6_Relationship_Role ,
+                                                                                        golem:G9_Narrative_Unit ;
                                                                        rdfs:comment "A concept that classifies (in particular, it 'sequences') perdurants (processes, events, or states), as a component of some description. Courses are the descriptive counterpart of perdurants, and, since perdurants have endurants as participants, they are usually the function of some role  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                        rdfs:label "course"@en .
 
@@ -1262,14 +1281,14 @@ This class also comprises items that are “about” something in the sense of a
 <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> rdf:type owl:Class ;
                                                                             owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                                                                              <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                             gc:G10_Narrative_Function ,
-                                                                                             gc:G11_Narrative_Role ,
-                                                                                             gc:G12_Setting ,
-                                                                                             gc:G13_Narrative_Location ,
-                                                                                             gc:G1_Character ,
-                                                                                             gc:G6_Relationship_Role ,
-                                                                                             gc:G7_Narrative_Sequence ,
-                                                                                             gc:G8_Syuzhet ;
+                                                                                             golem:G10_Narrative_Function ,
+                                                                                             golem:G11_Narrative_Role ,
+                                                                                             golem:G12_Setting ,
+                                                                                             golem:G13_Narrative_Location ,
+                                                                                             golem:G1_Character ,
+                                                                                             golem:G6_Relationship_Role ,
+                                                                                             golem:G7_Narrative_Sequence ,
+                                                                                             golem:G8_Syuzhet ;
                                                                             rdfs:comment "A description is a social object which represents a conceptualization (e.g. a mental object or state), hence it is generically dependent on some agent and communicable. Descriptions define or use concepts or figures, are expressed by an information object and can be satisfied by situations. The typology of descriptions is still preliminary  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                             rdfs:label "description"@en .
 
@@ -1277,29 +1296,29 @@ This class also comprises items that are “about” something in the sense of a
 ###  http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role
 <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> rdf:type owl:Class ;
                                                                      owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                      gc:G12_Setting ,
-                                                                                      gc:G13_Narrative_Location ,
-                                                                                      gc:G14_Narrative-Stoff ,
-                                                                                      gc:G1_Character ,
-                                                                                      gc:G4_Social_Relationship ,
-                                                                                      gc:G7_Narrative_Sequence ,
-                                                                                      gc:G8_Syuzhet ,
-                                                                                      gc:G9_Narrative_Unit ;
+                                                                                      golem:G12_Setting ,
+                                                                                      golem:G13_Narrative_Location ,
+                                                                                      golem:G14_Narrative-Stoff ,
+                                                                                      golem:G1_Character ,
+                                                                                      golem:G4_Social_Relationship ,
+                                                                                      golem:G7_Narrative_Sequence ,
+                                                                                      golem:G8_Syuzhet ,
+                                                                                      golem:G9_Narrative_Unit ;
                                                                      rdfs:comment "Also known as 'functional role'.A concept that classifies (in particular, it is 'played by') endurants, as used in some description. Roles are the descriptive counterpart of endurants, and, as endurants participate in perdurants, they usually have courses as modal targets (see).The typology of roles is still preliminary  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                      rdfs:label "role"@en .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation
 <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> rdf:type owl:Class ;
-                                                                          owl:disjointWith gc:G10_Narrative_Function ,
-                                                                                           gc:G11_Narrative_Role ,
-                                                                                           gc:G13_Narrative_Location ,
-                                                                                           gc:G14_Narrative-Stoff ,
-                                                                                           gc:G4_Social_Relationship ,
-                                                                                           gc:G6_Relationship_Role ,
-                                                                                           gc:G7_Narrative_Sequence ,
-                                                                                           gc:G8_Syuzhet ,
-                                                                                           gc:G9_Narrative_Unit ;
+                                                                          owl:disjointWith golem:G10_Narrative_Function ,
+                                                                                           golem:G11_Narrative_Role ,
+                                                                                           golem:G13_Narrative_Location ,
+                                                                                           golem:G14_Narrative-Stoff ,
+                                                                                           golem:G4_Social_Relationship ,
+                                                                                           golem:G6_Relationship_Role ,
+                                                                                           golem:G7_Narrative_Sequence ,
+                                                                                           golem:G8_Syuzhet ,
+                                                                                           golem:G9_Narrative_Unit ;
                                                                           rdfs:comment "A situation is a social object that appears in the domain of an ontology only because there is a description whose components can 'carve up' a view (setting) on that domain. A situation has to satisfy a description (see below for ways of defining the satisfies relation), and it has to be setting for at least one entity.In other words, it is the ontological counterpart (with due local differences or restrictions) of settings (situations from SC, contexts, episodes, states of affairs, structures, configurations, cases, etc.).A perdurant is usually the only mandatory constituent of a setting.Two descriptions of a same situation are possible, otherwise we would result in a solipsistic ontology. The time and space (and possibly other qualities) of a situation are the time and space of the perdurants in the setting  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                           rdfs:label "situation" .
 
@@ -1317,13 +1336,13 @@ rdf:Seq rdf:type owl:Class ;
         rdfs:label "Seq"@en .
 
 
-###  https://ontology.golemlab.eu/G0_Character-Stoff
-gc:G0_Character-Stoff rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G0_Character-Stoff
+golem:G0_Character-Stoff rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
                                       <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
-                                        owl:someValuesFrom gc:G1_Character
+                                        owl:someValuesFrom golem:G1_Character
                                       ] ;
                       rdfs:comment "The concept of Character-Stoff is derived from the German term Erzählstoff, referring to narrative material (Zgoll et al, 2020). Character-Stoff represents the infinite potential of a character across all known and unknown variations, extending beyond any singular depiction. It encompasses all possible versions, features, actions, and roles of a character across time and media, while remaining open to reinterpretation and transformation. This polymorphous nature allows for endless modifications. Thus, Character-Stoff is an ever-evolving, inexhaustible phenomenon, impossible to outline in full."@en ;
                       rdfs:label "G0 Character-Stoff"@en ;
@@ -1331,8 +1350,8 @@ gc:G0_Character-Stoff rdf:type owl:Class ;
 The Harry Potter Stoff includes not only the known versions from books, films, and fan works, but also potential reinterpretations in future media or cultural contexts. Any imaginary version of Harry Potter could be potentially true, as the Character-Stoff allows for infinite variations and reinterpretations.""" .
 
 
-###  https://ontology.golemlab.eu/G10_Narrative_Function
-gc:G10_Narrative_Function rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G10_Narrative_Function
+golem:G10_Narrative_Function rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
@@ -1340,27 +1359,27 @@ gc:G10_Narrative_Function rdf:type owl:Class ;
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
-                                            owl:someValuesFrom gc:G7_Narrative_Sequence
+                                            owl:someValuesFrom golem:G7_Narrative_Sequence
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by> ;
-                                            owl:someValuesFrom gc:G9_Narrative_Unit
+                                            owl:someValuesFrom golem:G9_Narrative_Unit
                                           ] ;
-                          owl:disjointWith gc:G12_Setting ,
-                                           gc:G13_Narrative_Location ,
-                                           gc:G14_Narrative-Stoff ,
-                                           gc:G1_Character ,
-                                           gc:G4_Social_Relationship ,
-                                           gc:G7_Narrative_Sequence ,
-                                           gc:G8_Syuzhet ,
-                                           gc:G9_Narrative_Unit ;
+                          owl:disjointWith golem:G12_Setting ,
+                                           golem:G13_Narrative_Location ,
+                                           golem:G14_Narrative-Stoff ,
+                                           golem:G1_Character ,
+                                           golem:G4_Social_Relationship ,
+                                           golem:G7_Narrative_Sequence ,
+                                           golem:G8_Syuzhet ,
+                                           golem:G9_Narrative_Unit ;
                           rdfs:comment "A narrative function refers to the functional roles that narrative units play within a story. For instance, the Proppian function (Propp, 1968) \"Villain causes harm or injury\" can be illustrated by the narrative unit where Zephyros causes Hyacinthus's death."@en ;
                           rdfs:label "G10 Narrative Function"@en ;
                           skos:example "Functions identified by Propp, Campbell, or Greimas (Greimas, 1983)." .
 
 
-###  https://ontology.golemlab.eu/G11_Narrative_Role
-gc:G11_Narrative_Role rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G11_Narrative_Role
+golem:G11_Narrative_Role rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
@@ -1368,27 +1387,27 @@ gc:G11_Narrative_Role rdf:type owl:Class ;
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
-                                        owl:someValuesFrom gc:G7_Narrative_Sequence
+                                        owl:someValuesFrom golem:G7_Narrative_Sequence
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by> ;
-                                        owl:someValuesFrom gc:G1_Character
+                                        owl:someValuesFrom golem:G1_Character
                                       ] ;
-                      owl:disjointWith gc:G12_Setting ,
-                                       gc:G13_Narrative_Location ,
-                                       gc:G14_Narrative-Stoff ,
-                                       gc:G1_Character ,
-                                       gc:G4_Social_Relationship ,
-                                       gc:G7_Narrative_Sequence ,
-                                       gc:G8_Syuzhet ,
-                                       gc:G9_Narrative_Unit ;
-                      rdfs:comment "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (gc:G1)." ;
+                      owl:disjointWith golem:G12_Setting ,
+                                       golem:G13_Narrative_Location ,
+                                       golem:G14_Narrative-Stoff ,
+                                       golem:G1_Character ,
+                                       golem:G4_Social_Relationship ,
+                                       golem:G7_Narrative_Sequence ,
+                                       golem:G8_Syuzhet ,
+                                       golem:G9_Narrative_Unit ;
+                      rdfs:comment "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (golem:G1)." ;
                       rdfs:label "G11 Narrative Role" ;
                       skos:example "Narrator, dramatis personae from Propp Ontology (Pannach et al., 2021) or *commedia dell’arte*." .
 
 
-###  https://ontology.golemlab.eu/G12_Setting
-gc:G12_Setting rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G12_Setting
+golem:G12_Setting rdf:type owl:Class ;
                rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#satisfies> ;
@@ -1400,43 +1419,43 @@ gc:G12_Setting rdf:type owl:Class ;
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting-for> ;
-                                 owl:someValuesFrom gc:G13_Narrative_Location
+                                 owl:someValuesFrom golem:G13_Narrative_Location
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting-for> ;
-                                 owl:someValuesFrom gc:G16_Object
+                                 owl:someValuesFrom golem:G16_Object
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting-for> ;
-                                 owl:someValuesFrom gc:G1_Character
+                                 owl:someValuesFrom golem:G1_Character
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting-for> ;
-                                 owl:someValuesFrom gc:G5_Narrative_Event
+                                 owl:someValuesFrom golem:G5_Narrative_Event
                                ] ;
-               owl:disjointWith gc:G13_Narrative_Location ,
-                                gc:G14_Narrative-Stoff ,
-                                gc:G4_Social_Relationship ,
-                                gc:G6_Relationship_Role ,
-                                gc:G7_Narrative_Sequence ,
-                                gc:G8_Syuzhet ,
-                                gc:G9_Narrative_Unit ;
+               owl:disjointWith golem:G13_Narrative_Location ,
+                                golem:G14_Narrative-Stoff ,
+                                golem:G4_Social_Relationship ,
+                                golem:G6_Relationship_Role ,
+                                golem:G7_Narrative_Sequence ,
+                                golem:G8_Syuzhet ,
+                                golem:G9_Narrative_Unit ;
                rdfs:comment "Setting is the narrative universe in which a story unfolds, encompassing the spatial, cultural, and social contexts that shape characters and events. It defines the situation and surroundings relevant to the narrative. Defining a setting for a Work is useful for its comparative and historical analysis with respect to other works. It is particularly apt to specify differences between canonical and fanfiction works that have Alternate Universe settings." ;
                rdfs:label "G12 Setting" ;
                skos:example """The Wizarding World for the Harry Potter novels. 
 The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle-class Dublin\" (Ryan, 2015).""" .
 
 
-###  https://ontology.golemlab.eu/G13_Narrative_Location
-gc:G13_Narrative_Location rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G13_Narrative_Location
+golem:G13_Narrative_Location rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of> ;
-                                            owl:someValuesFrom gc:G16_Object
+                                            owl:someValuesFrom golem:G16_Object
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of> ;
-                                            owl:someValuesFrom gc:G1_Character
+                                            owl:someValuesFrom golem:G1_Character
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generically-dependent-on> ;
@@ -1444,50 +1463,50 @@ gc:G13_Narrative_Location rdf:type owl:Class ;
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part> ;
-                                            owl:someValuesFrom gc:G13_Narrative_Location
+                                            owl:someValuesFrom golem:G13_Narrative_Location
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part-of> ;
-                                            owl:someValuesFrom gc:G13_Narrative_Location
+                                            owl:someValuesFrom golem:G13_Narrative_Location
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting> ;
-                                            owl:someValuesFrom gc:G12_Setting
+                                            owl:someValuesFrom golem:G12_Setting
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#participant-place-of> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ;
-                          owl:disjointWith gc:G14_Narrative-Stoff ,
-                                           gc:G4_Social_Relationship ,
-                                           gc:G6_Relationship_Role ,
-                                           gc:G7_Narrative_Sequence ,
-                                           gc:G8_Syuzhet ,
-                                           gc:G9_Narrative_Unit ;
+                          owl:disjointWith golem:G14_Narrative-Stoff ,
+                                           golem:G4_Social_Relationship ,
+                                           golem:G6_Relationship_Role ,
+                                           golem:G7_Narrative_Sequence ,
+                                           golem:G8_Syuzhet ,
+                                           golem:G9_Narrative_Unit ;
                           rdfs:comment "A narrative location is the spatial environment where events occur, the spatial frame that represents the immediate surroundings of action. It is a non-physical place shaped by the narrative context. A narrative location may derive features from real locations but it only exists as an entity within the narrative."@en ;
                           rdfs:label "G13 Narrative Location"@en ;
                           skos:example "England in the Harry Potter series functions as a non-physical place shaped by the narrative, generically dependent on England in the real world." .
 
 
-###  https://ontology.golemlab.eu/G14_Narrative-Stoff
-gc:G14_Narrative-Stoff rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G14_Narrative-Stoff
+golem:G14_Narrative-Stoff rdf:type owl:Class ;
                        rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
                                        <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                        [ rdf:type owl:Restriction ;
                                          owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
-                                         owl:someValuesFrom gc:G7_Narrative_Sequence
+                                         owl:someValuesFrom golem:G7_Narrative_Sequence
                                        ] ;
-                       owl:disjointWith gc:G1_Character ,
-                                        gc:G6_Relationship_Role ,
-                                        gc:G7_Narrative_Sequence ,
-                                        gc:G8_Syuzhet ;
-                       rdfs:comment "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (gc:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."@en ;
+                       owl:disjointWith golem:G1_Character ,
+                                        golem:G6_Relationship_Role ,
+                                        golem:G7_Narrative_Sequence ,
+                                        golem:G8_Syuzhet ;
+                       rdfs:comment "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (golem:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."@en ;
                        rdfs:label "G14 Narrative-Stoff"@en ;
                        skos:example "Apollo and Zephyros love Hyacinthus. While Apollo and Hyacinthus are playing a game with a discus, Zephyros uses the wind to change its direction, causing the discus to hit Hyacinthus and resulting in his death. Afterward, Hyacinthus transforms into a flower." .
 
 
-###  https://ontology.golemlab.eu/G15_Fandom
-gc:G15_Fandom rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G15_Fandom
+golem:G15_Fandom rdf:type owl:Class ;
               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ,
                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                               [ rdf:type owl:Restriction ;
@@ -1499,92 +1518,92 @@ gc:G15_Fandom rdf:type owl:Class ;
               skos:example "The entity identified by the label “Harry Potter - J. K. Rowling” on AO3." .
 
 
-###  https://ontology.golemlab.eu/G16_Object
-gc:G16_Object rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G16_Object
+golem:G16_Object rdf:type owl:Class ;
               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ,
                               <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location> ;
-                                owl:someValuesFrom gc:G13_Narrative_Location
+                                owl:someValuesFrom golem:G13_Narrative_Location
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting> ;
-                                owl:someValuesFrom gc:G12_Setting
+                                owl:someValuesFrom golem:G12_Setting
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#used-by> ;
-                                owl:someValuesFrom gc:G1_Character
+                                owl:someValuesFrom golem:G1_Character
                               ] ;
               rdfs:comment "An object refers to a persistent item that plays a significant role in the story but is not a character."@en ;
               rdfs:label "G16 Object"@en ;
               skos:example "The Elder Wand carried by Harry Potter." .
 
 
-###  https://ontology.golemlab.eu/G17_Character_Feature
-gc:G17_Character_Feature rdf:type owl:Class ;
-                         rdfs:subClassOf gc:G2_Feature ;
+###  https://w3id.org/golem/ontology/G17_Character_Feature
+golem:G17_Character_Feature rdf:type owl:Class ;
+                         rdfs:subClassOf golem:G2_Feature ;
                          rdfs:comment "Character traits or features are stable aspects defining a character's identity, including biographical (e.g., birth, death), physical (e.g., hair color, scars), and psychological features (e.g., personality). These three subcategories are specified using crm:E55_Type."@en ;
                          rdfs:label "G17 Character Feature"@en ;
                          skos:example """Harry Potter’s bravery as inferred from the sentence
 “Harry screwed up his courage” (chapter 17 of Harry Potter and the Philosopher’s Stone).""" .
 
 
-###  https://ontology.golemlab.eu/G18_Textual_Feature
-gc:G18_Textual_Feature rdf:type owl:Class ;
-                       rdfs:subClassOf gc:G2_Feature ;
+###  https://w3id.org/golem/ontology/G18_Textual_Feature
+golem:G18_Textual_Feature rdf:type owl:Class ;
+                       rdfs:subClassOf golem:G2_Feature ;
                        rdfs:comment "Textual features are the elements or characteristics found in a narrative or fictions. These features include narrative style, like the tone and writing techniques employed by the author, as well as the point of view (POV) that determines the perspective from which the story is told, such as first-person or third-person. Textual features also contain the voice reflecting authors' attitude, the diction referring to the authors' choice of words, etc. Taxonomies of textual features can be further specified using crm:E55_Type." ;
                        rdfs:label "G18 Textual Feature" ;
                        skos:example "Stream of consciousness, first-person perspective" .
 
 
-###  https://ontology.golemlab.eu/G1_Character
-gc:G1_Character rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G1_Character
+golem:G1_Character rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
                                 <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-social-object> ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
-                                  owl:someValuesFrom gc:G0_Character-Stoff
+                                  owl:someValuesFrom golem:G0_Character-Stoff
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#participant-in> ;
-                                  owl:someValuesFrom gc:G5_Narrative_Event
+                                  owl:someValuesFrom golem:G5_Narrative_Event
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#involved-in> ;
-                                  owl:someValuesFrom gc:G4_Social_Relationship
+                                  owl:someValuesFrom golem:G4_Social_Relationship
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays> ;
-                                  owl:someValuesFrom gc:G11_Narrative_Role
+                                  owl:someValuesFrom golem:G11_Narrative_Role
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays> ;
-                                  owl:someValuesFrom gc:G6_Relationship_Role
+                                  owl:someValuesFrom golem:G6_Relationship_Role
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting> ;
-                                  owl:someValuesFrom gc:G12_Setting
+                                  owl:someValuesFrom golem:G12_Setting
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#uses> ;
-                                  owl:someValuesFrom gc:G16_Object
+                                  owl:someValuesFrom golem:G16_Object
                                 ] ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty gc:GP1_is_character_in ;
+                                  owl:onProperty golem:GP1_is_character_in ;
                                   owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
                                 ] ;
-                owl:disjointWith gc:G4_Social_Relationship ,
-                                 gc:G6_Relationship_Role ,
-                                 gc:G7_Narrative_Sequence ,
-                                 gc:G8_Syuzhet ,
-                                 gc:G9_Narrative_Unit ;
+                owl:disjointWith golem:G4_Social_Relationship ,
+                                 golem:G6_Relationship_Role ,
+                                 golem:G7_Narrative_Sequence ,
+                                 golem:G8_Syuzhet ,
+                                 golem:G9_Narrative_Unit ;
                 rdfs:comment "“Character is a text- or media-based figure in a storyworld, usually human or human-like,” understood through readers’ knowledge of real people (Jannidis, 2019). Readers attribute to characters mental states such as intentions and beliefs, and consider them to engage in actions. Characters can have specific functional roles within narratives, such as protagonist or antagonist, influencing how readers perceive and interpret the story."@en ;
                 rdfs:label "G1 Character"@en ;
                 skos:example "Harry Potter in the novel *Harry Potter and the Philosopher's Stone*." .
 
 
-###  https://ontology.golemlab.eu/G2_Feature
-gc:G2_Feature rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G2_Feature
+golem:G2_Feature rdf:type owl:Class ;
               rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
               rdfs:comment """A feature in the context of narrative refers to a distinct element or characteristic that contributes to the structure and meaning of a story. Features include character traits and textual elements.
 Taxonomies of features can be further specified using crm:E55_Type.""" ;
@@ -1592,52 +1611,52 @@ Taxonomies of features can be further specified using crm:E55_Type.""" ;
               skos:example "Style, theme, literary devices" .
 
 
-###  https://ontology.golemlab.eu/G3_Psychological_State
-gc:G3_Psychological_State rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G3_Psychological_State
+golem:G3_Psychological_State rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#state> ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/FunctionalParticipation.owl#state-of> ;
-                                            owl:someValuesFrom gc:G1_Character
+                                            owl:someValuesFrom golem:G1_Character
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#follows> ;
-                                            owl:someValuesFrom gc:G3_Psychological_State
+                                            owl:someValuesFrom golem:G3_Psychological_State
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#follows> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes> ;
-                                            owl:someValuesFrom gc:G3_Psychological_State
+                                            owl:someValuesFrom golem:G3_Psychological_State
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in> ;
-                                            owl:someValuesFrom gc:G3_Psychological_State
+                                            owl:someValuesFrom golem:G3_Psychological_State
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-includes> ;
-                                            owl:someValuesFrom gc:G3_Psychological_State
+                                            owl:someValuesFrom golem:G3_Psychological_State
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-includes> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-overlaps> ;
-                                            owl:someValuesFrom gc:G3_Psychological_State
+                                            owl:someValuesFrom golem:G3_Psychological_State
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-overlaps> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ;
                           rdfs:comment "A psychological state is a temporal mental condition that may change over time but possesses relatively constant qualities, such as emotions, motivations, beliefs, and goals."@en ;
                           rdfs:label "G3 Psychological State"@en ;
@@ -1645,117 +1664,117 @@ gc:G3_Psychological_State rdf:type owl:Class ;
 In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling for Hermione and his insecurity. Seeing Hermione arriving at the ball with Viktor Krum, Ron lashes out and criticizes Hermione. His anger reveals his jealousy (chapter 23 of Harry Potter and The Goblet of Fire).""" .
 
 
-###  https://ontology.golemlab.eu/G4_Social_Relationship
-gc:G4_Social_Relationship rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G4_Social_Relationship
+golem:G4_Social_Relationship rdf:type owl:Class ;
                           rdfs:subClassOf <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship> ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generically-dependent-on> ;
-                                            owl:someValuesFrom gc:G5_Narrative_Event
+                                            owl:someValuesFrom golem:G5_Narrative_Event
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses> ;
-                                            owl:someValuesFrom gc:G6_Relationship_Role
+                                            owl:someValuesFrom golem:G6_Relationship_Role
                                           ] ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#involves> ;
-                                            owl:someValuesFrom gc:G1_Character
+                                            owl:someValuesFrom golem:G1_Character
                                           ] ;
-                          owl:disjointWith gc:G6_Relationship_Role ,
-                                           gc:G7_Narrative_Sequence ,
-                                           gc:G8_Syuzhet ;
+                          owl:disjointWith golem:G6_Relationship_Role ,
+                                           golem:G7_Narrative_Sequence ,
+                                           golem:G8_Syuzhet ;
                           rdfs:comment "“A social description defining roles for the interaction of cognitive agents (DOLCE-Lite-Plus, 2005)” or dlp:agentive-social-objects. Characters are involved in social relationships."@en ;
                           rdfs:label "G4 Social Relationships"@en ;
                           skos:example """Romantic love between Ron and Hermione, which can be inferred from the paragraph below:
 \"There was a clatter as the basilisk fangs cascaded out of Hermione’s arms. Running at Ron, she flung them around his neck and kissed him full on the mouth. Ron threw away the fangs and broomstick he was holding and responded with such enthusiasm that he lifted Hermione off her feet\" (chapter 31 in Harry Potter and the Deathly Hallows).""" .
 
 
-###  https://ontology.golemlab.eu/G5_Narrative_Event
-gc:G5_Narrative_Event rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G5_Narrative_Event
+golem:G5_Narrative_Event rdf:type owl:Class ;
                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#participant> ;
-                                        owl:someValuesFrom gc:G1_Character
+                                        owl:someValuesFrom golem:G1_Character
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting> ;
-                                        owl:someValuesFrom gc:G12_Setting
+                                        owl:someValuesFrom golem:G12_Setting
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#participant-place> ;
-                                        owl:someValuesFrom gc:G13_Narrative_Location
+                                        owl:someValuesFrom golem:G13_Narrative_Location
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#follows> ;
-                                        owl:someValuesFrom gc:G3_Psychological_State
+                                        owl:someValuesFrom golem:G3_Psychological_State
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#follows> ;
-                                        owl:someValuesFrom gc:G5_Narrative_Event
+                                        owl:someValuesFrom golem:G5_Narrative_Event
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes> ;
-                                        owl:someValuesFrom gc:G3_Psychological_State
+                                        owl:someValuesFrom golem:G3_Psychological_State
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes> ;
-                                        owl:someValuesFrom gc:G5_Narrative_Event
+                                        owl:someValuesFrom golem:G5_Narrative_Event
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in> ;
-                                        owl:someValuesFrom gc:G3_Psychological_State
+                                        owl:someValuesFrom golem:G3_Psychological_State
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in> ;
-                                        owl:someValuesFrom gc:G5_Narrative_Event
+                                        owl:someValuesFrom golem:G5_Narrative_Event
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-includes> ;
-                                        owl:someValuesFrom gc:G3_Psychological_State
+                                        owl:someValuesFrom golem:G3_Psychological_State
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-includes> ;
-                                        owl:someValuesFrom gc:G5_Narrative_Event
+                                        owl:someValuesFrom golem:G5_Narrative_Event
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-overlaps> ;
-                                        owl:someValuesFrom gc:G3_Psychological_State
+                                        owl:someValuesFrom golem:G3_Psychological_State
                                       ] ,
                                       [ rdf:type owl:Restriction ;
                                         owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-overlaps> ;
-                                        owl:someValuesFrom gc:G5_Narrative_Event
+                                        owl:someValuesFrom golem:G5_Narrative_Event
                                       ] ;
                       rdfs:comment "A narrative event is a unit inferred from a span of text and it can express a change of state, a process, or a state of things that supports the story, as defined by its temporality and sequentiality.. Events can be either external, like actions taken by characters, or psychological, involving changes in thoughts or feelings, which are distinct from a psychological state (cf. Gius and Vauth, 2022). Types of events can be specified using crm:E55_Type."@en ;
                       rdfs:label "G5 Narrative Event"@en ;
                       skos:example "\"There was a clatter as the basilisk fangs cascaded out of Hermione’s arms [process event]. Running at Ron [process event], she flung them around his neck and kissed him full on the mouth [change of state]. Ron threw away the fangs and broomstick [process event] he was holding and responded with such enthusiasm that he lifted Hermione off her feet [change of state].\"" .
 
 
-###  https://ontology.golemlab.eu/G6_Relationship_Role
-gc:G6_Relationship_Role rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G6_Relationship_Role
+golem:G6_Relationship_Role rdf:type owl:Class ;
                         rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
-                                          owl:someValuesFrom gc:G4_Social_Relationship
+                                          owl:someValuesFrom golem:G4_Social_Relationship
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by> ;
-                                          owl:someValuesFrom gc:G1_Character
+                                          owl:someValuesFrom golem:G1_Character
                                         ] ;
-                        owl:disjointWith gc:G7_Narrative_Sequence ,
-                                         gc:G8_Syuzhet ,
-                                         gc:G9_Narrative_Unit ;
+                        owl:disjointWith golem:G7_Narrative_Sequence ,
+                                         golem:G8_Syuzhet ,
+                                         golem:G9_Narrative_Unit ;
                         rdfs:comment "A relationship role refers to the functional role a character plays within the context of their interactions with other characters, serving as a descriptive counterpart to their enduring qualities, with characters participating in events (perdurants)." ;
                         rdfs:label "G6 Relationship Role" ;
                         skos:example """Lover (both Ron and Hermione in the “Ron and Hermione” romantic relationship).
 Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationship).""" .
 
 
-###  https://ontology.golemlab.eu/G7_Narrative_Sequence
-gc:G7_Narrative_Sequence rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G7_Narrative_Sequence
+golem:G7_Narrative_Sequence rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                          rdf:Seq ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
-                                           owl:someValuesFrom gc:G14_Narrative-Stoff
+                                           owl:someValuesFrom golem:G14_Narrative-Stoff
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
@@ -1763,22 +1782,22 @@ gc:G7_Narrative_Sequence rdf:type owl:Class ;
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                           owl:someValuesFrom gc:G10_Narrative_Function
+                                           owl:someValuesFrom golem:G10_Narrative_Function
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                           owl:someValuesFrom gc:G11_Narrative_Role
+                                           owl:someValuesFrom golem:G11_Narrative_Role
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences> ;
-                                           owl:someValuesFrom gc:G5_Narrative_Event
+                                           owl:someValuesFrom golem:G5_Narrative_Event
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty rdfs:member ;
-                                           owl:someValuesFrom gc:G9_Narrative_Unit
+                                           owl:someValuesFrom golem:G9_Narrative_Unit
                                          ] ;
-                         owl:disjointWith gc:G9_Narrative_Unit ;
-                         rdfs:comment "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
+                         owl:disjointWith golem:G9_Narrative_Unit ;
+                         rdfs:comment "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
                          rdfs:label "G7 Narrative Sequence"@en ;
                          skos:example """Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).
 
@@ -1807,8 +1826,8 @@ H2: Zephyros loves Hyacinthus (durative-constant)
 H5: Zephyros is the West Wind. (durative-constant)""" .
 
 
-###  https://ontology.golemlab.eu/G8_Syuzhet
-gc:G8_Syuzhet rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G8_Syuzhet
+golem:G8_Syuzhet rdf:type owl:Class ;
               rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                               rdf:Seq ,
                               [ rdf:type owl:Restriction ;
@@ -1817,22 +1836,22 @@ gc:G8_Syuzhet rdf:type owl:Class ;
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                owl:someValuesFrom gc:G10_Narrative_Function
+                                owl:someValuesFrom golem:G10_Narrative_Function
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                owl:someValuesFrom gc:G11_Narrative_Role
+                                owl:someValuesFrom golem:G11_Narrative_Role
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences> ;
-                                owl:someValuesFrom gc:G5_Narrative_Event
+                                owl:someValuesFrom golem:G5_Narrative_Event
                               ] ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty rdfs:member ;
-                                owl:someValuesFrom gc:G9_Narrative_Unit
+                                owl:someValuesFrom golem:G9_Narrative_Unit
                               ] ;
-              owl:disjointWith gc:G9_Narrative_Unit ;
-              rdfs:comment "Often translated as \"plot\" or “discourse”, syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
+              owl:disjointWith golem:G9_Narrative_Unit ;
+              rdfs:comment "Often translated as \"plot\" or “discourse”, syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
               rdfs:label "G8 Syuzhet"@en ;
               skos:example """Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death.” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).
 
@@ -1849,13 +1868,13 @@ H2: Zephyros loves Hyacinthus (durative-constant)
 H5: Zephyros is the West Wind. (durative-constant)""" .
 
 
-###  https://ontology.golemlab.eu/G9_Narrative_Unit
-gc:G9_Narrative_Unit rdf:type owl:Class ;
+###  https://w3id.org/golem/ontology/G9_Narrative_Unit
+golem:G9_Narrative_Unit rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
                                      <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> ;
-                                       owl:someValuesFrom gc:G5_Narrative_Event
+                                       owl:someValuesFrom golem:G5_Narrative_Event
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part-of> ;
@@ -1863,7 +1882,7 @@ gc:G9_Narrative_Unit rdf:type owl:Class ;
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays> ;
-                                       owl:someValuesFrom gc:G10_Narrative_Function
+                                       owl:someValuesFrom golem:G10_Narrative_Function
                                      ] ;
                      rdfs:comment "A narrative unit is the minimal or fundamental component of narrative structure that articulates actions, states, or thematic elements within a story. The advantage of having narrative unit as a concept distinct from that of narrative event (G5) is that narrative units can be propositional objects formulated differently from how events are presented in the narrative. For example, hylemes (Zgoll et al., 2023; Pannach, 2023) are narrative units (statements) composed of a subject, predicate, and optional object. They represent the fundamental building blocks of any narrative structure, describing actions, states, or information present within a narrative , such as \"Apollo loves Hyacinthus.\""@en ;
                      rdfs:label "G9 Narrative Unit"@en ;
