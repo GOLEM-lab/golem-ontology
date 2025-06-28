@@ -31,6 +31,9 @@
                                  vann:preferredNamespacePrefix "golem" ;
                                  vann:preferredNamespaceUri "https://w3id.org/golem/ontology#" ;
                                  rdfs:label "GOLEM Ontology"@en ;
+                                 dcterms:identifier "10.5281/zenodo.14911396" ;
+                                 dcterms:hasVersion "1.0.0" ;
+                                 dcterms:source <https://doi.org/10.5281/zenodo.14911396> ;
                                  rdfs:comment """# Golem Ontology for Narrative and Fiction
                                  
 
