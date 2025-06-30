@@ -2,7 +2,7 @@
 "ontology_URI": "https://w3id.org/golem/ontology",
 "ontology_title": "GOLEM Ontology",
 "ontology_license": "https://creativecommons.org/licenses/by/4.0/",
-"overall_score":0.8125,
+"overall_score":0.8541667,
 "checks":[
   {
     "id": "https://w3id.org/foops/test/PURL1",
@@ -233,24 +233,13 @@
     "category_id": "Interoperable",
     "status": "ok",
     "title": "Vocabulary reuse",
-    "explanation": "The ontology reuses/extends existing vocabularies.",
+    "explanation": "The ontology imports the following vocabularies: ",
     "abbreviation": "VOC2",
     "description": "This check verifies if the ontology imports/extends other vocabularies (besides RDF, OWL and RDFS)",
     "total_passed_tests": 1,
     "total_tests_run": 1,
     "reference_resources": [
-      "http://iflastandards.info/ns/lrm/lrmoo/",
-      "http://www.cidoc-crm.org/cidoc-crm/",
-      "http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#",
-      "http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#",
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/FunctionalParticipation.owl#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#",
-      "http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#",
-      "http://www.w3.org/2000/01/rdf-schema#"
+      "http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl"
     ]
   },
   {
@@ -305,12 +294,12 @@
     "id": "https://w3id.org/foops/test/URI2",
     "principle_id": "F1",
     "category_id": "Findable",
-    "status": "error",
+    "status": "ok",
     "title": "Consistent ontology IDs",
-    "explanation": "Ontology URI is different from ontology ID. Your ontologyURI (e.g., its w3id) should be the same as the one used within the ontology itself. Ontology URI: https://w3id.org/golem/ontology. Provided URI: https://ontology.golemlab.eu/golem.ttl",
+    "explanation": "Ontology URI is equal to ontology id",
     "abbreviation": "URI2",
     "description": "This check verifies if the ontology URI is equal to the ontology ID",
-    "total_passed_tests": 0,
+    "total_passed_tests": 1,
     "total_tests_run": 1
   }
 ]

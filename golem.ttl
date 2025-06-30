@@ -3,7 +3,6 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix csm: <http://www.loa-cnr.it/ontologies/CommonSenseMapping#> .
 @prefix dlp: <http://www.ontologydesignpatterns.org/ont/dlp/> .
-@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -1197,14 +1196,6 @@ This class also comprises items that are “about” something in the sense of a
                                                               rdfs:label "E89 Propositional Object"@en .
 
 
-###  http://www.loa-cnr.it/ontologies/CommonSenseMapping#G17_Narrative_physical_place
-csm:G17_Narrative_physical_place rdf:type owl:Class ;
-                                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object> ;
-                                 rdfs:comment "A non-agentive social object constructed through narrative, representing places that, within the storyworld, function as if they were physical locations. Such entities might exhibit spatial, causal, and interactive properties analogous to real-world physical places, despite lacking any necessary counterpart in the actual world."@en ;
-                                 rdfs:label "G17 Narrative Physical Place"@en ;
-                                 skos:example "The 'Forbidden Forest' in the Harry Potter series is a purely fictional, narrative-constructed forest that exhibits spatial extension, causal interaction (e.g., characters walk into it, encounter creatures, get injured, hide), and navigability, functioning as if it were a real physical place." .
-
-
 ###  http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place
 <http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place> rdf:type owl:Class ;
                                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
@@ -1541,14 +1532,6 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
                                                owl:someValuesFrom golem:G1_Character
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generically-dependent-on> ;
-                                               owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                    owl:unionOf ( csm:G17_Narrative_physical_place
-                                                                                  <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#physical-place>
-                                                                                )
-                                                                  ]
-                                             ] ,
-                                             [ rdf:type owl:Restriction ;
                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part> ;
                                                owl:someValuesFrom golem:G13_Narrative_Location
                                              ] ,
@@ -1572,7 +1555,7 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
                                               golem:G9_Narrative_Unit ;
                              rdfs:comment "A narrative location is the spatial context in which events unfold—serving as the immediate frame of action within a story. It is a non-agentive social object shaped by the narrative structure. While it may derive features from real-world locations, it exists solely as an entity within the narrative domain."@en ;
                              rdfs:label "G13 Narrative Location"@en ;
-                             skos:example "England in the Harry Potter series functions as a non-agentive social object shaped by the narrative, generically dependent on England in the real world. On the contrary, the 'Forbidden Forest' is generically dependent on a narrative physical place, as it lacks a real-world counterpart but behaves like a spatially extended, causally interactive location within the story." .
+                             skos:example "'England' or the 'Forbidden Forest' as depicted in the Harry Potter series—both conceived and situated within the fictional narrative context.\" ." .
 
 
 ###  https://w3id.org/golem/ontology#G14_Narrative-Stoff
