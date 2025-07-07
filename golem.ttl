@@ -1,7 +1,6 @@
 @prefix : <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix csm: <http://www.loa-cnr.it/ontologies/CommonSenseMapping#> .
 @prefix dlp: <http://www.ontologydesignpatterns.org/ont/dlp/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -16,7 +15,8 @@
 
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
                                    owl:versionIRI <https://w3id.org/golem/ontology/v1.0> ;
-                                   owl:imports dlp:CommonSenseMapping.owl ;
+                                   owl:imports dlp:CommonSenseMapping.owl ,
+                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
                                    dc:created "2024-10-10"^^xsd:date ;
                                    dc:creator "GOLEM Lab" ;
                                    dc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -534,10 +534,10 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                      rdfs:label "P91i is unit of" .
 
 
-###  http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration
-<http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration> rdf:type owl:ObjectProperty ;
+###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration> rdf:type owl:ObjectProperty ;
                                                                    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location> ;
-                                                                   owl:inverseOf <http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of> ;
+                                                                   owl:inverseOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of> ;
                                                                    rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
                                                                    rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
                                                                    rdfs:comment "In GOLEM, indicates that a narrative event (G5) has a specific duration." ,
@@ -546,8 +546,8 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                                    skos:example "The Battle of Hogwarts (G5) has *duration* several hours (time-interval)." .
 
 
-###  http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of
-<http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of> rdf:type owl:ObjectProperty ;
+###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of> rdf:type owl:ObjectProperty ;
                                                                       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location-of> ;
                                                                       rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
                                                                       rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
@@ -1196,8 +1196,8 @@ This class also comprises items that are “about” something in the sense of a
                                                               rdfs:label "E89 Propositional Object"@en .
 
 
-###  http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place
-<http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place> rdf:type owl:Class ;
+###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place> rdf:type owl:Class ;
                                                                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
                                                                                              [ rdf:type owl:Restriction ;
                                                                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent> ;
@@ -1674,7 +1674,7 @@ golem:G1_Character rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G2_Feature
 golem:G2_Feature rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region> ;
                  rdfs:comment """A feature in the context of narrative refers to a distinct element or characteristic that contributes to the structure and meaning of a story. Features include character traits and textual elements.
 Taxonomies of features can be further specified using crm:E55_Type.""" ;
                  rdfs:label "G2 Feature" ;
@@ -1966,7 +1966,7 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
 #    Annotations
 #################################################################
 
-<http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#collection-role> rdfs:comment "A role only played by collections." .
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#collection-role> rdfs:comment "A role only played by collections." .
 
 
 <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#flux> rdfs:comment "Fluxes are processes that (also) contain accomplishments as constituents. In other words, fluxes emerge out of accomplishments." .
