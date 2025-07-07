@@ -536,24 +536,24 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration
 <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration> rdf:type owl:ObjectProperty ;
-                                                                   rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location> ;
-                                                                   owl:inverseOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of> ;
-                                                                   rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
-                                                                   rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
-                                                                   rdfs:comment "In GOLEM, indicates that a narrative event (G5) has a specific duration." ,
-                                                                                "The time interval of duration of a perdurant ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
-                                                                   rdfs:label "duration" ;
-                                                                   skos:example "The Battle of Hogwarts (G5) has *duration* several hours (time-interval)." .
+                                                                                rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location> ;
+                                                                                owl:inverseOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of> ;
+                                                                                rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
+                                                                                rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
+                                                                                rdfs:comment "In GOLEM, indicates that a narrative event (G5) has a specific duration." ,
+                                                                                             "The time interval of duration of a perdurant ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
+                                                                                rdfs:label "duration" ;
+                                                                                skos:example "The Battle of Hogwarts (G5) has *duration* several hours (time-interval)." .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of
 <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of> rdf:type owl:ObjectProperty ;
-                                                                      rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location-of> ;
-                                                                      rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
-                                                                      rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
-                                                                      rdfs:comment "In GOLEM, indicates that a narrative event (G5) has a specific duration." ,
-                                                                                   "The time interval of duration of a perdurant ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
-                                                                      rdfs:label "duration of" .
+                                                                                   rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location-of> ;
+                                                                                   rdfs:domain <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#time-interval> ;
+                                                                                   rdfs:range <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant> ;
+                                                                                   rdfs:comment "In GOLEM, indicates that a narrative event (G5) has a specific duration." ,
+                                                                                                "The time interval of duration of a perdurant ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
+                                                                                   rdfs:label "duration of" .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent
@@ -965,6 +965,7 @@ rdf:_3 The spells collide in midair, etc.""" .
 
 ###  https://w3id.org/golem/ontology#GP0_has_feature
 golem:GP0_has_feature rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion> ;
                       owl:inverseOf golem:GP0i_is_feature_of ;
                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
                       rdfs:range golem:G2_Feature ;
@@ -1196,38 +1197,14 @@ This class also comprises items that are “about” something in the sense of a
                                                               rdfs:label "E89 Propositional Object"@en .
 
 
-###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place
-<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place> rdf:type owl:Class ;
-                                                                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
-                                                                                             [ rdf:type owl:Restriction ;
-                                                                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent> ;
-                                                                                               owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object>
-                                                                                             ] ;
-                                                                             owl:disjointWith <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship> ,
-                                                                                              <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
-                                                                                              <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
-                                                                                              <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
-                                                                                              <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
-                                                                                              golem:G10_Narrative_Function ,
-                                                                                              golem:G11_Narrative_Role ,
-                                                                                              golem:G12_Setting ,
-                                                                                              golem:G14_Narrative-Stoff ,
-                                                                                              golem:G4_Social_Relationship ,
-                                                                                              golem:G6_Relationship_Role ,
-                                                                                              golem:G7_Narrative_Sequence ,
-                                                                                              golem:G8_Syuzhet ,
-                                                                                              golem:G9_Narrative_Unit ;
-                                                                             rdfs:comment "A non-physical place, generically dependent on some (physical) geographical object ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
-                                                                             rdfs:label "Geographical place" .
-
-
 ###  http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship
 <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship> rdf:type owl:Class ;
                                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                                          owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#involves> ;
                                                                                          owl:minCardinality "2"^^xsd:nonNegativeInteger
                                                                                        ] ;
-                                                                       owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
+                                                                       owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place> ,
+                                                                                        <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-social-object> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                                                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
@@ -1242,6 +1219,30 @@ This class also comprises items that are “about” something in the sense of a
                                                                                         golem:G8_Syuzhet ;
                                                                        rdfs:comment "A social description defining roles for the interaction of rational agents  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                        rdfs:label "social relationship" .
+
+
+###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place> ,
+                                                                                                          [ rdf:type owl:Restriction ;
+                                                                                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent> ;
+                                                                                                            owl:someValuesFrom <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object>
+                                                                                                          ] ;
+                                                                                          owl:disjointWith <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
+                                                                                                           <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
+                                                                                                           <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
+                                                                                                           <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
+                                                                                                           golem:G10_Narrative_Function ,
+                                                                                                           golem:G11_Narrative_Role ,
+                                                                                                           golem:G12_Setting ,
+                                                                                                           golem:G14_Narrative-Stoff ,
+                                                                                                           golem:G4_Social_Relationship ,
+                                                                                                           golem:G6_Relationship_Role ,
+                                                                                                           golem:G7_Narrative_Sequence ,
+                                                                                                           golem:G8_Syuzhet ,
+                                                                                                           golem:G9_Narrative_Unit ;
+                                                                                          rdfs:comment "A non-physical place, generically dependent on some (physical) geographical object ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
+                                                                                          rdfs:label "Geographical place" .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place
@@ -1966,9 +1967,6 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
 #    Annotations
 #################################################################
 
-<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#collection-role> rdfs:comment "A role only played by collections." .
-
-
 <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#flux> rdfs:comment "Fluxes are processes that (also) contain accomplishments as constituents. In other words, fluxes emerge out of accomplishments." .
 
 
@@ -1979,6 +1977,9 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
 
 
 <http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#reconstructed-flux> rdfs:comment "Reconstructed fluxes are fluxes that only contain accomplishments as members." .
+
+
+<http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#collection-role> rdfs:comment "A role only played by collections." .
 
 
 rdf:direction rdfs:comment "The base direction component of a CompoundLiteral." ;
