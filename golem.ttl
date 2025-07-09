@@ -25,7 +25,7 @@
                                    dcterms:created "2024-10-10"^^xsd:date ;
                                    dcterms:creator "GOLEM Lab" ;
                                    dcterms:hasVersion "1.0.0" ;
-                                   dcterms:identifier <https://doi.org/10.5281/zenodo.14911396> ;
+                                   dcterms:identifier "10.5281/zenodo.14911396" ;
                                    dcterms:issued "2024-10-10"^^xsd:date ;
                                    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                    dcterms:publisher "GOLEM Lab" ;
@@ -103,7 +103,6 @@ Zgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An in
 Zgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82).""" ;
                                    rdfs:label "GOLEM Ontology"@en ;
                                    owl:versionInfo "1.0" ;
-                                   dcterms:status "stable" ;
                                    vs:term_status "stable" .
 
 #################################################################
