@@ -2,7 +2,7 @@
 "ontology_URI": "https://w3id.org/golem/ontology",
 "ontology_title": "GOLEM Ontology",
 "ontology_license": "https://creativecommons.org/licenses/by/4.0/",
-"overall_score":0.8541667,
+"overall_score":0.8958333,
 "checks":[
   {
     "id": "https://w3id.org/foops/test/PURL1",
@@ -233,13 +233,14 @@
     "category_id": "Interoperable",
     "status": "ok",
     "title": "Vocabulary reuse",
-    "explanation": "The ontology imports the following vocabularies: ",
+    "explanation": "The ontology imports the following vocabularies: . Foundational ontologies extended. Nicely done!",
     "abbreviation": "VOC2",
     "description": "This check verifies if the ontology imports/extends other vocabularies (besides RDF, OWL and RDFS)",
     "total_passed_tests": 1,
     "total_tests_run": 1,
     "reference_resources": [
-      "http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl"
+      "http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl",
+      "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"
     ]
   },
   {
@@ -282,12 +283,12 @@
     "id": "https://w3id.org/foops/test/VER2",
     "principle_id": "F1",
     "category_id": "Findable",
-    "status": "error",
+    "status": "ok",
     "title": "Version IRI resolves",
-    "explanation": "Version IRI could not be resolved",
+    "explanation": "Version IRI resolves",
     "abbreviation": "VER2",
     "description": "This check verifies if the version IRI resolves",
-    "total_passed_tests": 0,
+    "total_passed_tests": 1,
     "total_tests_run": 1
   },
   {
