@@ -2,7 +2,7 @@
 
 Cite as:
 
-Pianzola, F., Pannach, F., Cheng, L. and Yang, X. (2024). GOLEM Ontology for Narrative and Fiction. https://doi.org/10.5281/zenodo.14911392
+Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. (2024). GOLEM Ontology for Narrative and Fiction. https://doi.org/10.5281/zenodo.14911392
 
 # Golem Ontology for Narrative and Fiction
 
@@ -36,5 +36,6 @@ Pianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improve
 
 - Ontology development: Protégé 
 - Diagrams: Lucidchart
-- Documentation: PyLode + custom GitHub action to publish im HTML via GiHub Pages
+- Documentation: PyLode + custom GitHub action to publish im HTML via GitHub Pages
+- Evaluation: FOOPS! and Ontometrics
 
