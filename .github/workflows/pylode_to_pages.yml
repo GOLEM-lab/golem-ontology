@@ -26,18 +26,18 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install pyLODE and Dependencies
-        run: |
-          pip install pylode jinja2
+      #- name: Install pyLODE and Dependencies
+      #  run: |
+      #    pip install pylode jinja2
 
       - name: Build Pages with pyLODE
         uses: vliz-be-opsci/pylode-to-pages@v0
         with:
-          baseuri: http://ontology.golemlab.eu
+          baseuri: https://ontology.golemlab.eu
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Directory to publish (adjust if necessary)
+          publish_dir: ./golem  # Directory to publish (adjust if necessary)
