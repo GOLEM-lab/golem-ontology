@@ -14,31 +14,33 @@
 @base <https://w3id.org/golem/ontology#> .
 
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
-                                   owl:versionIRI <https://w3id.org/golem/ontology/v1.0> ;
+                                   owl:versionIRI <https://w3id.org/golem/ontology/v1.1> ;
                                    owl:imports dlp:CommonSenseMapping.owl ,
                                                <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ;
                                    dc:created "2024-10-10"^^xsd:date ;
                                    dc:creator "GOLEM Lab" ;
                                    dc:license <https://creativecommons.org/licenses/by/4.0/> ;
                                    dc:title "GOLEM Ontology" ;
-                                   dcterms:bibliographicCitation "GOLEM Lab. (2024). GOLEM Ontology v1.0. https://w3id.org/golem/ontology" ;
+                                   dcterms:bibliographicCitation "Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. (2024). GOLEM Ontology for Narrative and Fiction. https://doi.org/10.5281/zenodo.14911392" ;
                                    dcterms:created "2024-10-10"^^xsd:date ;
                                    dcterms:creator "GOLEM Lab" ;
-                                   dcterms:hasVersion "1.0.0" ;
-                                   dcterms:identifier <https://doi.org/10.5281/zenodo.14911396> ;
+                                   dcterms:hasVersion "1.1.0" ;
+                                   dcterms:identifier <https://doi.org/10.5281/zenodo.14911396> ,
+                                                      <https://w3id.org/golem/ontology> ;
                                    dcterms:issued "2024-10-10"^^xsd:date ;
                                    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                    dcterms:publisher "GOLEM Lab" ;
                                    dcterms:source <https://doi.org/10.5281/zenodo.14911396> ,
-                                                  <https://golemlab.eu/> ;
-                                   vann:preferredNamespacePrefix "golem" ;
+                                                  <https://ontology.golemlab.eu/> ;
+                                   dcterms:status "stable" ;
+                                   vann:preferredNamespacePrefix "gc" ;
                                    vann:preferredNamespaceUri "https://w3id.org/golem/ontology#" ;
                                    rdfs:comment """# Golem Ontology for Narrative and Fiction
                                  
 
-### GOLEM v1.0
+### GOLEM v1.1
 
-Created by [GOLEM lab](https://golemlab.eu/), October 10, 2024
+Created by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM lab](https://golemlab.eu/)), October 10, 2024
 
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)
 
@@ -100,10 +102,9 @@ Schöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., & Klee, A. (2022). Smart
 
 Zgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An introduction to holistic narratology. In *The shape of stories* (pp. 285-350). Brill.
 
-Zgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82).""" ;
+Zgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82)."""@en ;
                                    rdfs:label "GOLEM Ontology"@en ;
-                                   owl:versionInfo "1.0" ;
-                                   dcterms:status "stable" ;
+                                   owl:versionInfo "1.1" ;
                                    vs:term_status "stable" .
 
 #################################################################
@@ -168,6 +169,10 @@ dcterms:publisher rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/source
 dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/status
+dcterms:status rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -704,8 +709,8 @@ from his rebounded curse” (G9).""" ,
                                                                                 rdfs:comment "The relation between roles and courses. Modal target subrelations can be seen as 'reifications' of the operators of modal logics  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ,
                                                                                              "In GOLEM, relates a sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence), to its narrative function (G10) or narrative role (G11). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to link a social relationship (G4) to its relationship roles (G6)." ;
                                                                                 rdfs:label "modal target of"@en ;
-                                                                                skos:example "Proppian function “Victory” (G10) is the modal target of the fabula  (G7) of Harry Potter and the Deathly Hallows (Rowling, 2007)." ,
-                                                                                             "“Hero” (G11) is modal target of the syuzhet (G8) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)." .
+                                                                                skos:example "Proppian function “Victory” (G10) is the modal target of the fabula (G7_Narrative_Sequence) of Harry Potter and the Deathly Hallows (Rowling, 2007)." ,
+                                                                                             "“Hero” (G11) is modal target of the narrative sequence (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)." .
 
 
 ###  http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#played-by
@@ -1043,10 +1048,6 @@ golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
                                                                    owl:someValuesFrom golem:G7_Narrative_Sequence
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses> ;
-                                                                   owl:someValuesFrom golem:G8_Syuzhet
-                                                                 ] ,
-                                                                 [ rdf:type owl:Restriction ;
                                                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#satisfied-by> ;
                                                                    owl:someValuesFrom golem:G12_Setting
                                                                  ] ;
@@ -1135,7 +1136,7 @@ An instance of E54 Dimension represents the empirical or theoretically derived q
 The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of instances of E54 Dimension adequate to the precision of the applied method of determination. If the respective quantity belongs to a non-discrete space according to the laws of physics, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that comparability of values described in different units depends critically on the representation as value regions.
 Numerical approximations in archaic instances of E58 Measurement Unit used in historical records should be preserved. Equivalents corresponding to current knowledge should be recorded as additional instances of E54 Dimension, as appropriate ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                    rdfs:label "E54 Dimension"@en ;
-                                                   skos:example "The word count and kudos on AO3." .
+                                                   skos:example "The word count and kudos on AO3 (https://archiveofourown.org/works)" .
 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
@@ -1216,8 +1217,7 @@ This class also comprises items that are “about” something in the sense of a
                                                                                         golem:G13_Narrative_Location ,
                                                                                         golem:G1_Character ,
                                                                                         golem:G6_Relationship_Role ,
-                                                                                        golem:G7_Narrative_Sequence ,
-                                                                                        golem:G8_Syuzhet ;
+                                                                                        golem:G7_Narrative_Sequence ;
                                                                        rdfs:comment "A social description defining roles for the interaction of rational agents  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                        rdfs:label "social relationship" .
 
@@ -1240,7 +1240,6 @@ This class also comprises items that are “about” something in the sense of a
                                                                                                            golem:G4_Social_Relationship ,
                                                                                                            golem:G6_Relationship_Role ,
                                                                                                            golem:G7_Narrative_Sequence ,
-                                                                                                           golem:G8_Syuzhet ,
                                                                                                            golem:G9_Narrative_Unit ;
                                                                                           rdfs:comment "A non-physical place, generically dependent on some (physical) geographical object ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                                           rdfs:label "Geographical place" .
@@ -1259,7 +1258,6 @@ This class also comprises items that are “about” something in the sense of a
                                                                                                            golem:G4_Social_Relationship ,
                                                                                                            golem:G6_Relationship_Role ,
                                                                                                            golem:G7_Narrative_Sequence ,
-                                                                                                           golem:G8_Syuzhet ,
                                                                                                            golem:G9_Narrative_Unit ;
                                                                                           rdfs:comment "A figure (e.g. Italy) for non-physical (i.e. socially- or cognitively-constructed) places. Non-physical places generically depend on physical places  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                                           rdfs:label "non physical place" .
@@ -1323,7 +1321,6 @@ This class also comprises items that are “about” something in the sense of a
                                                                                                         golem:G4_Social_Relationship ,
                                                                                                         golem:G6_Relationship_Role ,
                                                                                                         golem:G7_Narrative_Sequence ,
-                                                                                                        golem:G8_Syuzhet ,
                                                                                                         golem:G9_Narrative_Unit ;
                                                                                        rdfs:comment "A social object that is assumed to internally represent a plan. Since social objects are dependent on physical ones, it is not trivial to interpret the local sense in which a social object 'internally represents' a plan. For example, an institution can have the plan to promote or regulate some activities, but this is possible by means of the powers conferred to it by some legal system, through its representatives, and that plan has to be executed by means of the physical agents that 'act for' the institution ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                                        rdfs:label "agentive social object"@en .
@@ -1363,8 +1360,7 @@ This class also comprises items that are “about” something in the sense of a
                                                                                              golem:G13_Narrative_Location ,
                                                                                              golem:G1_Character ,
                                                                                              golem:G6_Relationship_Role ,
-                                                                                             golem:G7_Narrative_Sequence ,
-                                                                                             golem:G8_Syuzhet ;
+                                                                                             golem:G7_Narrative_Sequence ;
                                                                             rdfs:comment "A description is a social object which represents a conceptualization (e.g. a mental object or state), hence it is generically dependent on some agent and communicable. Descriptions define or use concepts or figures, are expressed by an information object and can be satisfied by situations. The typology of descriptions is still preliminary  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                             rdfs:label "description"@en .
 
@@ -1378,7 +1374,6 @@ This class also comprises items that are “about” something in the sense of a
                                                                                       golem:G1_Character ,
                                                                                       golem:G4_Social_Relationship ,
                                                                                       golem:G7_Narrative_Sequence ,
-                                                                                      golem:G8_Syuzhet ,
                                                                                       golem:G9_Narrative_Unit ;
                                                                      rdfs:comment "Also known as 'functional role'.A concept that classifies (in particular, it is 'played by') endurants, as used in some description. Roles are the descriptive counterpart of endurants, and, as endurants participate in perdurants, they usually have courses as modal targets (see).The typology of roles is still preliminary  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."@en ;
                                                                      rdfs:label "role"@en .
@@ -1393,7 +1388,6 @@ This class also comprises items that are “about” something in the sense of a
                                                                                            golem:G4_Social_Relationship ,
                                                                                            golem:G6_Relationship_Role ,
                                                                                            golem:G7_Narrative_Sequence ,
-                                                                                           golem:G8_Syuzhet ,
                                                                                            golem:G9_Narrative_Unit ;
                                                                           rdfs:comment "A situation is a social object that appears in the domain of an ontology only because there is a description whose components can 'carve up' a view (setting) on that domain. A situation has to satisfy a description (see below for ways of defining the satisfies relation), and it has to be setting for at least one entity.In other words, it is the ontological counterpart (with due local differences or restrictions) of settings (situations from SC, contexts, episodes, states of affairs, structures, configurations, cases, etc.).A perdurant is usually the only mandatory constituent of a setting.Two descriptions of a same situation are possible, otherwise we would result in a solipsistic ontology. The time and space (and possibly other qualities) of a situation are the time and space of the perdurants in the setting  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                           rdfs:label "situation" .
@@ -1447,7 +1441,6 @@ golem:G10_Narrative_Function rdf:type owl:Class ;
                                               golem:G1_Character ,
                                               golem:G4_Social_Relationship ,
                                               golem:G7_Narrative_Sequence ,
-                                              golem:G8_Syuzhet ,
                                               golem:G9_Narrative_Unit ;
                              rdfs:comment "A narrative function refers to the functional roles that narrative units play within a story. For instance, the Proppian function (Propp, 1968) \"Villain causes harm or injury\" can be illustrated by the narrative unit where Zephyros causes Hyacinthus's death."@en ;
                              rdfs:label "G10 Narrative Function"@en ;
@@ -1475,9 +1468,8 @@ golem:G11_Narrative_Role rdf:type owl:Class ;
                                           golem:G1_Character ,
                                           golem:G4_Social_Relationship ,
                                           golem:G7_Narrative_Sequence ,
-                                          golem:G8_Syuzhet ,
                                           golem:G9_Narrative_Unit ;
-                         rdfs:comment "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (golem:G1)." ;
+                         rdfs:comment "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (gc:G1)." ;
                          rdfs:label "G11 Narrative Role" ;
                          skos:example "Narrator, dramatis personae from Propp Ontology (Pannach et al., 2021) or *commedia dell’arte*." .
 
@@ -1514,7 +1506,6 @@ golem:G12_Setting rdf:type owl:Class ;
                                    golem:G4_Social_Relationship ,
                                    golem:G6_Relationship_Role ,
                                    golem:G7_Narrative_Sequence ,
-                                   golem:G8_Syuzhet ,
                                    golem:G9_Narrative_Unit ;
                   rdfs:comment "Setting is the narrative universe in which a story unfolds, encompassing the spatial, cultural, and social contexts that shape characters and events. It defines the situation and surroundings relevant to the narrative. Defining a setting for a Work is useful for its comparative and historical analysis with respect to other works. It is particularly apt to specify differences between canonical and fanfiction works that have Alternate Universe settings." ;
                   rdfs:label "G12 Setting" ;
@@ -1553,7 +1544,6 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
                                               golem:G4_Social_Relationship ,
                                               golem:G6_Relationship_Role ,
                                               golem:G7_Narrative_Sequence ,
-                                              golem:G8_Syuzhet ,
                                               golem:G9_Narrative_Unit ;
                              rdfs:comment "A narrative location is the spatial context in which events unfold—serving as the immediate frame of action within a story. It is a non-agentive social object shaped by the narrative structure. While it may derive features from real-world locations, it exists solely as an entity within the narrative domain."@en ;
                              rdfs:label "G13 Narrative Location"@en ;
@@ -1570,8 +1560,7 @@ golem:G14_Narrative-Stoff rdf:type owl:Class ;
                                           ] ;
                           owl:disjointWith golem:G1_Character ,
                                            golem:G6_Relationship_Role ,
-                                           golem:G7_Narrative_Sequence ,
-                                           golem:G8_Syuzhet ;
+                                           golem:G7_Narrative_Sequence ;
                           rdfs:comment "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (golem:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."@en ;
                           rdfs:label "G14 Narrative-Stoff"@en ;
                           skos:example "Apollo and Zephyros love Hyacinthus. While Apollo and Hyacinthus are playing a game with a discus, Zephyros uses the wind to change its direction, causing the discus to hit Hyacinthus and resulting in his death. Afterward, Hyacinthus transforms into a flower." .
@@ -1667,7 +1656,6 @@ golem:G1_Character rdf:type owl:Class ;
                    owl:disjointWith golem:G4_Social_Relationship ,
                                     golem:G6_Relationship_Role ,
                                     golem:G7_Narrative_Sequence ,
-                                    golem:G8_Syuzhet ,
                                     golem:G9_Narrative_Unit ;
                    rdfs:comment "“Character is a text- or media-based figure in a storyworld, usually human or human-like,” understood through readers’ knowledge of real people (Jannidis, 2019). Readers attribute to characters mental states such as intentions and beliefs, and consider them to engage in actions. Characters can have specific functional roles within narratives, such as protagonist or antagonist, influencing how readers perceive and interpret the story."@en ;
                    rdfs:label "G1 Character"@en ;
@@ -1752,8 +1740,7 @@ golem:G4_Social_Relationship rdf:type owl:Class ;
                                                owl:someValuesFrom golem:G1_Character
                                              ] ;
                              owl:disjointWith golem:G6_Relationship_Role ,
-                                              golem:G7_Narrative_Sequence ,
-                                              golem:G8_Syuzhet ;
+                                              golem:G7_Narrative_Sequence ;
                              rdfs:comment "“A social description defining roles for the interaction of cognitive agents (DOLCE-Lite-Plus, 2005)” or dlp:agentive-social-objects. Characters are involved in social relationships."@en ;
                              rdfs:label "G4 Social Relationships"@en ;
                              skos:example """Romantic love between Ron and Hermione, which can be inferred from the paragraph below:
@@ -1832,7 +1819,6 @@ golem:G6_Relationship_Role rdf:type owl:Class ;
                                              owl:someValuesFrom golem:G1_Character
                                            ] ;
                            owl:disjointWith golem:G7_Narrative_Sequence ,
-                                            golem:G8_Syuzhet ,
                                             golem:G9_Narrative_Unit ;
                            rdfs:comment "A relationship role refers to the functional role a character plays within the context of their interactions with other characters, serving as a descriptive counterpart to their enduring qualities, with characters participating in events (perdurants)." ;
                            rdfs:label "G6 Relationship Role" ;
@@ -1869,7 +1855,7 @@ golem:G7_Narrative_Sequence rdf:type owl:Class ;
                                               owl:someValuesFrom golem:G9_Narrative_Unit
                                             ] ;
                             owl:disjointWith golem:G9_Narrative_Unit ;
-                            rdfs:comment "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
+                            rdfs:comment "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
                             rdfs:label "G7 Narrative Sequence"@en ;
                             skos:example """Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).
 
@@ -1884,48 +1870,6 @@ H7: The discus hits Hyacinthus (single-event)
 H8: Apollo fails to save Hyacinthus (single-event)
 H9: [Hyacinthus] is dead (durative-resultative)
 [H10: Hyacinthus is a flower (durative-resultative)]
-
-Syuthet (sequence of hylemes, a type of G9_Narrative_Unit): 
-H4: [Apollo and Hyacinthus] play the game of discus (single-event)
-H6: Zephyros causes the wind to change. (single-event)
-H7: The discus hits Hyacinthus (single-event)
-H8: Apollo fails to save Hyacinthus (single-event)
-H9: [Hyacinthus] is dead (durative-resultative)
-H10: Hyacinthus is a flower (durative-resultative)
-H1: [Apollo] loves [Hyacinthus] (durative-constant)
-H3: [Hyacinthus] loves [Apollo] (durative-initial)
-H2: Zephyros loves Hyacinthus (durative-constant)
-H5: Zephyros is the West Wind. (durative-constant)""" .
-
-
-###  https://w3id.org/golem/ontology#G8_Syuzhet
-golem:G8_Syuzhet rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
-                                 rdf:Seq ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
-                                   owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                   owl:someValuesFrom golem:G10_Narrative_Function
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
-                                   owl:someValuesFrom golem:G11_Narrative_Role
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences> ;
-                                   owl:someValuesFrom golem:G5_Narrative_Event
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty rdfs:member ;
-                                   owl:someValuesFrom golem:G9_Narrative_Unit
-                                 ] ;
-                 owl:disjointWith golem:G9_Narrative_Unit ;
-                 rdfs:comment "Often translated as \"plot\" or “discourse”, syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
-                 rdfs:label "G8 Syuzhet"@en ;
-                 skos:example """Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death.” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).
 
 Syuthet (sequence of hylemes, a type of G9_Narrative_Unit): 
 H4: [Apollo and Hyacinthus] play the game of discus (single-event)
@@ -1958,7 +1902,7 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
                                         ] ;
                         rdfs:comment "A narrative unit is the minimal or fundamental component of narrative structure that articulates actions, states, or thematic elements within a story. The advantage of having narrative unit as a concept distinct from that of narrative event (G5) is that narrative units can be propositional objects formulated differently from how events are presented in the narrative. For example, hylemes (Zgoll et al., 2023; Pannach, 2023) are narrative units (statements) composed of a subject, predicate, and optional object. They represent the fundamental building blocks of any narrative structure, describing actions, states, or information present within a narrative , such as \"Apollo loves Hyacinthus.\""@en ;
                         rdfs:label "G9 Narrative Unit"@en ;
-                        skos:example "A hyleme." .
+                        skos:example "A hyleme such as \"Apollo loves Hyacinthus\"." .
 
 
 [ rdfs:comment "G17 Narrative Physical Place"@en
