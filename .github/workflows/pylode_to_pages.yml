@@ -31,7 +31,7 @@ jobs:
           pip install pylode jinja2
 
       - name: Build Pages with pyLODE
-        uses: vliz-be-opsci/pylode-to-pages@v0.1.11
+        uses: vliz-be-opsci/pylode-to-pages@v0
         with:
           baseuri: https://ontology.golemlab.eu
 
