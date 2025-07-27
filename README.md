@@ -30,7 +30,7 @@ Ciotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidad
 
 Pianzola, F. (2018). Looking at narrative as a complex system: The proteus principle. In *Narrating complexity* (pp. 101-122).
 
-Pianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.
+Pianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723).
 
 # Technical implementation
 
