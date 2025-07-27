@@ -9,18 +9,49 @@
     <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://ontology.golemlab.eu/",
+    "@id": "https://w3id.org/golem/ontology",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
+    "https://schema.org/creator": [
+      {
+        "@value": "GOLEM Lab"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-10-10"
+      }
+    ],
+    "https://schema.org/dateIssued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-10-10"
+      }
+    ],
     "https://schema.org/description": [
       {
-        "@value": "# Golem Ontology for Narrative and Fiction\n\n### GOLEM v1.0\n\nCreated by [GOLEM lab](https://golemlab.eu/), October 10, 2024\n\n[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n### Overview\n\nOntology of fiction and narrative, developed as an extension of [CIDOC-CRM](https://cidoc-crm.org/versions-of-the-cidoc-crm) and [LRMoo](https://cidoc-crm.org/frbroo/fm_releases), and aligned to [DOLCE-Lite-Plus](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).\n\nNarrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.\n\nIn literary studies, traditional quantitative and probabilistic methods often struggle to account for the semantic richness and intensional qualities of texts ([Ciotti, 2016](https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1)). In contrast, ontology modeling highlights the complexities of narrative structure, making these elements explicit and computable.\n\nThe GOLEM project developed an ontology that models narratives and fiction independently of their specific domains. To achieve this, the project seeks to identify a common ground that defines how key elements of narrative structure—such as events, characters, social relationships, and settings—interrelate. By employing a modularization approach, GOLEM will create a comprehensive library of modules that encapsulate these narrative components, including modules for characters, relationships, events, settings, and narrative inference.\n\nThe detailed description of each module can be read in the [GitHub](https://github.com/GOLEM-lab/golem-ontology/wiki).\n\nFurthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time ([Pianzola et al., 2020](https://ceur-ws.org/Vol-2723/short8.pdf)).\n\n### References\n\nAbbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nBartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083\n\nBekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.\n\nCarroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.\n\nChaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynamic relationships between characters in literary novels. *arXiv preprint arXiv:1511.09376*. http://arxiv.org/abs/1511.09376\n\nCiotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.\n\nDoerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.\n\nJannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nKukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nLea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.\n\nMika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14. https://doi.org/10.3390/benefits1010014\n\nPannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).\n\nPannach, F. A. K. (2024). Narrative echoes across time and space.\n\nPannach, F., Sporleder, C., May, W., Krishnan, A., & Sewchurran, A. (2021). Of lions and Yakshis. *Semantic Web*, 12(2), 219-239.\n\nPropp, V. (1968). *Morphology of the folktale*. University of Texas Press.\n\nPianzola, F. (2018). Looking at narrative as a complex system: The proteus principle. In *Narrating complexity* (pp. 101-122).\n\nPianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.\n\nRyan, M.-L. (2019). Space. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nSanfilippo, E. M., & Ferrario, R. (2024). D3.1—Observations modeling: State of the art.\n\nSchöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., & Klee, A. (2022). Smart modelling for literary history. *International Journal of Humanities and Arts Computing*, 16(1), 78–93.\n\nZgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An introduction to holistic narratology. In *The shape of stories* (pp. 285-350). Brill.\n\nZgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82)."
+        "@value": "# Golem Ontology for Narrative and Fiction\n                                 \n\n### GOLEM v1.0\n\nCreated by [GOLEM lab](https://golemlab.eu/), October 10, 2024\n\n[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n### Overview\n\nOntology of fiction and narrative, developed as an extension of [CIDOC-CRM](https://cidoc-crm.org/versions-of-the-cidoc-crm) and [LRMoo](https://cidoc-crm.org/frbroo/fm_releases), and aligned to [DOLCE-Lite-Plus](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).\n\nNarrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.\n\nIn literary studies, traditional quantitative and probabilistic methods often struggle to account for the semantic richness and intensional qualities of texts ([Ciotti, 2016](https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1)). In contrast, ontology modeling highlights the complexities of narrative structure, making these elements explicit and computable.\n\nThe GOLEM project developed an ontology that models narratives and fiction independently of their specific domains. To achieve this, the project seeks to identify a common ground that defines how key elements of narrative structure—such as events, characters, social relationships, and settings—interrelate. By employing a modularization approach, GOLEM will create a comprehensive library of modules that encapsulate these narrative components, including modules for characters, relationships, events, settings, and narrative inference.\n\nThe detailed description of each module can be read in the [GitHub](https://github.com/GOLEM-lab/golem-ontology/wiki).\n\nFurthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time ([Pianzola et al., 2020](https://ceur-ws.org/Vol-2723/short8.pdf)).\n\n### References\n\nAbbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nBartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083\n\nBekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.\n\nCarroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.\n\nChaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynamic relationships between characters in literary novels. *arXiv preprint arXiv:1511.09376*. http://arxiv.org/abs/1511.09376\n\nCiotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.\n\nDoerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.\n\nJannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nKukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nLea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.\n\nMika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14. https://doi.org/10.3390/benefits1010014\n\nPannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).\n\nPannach, F. A. K. (2024). Narrative echoes across time and space.\n\nPannach, F., Sporleder, C., May, W., Krishnan, A., & Sewchurran, A. (2021). Of lions and Yakshis. *Semantic Web*, 12(2), 219-239.\n\nPropp, V. (1968). *Morphology of the folktale*. University of Texas Press.\n\nPianzola, F. (2018). Looking at narrative as a complex system: The proteus principle. In *Narrating complexity* (pp. 101-122).\n\nPianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.\n\nRyan, M.-L. (2019). Space. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nSanfilippo, E. M., & Ferrario, R. (2024). D3.1—Observations modeling: State of the art.\n\nSchöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., & Klee, A. (2022). Smart modelling for literary history. *International Journal of Humanities and Arts Computing*, 16(1), 78–93.\n\nZgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An introduction to holistic narratology. In *The shape of stories* (pp. 285-350). Brill.\n\nZgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82)."
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
       }
     ],
     "https://schema.org/name": [
       {
         "@value": "GOLEM Ontology"
+      },
+      {
+        "@language": "en",
+        "@value": "GOLEM Ontology"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@value": "GOLEM Lab"
       }
     ]
   }
@@ -30,7 +61,7 @@
   <body>
     <div id="content">
       <div class="section" id="metadata">
-        <h1>GOLEM Ontology</h1>
+        <h1>GOLEM OntologyGOLEM Ontology</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -38,14 +69,94 @@
               <strong>IRI</strong>
             </dt>
             <dd>
-              <code>https://ontology.golemlab.eu/</code>
+              <code>https://w3id.org/golem/ontology</code>
             </dd>
           </div>
           <div>
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
             </dt>
-            <dd><p>GOLEM Ontology</p></dd>
+            <dd>
+              <ul>
+                <li><p>GOLEM Ontology</p></li>
+                <li><p>GOLEM Ontology</p></li>
+              </ul>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="An entity responsible for making the resource available. Defined in DCMI Metadata Terms">Publisher</a>
+            </dt>
+            <dd><p>GOLEM Lab</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/creator" title="An entity responsible for making the resource. Defined in DCMI Metadata Terms">Creator</a>
+            </dt>
+            <dd><p>GOLEM Lab</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/created" title="Date of creation of the resource. Defined in DCMI Metadata Terms">Date Created</a>
+            </dt>
+            <dd><p>2024-10-10</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/issued" title="Date of formal issuance of the resource. Defined in DCMI Metadata Terms">Date Issued</a>
+            </dt>
+            <dd><p>2024-10-10</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/license" title="A legal document giving official permission to do something with the resource. Defined in DCMI Metadata Terms">License</a>
+            </dt>
+            <dd>
+              <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
+            </dt>
+            <dd>
+              <a href="https://w3id.org/golem/ontology/v1.0">https://w3id.org/golem/ontology/v1.0</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
+            </dt>
+            <dd><p>1.0</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
+            </dt>
+            <dd><p>golem</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
+            </dt>
+            <dd>
+              <a href="https://w3id.org/golem/ontology#">golem:</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/source" title="A related resource from which the described resource is derived. Defined in DCMI Metadata Terms">Source</a>
+            </dt>
+            <dd>
+              <ul>
+                <li>
+                  <a href="https://doi.org/10.5281/zenodo.14911396">https://doi.org/10.5281/zenodo.14911396</a>
+                </li>
+                <li>
+                  <a href="https://golemlab.eu/">https://golemlab.eu/</a>
+                </li>
+              </ul>
+            </dd>
           </div>
           <div>
             <dt>
@@ -747,20 +858,10 @@ All properties assigned in such an action can also be seen as directly relating 
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">E54 Dimension</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G2_Feature">G2 Feature</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E54_Dimension">E54 Dimension</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -1372,60 +1473,6 @@ This class also comprises items that are “about” something in the sense of a
             </tr>
           </table>
         </div>
-        <div class="property entity" id="Geographicalplace">
-          <h3>Geographical place
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>A non-physical place, generically dependent on some (physical) geographical object (<a href="https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html">DOLCE-Lite-Plus, 2005</a>).</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place">non physical place</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <span>
-                  <span>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent">generic dependent</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                    <span>
-                      <span class="cardinality">some</span>
-                      <span>
-                        <span>
-                          <a href="#G13_Narrative_Location">G13 Narrative Location</a>
-                          <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                        </span>
-                      </span>
-                    </span><br>
-                  </span>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="socialrelationship">
           <h3>social relationship
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1475,6 +1522,60 @@ This class also comprises items that are “about” something in the sense of a
             </tr>
           </table>
         </div>
+        <div class="property entity" id="Geographicalplace">
+          <h3>Geographical place
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A non-physical place, generically dependent on some (physical) geographical object (<a href="https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html">DOLCE-Lite-Plus, 2005</a>).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place">non physical place</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-dependent">generic dependent</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">some</span>
+                      <span>
+                        <span>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object">http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object</a>
+                          <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                        </span>
+                      </span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="nonphysicalplace">
           <h3>non physical place
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1497,20 +1598,10 @@ This class also comprises items that are “about” something in the sense of a
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place">Geographical place</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G13_Narrative_Location">G13 Narrative Location</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-place">Geographical place</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -1806,7 +1897,7 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration">duration</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration">duration</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1875,7 +1966,7 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of">duration of</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of">duration of</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -2079,7 +2170,7 @@ This class also comprises items that are “about” something in the sense of a
               </th>
               <td>
                 <span>
-                  <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of">duration of</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of">duration of</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -2090,7 +2181,7 @@ This class also comprises items that are “about” something in the sense of a
               </th>
               <td>
                 <span>
-                  <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration">duration</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration">duration</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -2671,7 +2762,7 @@ This class also comprises items that are “about” something in the sense of a
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G0_Character-Stoff</code>
+                <code>https://w3id.org/golem/ontology#G0_Character-Stoff</code>
               </td>
             </tr>
             <tr>
@@ -2744,7 +2835,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G10_Narrative_Function</code>
+                <code>https://w3id.org/golem/ontology#G10_Narrative_Function</code>
               </td>
             </tr>
             <tr>
@@ -2848,14 +2939,14 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G11_Narrative_Role</code>
+                <code>https://w3id.org/golem/ontology#G11_Narrative_Role</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (gc:G1).</p></td>
+              <td><p>A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (golem:G1).</p></td>
             </tr>
             <tr>
               <th>
@@ -2952,7 +3043,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G12_Setting</code>
+                <code>https://w3id.org/golem/ontology#G12_Setting</code>
               </td>
             </tr>
             <tr>
@@ -3114,21 +3205,21 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G13_Narrative_Location</code>
+                <code>https://w3id.org/golem/ontology#G13_Narrative_Location</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>A narrative location is the spatial environment where events occur, the spatial frame that represents the immediate surroundings of action. It is a non-physical place shaped by the narrative context. A narrative location may derive features from real locations but it only exists as an entity within the narrative.</p></td>
+              <td><p>A narrative location is the spatial context in which events unfold—serving as the immediate frame of action within a story. It is a non-agentive social object shaped by the narrative structure. While it may derive features from real-world locations, it exists solely as an entity within the narrative domain.</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
               </th>
               <td>
-                <pre>England in the Harry Potter series functions as a non-physical place shaped by the narrative, generically dependent on England in the real world.</pre>
+                <pre>'England' or the 'Forbidden Forest' as depicted in the Harry Potter series—both conceived and situated within the fictional narrative context.&quot; .</pre>
               </td>
             </tr>
             <tr>
@@ -3136,10 +3227,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#non-physical-place">non physical place</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object">http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object</a>
               </td>
             </tr>
             <tr>
@@ -3179,25 +3267,6 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span>
                             <span>
                               <a href="#G1_Character">G1 Character</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generically-dependent-on">generically dependent on</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#geographical-place">Geographical place</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3294,14 +3363,14 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G14_Narrative-Stoff</code>
+                <code>https://w3id.org/golem/ontology#G14_Narrative-Stoff</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (gc:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts.</p></td>
+              <td><p>Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (golem:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts.</p></td>
             </tr>
             <tr>
               <th>
@@ -3366,7 +3435,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G15_Fandom</code>
+                <code>https://w3id.org/golem/ontology#G15_Fandom</code>
               </td>
             </tr>
             <tr>
@@ -3438,7 +3507,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G16_Object</code>
+                <code>https://w3id.org/golem/ontology#G16_Object</code>
               </td>
             </tr>
             <tr>
@@ -3552,7 +3621,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G17_Character_Feature</code>
+                <code>https://w3id.org/golem/ontology#G17_Character_Feature</code>
               </td>
             </tr>
             <tr>
@@ -3591,7 +3660,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G18_Textual_Feature</code>
+                <code>https://w3id.org/golem/ontology#G18_Textual_Feature</code>
               </td>
             </tr>
             <tr>
@@ -3629,7 +3698,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G1_Character</code>
+                <code>https://w3id.org/golem/ontology#G1_Character</code>
               </td>
             </tr>
             <tr>
@@ -3860,7 +3929,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G2_Feature</code>
+                <code>https://w3id.org/golem/ontology#G2_Feature</code>
               </td>
             </tr>
             <tr>
@@ -3883,10 +3952,7 @@ Taxonomies of features can be further specified using crm:E55_Type.</p></td>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <span>
-                  <a href="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity">E1 CRM Entity</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
+                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region">http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</a>
               </td>
             </tr>
             <tr>
@@ -3942,7 +4008,7 @@ Taxonomies of features can be further specified using crm:E55_Type.</p></td>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G3_Psychological_State</code>
+                <code>https://w3id.org/golem/ontology#G3_Psychological_State</code>
               </td>
             </tr>
             <tr>
@@ -4199,7 +4265,7 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G4_Social_Relationship</code>
+                <code>https://w3id.org/golem/ontology#G4_Social_Relationship</code>
               </td>
             </tr>
             <tr>
@@ -4304,7 +4370,7 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G5_Narrative_Event</code>
+                <code>https://w3id.org/golem/ontology#G5_Narrative_Event</code>
               </td>
             </tr>
             <tr>
@@ -4598,7 +4664,7 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G6_Relationship_Role</code>
+                <code>https://w3id.org/golem/ontology#G6_Relationship_Role</code>
               </td>
             </tr>
             <tr>
@@ -4684,14 +4750,14 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G7_Narrative_Sequence</code>
+                <code>https://w3id.org/golem/ontology#G7_Narrative_Sequence</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as "plot" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
+              <td><p>G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as "plot" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
             </tr>
             <tr>
               <th>
@@ -4879,14 +4945,14 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G8_Syuzhet</code>
+                <code>https://w3id.org/golem/ontology#G8_Syuzhet</code>
               </td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>Often translated as "plot" or “discourse”, syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
+              <td><p>Often translated as "plot" or “discourse”, syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (golem:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
             </tr>
             <tr>
               <th>
@@ -5043,7 +5109,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/G9_Narrative_Unit</code>
+                <code>https://w3id.org/golem/ontology#G9_Narrative_Unit</code>
               </td>
             </tr>
             <tr>
@@ -6489,7 +6555,7 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  (<a href="
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration</code>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration</code>
               </td>
             </tr>
             <tr>
@@ -6554,7 +6620,7 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  (<a href="
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of</code>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of</code>
               </td>
             </tr>
             <tr>
@@ -8329,7 +8395,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration">duration</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration">duration</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -8386,7 +8452,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.loa-cnr.it/ontologies/CommonSenseMapping.owl#duration-of">duration of</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#duration-of">duration of</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -8627,7 +8693,7 @@ rdf:_3 The spells collide in midair, etc.</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/GP0_has_feature</code>
+                <code>https://w3id.org/golem/ontology#GP0_has_feature</code>
               </td>
             </tr>
             <tr>
@@ -8650,6 +8716,14 @@ rdf:_3 The spells collide in midair, etc.</pre>
 perspective (G18).</pre>
                   </li>
                 </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion">http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion</a>
               </td>
             </tr>
             <tr>
@@ -8684,7 +8758,7 @@ perspective (G18).</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/GP0i_is_feature_of</code>
+                <code>https://w3id.org/golem/ontology#GP0i_is_feature_of</code>
               </td>
             </tr>
             <tr>
@@ -8725,7 +8799,7 @@ perspective (G18).</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/GP1_is_character_in</code>
+                <code>https://w3id.org/golem/ontology#GP1_is_character_in</code>
               </td>
             </tr>
             <tr>
@@ -8774,7 +8848,7 @@ perspective (G18).</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://ontology.golemlab.eu/GP1i_has_Character</code>
+                <code>https://w3id.org/golem/ontology#GP1i_has_Character</code>
               </td>
             </tr>
             <tr>
@@ -8867,6 +8941,32 @@ perspective (G18).</pre>
       </div>
       <div class="section" id="annotationproperties">
         <h2>Annotation Properties</h2>
+        <div class="property entity" id="created">
+          <h3>created
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/elements/1.1/created</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="creator">
+          <h3>creator
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/elements/1.1/creator</code>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="date">
           <h3>date
             <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
@@ -8893,6 +8993,19 @@ perspective (G18).</pre>
             </tr>
           </table>
         </div>
+        <div class="property entity" id="license">
+          <h3>license
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/elements/1.1/license</code>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="title">
           <h3>title
             <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
@@ -8902,6 +9015,189 @@ perspective (G18).</pre>
               <th>IRI</th>
               <td>
                 <code>http://purl.org/dc/elements/1.1/title</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="bibliographicCitation">
+          <h3>bibliographic citation
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/bibliographicCitation</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="created1">
+          <h3>created
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/created</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="creator1">
+          <h3>creator
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/creator</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="hasVersion">
+          <h3>has version
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/hasVersion</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="identifier">
+          <h3>identifier
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/identifier</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="issued">
+          <h3>issued
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/issued</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="license1">
+          <h3>license
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/license</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="publisher">
+          <h3>publisher
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/publisher</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="source">
+          <h3>source
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/source</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="preferredNamespacePrefix">
+          <h3>preferred namespace prefix
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/vocab/vann/preferredNamespacePrefix</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="preferredNamespaceUri">
+          <h3>preferred namespace uri
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/vocab/vann/preferredNamespaceUri</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="label">
+          <h3>label
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.w3.org/2000/01/rdf-schema#label</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+              </th>
+              <td>
+                <a href="http://www.w3.org/2000/01/rdf-schema#">The RDF Schema vocabulary (RDFS)</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A human-readable name for the subject.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="term_status">
+          <h3>term_status
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.w3.org/2003/06/sw-vocab-status/ns#term_status</code>
               </td>
             </tr>
           </table>
@@ -8953,13 +9249,17 @@ perspective (G18).</pre>
           <dd>
             <code>http://purl.org/dc/elements/1.1/</code>
           </dd>
+          <dt id="dcterms">dcterms</dt>
+          <dd>
+            <code>http://purl.org/dc/terms/</code>
+          </dd>
           <dt id="dlp">dlp</dt>
           <dd>
             <code>http://www.ontologydesignpatterns.org/ont/dlp/</code>
           </dd>
-          <dt id="gc">gc</dt>
+          <dt id="golem">golem</dt>
           <dd>
-            <code>https://ontology.golemlab.eu/</code>
+            <code>https://w3id.org/golem/ontology#</code>
           </dd>
           <dt id="owl">owl</dt>
           <dd>
@@ -8976,6 +9276,18 @@ perspective (G18).</pre>
           <dt id="skos">skos</dt>
           <dd>
             <code>http://www.w3.org/2004/02/skos/core#</code>
+          </dd>
+          <dt id="vann">vann</dt>
+          <dd>
+            <code>http://purl.org/vocab/vann/</code>
+          </dd>
+          <dt id="vs">vs</dt>
+          <dd>
+            <code>http://www.w3.org/2003/06/sw-vocab-status/ns#</code>
+          </dd>
+          <dt id="xsd">xsd</dt>
+          <dd>
+            <code>http://www.w3.org/2001/XMLSchema#</code>
           </dd>
         </dl>
       </div>
@@ -9072,10 +9384,10 @@ perspective (G18).</pre>
               <a href="#E89PropositionalObject">E89 Propositional Object</a>
             </li>
             <li>
-              <a href="#Geographicalplace">Geographical place</a>
+              <a href="#socialrelationship">social relationship</a>
             </li>
             <li>
-              <a href="#socialrelationship">social relationship</a>
+              <a href="#Geographicalplace">Geographical place</a>
             </li>
             <li>
               <a href="#nonphysicalplace">non physical place</a>
@@ -9408,13 +9720,61 @@ perspective (G18).</pre>
           </h4>
           <ul class="second">
             <li>
+              <a href="#created">created</a>
+            </li>
+            <li>
+              <a href="#creator">creator</a>
+            </li>
+            <li>
               <a href="#date">date</a>
             </li>
             <li>
               <a href="#description1">description</a>
             </li>
             <li>
+              <a href="#license">license</a>
+            </li>
+            <li>
               <a href="#title">title</a>
+            </li>
+            <li>
+              <a href="#bibliographicCitation">bibliographic citation</a>
+            </li>
+            <li>
+              <a href="#created1">created</a>
+            </li>
+            <li>
+              <a href="#creator1">creator</a>
+            </li>
+            <li>
+              <a href="#hasVersion">has version</a>
+            </li>
+            <li>
+              <a href="#identifier">identifier</a>
+            </li>
+            <li>
+              <a href="#issued">issued</a>
+            </li>
+            <li>
+              <a href="#license1">license</a>
+            </li>
+            <li>
+              <a href="#publisher">publisher</a>
+            </li>
+            <li>
+              <a href="#source">source</a>
+            </li>
+            <li>
+              <a href="#preferredNamespacePrefix">preferred namespace prefix</a>
+            </li>
+            <li>
+              <a href="#preferredNamespaceUri">preferred namespace uri</a>
+            </li>
+            <li>
+              <a href="#label">label</a>
+            </li>
+            <li>
+              <a href="#term_status">term_status</a>
             </li>
             <li>
               <a href="#example">example</a>
@@ -9436,10 +9796,13 @@ perspective (G18).</pre>
               <a href="#dc">dc</a>
             </li>
             <li>
+              <a href="#dcterms">dcterms</a>
+            </li>
+            <li>
               <a href="#dlp">dlp</a>
             </li>
             <li>
-              <a href="#gc">gc</a>
+              <a href="#golem">golem</a>
             </li>
             <li>
               <a href="#owl">owl</a>
@@ -9452,6 +9815,15 @@ perspective (G18).</pre>
             </li>
             <li>
               <a href="#skos">skos</a>
+            </li>
+            <li>
+              <a href="#vann">vann</a>
+            </li>
+            <li>
+              <a href="#vs">vs</a>
+            </li>
+            <li>
+              <a href="#xsd">xsd</a>
             </li>
           </ul>
         </li>
