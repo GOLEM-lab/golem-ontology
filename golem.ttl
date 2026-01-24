@@ -1,6 +1,4 @@
-# THIS FILE IS AUTO-GENERATED.
-# Do not edit directly.
-# Source: golem_v1-1.ttl
+# Test CI alias generation
 
 @prefix : <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
