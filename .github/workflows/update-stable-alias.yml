@@ -1,0 +1,31 @@
+name: Update stable ontology aliases
+
+on:
+  push:
+    branches:
+      - fix/pid-resolution
+    paths:
+      - 'golem_v*.ttl'
+      - 'golem_v*.html'
+
+jobs:
+  update-alias:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update stable aliases
+        run: |
+          cp golem_v1-1.ttl golem.ttl
+          cp golem_v1-1.html golem.html
+
+      - name: Commit updated aliases
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add golem.ttl golem.html
+          git commit -m "Auto-update stable ontology aliases" || echo "No changes to commit"
+          git push
+
