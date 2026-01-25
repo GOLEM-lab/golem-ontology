@@ -1,5 +1,3 @@
-# Test CI alias generation rdf
-
 @prefix : <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .

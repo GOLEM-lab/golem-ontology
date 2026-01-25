@@ -3,7 +3,7 @@ name: Update stable ontology aliases
 on:
   push:
     branches:
-      - fix/pid-resolution
+      - gh-pages
     paths:
       - 'golem_v*.ttl'
       - 'golem_v*.html'
