@@ -3,7 +3,7 @@ name: Update stable ontology aliases
 on:
   push:
     branches:
-      - gh-pages
+      - fix/pid-resolution
     paths:
       - 'golem_v*.ttl'
       - 'golem_v*.html'
@@ -16,10 +16,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update stable aliases
+      - name: Update stable aliases to latest version
+        shell: bash
         run: |
-          cp golem_v1-1.ttl golem.ttl
-          cp golem_v1-1.html golem.html
+          set -euo pipefail
+          shopt -s nullglob
+
+          # Collect versioned files
+          ttl_files=(golem_v*.ttl)
+          html_files=(golem_v*.html)
+
+          # Fail explicitly if no files are found
+          if [ ${#ttl_files[@]} -eq 0 ]; then
+            echo "ERROR: No golem_v*.ttl files found"
+            exit 1
+          fi
+
+          if [ ${#html_files[@]} -eq 0 ]; then
+            echo "ERROR: No golem_v*.html files found"
+            exit 1
+          fi
+
+          # Select latest versions (version-aware sort)
+          latest_ttl=$(printf "%s\n" "${ttl_files[@]}" | sort -V | tail -n 1)
+          latest_html=$(printf "%s\n" "${html_files[@]}" | sort -V | tail -n 1)
+
+          echo "Latest TTL:  $latest_ttl"
+          echo "Latest HTML: $latest_html"
+
+          # Update stable aliases
+          cp "$latest_ttl" golem.ttl
+          cp "$latest_html" golem.html
 
       - name: Commit updated aliases
         run: |
@@ -28,4 +55,3 @@ jobs:
           git add golem.ttl golem.html
           git commit -m "Auto-update stable ontology aliases" || echo "No changes to commit"
           git push
-
