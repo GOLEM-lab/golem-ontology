@@ -432,10 +432,10 @@ Another example is the use of a particular name by a particular group of people 
                                                                     "The text of Harry Potter and the Philosopher's Stone (Rowling, 1997) was used for the assignment of the topic “friendship” (E13)." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type
-<http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type> rdf:type owl:ObjectProperty ;
+###  crm:P177_assigned_property_of_type
+crm:P177_assigned_property_of_type rdf:type owl:ObjectProperty ;
                                                                     rdfs:subPropertyOf <crm:P2_has_type> ;
-                                                                    owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned> ;
+                                                                    owl:inverseOf crm:P177i_is_type_of_property_assigned ;
                                                                     rdfs:domain <crm:E13_Attribute_Assignment> ;
                                                                     rdfs:range <crm:E55_Type> ;
                                                                     rdfs:comment """This property associates an instance of E13 Attribute Assignment with the type of property or relation that this assignment maintains to hold between the item to which it assigns an attribute and the attribute itself. Note that the properties defined by the CIDOC CRM also constitute instances of E55 Type themselves. The direction of the assigned property of type is understood to be from the attributed item (the range of property P140 assigned attribute to) to the attribute item (the range of the property P141 assigned). More than one property type may be assigned to hold between two items.
@@ -445,8 +445,8 @@ A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is giv
                                                                     skos:example "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned property of type “topic” (E55)." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned
-<http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned> rdf:type owl:ObjectProperty ;
+###  crm:P177i_is_type_of_property_assigned
+crm:P177i_is_type_of_property_assigned rdf:type owl:ObjectProperty ;
                                                                         rdfs:subPropertyOf <crm:P2i_is_type_of> ;
                                                                         rdfs:domain <crm:E55_Type> ;
                                                                         rdfs:range <crm:E13_Attribute_Assignment> ;
@@ -1103,7 +1103,7 @@ An instance of F2 Expression which includes spoken or written text may be multip
                                                                                 owl:someValuesFrom <crm:E1_CRM_Entity>
                                                                               ] ,
                                                                               [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type> ;
+                                                                                owl:onProperty crm:P177_assigned_property_of_type ;
                                                                                 owl:someValuesFrom <crm:E55_Type>
                                                                               ] ;
                                                               rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
