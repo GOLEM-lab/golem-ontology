@@ -2,6 +2,8 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix dlp: <http://www.ontologydesignpatterns.org/ont/dlp/> .
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix lrmoo: <lrmoo:> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -236,12 +238,12 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in
-<http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in> rdf:type owl:ObjectProperty ;
-                                                           rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
-                                                           owl:inverseOf <http://iflastandards.info/ns/lrm/lrmoo/R3i_realises> ;
-                                                           rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
-                                                           rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
+###  lrmoo:R3_is_realised_in
+<lrmoo:R3_is_realised_in> rdf:type owl:ObjectProperty ;
+                                                           rdfs:subPropertyOf <crm:P130_shows_features_of> ;
+                                                           owl:inverseOf <lrmoo:R3i_realises> ;
+                                                           rdfs:domain <lrmoo:F1_Work> ;
+                                                           rdfs:range <lrmoo:F2_Expression> ;
                                                            rdfs:comment """Quantification: one to many, necessary, dependent (1,n:1,1)
 
 Scope note:
@@ -253,11 +255,11 @@ This property expresses the association that exists between an expression and th
 (Rowling, 2007) (F2).""" .
 
 
-###  http://iflastandards.info/ns/lrm/lrmoo/R3i_realises
-<http://iflastandards.info/ns/lrm/lrmoo/R3i_realises> rdf:type owl:ObjectProperty ;
-                                                      rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
-                                                      rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
-                                                      rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
+###  lrmoo:R3i_realises
+<lrmoo:R3i_realises> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf <crm:P130i_features_are_also_found_on> ;
+                                                      rdfs:domain <lrmoo:F2_Expression> ;
+                                                      rdfs:range <lrmoo:F1_Work> ;
                                                       rdfs:comment """Quantification of the inverse property: one to many, necessary, dependent (1,n:1,1)
 
 Scope note of the inverse property:
@@ -278,11 +280,11 @@ Examples of the inverse property:
                                                       skos:notation "R3i" .
 
 
-###  http://iflastandards.info/ns/lrm/lrmoo/R5_has_component
-<http://iflastandards.info/ns/lrm/lrmoo/R5_has_component> rdf:type owl:ObjectProperty ;
-                                                          owl:inverseOf <http://iflastandards.info/ns/lrm/lrmoo/R5i_is_component_of> ;
-                                                          rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
-                                                          rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
+###  lrmoo:R5_has_component
+<lrmoo:R5_has_component> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf <lrmoo:R5i_is_component_of> ;
+                                                          rdfs:domain <lrmoo:F2_Expression> ;
+                                                          rdfs:range <lrmoo:F2_Expression> ;
                                                           rdfs:comment "In GOLEM, it indicates that an expression (such as a text) contains a specific component, like a word, sentence, or paragraph." ,
                                                                        """Quantification: many to many (0,n:0,n)
 
@@ -295,10 +297,10 @@ This property does not cover the relationship that exists between expressions th
                                                           skos:example "Text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2) has component a paragraph in Harry Potter and the Deathly Hallows (F2)." .
 
 
-###  http://iflastandards.info/ns/lrm/lrmoo/R5i_is_component_of
-<http://iflastandards.info/ns/lrm/lrmoo/R5i_is_component_of> rdf:type owl:ObjectProperty ;
-                                                             rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
-                                                             rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
+###  lrmoo:R5i_is_component_of
+<lrmoo:R5i_is_component_of> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <lrmoo:F2_Expression> ;
+                                                             rdfs:range <lrmoo:F2_Expression> ;
                                                              rdfs:comment "In GOLEM, it indicates that an expression (such as a text) contains a specific component, like a word, sentence, or paragraph." ,
                                                                           """Quantification: many to many (0,n:0,n)
 
@@ -310,11 +312,11 @@ This property does not cover the relationship that exists between expressions th
                                                              rdfs:label "R5i is component of"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term
-<http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term> rdf:type owl:ObjectProperty ;
-                                                           owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term> ;
-                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
-                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+###  crm:P127_has_broader_term
+<crm:P127_has_broader_term> rdf:type owl:ObjectProperty ;
+                                                           owl:inverseOf <crm:P127i_has_narrower_term> ;
+                                                           rdfs:domain <crm:E55_Type> ;
+                                                           rdfs:range <crm:E55_Type> ;
                                                            rdfs:comment """This property associates an instance of E55 Type with another instance of E55 Type that has a broader meaning.
 It allows instances of E55 Types to be organised into hierarchies. This is the sense of “broader term generic (BTG)” as defined in ISO 25964-2:2013 (International Organization for Standardization 2013).
 This property is transitive. This property is asymmetric  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
@@ -322,21 +324,21 @@ This property is transitive. This property is asymmetric  ([CIDOC-CRM version 7.
                                                            skos:example "\"Friendship\" (E55) has broader term \"topic\" (E55)." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term
-<http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term> rdf:type owl:ObjectProperty ;
-                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
-                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+###  crm:P127i_has_narrower_term
+<crm:P127i_has_narrower_term> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <crm:E55_Type> ;
+                                                             rdfs:range <crm:E55_Type> ;
                                                              rdfs:comment """This property associates an instance of E55 Type with another instance of E55 Type that has a broader meaning.
 It allows instances of E55 Types to be organised into hierarchies. This is the sense of “broader term generic (BTG)” as defined in ISO 25964-2:2013 (International Organization for Standardization 2013).
 This property is transitive. This property is asymmetric  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html)).""" ;
                                                              rdfs:label "P127i has narrower term"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of
-<http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> rdf:type owl:ObjectProperty ;
-                                                            owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
-                                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
-                                                            rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+###  crm:P130_shows_features_of
+<crm:P130_shows_features_of> rdf:type owl:ObjectProperty ;
+                                                            owl:inverseOf <crm:P130i_features_are_also_found_on> ;
+                                                            rdfs:domain <crm:E70_Thing> ;
+                                                            rdfs:range <crm:E70_Thing> ;
                                                             rdfs:comment """This property generalises the notions of “copy of” and “similar to” into a directed relationship, where the domain expresses the derivative or influenced item and the range the source or influencing item, if such a direction can be established. The property can also be used to express similarity in cases that can be stated between two objects only, without historical knowledge about its reasons. The property expresses a symmetric relationship in case no direction of influence can be established either from evidence on the item itself or from historical knowledge. This holds in particular for siblings of a derivation process from a common source or non-causal cultural parallels, such as some weaving patterns.
 The P130.1 kind of similarity property of the P130 shows features of (features are also found on) property enables the relationship between the domain and the range to be further clarified, in the sense from domain to range, if applicable. For example, it may be expressed if both items are product “of the same mould”, or if two texts “contain identical paragraphs”.
 If the reason for similarity is a sort of derivation process, i.e. that the creator has used or had in mind the form of a particular thing during the creation or production, this process should be explicitly modelled. In these cases, P130 shows features of can be regarded as a shortcut of such a process. However, the current model does not contain any path specific enough to infer this property. Specializations of the CIDOC CRM may however be more explicit, for instance describing the use of moulds etc.
@@ -347,10 +349,10 @@ This property is not transitive. This property is irreflexive ([CIDOC-CRM versio
                                                                          "The Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007) (G7) shows features of Battle of Hogwarts Stoff (G14)." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on
-<http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> rdf:type owl:ObjectProperty ;
-                                                                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
-                                                                      rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+###  crm:P130i_features_are_also_found_on
+<crm:P130i_features_are_also_found_on> rdf:type owl:ObjectProperty ;
+                                                                      rdfs:domain <crm:E70_Thing> ;
+                                                                      rdfs:range <crm:E70_Thing> ;
                                                                       rdfs:comment "In the GOLEM ontology, it indicates that a Stoff variant exhibits features of the Stoff, such as a Character-Stoff or Narrative-Stoff." ,
                                                                                    """This property generalises the notions of “copy of” and “similar to” into a directed relationship, where the domain expresses the derivative or influenced item and the range the source or influencing item, if such a direction can be established. The property can also be used to express similarity in cases that can be stated between two objects only, without historical knowledge about its reasons. The property expresses a symmetric relationship in case no direction of influence can be established either from evidence on the item itself or from historical knowledge. This holds in particular for siblings of a derivation process from a common source or non-causal cultural parallels, such as some weaving patterns.
 The P130.1 kind of similarity property of the P130 shows features of (features are also found on) property enables the relationship between the domain and the range to be further clarified, in the sense from domain to range, if applicable. For example, it may be expressed if both items are product “of the same mould”, or if two texts “contain identical paragraphs”.
@@ -359,11 +361,11 @@ This property is not transitive. This property is irreflexive ([CIDOC-CRM versio
                                                                       rdfs:label "P130i features are also found on"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to
-<http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> rdf:type owl:ObjectProperty ;
-                                                                owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> ;
-                                                                rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
-                                                                rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+###  crm:P140_assigned_attribute_to
+<crm:P140_assigned_attribute_to> rdf:type owl:ObjectProperty ;
+                                                                owl:inverseOf <crm:P140i_was_attributed_by> ;
+                                                                rdfs:domain <crm:E13_Attribute_Assignment> ;
+                                                                rdfs:range <crm:E1_CRM_Entity> ;
                                                                 rdfs:comment """This property associates an instance of E13 Attribute Assignment with the instance of E1 CRM Entity about which it made an attribution. The instance of E1 CRM Entity plays the role of the domain of the attribution.
 The kind of attribution made should be documented using P177 assigned property of type (is type of property assigned)  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                                 rdfs:label "P140 assigned attribute to"@en ;
@@ -372,20 +374,20 @@ The kind of attribution made should be documented using P177 assigned property o
 Harry Potter and the Philosopher's Stone (Rowling, 1997) (F1).""" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by
-<http://www.cidoc-crm.org/cidoc-crm/P140i_was_attributed_by> rdf:type owl:ObjectProperty ;
-                                                             rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
-                                                             rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+###  crm:P140i_was_attributed_by
+<crm:P140i_was_attributed_by> rdf:type owl:ObjectProperty ;
+                                                             rdfs:domain <crm:E1_CRM_Entity> ;
+                                                             rdfs:range <crm:E13_Attribute_Assignment> ;
                                                              rdfs:comment """This property associates an instance of E13 Attribute Assignment with the instance of E1 CRM Entity about which it made an attribution. The instance of E1 CRM Entity plays the role of the domain of the attribution.
 The kind of attribution made should be documented using P177 assigned property of type (is type of property assigned)  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html)).""" ;
                                                              rdfs:label "P140i was attributed by"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P141_assigned
-<http://www.cidoc-crm.org/cidoc-crm/P141_assigned> rdf:type owl:ObjectProperty ;
-                                                   owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> ;
-                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
-                                                   rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+###  crm:P141_assigned
+<crm:P141_assigned> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <crm:P141i_was_assigned_by> ;
+                                                   rdfs:domain <crm:E13_Attribute_Assignment> ;
+                                                   rdfs:range <crm:E1_CRM_Entity> ;
                                                    rdfs:comment "This property associates an instance of E13 Attribute Assignment with the instance of E1 CRM Entity used in the attribution. The instance of E1 CRM Entity here plays the role of the range of the attribution. The kind of attribution made should be documented using P177 assigned property of type (is type of property assigned)  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."@en ;
                                                    rdfs:label "P141 assigned"@en ;
                                                    skos:example "Relationship assignment for Ron and Hermione (E13) assigned Ron (G1) [to romantic love between Ron and Hermione (G4)]." ,
@@ -393,19 +395,19 @@ The kind of attribution made should be documented using P177 assigned property o
 Harry Potter and the Philosopher's Stone (F1)].""" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by
-<http://www.cidoc-crm.org/cidoc-crm/P141i_was_assigned_by> rdf:type owl:ObjectProperty ;
-                                                           rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
-                                                           rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+###  crm:P141i_was_assigned_by
+<crm:P141i_was_assigned_by> rdf:type owl:ObjectProperty ;
+                                                           rdfs:domain <crm:E1_CRM_Entity> ;
+                                                           rdfs:range <crm:E13_Attribute_Assignment> ;
                                                            rdfs:comment "This property associates an instance of E13 Attribute Assignment with the instance of E1 CRM Entity used in the attribution. The instance of E1 CRM Entity here plays the role of the range of the attribution. The kind of attribution made should be documented using P177 assigned property of type (is type of property assigned)  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))." ;
                                                            rdfs:label "P141i was assigned by"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object
-<http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object> rdf:type owl:ObjectProperty ;
-                                                              owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> ;
-                                                              rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
-                                                              rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+###  crm:P16_used_specific_object
+<crm:P16_used_specific_object> rdf:type owl:ObjectProperty ;
+                                                              owl:inverseOf <crm:P16i_was_used_for> ;
+                                                              rdfs:domain <crm:E7_Activity> ;
+                                                              rdfs:range <crm:E70_Thing> ;
                                                               rdfs:comment "In GOLEM, indicates that an object (G16) is used in a narrative event (G5), or a source is used in an observation or inference process (E13)." ,
                                                                            """This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity.
 
@@ -415,10 +417,10 @@ Another example is the use of a particular name by a particular group of people 
                                                               rdfs:label "P16 used specific object"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for
-<http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> rdf:type owl:ObjectProperty ;
-                                                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
-                                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ;
+###  crm:P16i_was_used_for
+<crm:P16i_was_used_for> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <crm:E70_Thing> ;
+                                                       rdfs:range <crm:E7_Activity> ;
                                                        rdfs:comment "In GOLEM, indicates that an object (G16) is used in a narrative event (G5), or a source is used in an observation or inference process (E13)." ,
                                                                     """This property describes the use of material or immaterial things in a way essential to the performance or the outcome of an instance of E7 Activity.
 
@@ -432,10 +434,10 @@ Another example is the use of a particular name by a particular group of people 
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type
 <http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type> rdf:type owl:ObjectProperty ;
-                                                                    rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> ;
+                                                                    rdfs:subPropertyOf <crm:P2_has_type> ;
                                                                     owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned> ;
-                                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
-                                                                    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+                                                                    rdfs:domain <crm:E13_Attribute_Assignment> ;
+                                                                    rdfs:range <crm:E55_Type> ;
                                                                     rdfs:comment """This property associates an instance of E13 Attribute Assignment with the type of property or relation that this assignment maintains to hold between the item to which it assigns an attribute and the attribute itself. Note that the properties defined by the CIDOC CRM also constitute instances of E55 Type themselves. The direction of the assigned property of type is understood to be from the attributed item (the range of property P140 assigned attribute to) to the attribute item (the range of the property P141 assigned). More than one property type may be assigned to hold between two items.
 A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is given in the section “About Types” in the section on “Specific Modelling Constructs” of this document ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ,
                                                                                  "Links an attribution or statement-making process to the type of the object, attribute, or value." ;
@@ -445,19 +447,19 @@ A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is giv
 
 ###  http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned
 <http://www.cidoc-crm.org/cidoc-crm/P177i_is_type_of_property_assigned> rdf:type owl:ObjectProperty ;
-                                                                        rdfs:subPropertyOf <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> ;
-                                                                        rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
-                                                                        rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+                                                                        rdfs:subPropertyOf <crm:P2i_is_type_of> ;
+                                                                        rdfs:domain <crm:E55_Type> ;
+                                                                        rdfs:range <crm:E13_Attribute_Assignment> ;
                                                                         rdfs:comment """This property associates an instance of E13 Attribute Assignment with the type of property or relation that this assignment maintains to hold between the item to which it assigns an attribute and the attribute itself. Note that the properties defined by the CIDOC CRM also constitute instances of E55 Type themselves. The direction of the assigned property of type is understood to be from the attributed item (the range of property P140 assigned attribute to) to the attribute item (the range of the property P141 assigned). More than one property type may be assigned to hold between two items.
 A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is given in the section “About Types” in the section on “Specific Modelling Constructs” of this document ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html)).""" ;
                                                                         rdfs:label "P177i is type of property assigned"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P2_has_type
-<http://www.cidoc-crm.org/cidoc-crm/P2_has_type> rdf:type owl:ObjectProperty ;
-                                                 owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> ;
-                                                 rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
-                                                 rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
+###  crm:P2_has_type
+<crm:P2_has_type> rdf:type owl:ObjectProperty ;
+                                                 owl:inverseOf <crm:P2i_is_type_of> ;
+                                                 rdfs:domain <crm:E1_CRM_Entity> ;
+                                                 rdfs:range <crm:E55_Type> ;
                                                  rdfs:comment """This property allows sub-typing of CIDOC CRM entities –a form of specialisation – through the use of a terminological hierarchy, or thesaurus.
 The CIDOC CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CIDOC CRM may by specialised into any number of sub-entities, which can be defined in the E55 Type hierarchy. E41 Appellation, for example, may be specialised into “e-mail address”, “telephone number”, “post office box”, “URL”, etc., none of which figures explicitly in the CIDOC CRM class hierarchy. A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is given in the section “About Types” in the section on “Specific Modelling Constructs” of this document.
 This property is a shortcut for the path from E1 CRM Entity through P41i was classified by, E17 Type Assignment, P42 assigned to E55 Type ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
@@ -465,21 +467,21 @@ This property is a shortcut for the path from E1 CRM Entity through P41i was cla
                                                  skos:example "Narrative function “Victory” (G10) has type “Proppian function” (E55)" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of
-<http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> rdf:type owl:ObjectProperty ;
-                                                    rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E55_Type> ;
-                                                    rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+###  crm:P2i_is_type_of
+<crm:P2i_is_type_of> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <crm:E55_Type> ;
+                                                    rdfs:range <crm:E1_CRM_Entity> ;
                                                     rdfs:comment """This property allows sub-typing of CIDOC CRM entities –a form of specialisation – through the use of a terminological hierarchy, or thesaurus.
 The CIDOC CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CIDOC CRM may by specialised into any number of sub-entities, which can be defined in the E55 Type hierarchy. E41 Appellation, for example, may be specialised into “e-mail address”, “telephone number”, “post office box”, “URL”, etc., none of which figures explicitly in the CIDOC CRM class hierarchy. A comprehensive explanation about refining CIDOC CRM concepts by E55 Type is given in the section “About Types” in the section on “Specific Modelling Constructs” of this document.
 This property is a shortcut for the path from E1 CRM Entity through P41i was classified by, E17 Type Assignment, P42 assigned to E55 Type ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html)).""" ;
                                                     rdfs:label "P2i is type of"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension
-<http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension> rdf:type owl:ObjectProperty ;
-                                                       owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of> ;
-                                                       rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
-                                                       rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+###  crm:P43_has_dimension
+<crm:P43_has_dimension> rdf:type owl:ObjectProperty ;
+                                                       owl:inverseOf <crm:P43i_is_dimension_of> ;
+                                                       rdfs:domain <crm:E70_Thing> ;
+                                                       rdfs:range <crm:E54_Dimension> ;
                                                        rdfs:comment """This property records an instance of E54 Dimension of some instance of E70 Thing.
 In the case that the recorded property is a result of a measurement of an instance of E18 Physical Thing, this property is a shortcut of the more fully developed path from E18 Physical Thing through P39i was measured by, E16 Measurement, P40 observed dimension to E54 Dimension.
 It offers no information about how and when an E54 Dimension was established, nor by whom. Knowledge about an instance of E54 Dimension need not be the result of a measurement; it may be the result of evaluating data or other information, which should be documented as an instance of E13 Attribute Assignment.
@@ -487,10 +489,10 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                        rdfs:label "P43 has dimension"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of
-<http://www.cidoc-crm.org/cidoc-crm/P43i_is_dimension_of> rdf:type owl:ObjectProperty ;
-                                                          rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
-                                                          rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+###  crm:P43i_is_dimension_of
+<crm:P43i_is_dimension_of> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <crm:E54_Dimension> ;
+                                                          rdfs:range <crm:E70_Thing> ;
                                                           rdfs:comment """This property records an instance of E54 Dimension of some instance of E70 Thing.
 In the case that the recorded property is a result of a measurement of an instance of E18 Physical Thing, this property is a shortcut of the more fully developed path from E18 Physical Thing through P39i was measured by, E16 Measurement, P40 observed dimension to E54 Dimension.
 It offers no information about how and when an E54 Dimension was established, nor by whom. Knowledge about an instance of E54 Dimension need not be the result of a measurement; it may be the result of evaluating data or other information, which should be documented as an instance of E13 Attribute Assignment.
@@ -498,11 +500,11 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                           rdfs:label "P43i is dimension of"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P67_refers_to
-<http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> rdf:type owl:ObjectProperty ;
+###  crm:P67_refers_to
+<crm:P67_refers_to> rdf:type owl:ObjectProperty ;
                                                    rdfs:subPropertyOf owl:topObjectProperty ;
-                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
-                                                   rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+                                                   rdfs:domain <crm:E89_Propositional_Object> ;
+                                                   rdfs:range <crm:E1_CRM_Entity> ;
                                                    rdfs:comment "In GOLEM, indicates that a narrative unit (G9) refers to a specific narrative event (G5)." ,
                                                                 "This property documents that an instance of E89 Propositional Object makes a statement about an instance of E1 CRM Entity. P67 refers to (is referred to by) has the P67.1 has type link to an instance of E55 Type. This is intended to allow a more detailed description of the type of reference. This differs from P129 is about (is subject of), which describes the primary subject or subjects of the instance of E89 Propositional Object  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))." ;
                                                    rdfs:label "P67 refers to" ;
@@ -510,21 +512,21 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
 [...]: ‘Avada Kedavra!’” (G5).""" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by
-<http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by> rdf:type owl:ObjectProperty ;
+###  crm:P67i_is_referred_to_by
+<crm:P67i_is_referred_to_by> rdf:type owl:ObjectProperty ;
                                                             rdfs:subPropertyOf owl:topObjectProperty ;
-                                                            rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
-                                                            rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+                                                            rdfs:domain <crm:E1_CRM_Entity> ;
+                                                            rdfs:range <crm:E89_Propositional_Object> ;
                                                             rdfs:comment "In GOLEM, indicates that a narrative unit (G9) refers to a specific narrative event (G5)." ,
                                                                          "This property documents that an instance of E89 Propositional Object makes a statement about an instance of E1 CRM Entity. P67 refers to (is referred to by) has the P67.1 has type link to an instance of E55 Type. This is intended to allow a more detailed description of the type of reference. This differs from P129 is about (is subject of), which describes the primary subject or subjects of the instance of E89 Propositional Object  ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))." ;
                                                             rdfs:label "P67i is referred to by" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P91_has_unit
-<http://www.cidoc-crm.org/cidoc-crm/P91_has_unit> rdf:type owl:ObjectProperty ;
-                                                  owl:inverseOf <http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of> ;
-                                                  rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
-                                                  rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
+###  crm:P91_has_unit
+<crm:P91_has_unit> rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf <crm:P91i_is_unit_of> ;
+                                                  rdfs:domain <crm:E54_Dimension> ;
+                                                  rdfs:range <crm:E58_Measurement_Unit> ;
                                                   rdfs:comment "This property shows the type of unit an instance of E54 Dimension was expressed in." ;
                                                   rdfs:label "P91 has unit" ;
                                                   skos:example """Kudos (E54) has unit kudos (E58).
@@ -532,10 +534,10 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  ([CIDOC-CR
                                                                "Word count (E54) has unit word count (E58)." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of
-<http://www.cidoc-crm.org/cidoc-crm/P91i_is_unit_of> rdf:type owl:ObjectProperty ;
-                                                     rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> ;
-                                                     rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+###  crm:P91i_is_unit_of
+<crm:P91i_is_unit_of> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <crm:E58_Measurement_Unit> ;
+                                                     rdfs:range <crm:E54_Dimension> ;
                                                      rdfs:comment "This property shows the type of unit an instance of E54 Dimension was expressed in." ;
                                                      rdfs:label "P91i is unit of" .
 
@@ -973,7 +975,7 @@ rdf:_3 The spells collide in midair, etc.""" .
 golem:GP0_has_feature rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion> ;
                       owl:inverseOf golem:GP0i_is_feature_of ;
-                      rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+                      rdfs:domain <crm:E70_Thing> ;
                       rdfs:range golem:G2_Feature ;
                       rdfs:comment "Indicates that a narrative or character has certain features." ;
                       rdfs:label "has feature" ;
@@ -985,7 +987,7 @@ perspective (G18).""" .
 ###  https://w3id.org/golem/ontology#GP0i_is_feature_of
 golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
                          rdfs:domain golem:G2_Feature ;
-                         rdfs:range <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ;
+                         rdfs:range <crm:E70_Thing> ;
                          rdfs:comment "Indicates that a narrative or character has certain features." ;
                          rdfs:label "is feature of" .
 
@@ -994,7 +996,7 @@ golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
 golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
                           owl:inverseOf golem:GP1i_has_Character ;
                           rdfs:domain golem:G1_Character ;
-                          rdfs:range <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
+                          rdfs:range <lrmoo:F1_Work> ;
                           rdfs:comment "Indicates that a character appears in a work."@en ;
                           rdfs:label "is character in"@en ;
                           skos:example "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)." .
@@ -1002,7 +1004,7 @@ golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
 
 ###  https://w3id.org/golem/ontology#GP1i_has_Character
 golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
-                         rdfs:domain <http://iflastandards.info/ns/lrm/lrmoo/F1_Work> ;
+                         rdfs:domain <lrmoo:F1_Work> ;
                          rdfs:range golem:G1_Character ;
                          rdfs:comment "Indicates that a character appears in a work." ;
                          rdfs:label "has character" .
@@ -1012,9 +1014,9 @@ golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
 #    Data properties
 #################################################################
 
-###  http://www.cidoc-crm.org/cidoc-crm/P90_has_value
-<http://www.cidoc-crm.org/cidoc-crm/P90_has_value> rdf:type owl:DatatypeProperty ;
-                                                   rdfs:domain <http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> ;
+###  crm:P90_has_value
+<crm:P90_has_value> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <crm:E54_Dimension> ;
                                                    rdfs:range rdfs:Literal ;
                                                    rdfs:comment "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive." ;
                                                    rdfs:label "P90 has value" ;
@@ -1027,16 +1029,16 @@ golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
 #    Classes
 #################################################################
 
-###  http://iflastandards.info/ns/lrm/lrmoo/F1_Work
-<http://iflastandards.info/ns/lrm/lrmoo/F1_Work> rdf:type owl:Class ;
-                                                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
+###  lrmoo:F1_Work
+<lrmoo:F1_Work> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <crm:E89_Propositional_Object> ,
                                                                  <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in> ;
-                                                                   owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression>
+                                                                   owl:onProperty <lrmoo:R3_is_realised_in> ;
+                                                                   owl:someValuesFrom <lrmoo:F2_Expression>
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
-                                                                   owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
+                                                                   owl:onProperty <crm:P130_shows_features_of> ;
                                                                    owl:someValuesFrom golem:G15_Fandom
                                                                  ] ,
                                                                  [ rdf:type owl:Restriction ;
@@ -1063,20 +1065,20 @@ The main purpose of this class is to enable bringing together intellectually equ
                                                  skos:example "*Harry Potter and the Philosopher's Stone* (movie, 2001)." .
 
 
-###  http://iflastandards.info/ns/lrm/lrmoo/F2_Expression
-<http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> ,
+###  lrmoo:F2_Expression
+<lrmoo:F2_Expression> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <crm:E73_Information_Object> ,
                                                                        [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://iflastandards.info/ns/lrm/lrmoo/R3i_realises> ;
-                                                                         owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                                                         owl:onProperty <lrmoo:R3i_realises> ;
+                                                                         owl:someValuesFrom <lrmoo:F1_Work>
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://iflastandards.info/ns/lrm/lrmoo/R5_has_component> ;
-                                                                         owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression>
+                                                                         owl:onProperty <lrmoo:R5_has_component> ;
+                                                                         owl:someValuesFrom <lrmoo:F2_Expression>
                                                                        ] ,
                                                                        [ rdf:type owl:Restriction ;
-                                                                         owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for> ;
-                                                                         owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment>
+                                                                         owl:onProperty <crm:P16i_was_used_for> ;
+                                                                         owl:someValuesFrom <crm:E13_Attribute_Assignment>
                                                                        ] ;
                                                        rdfs:comment """Scope note:
 This class comprises the intellectual or artistic realisations of Works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms. The substance of F2 Expression is signs.
@@ -1089,20 +1091,20 @@ An instance of F2 Expression which includes spoken or written text may be multip
                                                        skos:example "The text of the English version of *Harry Potter and the Philosopher's Stone*." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment
-<http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> rdf:type owl:Class ;
-                                                              rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E7_Activity> ,
+###  crm:E13_Attribute_Assignment
+<crm:E13_Attribute_Assignment> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <crm:E7_Activity> ,
                                                                               [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P140_assigned_attribute_to> ;
-                                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+                                                                                owl:onProperty <crm:P140_assigned_attribute_to> ;
+                                                                                owl:someValuesFrom <crm:E1_CRM_Entity>
                                                                               ] ,
                                                                               [ rdf:type owl:Restriction ;
-                                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P141_assigned> ;
-                                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+                                                                                owl:onProperty <crm:P141_assigned> ;
+                                                                                owl:someValuesFrom <crm:E1_CRM_Entity>
                                                                               ] ,
                                                                               [ rdf:type owl:Restriction ;
                                                                                 owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P177_assigned_property_of_type> ;
-                                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+                                                                                owl:someValuesFrom <crm:E55_Type>
                                                                               ] ;
                                                               rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
@@ -1113,24 +1115,24 @@ All properties assigned in such an action can also be seen as directly relating 
                                                               skos:example "Assigning the topic “friendship” to the work Harry Potter and the Philosopher's Stone." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity
-<http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> rdf:type owl:Class ;
+###  crm:E1_CRM_Entity
+<crm:E1_CRM_Entity> rdf:type owl:Class ;
                                                    owl:equivalentClass <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#particular> ;
                                                    rdfs:comment "This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. It is an abstract concept providing for three general properties: Identification by name or appellation, and in particular by a preferred identifier Classification by type, allowing further refinement of the specific subclass to which an instance belongs Attachment of free text and other unstructured data for the expression of anything not captured by formal properties. All other classes within the CIDOC CRM are directly or indirectly specialisations of E1 CRM Entity ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."@en ;
                                                    rdfs:label "E1 CRM Entity"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object
-<http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> rdf:type owl:Class ;
+###  crm:E28_Conceptual_Object
+<crm:E28_Conceptual_Object> rdf:type owl:Class ;
                                                            rdfs:comment """This class comprises non-material products of our minds and other human produced data that have become objects of a discourse about their identity, circumstances of creation, or historical implication. The production of such information might have been supported by the use of technical devices such as cameras or computers.
 Characteristically, instances of this class are created, invented or thought by someone, and then may be documented or communicated between persons. Instances of E28 Conceptual Object have the ability to exist on more than one particular carrier at the same time, such as paper, electronic signals, marks, audio media, paintings, photos, human memories, etc.
 They cannot be destroyed. They exist as long as they can be found on at least one carrier or in at least one human memory. Their existence ends when the last carrier and the last memory are lost ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                            rdfs:label "E28 Conceptual Object"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E54_Dimension
-<http://www.cidoc-crm.org/cidoc-crm/E54_Dimension> rdf:type owl:Class ;
-                                                   rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity> ;
+###  crm:E54_Dimension
+<crm:E54_Dimension> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <crm:E1_CRM_Entity> ;
                                                    rdfs:comment """This class comprises quantifiable properties that can be measured by some calibrated means and can be approximated by values, i.e. points or regions in a mathematical or conceptual space, such as natural or real numbers, RGB values, etc.
 An instance of E54 Dimension represents the empirical or theoretically derived quantity, including the precision tolerances resulting from the particular method or calculation. The identity of an instance of E54 Dimension depends on the method of its determination because each method may produce different values even when determining comparable qualities. For instance, the wingspan of a bird alive or dead is a different dimension. Thermoluminescence dating and Rehydroxylation [RHX] dating are different dimensions of temporal distance from now, even if they aim at dating the same object. The method of determination should be expressed using the property P2 has type (is type of). Note that simple terms such as “diameter” or “length” are normally insufficient to unambiguously describe a respective dimension. In contrast, “maximum linear extent” may be sufficient.
 The properties of the class E54 Dimension allow for expressing the numerical approximation of the values of instances of E54 Dimension adequate to the precision of the applied method of determination. If the respective quantity belongs to a non-discrete space according to the laws of physics, such as spatial distances, it is recommended to record them as approximations by intervals or regions of indeterminacy enclosing the assumed true values. For instance, a length of 5 cm may be recorded as 4.5-5.5 cm, according to the precision of the respective observation. Note, that comparability of values described in different units depends critically on the representation as value regions.
@@ -1139,19 +1141,19 @@ Numerical approximations in archaic instances of E58 Measurement Unit used in hi
                                                    skos:example "The word count and kudos on AO3 (https://archiveofourown.org/works)" .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E55_Type
-<http://www.cidoc-crm.org/cidoc-crm/E55_Type> rdf:type owl:Class ;
+###  crm:E55_Type
+<crm:E55_Type> rdf:type owl:Class ;
                                               rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P127_has_broader_term> ;
-                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+                                                                owl:onProperty <crm:P127_has_broader_term> ;
+                                                                owl:someValuesFrom <crm:E55_Type>
                                                               ] ,
                                                               [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P127i_has_narrower_term> ;
-                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E55_Type>
+                                                                owl:onProperty <crm:P127i_has_narrower_term> ;
+                                                                owl:someValuesFrom <crm:E55_Type>
                                                               ] ,
                                                               [ rdf:type owl:Restriction ;
-                                                                owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of> ;
-                                                                owl:someValuesFrom <http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity>
+                                                                owl:onProperty <crm:P2i_is_type_of> ;
+                                                                owl:someValuesFrom <crm:E1_CRM_Entity>
                                                               ] ;
                                               rdfs:comment """This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts, in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes.
 E55 Type provides an interface to domain specific ontologies and thesauri. These can be represented in the CIDOC CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader term (has narrower term): E55 Type. Such hierarchies may be extended with additional properties ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
@@ -1159,8 +1161,8 @@ E55 Type provides an interface to domain specific ontologies and thesauri. These
                                               skos:example "The Tag categories on AO3, e.g. character tag or relationship tag." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit
-<http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> rdf:type owl:Class ;
+###  crm:E58_Measurement_Unit
+<crm:E58_Measurement_Unit> rdf:type owl:Class ;
                                                           rdfs:comment """This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.
 
 This type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.
@@ -1170,30 +1172,30 @@ Système International (SI) units or internationally recognized non-SI terms sho
                                                           skos:example "word counts, kudos." .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E70_Thing
-<http://www.cidoc-crm.org/cidoc-crm/E70_Thing> rdf:type owl:Class ;
+###  crm:E70_Thing
+<crm:E70_Thing> rdf:type owl:Class ;
                                                rdfs:comment """This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability.
 They may be intellectual products or physical things. They may, for instance, have a solid physical form, an electronic encoding, or they may be a logical concept or structure ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                rdfs:label "E70 Thing"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object
-<http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> rdf:type owl:Class ;
+###  crm:E73_Information_Object
+<crm:E73_Information_Object> rdf:type owl:Class ;
                                                             rdfs:comment """This class comprises identifiable immaterial items, such as poems, jokes, data sets, images, texts, multimedia objects, procedural prescriptions, computer program code, algorithm or mathematical formulae, that have an objectively recognizable structure and are documented as single units. The encoding structure known as a “named graph” also falls under this class, so that each “named graph” is an instance of E73 Information Object.
 An instance of E73 Information Object does not depend on a specific physical carrier, which can include human memory, and it can exist on one or more carriers simultaneously.
 Instances of E73 Information Object of a linguistic nature should be declared as instances of the E33 Linguistic Object subclass. Instances of E73 Information Object of a documentary nature should be declared as instances of the E31 Document subclass. Conceptual items such as types and classes are not instances of E73 Information Object, nor are ideas without a reproducible expression ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                             rdfs:label "E73 Information Object"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E7_Activity
-<http://www.cidoc-crm.org/cidoc-crm/E7_Activity> rdf:type owl:Class ;
+###  crm:E7_Activity
+<crm:E7_Activity> rdf:type owl:Class ;
                                                  rdfs:comment """This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.
 This notion includes complex, composite, and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                  rdfs:label "E7 Activity"@en .
 
 
-###  http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object
-<http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> rdf:type owl:Class ;
+###  crm:E89_Propositional_Object
+<crm:E89_Propositional_Object> rdf:type owl:Class ;
                                                               rdfs:comment """This class comprises immaterial items, including but not limited to stories, plots, procedural prescriptions, algorithms, laws of physics or images that are, or represent in some sense, sets of propositions about real or imaginary things and that are documented as single units or serve as topic of discourse.
 This class also comprises items that are “about” something in the sense of a subject. In the wider sense, this class includes expressions of psychological value such as non-figural art and musical themes. However, conceptual items such as types and classes are not instances of E89 Propositional Object. This should not be confused with the definition of a type, which is indeed an instance of E89 Propositional Object ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
                                                               rdfs:label "E89 Propositional Object"@en .
@@ -1408,10 +1410,10 @@ rdf:Seq rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G0_Character-Stoff
 golem:G0_Character-Stoff rdf:type owl:Class ;
-                         rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
+                         rdfs:subClassOf <crm:E89_Propositional_Object> ,
                                          <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
+                                           owl:onProperty <crm:P130i_features_are_also_found_on> ;
                                            owl:someValuesFrom golem:G1_Character
                                          ] ;
                          rdfs:comment "The concept of Character-Stoff is derived from the German term Erzählstoff, referring to narrative material (Zgoll et al, 2020). Character-Stoff represents the infinite potential of a character across all known and unknown variations, extending beyond any singular depiction. It encompasses all possible versions, features, actions, and roles of a character across time and media, while remaining open to reinterpretation and transformation. This polymorphous nature allows for endless modifications. Thus, Character-Stoff is an ever-evolving, inexhaustible phenomenon, impossible to outline in full."@en ;
@@ -1425,7 +1427,7 @@ golem:G10_Narrative_Function rdf:type owl:Class ;
                              rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
-                                               owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                               owl:someValuesFrom <lrmoo:F1_Work>
                                              ] ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
@@ -1452,7 +1454,7 @@ golem:G11_Narrative_Role rdf:type owl:Class ;
                          rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role> ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
-                                           owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                           owl:someValuesFrom <lrmoo:F1_Work>
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target> ;
@@ -1479,7 +1481,7 @@ golem:G12_Setting rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#situation> ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#satisfies> ;
-                                    owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                    owl:someValuesFrom <lrmoo:F1_Work>
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting-for> ;
@@ -1552,10 +1554,10 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G14_Narrative-Stoff
 golem:G14_Narrative-Stoff rdf:type owl:Class ;
-                          rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
+                          rdfs:subClassOf <crm:E89_Propositional_Object> ,
                                           <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
+                                            owl:onProperty <crm:P130i_features_are_also_found_on> ;
                                             owl:someValuesFrom golem:G7_Narrative_Sequence
                                           ] ;
                           owl:disjointWith golem:G1_Character ,
@@ -1568,11 +1570,11 @@ golem:G14_Narrative-Stoff rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G15_Fandom
 golem:G15_Fandom rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object> ,
+                 rdfs:subClassOf <crm:E28_Conceptual_Object> ,
                                  <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on> ;
-                                   owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                   owl:onProperty <crm:P130i_features_are_also_found_on> ;
+                                   owl:someValuesFrom <lrmoo:F1_Work>
                                  ] ;
                  rdfs:comment "A fandom is a group of fans who share a common interest in a particular work or topic, such as a book or movie, and engage in fan activities like discussions or creating fan works."@en ;
                  rdfs:label "G15 Fandom"@en ;
@@ -1581,7 +1583,7 @@ golem:G15_Fandom rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G16_Object
 golem:G16_Object rdf:type owl:Class ;
-                 rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E70_Thing> ,
+                 rdfs:subClassOf <crm:E70_Thing> ,
                                  <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object> ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location> ;
@@ -1619,10 +1621,10 @@ golem:G18_Textual_Feature rdf:type owl:Class ;
 
 ###  https://w3id.org/golem/ontology#G1_Character
 golem:G1_Character rdf:type owl:Class ;
-                   rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
+                   rdfs:subClassOf <crm:E89_Propositional_Object> ,
                                    <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-social-object> ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
+                                     owl:onProperty <crm:P130_shows_features_of> ;
                                      owl:someValuesFrom golem:G0_Character-Stoff
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -1651,7 +1653,7 @@ golem:G1_Character rdf:type owl:Class ;
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty golem:GP1_is_character_in ;
-                                     owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                     owl:someValuesFrom <lrmoo:F1_Work>
                                    ] ;
                    owl:disjointWith golem:G4_Social_Relationship ,
                                     golem:G6_Relationship_Role ,
@@ -1831,12 +1833,12 @@ golem:G7_Narrative_Sequence rdf:type owl:Class ;
                             rdfs:subClassOf <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course> ,
                                             rdf:Seq ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of> ;
+                                              owl:onProperty <crm:P130_shows_features_of> ;
                                               owl:someValuesFrom golem:G14_Narrative-Stoff
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by> ;
-                                              owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                              owl:someValuesFrom <lrmoo:F1_Work>
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of> ;
@@ -1886,15 +1888,15 @@ H5: Zephyros is the West Wind. (durative-constant)""" .
 
 ###  https://w3id.org/golem/ontology#G9_Narrative_Unit
 golem:G9_Narrative_Unit rdf:type owl:Class ;
-                        rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ,
+                        rdfs:subClassOf <crm:E89_Propositional_Object> ,
                                         <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description> ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty <http://www.cidoc-crm.org/cidoc-crm/P67_refers_to> ;
+                                          owl:onProperty <crm:P67_refers_to> ;
                                           owl:someValuesFrom golem:G5_Narrative_Event
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part-of> ;
-                                          owl:someValuesFrom <http://iflastandards.info/ns/lrm/lrmoo/F1_Work>
+                                          owl:someValuesFrom <lrmoo:F1_Work>
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays> ;
