@@ -1,0 +1,8 @@
+.venv/
+
+tbox_validation/converted/
+tbox_validation/ontologies/
+
+**/__pycache__/
+
+*.pyc

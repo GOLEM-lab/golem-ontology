@@ -658,8 +658,7 @@ dlp_lite:proper-part-of rdf:type owl:ObjectProperty ;
 ###  dlp_extDnS:d-used-by
 dlp_extDnS:d-used-by rdf:type owl:ObjectProperty ;
                                                                           owl:inverseOf dlp_extDnS:d-uses ;
-                                                                          rdfs:domain dlp_extDnS:concept ,
-                                                                                      dlp_extDnS:role ;
+                                                                          rdfs:domain dlp_extDnS:concept ;
                                                                           rdfs:range dlp_extDnS:description ;
                                                                           rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                        """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
@@ -670,8 +669,7 @@ dlp_extDnS:d-used-by rdf:type owl:ObjectProperty ;
 ###  dlp_extDnS:d-uses
 dlp_extDnS:d-uses rdf:type owl:ObjectProperty ;
                                                                        rdfs:domain dlp_extDnS:description ;
-                                                                       rdfs:range dlp_extDnS:concept ,
-                                                                                  dlp_extDnS:role ;
+                                                                       rdfs:range dlp_extDnS:concept ;
                                                                        rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                     """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
 ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).""" ;
@@ -778,21 +776,21 @@ and the Goblet of Fire (F1).""" .
 ###  dlp_extDnS:sequenced-by
 dlp_extDnS:sequenced-by rdf:type owl:ObjectProperty ;
                                                                              owl:inverseOf dlp_extDnS:sequences ;
-                                                                             rdfs:domain dlp_extDnS:course ;
-                                                                             rdfs:range dlp_lite:perdurant ;
+                                                                             rdfs:domain dlp_lite:perdurant ;
+                                                                             rdfs:range dlp_extDnS:course ;
                                                                              rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
                                                                                           "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                              rdfs:label "sequenced-by"@en .
 
 
-###  dlp_extDnS:sequences
-dlp_extDnS:sequences rdf:type owl:ObjectProperty ;
-                                                                          rdfs:domain dlp_lite:perdurant ;
-                                                                          rdfs:range dlp_extDnS:course ;
-                                                                          rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
-                                                                                       "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
-                                                                          rdfs:label "sequences"@en ;
-                                                                          skos:example "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
+  ###  dlp_extDnS:sequences
+  dlp_extDnS:sequences rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain dlp_extDnS:course ; 
+                                                                            rdfs:range dlp_lite:perdurant ;
+                                                                            rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
+                                                                                        "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
+                                                                            rdfs:label "sequences"@en ;
+                                                                            skos:example "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
 
 
 ###  dlp_extDnS:setting
@@ -1820,7 +1818,7 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
 
 ###  golem:G7_Narrative_Sequence
 golem:G7_Narrative_Sequence rdf:type owl:Class ;
-                            rdfs:subClassOf dlp_extDnS:course ,
+                            rdfs:subClassOf dlp_extDnS:concept ,
                                             rdf:Seq ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty crm:P130_shows_features_of ;
