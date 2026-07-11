@@ -2,6 +2,7 @@
 
 tbox_validation/converted/
 tbox_validation/ontologies/
+tbox_validation/core/__init__.py
 
 **/__pycache__/
 
