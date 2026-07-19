@@ -4,6 +4,7 @@ tbox_validation/converted/
 tbox_validation/core/
 tbox_validation/phases/
 tbox_validation/requirements.txt
+tbox_validation/workflow_report/.obsidian
 
 # Ignore everything under ontologies
 tbox_validation/ontologies/*
