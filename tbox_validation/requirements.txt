@@ -1,2 +1,0 @@
-owlready2
-rdflib
