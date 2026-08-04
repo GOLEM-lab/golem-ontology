@@ -1,0 +1,6 @@
+@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix dlp_extDnS: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+crm:E28_Conceptual_Object rdfs:subClassOf dlp_extDnS:social-object .
+

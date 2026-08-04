@@ -11,4 +11,5 @@ tbox_validation/ontologies/*
 # Except these two files
 !tbox_validation/ontologies/golem.ttl
 !tbox_validation/ontologies/golem_fixed.ttl
+!tbox_validation/ontologies/golem_exp.ttl
 

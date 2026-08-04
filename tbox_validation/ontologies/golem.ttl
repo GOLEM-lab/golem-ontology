@@ -276,8 +276,8 @@ Examples of the inverse property:
 - Auguste Rodin’s work ‘The Thinker’ (F1) is realised in the large-scale version of ‘The thinker’ (F2) created at the Fonderie Alexis Rudier in 1904.
 """@en ,
                                                                    "A narrative or idea (work) is realized in a specific expression, such as a text, movie, performance, or other medium." ;
-                                                      rdfs:label "R3i realises"@en ;
-                                                      skos:notation "R3i" .
+                                                      rdfs:label "R3i realises"@en .
+                                                      
 
 ###  lrmoo:R5_has_component
 lrmoo:R5_has_component rdf:type owl:ObjectProperty ;

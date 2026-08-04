@@ -10,7 +10,7 @@
 @prefix dlp_lite: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
 @prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/> .
 @prefix crm: <http://erlangen-crm.org/240307/> .
-@prefix lrmoo: <https://cidoc-crm.org/extensions/lrmoo/owl/> .
+@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -658,8 +658,7 @@ dlp_lite:proper-part-of rdf:type owl:ObjectProperty ;
 ###  dlp_extDnS:d-used-by
 dlp_extDnS:d-used-by rdf:type owl:ObjectProperty ;
                                                                           owl:inverseOf dlp_extDnS:d-uses ;
-                                                                          rdfs:domain dlp_extDnS:concept ,
-                                                                                      dlp_extDnS:role ;
+                                                                          rdfs:domain dlp_extDnS:concept ;
                                                                           rdfs:range dlp_extDnS:description ;
                                                                           rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                        """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
@@ -670,8 +669,7 @@ dlp_extDnS:d-used-by rdf:type owl:ObjectProperty ;
 ###  dlp_extDnS:d-uses
 dlp_extDnS:d-uses rdf:type owl:ObjectProperty ;
                                                                        rdfs:domain dlp_extDnS:description ;
-                                                                       rdfs:range dlp_extDnS:concept ,
-                                                                                  dlp_extDnS:role ;
+                                                                       rdfs:range dlp_extDnS:concept ;
                                                                        rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ,
                                                                                     """Descriptions can d-use (descriptively use) concepts or figures, provided that used ones are defined by some description
 ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).""" ;
@@ -778,21 +776,21 @@ and the Goblet of Fire (F1).""" .
 ###  dlp_extDnS:sequenced-by
 dlp_extDnS:sequenced-by rdf:type owl:ObjectProperty ;
                                                                              owl:inverseOf dlp_extDnS:sequences ;
-                                                                             rdfs:domain dlp_extDnS:course ;
-                                                                             rdfs:range dlp_lite:perdurant ;
+                                                                             rdfs:domain dlp_lite:perdurant ;
+                                                                             rdfs:range dlp_extDnS:course ;
                                                                              rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
                                                                                           "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
                                                                              rdfs:label "sequenced-by"@en .
 
 
-###  dlp_extDnS:sequences
-dlp_extDnS:sequences rdf:type owl:ObjectProperty ;
-                                                                          rdfs:domain dlp_lite:perdurant ;
-                                                                          rdfs:range dlp_extDnS:course ;
-                                                                          rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
-                                                                                       "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
-                                                                          rdfs:label "sequences"@en ;
-                                                                          skos:example "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
+  ###  dlp_extDnS:sequences
+  dlp_extDnS:sequences rdf:type owl:ObjectProperty ;
+                                                                            rdfs:domain dlp_extDnS:course ; 
+                                                                            rdfs:range dlp_lite:perdurant ;
+                                                                            rdfs:comment "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order." ,
+                                                                                        "This is the immediate relation between courses and perdurants. A course can be either atomic, being a simple 'perdurant role', or it can be complex, thus creating an abstract ordering over a temporal or causal sequence of processes or actions. The ontology of plans develops in detail intentional complex courses ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))." ;
+                                                                            rdfs:label "sequences"@en ;
+                                                                            skos:example "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events" .
 
 
 ###  dlp_extDnS:setting
@@ -1131,7 +1129,7 @@ crm:E1_CRM_Entity rdf:type owl:Class ;
 ###  crm:E28_Conceptual_Object
 crm:E28_Conceptual_Object rdf:type owl:Class ;
 
-                                                           rdfs:subClassOf dlp_extDnS:SocialObject ;   
+                                                           rdfs:subClassOf dlp_extDnS:social-object ;   
                                                            rdfs:comment """This class comprises non-material products of our minds and other human produced data that have become objects of a discourse about their identity, circumstances of creation, or historical implication. The production of such information might have been supported by the use of technical devices such as cameras or computers.
 Characteristically, instances of this class are created, invented or thought by someone, and then may be documented or communicated between persons. Instances of E28 Conceptual Object have the ability to exist on more than one particular carrier at the same time, such as paper, electronic signals, marks, audio media, paintings, photos, human memories, etc.
 They cannot be destroyed. They exist as long as they can be found on at least one carrier or in at least one human memory. Their existence ends when the last carrier and the last memory are lost ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ;
@@ -1820,7 +1818,7 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
 
 ###  golem:G7_Narrative_Sequence
 golem:G7_Narrative_Sequence rdf:type owl:Class ;
-                            rdfs:subClassOf dlp_extDnS:course ,
+                            rdfs:subClassOf dlp_extDnS:concept ,
                                             rdf:Seq ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty crm:P130_shows_features_of ;
