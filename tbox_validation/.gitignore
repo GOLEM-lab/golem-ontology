@@ -4,12 +4,15 @@ tbox_validation/converted/
 tbox_validation/core/
 tbox_validation/phases/
 tbox_validation/requirements.txt
-tbox_validation/workflow_report/.obsidian
+tbox_validation/workflow_report/.obsidian/
 
-# Ignore everything under ontologies
+# Ignore everything in ontologies
 tbox_validation/ontologies/*
-# Except these two files
+
+# Allow selected ontology files
 !tbox_validation/ontologies/golem.ttl
 !tbox_validation/ontologies/golem_fixed.ttl
-!tbox_validation/ontologies/golem_exp.ttl
 
+# Allow golem_exp directory and file
+!tbox_validation/ontologies/golem_exp/
+!tbox_validation/ontologies/golem_exp/golem_latest.ttl
