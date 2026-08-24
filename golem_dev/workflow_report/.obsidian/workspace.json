@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "task1.3_consistency_assessment/4_05_08.md",
+                "file": "task1.3_consistency_assessment/6_24_08.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4_05_08"
+              "title": "6_24_08"
             }
           }
         ]
@@ -80,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 216.7804946899414
   },
   "right": {
     "id": "42598da63e1053a6",
@@ -188,6 +188,13 @@
   "active": "4927c66a8fecee07",
   "lastOpenFiles": [
     "Class Diagram (Mermaid).md",
-    "task1.3_consistency_assessment/4_05_08.md"
+    "task1.3_consistency_assessment/6_24_08.md",
+    "task1.1_pre_process_normalization/report.md",
+    "task1.2_imports_management/report.md",
+    "task1.3_consistency_assessment/1_25_06.md",
+    "task1.3_consistency_assessment/2_07_07.md",
+    "task1.3_consistency_assessment/3_17_07.md",
+    "task1.3_consistency_assessment/4_05_08.md",
+    "task1.3_consistency_assessment/5_17_08.md"
   ]
 }

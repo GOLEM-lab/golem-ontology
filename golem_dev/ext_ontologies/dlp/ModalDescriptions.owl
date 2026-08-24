@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:men="http://www.ontologydesignpatterns.org/ont/dlp/MentalObjects.owl#"
+    xmlns:dol="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#"
+    xmlns:edns="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.ontologydesignpatterns.org/ont/dlp/ModalDescriptions.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xml:base="http://www.ontologydesignpatterns.org/ont/dlp/ModalDescriptions.owl">
+  <owl:Ontology rdf:about="">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An ontology of modal relations, plugin to DnS, very preliminary. OWL engineering by Aldo Gangemi.</rdfs:comment>
+    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imports: DO+DnS</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >397
+    </owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-physical-object"/>
+  <owl:Class rdf:ID="promise">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="commitment"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A commitment in which an obligation to some future result is expressed.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="responsibility">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#commitment"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Responsibility is preliminarily described here as a commitment that includes a status, which has some rights and duties towards some task (see related axioms).</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#status"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-object"/>
+  <owl:Class rdf:about="#commitment">
+    <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#cognitive-modal-description"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A commitment is a cognitive modal description, characterized by certain obligations and rights targeted by at least one of its roles.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+  <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/MentalObjects.owl#mental-object">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >AKA "internal description". Mental objects are dependent on agents which are assumed to be intentional (in the wider sense of conceiving some description). This class is just a pointer to a complex ontology of mental entities that is currently under development.</rdfs:comment>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-object"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#specifically-constantly-dependent-on"/>
+            <owl:someValuesFrom rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-physical-object"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="subject-target-of">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="subjected-to"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-target-of"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="desire-target-of">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="desire-towards"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-target-of"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="bdi-target-of">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="bdi"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-target-of"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#bdi">
+    <owl:inverseOf rdf:resource="#bdi-target-of"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-towards"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A generic attitude relation that holds between agent-driven roles or agentive figures and tasks. This is used here as a shortcut for saying that someone participates to some action with a plan in mind, and desiring it. An analytic account of this relation requires an explicit plan, and that the course be a goal inside that plan.The acronym 'bdi' in the name is for 'belief, desire, intention', a well known model of deliberation used in many agent architectures.The intuition goes to the deliberative agent as something that, provided it has the belief _p_, the desire to have _q_, and the intention to do _r_ in order to get _q_, then it is ready to deliberate an action.Here it is as a placeholder, wating for a more comprehensive ontological theory that takes into account not only BDI, but also the details of interacting, cooperative, competitive agents in the context of complex social and legal modalities of action.This is a simple summary of how BDI is usually understood and implemented in information systems:- According to Wooldridge and Jennings, strong agents can possess mental attitudes.- According to the BDI paradigm, the current state of entities and environment as perceived by the agent (preconditions) are the agent's beliefs.- Desires are some future states that an agent would like to be in. Desires are sometimes called goals.- Intentions are some commitment of an agent to achieve a goal by progressing along a particular future path that leads to the goal. Such path is sometimes called a plan. - One advantage with using intentions is that the effort associated with creating them needs not be repeated every time they are required. Intentions can be pre-computed and cached. Each intention can be tagged with a trigger describing some situation in which this intention should be accessed and applied.- In a typical BDI paradigm, deliberation is done through the selection of a goal, the selection of a plan that will be used to form an intention, the selection of an intention, and the execution of the selected intention. All these decisions are based on the beliefs the agent has about the current state of the environment. The process of selecting the plan is known as means-end reasoning.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#desire-towards">
+    <owl:inverseOf rdf:resource="#desire-target-of"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A modal relation expressing that an agent conceives a description by 'desiring' a certain course of events.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-towards"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#subjected-to">
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#attitude-towards"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A modality characterized by a low commitment, and bearing modifications to the player of the role, or the figure.</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agent-driven-role"/>
+          <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#agentive-figure"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#subject-target-of"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#task"/>
+  </owl:ObjectProperty>
+</rdf:RDF>

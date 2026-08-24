@@ -5,8 +5,8 @@ on:
     branches:
       - gh-pages
     paths:
-      - 'golem_v*.ttl'
-      - 'golem_v*.html'
+      - 'releases/**/*.ttl'
+      - 'releases/**/*.html'
 
 jobs:
   update-alias:
@@ -16,35 +16,41 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update stable aliases to latest version
+      - name: Update stable aliases to latest release
         shell: bash
         run: |
           set -euo pipefail
           shopt -s nullglob
 
-          # Collect versioned files
-          ttl_files=(golem_v*.ttl)
-          html_files=(golem_v*.html)
+          # Collect release directories, e.g. releases/golem_v1-1/, releases/golem_v2-0/
+          release_dirs=(releases/*/)
 
-          # Fail explicitly if no files are found
-          if [ ${#ttl_files[@]} -eq 0 ]; then
-            echo "ERROR: No golem_v*.ttl files found"
+          if [ ${#release_dirs[@]} -eq 0 ]; then
+            echo "ERROR: No release directories found under releases/"
             exit 1
           fi
 
-          if [ ${#html_files[@]} -eq 0 ]; then
-            echo "ERROR: No golem_v*.html files found"
+          # Pick the latest release directory (version-aware sort)
+          latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
+          latest_dir="${latest_dir%/}"
+          echo "Latest release directory: $latest_dir"
+
+          # Find its ttl/html, excluding backups (e.g. .ttl.bak)
+          latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
+          latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
+
+          if [ -z "$latest_ttl" ]; then
+            echo "ERROR: No .ttl file found in $latest_dir"
             exit 1
           fi
-
-          # Select latest versions (version-aware sort)
-          latest_ttl=$(printf "%s\n" "${ttl_files[@]}" | sort -V | tail -n 1)
-          latest_html=$(printf "%s\n" "${html_files[@]}" | sort -V | tail -n 1)
+          if [ -z "$latest_html" ]; then
+            echo "ERROR: No .html file found in $latest_dir"
+            exit 1
+          fi
 
           echo "Latest TTL:  $latest_ttl"
           echo "Latest HTML: $latest_html"
 
-          # Update stable aliases
           cp "$latest_ttl" golem.ttl
           cp "$latest_html" golem.html
 

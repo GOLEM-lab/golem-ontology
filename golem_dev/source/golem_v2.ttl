@@ -7,7 +7,8 @@
 @prefix dlp_spat: <http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#> .
 @prefix dlp_funct: <http://www.ontologydesignpatterns.org/ont/dlp/FunctionalParticipation.owl#> .
 @prefix dlp_extDnS: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#> .
-@prefix dlp_lite: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
+@prefix dol: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
+@prefix dul_region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
 @prefix ecrm: <http://erlangen-crm.org/240307/> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -23,7 +24,8 @@
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
                                    owl:versionIRI <https://w3id.org/golem/ontology/v1.1> ;
                                    owl:imports <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl> ,
-                                               <http://erlangen-crm.org/240307/> ;
+                                               <http://erlangen-crm.org/240307/> ,
+                                               <http://www.ontologydesignpatterns.org/cp/owl/region.owl> ;
                                    dc:created "2024-10-10"^^xsd:date ;
                                    dc:creator "GOLEM Lab" ;
                                    dc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -378,49 +380,49 @@ dlp_csm:duration rdf:type owl:ObjectProperty ;
 dlp_csm:duration-of rdf:type owl:ObjectProperty ;
                     rdfs:label "duration of" .
 
-###  dlp_lite:generic-dependent
-dlp_lite:generic-dependent rdf:type owl:ObjectProperty ;
+###  dol:generic-dependent
+dol:generic-dependent rdf:type owl:ObjectProperty ;
                             rdfs:comment "In GOLEM, indicates that one entity is dependent on another, such as a relationship depending on an event or a narrative location (G13) depending on a physical location."@en ;
                             rdfs:label "generic dependent"@en .
 
-###  dlp_lite:generically-dependent-on
-dlp_lite:generically-dependent-on rdf:type owl:ObjectProperty ;
+###  dol:generically-dependent-on
+dol:generically-dependent-on rdf:type owl:ObjectProperty ;
                                   rdfs:label "generically dependent on"@en ;
                                   skos:example "England in the Harry Potter series (G13) generically dependent on England in the real world (geographical-place)." ,
                                   "The romantic love between Ron and Hermione (G4) generically dependent on their kiss in the chamber of secrets (G5)." .                                                                                 
 
-###  dlp_lite:generic-location
-dlp_lite:generic-location rdf:type owl:ObjectProperty ;
+###  dol:generic-location
+dol:generic-location rdf:type owl:ObjectProperty ;
                           rdfs:comment "In GOLEM, specifies the location (G13) of an enduring entity, such as a character (G1) or object (G16), within the narrative."@en ;
                           rdfs:label "generic location"@en .
 
 
-###  dlp_lite:generic-location-of
-dlp_lite:generic-location-of rdf:type owl:ObjectProperty ;
+###  dol:generic-location-of
+dol:generic-location-of rdf:type owl:ObjectProperty ;
                               rdfs:label "generic location of"@en ;
                               skos:example "Quidditch World Cup Campsite (G13) is generic location of Harry Potter (G1)." ,
                                           "Quidditch World Cup Campsite (G13) is generic location of Quidditch banners and flags (G16)." .
 
-###  dlp_lite:participant
-dlp_lite:participant rdf:type owl:ObjectProperty ;
+###  dol:participant
+dol:participant rdf:type owl:ObjectProperty ;
                       rdfs:comment "In GOLEM, indicates that an endurant, such as a character (G1) or object (G16), participates in a specific narrative event (G5)."@en ;
                       rdfs:label "participant"@en .
 
-###  dlp_lite:participant-in
-dlp_lite:participant-in rdf:type owl:ObjectProperty ;                     
+###  dol:participant-in
+dol:participant-in rdf:type owl:ObjectProperty ;                     
                         rdfs:label "participant in"@en ;
                         skos:example "Harry Potter (G1) participant in the Battle of Hogwarts (G5)." ,
                                       "The egg (G16) participant in the event in which Cedric gives Harry a hint (G5) (chapter 24 of Harry Potter and the Goblet of Fire)." .
 
-###  dlp_lite:proper-part
-dlp_lite:proper-part rdf:type owl:ObjectProperty ;
+###  dol:proper-part
+dol:proper-part rdf:type owl:ObjectProperty ;
                       rdfs:comment "In GOLEM, indicates that an entity  is part of a larger entity. For example, a child location (G13) is part of a larger parent location (G13)." ;
                       rdfs:label "proper part"@en ;
                       skos:example "Harry Potter and the Deathly Hallows (Rowling, 2007) (F1) has proper part Hyleme “Harry’s triumph, as Voldemort dies from his rebounded curse” (G9)." ,
                       "Hogwarts School of Witchcraft and Wizardry (G13) has proper part  Forbidden Forest (G13)." .
 
-###  dlp_lite:proper-part-of
-dlp_lite:proper-part-of rdf:type owl:ObjectProperty ;
+###  dol:proper-part-of
+dol:proper-part-of rdf:type owl:ObjectProperty ;
                         rdfs:label "proper part of"@en .
 
 ###  dlp_extDnS:d-uses
@@ -605,9 +607,9 @@ rdf:_3 The spells collide in midair, etc.""" .
 
 ###  golem:GP0_has_feature
 golem:GP0_has_feature rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf dlp_lite:has-quality ;
+                      rdfs:subPropertyOf dul_region:hasRegion ;
                       owl:inverseOf golem:GP0i_is_feature_of ;
-                      rdfs:domain ecrm:E70_Thing ;
+                      rdfs:domain ecrm:E28_Conceptual_Object ;
                       rdfs:range golem:G2_Feature ;
                       rdfs:comment "Indicates that a narrative or character has certain features." ;
                       rdfs:label "has feature" ;
@@ -617,8 +619,9 @@ perspective (G18).""" .
 
 ###  golem:GP0i_is_feature_of
 golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf dul_region:isRegionFor ;
                          rdfs:domain golem:G2_Feature ;
-                         rdfs:range ecrm:E70_Thing ;
+                         rdfs:range ecrm:E28_Conceptual_Object ;
                          rdfs:comment "Indicates that a narrative or character has certain features." ;
                          rdfs:label "is feature of" .
 
@@ -674,7 +677,7 @@ lrmoo:F1_Work rdf:type owl:Class ;
                                 owl:someValuesFrom golem:G15_Fandom
                               ] ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_lite:proper-part ;
+                                owl:onProperty dol:proper-part ;
                                 owl:someValuesFrom golem:G9_Narrative_Unit
                               ] ,
                               [ rdf:type owl:Restriction ;
@@ -813,7 +816,7 @@ dlp_extDnS:social-relationship rdf:type owl:Class ;
 dlp_csm:geographical-place rdf:type owl:Class ;
                             rdfs:subClassOf
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty dlp_lite:generic-dependent ;
+                                              owl:onProperty dol:generic-dependent ;
                                               owl:someValuesFrom dlp_csm:geographical-object
                                             ] ;
                             owl:disjointWith dlp_extDnS:course ,
@@ -847,8 +850,8 @@ dlp_csm:non-physical-place rdf:type owl:Class ;
                             rdfs:label "non physical place" .
 
 
-###  dlp_lite:time-interval
-dlp_lite:time-interval rdf:type owl:Class ;
+###  dol:time-interval
+dol:time-interval rdf:type owl:Class ;
                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                           owl:onProperty dlp_extDnS:setting ;
                                           owl:someValuesFrom golem:G12_Setting
@@ -1017,7 +1020,7 @@ golem:G12_Setting rdf:type owl:Class ;
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty dlp_extDnS:setting-for ;
-                                    owl:someValuesFrom dlp_lite:time-interval
+                                    owl:someValuesFrom dol:time-interval
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty dlp_extDnS:setting-for ;
@@ -1051,19 +1054,19 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
                              rdfs:subClassOf dlp_extDnS:non-agentive-social-object ,
                                               ecrm:E28_Conceptual_Object,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty dlp_lite:generic-location-of ;
+                                               owl:onProperty dol:generic-location-of ;
                                                owl:someValuesFrom golem:G16_Object
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty dlp_lite:generic-location-of ;
+                                               owl:onProperty dol:generic-location-of ;
                                                owl:someValuesFrom golem:G1_Character
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty dlp_lite:proper-part ;
+                                               owl:onProperty dol:proper-part ;
                                                owl:someValuesFrom golem:G13_Narrative_Location
                                              ] ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty dlp_lite:proper-part-of ;
+                                               owl:onProperty dol:proper-part-of ;
                                                owl:someValuesFrom golem:G13_Narrative_Location
                                              ] ,
                                              [ rdf:type owl:Restriction ;
@@ -1113,7 +1116,7 @@ golem:G15_Fandom rdf:type owl:Class ;
 golem:G16_Object rdf:type owl:Class ;
                  rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                  [ rdf:type owl:Restriction ;
-                                   owl:onProperty dlp_lite:generic-location ;
+                                   owl:onProperty dol:generic-location ;
                                    owl:someValuesFrom golem:G13_Narrative_Location
                                  ] ,
                                  [ rdf:type owl:Restriction ;
@@ -1157,7 +1160,7 @@ golem:G1_Character rdf:type owl:Class ;
                                      owl:someValuesFrom golem:G0_Character-Stoff
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty dlp_lite:participant-in ;
+                                     owl:onProperty dol:participant-in ;
                                      owl:someValuesFrom golem:G5_Narrative_Event
                                    ] ,
                                    [ rdf:type owl:Restriction ;
@@ -1194,7 +1197,7 @@ golem:G1_Character rdf:type owl:Class ;
 
 ###  golem:G2_Feature
 golem:G2_Feature rdf:type owl:Class ;
-                 rdfs:subClassOf dlp_lite:quality ;
+                 rdfs:subClassOf dul_region:Region ;
                  rdfs:comment """A feature in the context of narrative refers to a distinct element or characteristic that contributes to the structure and meaning of a story. Features include character traits and textual elements.
 Taxonomies of features can be further specified using ecrm:E55_Type.""" ;
                  rdfs:label "G2 Feature" ;
@@ -1202,7 +1205,7 @@ Taxonomies of features can be further specified using ecrm:E55_Type.""" ;
 
 ###  golem:G3_Psychological_State
 golem:G3_Psychological_State rdf:type owl:Class ;
-                             rdfs:subClassOf dlp_lite:state ,
+                             rdfs:subClassOf dol:state ,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty dlp_funct:state-of ;
                                                owl:someValuesFrom golem:G1_Character
@@ -1231,7 +1234,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
 golem:G4_Social_Relationship rdf:type owl:Class ;
                              rdfs:subClassOf dlp_extDnS:social-relationship ,
                                              [ rdf:type owl:Restriction ;
-                                               owl:onProperty dlp_lite:generically-dependent-on ;
+                                               owl:onProperty dol:generically-dependent-on ;
                                                owl:someValuesFrom golem:G5_Narrative_Event
                                              ] ,
                                              [ rdf:type owl:Restriction ;
@@ -1256,9 +1259,9 @@ golem:G4_Social_Relationship rdf:type owl:Class ;
 
 ###  golem:G5_Narrative_Event
 golem:G5_Narrative_Event rdf:type owl:Class ;
-                         rdfs:subClassOf dlp_lite:perdurant ,
+                         rdfs:subClassOf dol:perdurant ,
                                          [ rdf:type owl:Restriction ;
-                                           owl:onProperty dlp_lite:participant ;
+                                           owl:onProperty dol:participant ;
                                            owl:someValuesFrom golem:G1_Character
                                          ] ,
                                          [ rdf:type owl:Restriction ;
@@ -1397,7 +1400,7 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
                                           owl:someValuesFrom golem:G5_Narrative_Event
                                         ] ,
                                         [ rdf:type owl:Restriction ;
-                                          owl:onProperty dlp_lite:proper-part-of ;
+                                          owl:onProperty dol:proper-part-of ;
                                           owl:someValuesFrom lrmoo:F1_Work
                                         ] ,
                                         [ rdf:type owl:Restriction ;
@@ -1438,4 +1441,3 @@ rdf:nil rdfs:comment "The empty list, with no items in it. If the rest of a list
         rdfs:label "nil" .
 
 
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
