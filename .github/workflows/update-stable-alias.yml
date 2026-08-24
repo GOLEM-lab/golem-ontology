@@ -3,7 +3,8 @@ name: Update stable ontology aliases
 on:
   push:
     branches:
-      - gh-pages
+     # - gh-pages
+     - fix/pid-resolution
     paths:
       - 'releases/**/*.ttl'
       - 'releases/**/*.html'
