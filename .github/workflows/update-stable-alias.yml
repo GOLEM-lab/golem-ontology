@@ -8,6 +8,7 @@ on:
     paths:
       - 'releases/**/*.ttl'
       - 'releases/**/*.html'
+  workflow_dispatch:    
 
 jobs:
   update-alias:
