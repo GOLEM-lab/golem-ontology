@@ -1,65 +1,87 @@
-name: Update stable ontology aliases
+# name: Update stable ontology aliases
 
-on:
-  push:
-    branches:
-     # - gh-pages
-     - fix/pid-resolution
-    paths:
-      - 'releases/**/*.ttl'
-      - 'releases/**/*.html'
-  workflow_dispatch:    
+# on:
+#   push:
+#     branches:
+#       #- gh-pages
+#       - fix/pid-resolution
+#     paths:
+#       - 'releases/**/*.ttl'
+#       - 'releases/**/*.rdf'
+#       - 'releases/**/*.jsonld'
+#       - 'releases/**/*.html'
+#   workflow_dispatch:
 
-jobs:
-  update-alias:
-    runs-on: ubuntu-latest
+# permissions:
+#   contents: write
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# jobs:
+#   update-alias:
+#     runs-on: ubuntu-latest
 
-      - name: Update stable aliases to latest release
-        shell: bash
-        run: |
-          set -euo pipefail
-          shopt -s nullglob
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-          # Collect release directories, e.g. releases/golem_v1-1/, releases/golem_v2-0/
-          release_dirs=(releases/*/)
+#       - name: Update stable aliases to latest release
+#         shell: bash
+#         run: |
+#           set -euo pipefail
+#           shopt -s nullglob
 
-          if [ ${#release_dirs[@]} -eq 0 ]; then
-            echo "ERROR: No release directories found under releases/"
-            exit 1
-          fi
+#           # Collect release directories, e.g. releases/v1-1/, releases/v2-0/
+#           release_dirs=(releases/*/)
 
-          # Pick the latest release directory (version-aware sort)
-          latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
-          latest_dir="${latest_dir%/}"
-          echo "Latest release directory: $latest_dir"
+#           if [ ${#release_dirs[@]} -eq 0 ]; then
+#             echo "ERROR: No release directories found under releases/"
+#             exit 1
+#           fi
 
-          # Find its ttl/html, excluding backups (e.g. .ttl.bak)
-          latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
-          latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
+#           # Pick the latest release directory (version-aware sort)
+#           latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
+#           latest_dir="${latest_dir%/}"
+#           echo "Latest release directory: $latest_dir"
 
-          if [ -z "$latest_ttl" ]; then
-            echo "ERROR: No .ttl file found in $latest_dir"
-            exit 1
-          fi
-          if [ -z "$latest_html" ]; then
-            echo "ERROR: No .html file found in $latest_dir"
-            exit 1
-          fi
+#           # Find its ttl/rdf/jsonld/html
+#           latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
+#           latest_rdf=$(find "$latest_dir" -maxdepth 1 -type f -name '*.rdf' | sort -V | tail -n 1)
+#           latest_jsonld=$(find "$latest_dir" -maxdepth 1 -type f -name '*.jsonld' | sort -V | tail -n 1)
+#           latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
 
-          echo "Latest TTL:  $latest_ttl"
-          echo "Latest HTML: $latest_html"
+#           if [ -z "$latest_ttl" ]; then
+#             echo "ERROR: No .ttl file found in $latest_dir"
+#             exit 1
+#           fi
 
-          cp "$latest_ttl" golem.ttl
-          cp "$latest_html" golem.html
+#           if [ -z "$latest_rdf" ]; then
+#             echo "ERROR: No .rdf file found in $latest_dir"
+#             exit 1
+#           fi
 
-      - name: Commit updated aliases
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add golem.ttl golem.html
-          git commit -m "Auto-update stable ontology aliases" || echo "No changes to commit"
-          git push
+#           if [ -z "$latest_jsonld" ]; then
+#             echo "ERROR: No .jsonld file found in $latest_dir"
+#             exit 1
+#           fi
+
+#           if [ -z "$latest_html" ]; then
+#             echo "ERROR: No .html file found in $latest_dir"
+#             exit 1
+#           fi
+
+#           echo "Latest TTL:      $latest_ttl"
+#           echo "Latest RDF:      $latest_rdf"
+#           echo "Latest JSON-LD:  $latest_jsonld"
+#           echo "Latest HTML:     $latest_html"
+
+#           cp "$latest_ttl" current/golem.ttl
+#           cp "$latest_rdf" current/golem.rdf
+#           cp "$latest_jsonld" current/golem.jsonld
+#           cp "$latest_html" current/golem.html
+
+#       - name: Commit updated aliases
+#         run: |
+#           git config user.name "github-actions"
+#           git config user.email "actions@github.com"
+#           git add current/golem.ttl current/golem.rdf current/golem.jsonld current/golem.html
+#           git commit -m "Auto-update stable ontology aliases" || echo "No changes to commit"
+#           git push

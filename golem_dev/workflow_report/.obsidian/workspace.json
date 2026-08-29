@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4927c66a8fecee07",
+            "id": "3dbc34b851a1b1d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -185,16 +185,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "4927c66a8fecee07",
+  "active": "3dbc34b851a1b1d7",
   "lastOpenFiles": [
-    "Class Diagram (Mermaid).md",
-    "task1.3_consistency_assessment/6_24_08.md",
-    "task1.1_pre_process_normalization/report.md",
-    "task1.2_imports_management/report.md",
-    "task1.3_consistency_assessment/1_25_06.md",
-    "task1.3_consistency_assessment/2_07_07.md",
-    "task1.3_consistency_assessment/3_17_07.md",
+    "task1.3_consistency_assessment/5_17_08.md",
     "task1.3_consistency_assessment/4_05_08.md",
-    "task1.3_consistency_assessment/5_17_08.md"
+    "task1.3_consistency_assessment/3_17_07.md",
+    "task1.3_consistency_assessment/2_07_07.md",
+    "task1.3_consistency_assessment/1_25_06.md",
+    "task1.2_imports_management/report.md",
+    "task1.1_pre_process_normalization/report.md",
+    "task1.3_consistency_assessment/6_24_08.md",
+    "Class Diagram (Mermaid).md",
+    "class diagrams.md"
   ]
 }
