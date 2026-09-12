@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "1efb61a0f036283c",
+    "type": "split",
+    "children": [
+      {
+        "id": "db0ebb3d95f81498",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3dbc34b851a1b1d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "task1.3_consistency_assessment/7_01_09.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "7_01_09"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5c1159d31c3d5a27",
+    "type": "split",
+    "children": [
+      {
+        "id": "c75ecaec78a39b8d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7203e44603919135",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8d23347f018fb7b6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "8027edcc402b9346",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 216.7804946899414
+  },
+  "right": {
+    "id": "42598da63e1053a6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebf4c3885bda4475",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "38a03a14e08d9267",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "task1.3_consistency_assessment/4_05_08.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 4_05_08"
+            }
+          },
+          {
+            "id": "522fc5ee322a89e4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "task1.3_consistency_assessment/4_05_08.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 4_05_08"
+            }
+          },
+          {
+            "id": "875a7b14387ba220",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0f5be2edc5318bd4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "b60d0b0fcbe6a147",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "task1.3_consistency_assessment/4_05_08.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 4_05_08"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "3dbc34b851a1b1d7",
+  "lastOpenFiles": [
+    "task1.3_consistency_assessment/6_24_08.md",
+    "task1.3_consistency_assessment/7_01_09.md",
+    "task1.3_consistency_assessment/5_17_08.md",
+    "task1.3_consistency_assessment/4_05_08.md",
+    "task1.3_consistency_assessment/3_17_07.md",
+    "task1.3_consistency_assessment/2_07_07.md",
+    "task1.3_consistency_assessment/1_25_06.md",
+    "task1.2_imports_management/report.md",
+    "task1.1_pre_process_normalization/report.md",
+    "Class Diagram (Mermaid).md",
+    "class diagrams.md"
+  ]
+}

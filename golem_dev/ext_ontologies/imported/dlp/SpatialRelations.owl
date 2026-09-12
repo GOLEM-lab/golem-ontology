@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dol="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#"
+    xmlns:edns="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:spa="http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#"
+  xml:base="http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An Ontology of spatial relations, extending the location relations from DOLCE. OWL engineering by Aldo Gangemi.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imports: DOLCE-Lite</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >
+    &gt;397
+    </owl:versionInfo>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:ID="participant-place-of">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="participant-place"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="approximate-location-of"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="descriptive-place">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="approximate-location"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Approximate location of an endurant in a non-physical one. It assumes a shared region.AKA fiat-place.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="descriptive-place-of"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="p-spatial-location">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="p-spatial-location-of"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Analytical indirect location holding between perdurants and space regions.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="origin">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#approximate-location"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="material-place"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="place"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="origin-of"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The physical 'origin' of a physical endurant in the space region of the spatial quality of another physical endurant.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#approximate-location-of">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#spatio-temporal-particular"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#spatio-temporal-particular"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#approximate-location"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="place-of">
+    <rdfs:subPropertyOf rdf:resource="#approximate-location-of"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#place"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#material-place">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="material-place-of"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation of approximate location holding for physical endurants. It assumes a physical region that is shared by two physical endurants. Sharedness can be any mereotopological association, but no analytical definition can be done in OWL due to the lack of role value maps.</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#place"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#approximate-location"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#descriptive-place-of">
+    <rdfs:subPropertyOf rdf:resource="#approximate-location-of"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <owl:inverseOf rdf:resource="#descriptive-place"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="descriptive-origin-of">
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="#descriptive-place-of"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="descriptive-origin"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#approximate-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#descriptive-origin">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Original location of an endurant in a non-physical one. It assumes a shared region between the first and the depend-on of the second (see descriptive place).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <owl:inverseOf rdf:resource="#descriptive-origin-of"/>
+    <rdfs:subPropertyOf rdf:resource="#descriptive-place"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#approximate-location"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location-of"/>
+  <owl:ObjectProperty rdf:about="#origin-of">
+    <owl:inverseOf rdf:resource="#origin"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#material-place-of"/>
+    </rdfs:subPropertyOf>
+    <rdfs:subPropertyOf rdf:resource="#place-of"/>
+    <rdfs:subPropertyOf rdf:resource="#approximate-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="d-spatial-location">
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="d-spatial-location-of"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Analytical indirect location holding between non-physical endurants and space regions.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#d-spatial-location-of">
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location-of"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#non-physical-endurant"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <owl:inverseOf rdf:resource="#d-spatial-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#material-place-of">
+    <owl:inverseOf rdf:resource="#material-place"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="#place-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+    <rdfs:subPropertyOf rdf:resource="#approximate-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#p-spatial-location-of">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location-of"/>
+    <owl:inverseOf rdf:resource="#p-spatial-location"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#approximate-location">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A  spatial location relation holding between any two entities but regions. It assumes a mereotopological association (part, connection, overlaps, etc.) between shared spatial regions.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#spatio-temporal-particular"/>
+    <owl:inverseOf rdf:resource="#approximate-location-of"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#spatio-temporal-particular"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#participant-place">
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The place of a perdurant as provided by a reference region at which the spatial quality of a certain endurant is q-located.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#approximate-location"/>
+    <owl:inverseOf rdf:resource="#participant-place-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-location"/>
+  <owl:ObjectProperty rdf:ID="spatial-location-of">
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="spatial-location"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation-i"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location-of"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#place">
+    <rdfs:subPropertyOf rdf:resource="#approximate-location"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#endurant"/>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <owl:inverseOf rdf:resource="#place-of"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A relation of approximate location holding between any endurant and physical endurants. It assumes a shared physical region. Sharedness can be any mereotopological association, but no analytical definition can be done in OWL due to the lack of role value maps.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#spatial-location">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Analytical location holding between physical endurants and spatial regions.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#space-region"/>
+    <owl:inverseOf rdf:resource="#spatial-location-of"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-location"/>
+    <rdfs:domain rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#physical-endurant"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#mediated-relation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#exact-location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#generic-location"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
