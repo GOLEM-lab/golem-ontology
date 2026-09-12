@@ -7,7 +7,7 @@
 #       - fix/pid-resolution
 #     paths:
 #       - 'releases/**/*.ttl'
-#       - 'releases/**/*.rdf'
+#       - 'releases/**/*.owl'
 #       - 'releases/**/*.jsonld'
 #       - 'releases/**/*.html'
 #   workflow_dispatch:
@@ -42,9 +42,9 @@
 #           latest_dir="${latest_dir%/}"
 #           echo "Latest release directory: $latest_dir"
 
-#           # Find its ttl/rdf/jsonld/html
+#           # Find its ttl/owl/jsonld/html
 #           latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
-#           latest_rdf=$(find "$latest_dir" -maxdepth 1 -type f -name '*.rdf' | sort -V | tail -n 1)
+#           latest_owl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.owl' | sort -V | tail -n 1)
 #           latest_jsonld=$(find "$latest_dir" -maxdepth 1 -type f -name '*.jsonld' | sort -V | tail -n 1)
 #           latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
 
@@ -53,8 +53,8 @@
 #             exit 1
 #           fi
 
-#           if [ -z "$latest_rdf" ]; then
-#             echo "ERROR: No .rdf file found in $latest_dir"
+#           if [ -z "$latest_owl" ]; then
+#             echo "ERROR: No .owl file found in $latest_dir"
 #             exit 1
 #           fi
 
@@ -69,12 +69,12 @@
 #           fi
 
 #           echo "Latest TTL:      $latest_ttl"
-#           echo "Latest RDF:      $latest_rdf"
+#           echo "Latest OWL:      $latest_owl"
 #           echo "Latest JSON-LD:  $latest_jsonld"
 #           echo "Latest HTML:     $latest_html"
 
 #           cp "$latest_ttl" current/golem.ttl
-#           cp "$latest_rdf" current/golem.rdf
+#           cp "$latest_owl" current/golem.owl
 #           cp "$latest_jsonld" current/golem.jsonld
 #           cp "$latest_html" current/golem.html
 
@@ -82,6 +82,6 @@
 #         run: |
 #           git config user.name "github-actions"
 #           git config user.email "actions@github.com"
-#           git add current/golem.ttl current/golem.rdf current/golem.jsonld current/golem.html
+#           git add current/golem.ttl current/golem.owl current/golem.jsonld current/golem.html
 #           git commit -m "Auto-update stable ontology aliases" || echo "No changes to commit"
 #           git push
