@@ -1,4 +1,4 @@
-# little change for testing
+# little change for testing 2
 
 @prefix : <https://w3id.org/golem/ontology#> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
