@@ -143,13 +143,11 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 4. Prepare PyLODE
-      #
-      # The pylode-to-pages action expects pylode.css to exist in
-      # the directory containing the ontology it is processing.
+      # 4. Prepare PyLODE CSS
       #
       # The authoritative/shared CSS remains at the repository root.
-      # This copy is only needed by the PyLODE build.
+      # A copy is placed in the release directory because the
+      # generated HTML refers to pylode.css relatively.
       # ------------------------------------------------------------
 
       - name: Prepare PyLODE CSS
@@ -168,31 +166,71 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 5. Generate PyLODE documentation
+      # 5. Set up Python for PyLODE
       #
-      # Only the release associated with the changed TTL is processed.
+      # PyLODE is installed directly rather than through the
+      # pylode-to-pages GitHub Action.
+      #
+      # The version is pinned to avoid incompatible dependency
+      # changes in future releases.
+      # ------------------------------------------------------------
+
+      - name: Set up Python for PyLODE
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install PyLODE
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --upgrade pip
+          python -m pip install "pylode==3.2.1"
+
+          echo "Installed PyLODE version:"
+          pylode --version
+
+
+      # ------------------------------------------------------------
+      # 6. Generate PyLODE documentation
+      #
+      # Only the release associated with the changed TTL is
+      # processed.
       # ------------------------------------------------------------
 
       - name: Generate PyLODE documentation
-        uses: vliz-be-opsci/pylode-to-pages@v0
-        with:
-          baseuri: https://ontology.golemlab.eu
-          nsfolder: ./${{ steps.release.outputs.release_dir }}
-          outfolder: ./${{ steps.release.outputs.release_dir }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          release_dir="${{ steps.release.outputs.release_dir }}"
+          ttl_filename="${{ steps.release.outputs.ttl_filename }}"
+          ttl_file="${{ steps.release.outputs.ttl_file }}"
+
+          ontology_name="${ttl_filename%.ttl}"
+          html_file="$release_dir/$ontology_name.html"
+
+          echo "Generating PyLODE documentation:"
+          echo "  TTL:  $ttl_file"
+          echo "  HTML: $html_file"
+
+          pylode "$ttl_file" -o "$html_file"
+
+          if [ ! -f "$html_file" ]; then
+            echo "ERROR: PyLODE did not generate $html_file"
+            exit 1
+          fi
+
+          echo "Generated:"
+          ls -lh "$html_file"
 
 
       # ------------------------------------------------------------
-      # 6. Clean PyLODE auxiliary output
+      # 7. Clean PyLODE auxiliary output
       #
-      # PyLODE creates:
-      #
-      #   *.ttl.bak
-      #   <ontology-name>/<ontology-name>.html
-      #   <ontology-name>/pylode.css
-      #   index.html
-      #
-      # We keep the main generated HTML and the release-level CSS.
-      # The nested duplicate documentation is unnecessary.
+      # Remove files that are not part of the intended release
+      # publication structure.
       # ------------------------------------------------------------
 
       - name: Clean PyLODE auxiliary output
@@ -205,21 +243,20 @@ jobs:
 
           ontology_name="${ttl_filename%.ttl}"
 
-          # Remove PyLODE backup of the source TTL.
+          # Remove PyLODE backup of the source TTL, if generated.
           rm -f "$release_dir"/*.ttl.bak
 
-          # Remove nested duplicate HTML/CSS directory.
+          # Remove nested duplicate documentation directory, if generated.
           rm -rf "$release_dir/$ontology_name"
 
-          # Remove PyLODE-generated release index.
+          # Remove PyLODE-generated release index, if generated.
           rm -f "$release_dir/index.html"
 
 
       # ------------------------------------------------------------
-      # 7. Determine the newest release
+      # 8. Determine the newest release
       #
-      # This preserves the version-aware logic from the previous
-      # update-stable-alias workflow.
+      # This preserves the version-aware stable/current logic.
       # ------------------------------------------------------------
 
       - name: Find latest release
@@ -245,7 +282,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 8. Update stable aliases
+      # 9. Update stable aliases
       #
       # The newest release becomes the stable/current version.
       # Nothing is committed yet.
@@ -295,19 +332,17 @@ jobs:
           cp "$latest_jsonld" current/golem.jsonld
           cp "$latest_html" current/golem.html
 
-          # current/golem.html refers to pylode.css with a relative
-          # path, so current/ needs its own copy.
+          # current/golem.html refers to pylode.css relatively.
           cp pylode.css current/pylode.css
 
 
       # ------------------------------------------------------------
-      # 9. Commit generated artifacts to the test branch
+      # 10. Commit generated release artifacts to the test branch
       #
       # This is the single automated commit.
       #
       # The workflow is triggered only by changes to release TTL
-      # files. The generated files do not independently trigger
-      # another run through this path filter.
+      # files, so these generated files do not trigger another run.
       # ------------------------------------------------------------
 
       - name: Commit generated release artifacts
@@ -329,7 +364,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 10. Prepare GitHub Pages publication tree
+      # 11. Prepare GitHub Pages publication tree
       #
       # Only public material is copied.
       #
@@ -369,7 +404,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 11. Deploy publication tree to gh-pages
+      # 12. Deploy publication tree to gh-pages-test
       # ------------------------------------------------------------
 
       - name: Deploy to GitHub Pages
