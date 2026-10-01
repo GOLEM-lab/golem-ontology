@@ -77,15 +77,12 @@ jobs:
             before="${{ github.event.before }}"
             after="${{ github.event.after }}"
 
-            # On the first push of a branch, GitHub uses an all-zero
-            # SHA as github.event.before. There is no Git object to diff
-            # against in that case.
             if [ "$before" = "0000000000000000000000000000000000000000" ]; then
               echo "First push of this branch detected."
-              echo "Using release TTL files present in the pushed commit."
 
               mapfile -t ttl_files < <(
-                git ls-tree -r --name-only "$after" -- 'releases/**/*.ttl'
+                git ls-tree -r --name-only "$after" |
+                grep '^releases/[^/]*/[^/]*\.ttl$' || true
               )
 
             else
@@ -94,15 +91,13 @@ jobs:
               echo "  after:  $after"
 
               mapfile -t ttl_files < <(
-                git diff --name-only \
-                  "$before" \
-                  "$after" \
-                  -- 'releases/**/*.ttl'
+                git diff --name-only "$before" "$after" |
+                grep '^releases/[^/]*/[^/]*\.ttl$' || true
               )
             fi
 
             if [ ${#ttl_files[@]} -eq 0 ]; then
-              echo "ERROR: No release TTL found."
+              echo "ERROR: No changed release TTL found."
               exit 1
             fi
 
@@ -125,7 +120,7 @@ jobs:
 
           echo "release_dir=$release_dir" >> "$GITHUB_OUTPUT"
           echo "ttl_file=$ttl_file" >> "$GITHUB_OUTPUT"
-          echo "ttl_filename=$ttl_filename"
+          echo "ttl_filename=$ttl_filename" >> "$GITHUB_OUTPUT"
 
 
       # ------------------------------------------------------------
