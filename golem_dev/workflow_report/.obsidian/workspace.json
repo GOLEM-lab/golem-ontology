@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "be735924905c1f05",
+        "id": "fe24451a61b41173",
         "type": "tabs",
         "children": [
           {
-            "id": "95ad3ded98318b8e",
+            "id": "f60b8f1f59a32073",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -185,7 +185,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "95ad3ded98318b8e",
+  "active": "f60b8f1f59a32073",
   "lastOpenFiles": [
     "task1.3_consistency_assessment/9_02_10.md",
     "task1.3_consistency_assessment/8_18_09.md",
