@@ -3,7 +3,7 @@
 # on:
 #   push:
 #     branches:
-#       #- gh-pages
+#       - main
 #       - fix/pid-resolution
 #     paths:
 #       - 'releases/**/*.ttl'
