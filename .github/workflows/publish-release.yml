@@ -63,20 +63,46 @@ jobs:
               exit 1
             fi
 
+            if [ ${#ttl_files[@]} -gt 1 ]; then
+              echo "ERROR: More than one TTL file found in $latest_dir:"
+              printf '  %s\n' "${ttl_files[@]}"
+              exit 1
+            fi
+
             ttl_file="${ttl_files[0]}"
 
           else
             echo "Workflow triggered by push."
 
-            git diff --name-only \
-              "${{ github.event.before }}" \
-              "${{ github.event.after }}" \
-              -- 'releases/**/*.ttl' > changed_ttls.txt
+            before="${{ github.event.before }}"
+            after="${{ github.event.after }}"
 
-            mapfile -t ttl_files < changed_ttls.txt
+            # On the first push of a branch, GitHub uses an all-zero
+            # SHA as github.event.before. There is no Git object to diff
+            # against in that case.
+            if [ "$before" = "0000000000000000000000000000000000000000" ]; then
+              echo "First push of this branch detected."
+              echo "Using release TTL files present in the pushed commit."
+
+              mapfile -t ttl_files < <(
+                git ls-tree -r --name-only "$after" -- 'releases/**/*.ttl'
+              )
+
+            else
+              echo "Comparing:"
+              echo "  before: $before"
+              echo "  after:  $after"
+
+              mapfile -t ttl_files < <(
+                git diff --name-only \
+                  "$before" \
+                  "$after" \
+                  -- 'releases/**/*.ttl'
+              )
+            fi
 
             if [ ${#ttl_files[@]} -eq 0 ]; then
-              echo "ERROR: No changed release TTL found."
+              echo "ERROR: No release TTL found."
               exit 1
             fi
 
