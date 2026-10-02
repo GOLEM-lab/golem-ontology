@@ -1,362 +1,392 @@
-# name: Publish GOLEM release
+name: Publish GOLEM release
 
-# on:
-#   push:
-#     branches:
-#       - main
-#     paths:
-#       - 'releases/**/*.ttl'
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'releases/**/*.ttl'
 
-#   workflow_dispatch:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-release
+  cancel-in-progress: false
 
-# permissions:
-#   contents: write
+jobs:
+  publish-release:
+    runs-on: ubuntu-latest
 
-# concurrency:
-#   group: publish-release
-#   cancel-in-progress: false
+    steps:
 
-# jobs:
-#   publish-release:
-#     runs-on: ubuntu-latest
+      # ------------------------------------------------------------
+      # 1. Checkout repository
+      # ------------------------------------------------------------
 
-#     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-#       # ------------------------------------------------------------
-#       # 1. Checkout repository
-#       # ------------------------------------------------------------
 
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-#         with:
-#           fetch-depth: 0
+      # ------------------------------------------------------------
+      # 2. Identify the release TTL that triggered the workflow
+      # ------------------------------------------------------------
 
+      - name: Identify changed release
+        id: release
+        shell: bash
+        run: |
+          set -euo pipefail
 
-#       # ------------------------------------------------------------
-#       # 2. Identify the release TTL that triggered the workflow
-#       # ------------------------------------------------------------
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Workflow manually triggered."
 
-#       - name: Identify changed release
-#         id: release
-#         shell: bash
-#         run: |
-#           set -euo pipefail
+            # For a manual run, use the newest release directory.
+            release_dirs=(releases/*/)
 
-#           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-#             echo "Workflow manually triggered."
+            if [ ${#release_dirs[@]} -eq 0 ]; then
+              echo "ERROR: No release directories found under releases/"
+              exit 1
+            fi
 
-#             # For a manual run, use the newest release directory.
-#             release_dirs=(releases/*/)
+            latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
+            latest_dir="${latest_dir%/}"
 
-#             if [ ${#release_dirs[@]} -eq 0 ]; then
-#               echo "ERROR: No release directories found under releases/"
-#               exit 1
-#             fi
+            ttl_files=("$latest_dir"/*.ttl)
 
-#             latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
-#             latest_dir="${latest_dir%/}"
+            if [ ${#ttl_files[@]} -eq 0 ]; then
+              echo "ERROR: No TTL file found in $latest_dir"
+              exit 1
+            fi
 
-#             ttl_files=("$latest_dir"/*.ttl)
+            if [ ${#ttl_files[@]} -gt 1 ]; then
+              echo "ERROR: More than one TTL file found in $latest_dir:"
+              printf '  %s\n' "${ttl_files[@]}"
+              exit 1
+            fi
 
-#             if [ ${#ttl_files[@]} -eq 0 ]; then
-#               echo "ERROR: No TTL file found in $latest_dir"
-#               exit 1
-#             fi
+            ttl_file="${ttl_files[0]}"
 
-#             ttl_file="${ttl_files[0]}"
+          else
+            echo "Workflow triggered by push."
 
-#           else
-#             echo "Workflow triggered by push."
+            before="${{ github.event.before }}"
+            after="${{ github.event.after }}"
 
-#             git diff --name-only \
-#               "${{ github.event.before }}" \
-#               "${{ github.event.after }}" \
-#               -- 'releases/**/*.ttl' > changed_ttls.txt
-
-#             mapfile -t ttl_files < changed_ttls.txt
+            if [ "$before" = "0000000000000000000000000000000000000000" ]; then
+              echo "First push of this branch detected."
 
-#             if [ ${#ttl_files[@]} -eq 0 ]; then
-#               echo "ERROR: No changed release TTL found."
-#               exit 1
-#             fi
-
-#             if [ ${#ttl_files[@]} -gt 1 ]; then
-#               echo "ERROR: More than one release TTL changed in this push:"
-#               printf '  %s\n' "${ttl_files[@]}"
-#               echo
-#               echo "Please publish one release TTL at a time."
-#               exit 1
-#             fi
+              mapfile -t ttl_files < <(
+                git ls-tree -r --name-only "$after" |
+                grep '^releases/[^/]*/[^/]*\.ttl$' || true
+              )
 
-#             ttl_file="${ttl_files[0]}"
-#           fi
+            else
+              echo "Comparing:"
+              echo "  before: $before"
+              echo "  after:  $after"
 
-#           release_dir=$(dirname "$ttl_file")
-#           ttl_filename=$(basename "$ttl_file")
+              mapfile -t ttl_files < <(
+                git diff --name-only "$before" "$after" |
+                grep '^releases/[^/]*/[^/]*\.ttl$' || true
+              )
+            fi
 
-#           echo "Release directory: $release_dir"
-#           echo "TTL file:          $ttl_filename"
+            if [ ${#ttl_files[@]} -eq 0 ]; then
+              echo "ERROR: No changed release TTL found."
+              exit 1
+            fi
 
-#           echo "release_dir=$release_dir" >> "$GITHUB_OUTPUT"
-#           echo "ttl_file=$ttl_file" >> "$GITHUB_OUTPUT"
-#           echo "ttl_filename=$ttl_filename"
-
-
-#       # ------------------------------------------------------------
-#       # 3. Generate RDF/XML and JSON-LD serializations
-#       #
-#       # Turtle is the authoritative source.
-#       #
-#       # The existing build script resolves the release directory
-#       # from the ontology filename.
-#       # ------------------------------------------------------------
-
-#       - name: Generate RDF serializations
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           ttl_filename="${{ steps.release.outputs.ttl_filename }}"
-
-#           ./scripts/serializer/build.sh "$ttl_filename"
-
-
-#       # ------------------------------------------------------------
-#       # 4. Prepare PyLODE
-#       #
-#       # The pylode-to-pages action expects pylode.css to exist in
-#       # the directory containing the ontology it is processing.
-#       #
-#       # The authoritative/shared CSS remains at the repository root.
-#       # This copy is only needed by the PyLODE build.
-#       # ------------------------------------------------------------
+            if [ ${#ttl_files[@]} -gt 1 ]; then
+              echo "ERROR: More than one release TTL changed in this push:"
+              printf '  %s\n' "${ttl_files[@]}"
+              echo
+              echo "Please publish one release TTL at a time."
+              exit 1
+            fi
 
-#       - name: Prepare PyLODE CSS
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           release_dir="${{ steps.release.outputs.release_dir }}"
+            ttl_file="${ttl_files[0]}"
+          fi
 
-#           if [ ! -f "pylode.css" ]; then
-#             echo "ERROR: Root pylode.css does not exist."
-#             exit 1
-#           fi
+          release_dir=$(dirname "$ttl_file")
+          ttl_filename=$(basename "$ttl_file")
 
-#           cp "pylode.css" "$release_dir/pylode.css"
-
-
-#       # ------------------------------------------------------------
-#       # 5. Generate PyLODE documentation
-#       #
-#       # Only the release associated with the changed TTL is processed.
-#       # ------------------------------------------------------------
-
-#       - name: Generate PyLODE documentation
-#         uses: vliz-be-opsci/pylode-to-pages@v0
-#         with:
-#           baseuri: https://ontology.golemlab.eu
-#           nsfolder: ./${{ steps.release.outputs.release_dir }}
-#           outfolder: ./${{ steps.release.outputs.release_dir }}
-
-
-#       # ------------------------------------------------------------
-#       # 6. Clean PyLODE auxiliary output
-#       #
-#       # PyLODE creates:
-#       #
-#       #   *.ttl.bak
-#       #   <ontology-name>/<ontology-name>.html
-#       #   <ontology-name>/pylode.css
-#       #   index.html
-#       #
-#       # We keep the main generated HTML and the release-level CSS.
-#       # The nested duplicate documentation is unnecessary.
-#       # ------------------------------------------------------------
-
-#       - name: Clean PyLODE auxiliary output
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           release_dir="${{ steps.release.outputs.release_dir }}"
-#           ttl_filename="${{ steps.release.outputs.ttl_filename }}"
-
-#           ontology_name="${ttl_filename%.ttl}"
-
-#           # Remove PyLODE backup of the source TTL.
-#           rm -f "$release_dir"/*.ttl.bak
-
-#           # Remove nested duplicate HTML/CSS directory.
-#           rm -rf "$release_dir/$ontology_name"
-
-#           # Remove PyLODE-generated release index.
-#           rm -f "$release_dir/index.html"
-
-
-#       # ------------------------------------------------------------
-#       # 7. Determine the newest release
-#       #
-#       # This preserves the version-aware logic from the previous
-#       # update-stable-alias workflow.
-#       # ------------------------------------------------------------
-
-#       - name: Find latest release
-#         id: latest
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-#           shopt -s nullglob
-
-#           release_dirs=(releases/*/)
-
-#           if [ ${#release_dirs[@]} -eq 0 ]; then
-#             echo "ERROR: No release directories found under releases/"
-#             exit 1
-#           fi
-
-#           latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
-#           latest_dir="${latest_dir%/}"
-
-#           echo "Latest release directory: $latest_dir"
-
-#           echo "latest_dir=$latest_dir" >> "$GITHUB_OUTPUT"
-
-
-#       # ------------------------------------------------------------
-#       # 8. Update stable aliases
-#       #
-#       # The newest release becomes the stable/current version.
-#       # Nothing is committed yet.
-#       # ------------------------------------------------------------
-
-#       - name: Update stable aliases
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           latest_dir="${{ steps.latest.outputs.latest_dir }}"
-
-#           latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
-#           latest_owl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.owl' | sort -V | tail -n 1)
-#           latest_jsonld=$(find "$latest_dir" -maxdepth 1 -type f -name '*.jsonld' | sort -V | tail -n 1)
-#           latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
-
-#           if [ -z "$latest_ttl" ]; then
-#             echo "ERROR: No .ttl file found in $latest_dir"
-#             exit 1
-#           fi
-
-#           if [ -z "$latest_owl" ]; then
-#             echo "ERROR: No .owl file found in $latest_dir"
-#             exit 1
-#           fi
-
-#           if [ -z "$latest_jsonld" ]; then
-#             echo "ERROR: No .jsonld file found in $latest_dir"
-#             exit 1
-#           fi
-
-#           if [ -z "$latest_html" ]; then
-#             echo "ERROR: No .html file found in $latest_dir"
-#             exit 1
-#           fi
-
-#           echo "Latest TTL:      $latest_ttl"
-#           echo "Latest OWL:      $latest_owl"
-#           echo "Latest JSON-LD:  $latest_jsonld"
-#           echo "Latest HTML:     $latest_html"
-
-#           mkdir -p current
-
-#           cp "$latest_ttl" current/golem.ttl
-#           cp "$latest_owl" current/golem.owl
-#           cp "$latest_jsonld" current/golem.jsonld
-#           cp "$latest_html" current/golem.html
-
-#           # current/golem.html refers to pylode.css with a relative
-#           # path, so current/ needs its own copy.
-#           cp pylode.css current/pylode.css
-
-
-#       # ------------------------------------------------------------
-#       # 9. Commit generated artifacts to main
-#       #
-#       # This is the single automated commit.
-#       #
-#       # The workflow is triggered only by changes to release TTL
-#       # files. The generated files do not independently trigger
-#       # another run through this path filter.
-#       # ------------------------------------------------------------
-
-#       - name: Commit generated release artifacts
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           git config user.name "github-actions[bot]"
-#           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-#           git add releases/ current/
-
-#           if git diff --cached --quiet; then
-#             echo "No generated changes to commit."
-#           else
-#             git commit -m "Publish GOLEM release"
-#             git push origin HEAD:main
-#           fi
-
-
-#       # ------------------------------------------------------------
-#       # 10. Prepare GitHub Pages publication tree
-#       #
-#       # Only public material is copied.
-#       #
-#       # Development material such as golem_dev/ and scripts/ is
-#       # deliberately excluded.
-#       # ------------------------------------------------------------
-
-#       - name: Prepare GitHub Pages site
-#         shell: bash
-#         run: |
-#           set -euo pipefail
-
-#           rm -rf public
-#           mkdir -p public
-
-#           # Public root files.
-#           cp index.html public/
-#           cp CNAME public/
-
-#           if [ -f .nojekyll ]; then
-#             cp .nojekyll public/
-#           else
-#             touch public/.nojekyll
-#           fi
-
-#           # Shared PyLODE stylesheet.
-#           cp pylode.css public/
-
-#           # Versioned releases.
-#           cp -a releases public/
-
-#           # Stable aliases.
-#           cp -a current public/
-
-#           echo "GitHub Pages publication tree:"
-#           find public -maxdepth 4 -type f | sort
-
-
-#       # ------------------------------------------------------------
-#       # 11. Deploy publication tree to gh-pages
-#       # ------------------------------------------------------------
-
-#       - name: Deploy to GitHub Pages
-#         uses: peaceiris/actions-gh-pages@v4
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_branch: gh-pages
-#           publish_dir: ./public
-#           enable_jekyll: false
-#           force_orphan: true
-#           commit_message: "Deploy GOLEM ontology site"
+          echo "Release directory: $release_dir"
+          echo "TTL file:          $ttl_filename"
+
+          echo "release_dir=$release_dir" >> "$GITHUB_OUTPUT"
+          echo "ttl_file=$ttl_file" >> "$GITHUB_OUTPUT"
+          echo "ttl_filename=$ttl_filename" >> "$GITHUB_OUTPUT"
+
+
+      # ------------------------------------------------------------
+      # 3. Generate RDF/XML and JSON-LD serializations
+      # ------------------------------------------------------------
+
+      - name: Generate RDF serializations
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ttl_filename="${{ steps.release.outputs.ttl_filename }}"
+
+          ./scripts/serializer/build.sh "$ttl_filename"
+
+
+      # ------------------------------------------------------------
+      # 4. Prepare PyLODE CSS
+      #
+      # The authoritative/shared CSS remains at the repository root.
+      # A copy is placed in the release directory because the
+      # generated HTML refers to pylode.css relatively.
+      # ------------------------------------------------------------
+
+      - name: Prepare PyLODE CSS
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          release_dir="${{ steps.release.outputs.release_dir }}"
+
+          if [ ! -f "pylode.css" ]; then
+            echo "ERROR: Root pylode.css does not exist."
+            exit 1
+          fi
+
+          cp "pylode.css" "$release_dir/pylode.css"
+
+
+      # ------------------------------------------------------------
+      # 5. Set up Python for PyLODE
+      #
+      # PyLODE is installed directly rather than through the
+      # pylode-to-pages GitHub Action.
+      #
+      # The version is pinned to avoid incompatible dependency
+      # changes in future releases.
+      # ------------------------------------------------------------
+
+      - name: Set up Python for PyLODE
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install PyLODE
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python -m pip install --upgrade pip
+          python -m pip install "pylode==3.2.1"
+
+          echo "Installed PyLODE version:"
+          pylode --version
+
+
+      # ------------------------------------------------------------
+      # 6. Generate PyLODE documentation
+      # ------------------------------------------------------------
+
+      - name: Generate PyLODE documentation
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          release_dir="${{ steps.release.outputs.release_dir }}"
+          ttl_filename="${{ steps.release.outputs.ttl_filename }}"
+          ttl_file="${{ steps.release.outputs.ttl_file }}"
+
+          ontology_name="${ttl_filename%.ttl}"
+          html_file="$release_dir/$ontology_name.html"
+
+          echo "Generating PyLODE documentation:"
+          echo "  TTL:  $ttl_file"
+          echo "  HTML: $html_file"
+
+          pylode "$ttl_file" -o "$html_file"
+
+          if [ ! -f "$html_file" ]; then
+            echo "ERROR: PyLODE did not generate $html_file"
+            exit 1
+          fi
+
+          echo "Generated:"
+          ls -lh "$html_file"
+
+
+      # ------------------------------------------------------------
+      # 7. Clean PyLODE auxiliary output
+      # ------------------------------------------------------------
+
+      - name: Clean PyLODE auxiliary output
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          release_dir="${{ steps.release.outputs.release_dir }}"
+          ttl_filename="${{ steps.release.outputs.ttl_filename }}"
+
+          ontology_name="${ttl_filename%.ttl}"
+
+          # Remove PyLODE backup of the source TTL, if generated.
+          rm -f "$release_dir"/*.ttl.bak
+
+          # Remove nested duplicate documentation directory, if generated.
+          rm -rf "$release_dir/$ontology_name"
+
+          # Remove PyLODE-generated release index, if generated.
+          rm -f "$release_dir/index.html"
+
+
+      # ------------------------------------------------------------
+      # 8. Determine the newest release
+      # ------------------------------------------------------------
+
+      - name: Find latest release
+        id: latest
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          release_dirs=(releases/*/)
+
+          if [ ${#release_dirs[@]} -eq 0 ]; then
+            echo "ERROR: No release directories found under releases/"
+            exit 1
+          fi
+
+          latest_dir=$(printf "%s\n" "${release_dirs[@]}" | sort -V | tail -n 1)
+          latest_dir="${latest_dir%/}"
+
+          echo "Latest release directory: $latest_dir"
+
+          echo "latest_dir=$latest_dir" >> "$GITHUB_OUTPUT"
+
+
+      # ------------------------------------------------------------
+      # 9. Update stable aliases
+      # ------------------------------------------------------------
+
+      - name: Update stable aliases
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          latest_dir="${{ steps.latest.outputs.latest_dir }}"
+
+          latest_ttl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.ttl' | sort -V | tail -n 1)
+          latest_owl=$(find "$latest_dir" -maxdepth 1 -type f -name '*.owl' | sort -V | tail -n 1)
+          latest_jsonld=$(find "$latest_dir" -maxdepth 1 -type f -name '*.jsonld' | sort -V | tail -n 1)
+          latest_html=$(find "$latest_dir" -maxdepth 1 -type f -name '*.html' | sort -V | tail -n 1)
+
+          if [ -z "$latest_ttl" ]; then
+            echo "ERROR: No .ttl file found in $latest_dir"
+            exit 1
+          fi
+
+          if [ -z "$latest_owl" ]; then
+            echo "ERROR: No .owl file found in $latest_dir"
+            exit 1
+          fi
+
+          if [ -z "$latest_jsonld" ]; then
+            echo "ERROR: No .jsonld file found in $latest_dir"
+            exit 1
+          fi
+
+          if [ -z "$latest_html" ]; then
+            echo "ERROR: No .html file found in $latest_dir"
+            exit 1
+          fi
+
+          echo "Latest TTL:      $latest_ttl"
+          echo "Latest OWL:      $latest_owl"
+          echo "Latest JSON-LD:  $latest_jsonld"
+          echo "Latest HTML:     $latest_html"
+
+          mkdir -p current
+
+          cp "$latest_ttl" current/golem.ttl
+          cp "$latest_owl" current/golem.owl
+          cp "$latest_jsonld" current/golem.jsonld
+          cp "$latest_html" current/golem.html
+
+          # current/golem.html refers to pylode.css relatively.
+          cp pylode.css current/pylode.css
+
+
+      # ------------------------------------------------------------
+      # 10. Commit generated release artifacts
+      # ------------------------------------------------------------
+
+      - name: Commit generated release artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add releases/ current/
+
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Publish GOLEM release"
+            git push origin HEAD:main
+          fi
+
+
+      # ------------------------------------------------------------
+      # 11. Prepare GitHub Pages publication tree
+      # ------------------------------------------------------------
+
+      - name: Prepare GitHub Pages site
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf public
+          mkdir -p public
+
+          # Public root files.
+          cp index.html public/
+          cp CNAME public/
+
+          if [ -f .nojekyll ]; then
+            cp .nojekyll public/
+          else
+            touch public/.nojekyll
+          fi
+
+          # Shared PyLODE stylesheet.
+          cp pylode.css public/
+
+          # Versioned releases.
+          cp -a releases public/
+
+          # Stable aliases.
+          cp -a current public/
+
+          echo "GitHub Pages publication tree:"
+          find public -maxdepth 4 -type f | sort
+
+
+      # ------------------------------------------------------------
+      # 12. Deploy publication tree to gh-pages
+      # ------------------------------------------------------------
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          enable_jekyll: false
+          force_orphan: true
+          commit_message: "Deploy GOLEM ontology site"
