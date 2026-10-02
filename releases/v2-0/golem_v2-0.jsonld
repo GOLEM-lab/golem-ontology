@@ -42,119 +42,242 @@
   },
   "@graph": [
     {
-      "@id": "golem:G12_Setting",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
+      "@id": "dlp_extDnS:rational-physical-object",
+      "rdfs:comment": "In this ontology, a rational object is encoded as having the ability to internally represent meta-descriptions (descriptions that have other descriptions playing roles used by them). Other theories of rational agency assume desires and intentions for these objects, but in principle any agent can have desires and intentions: the very difference seems to be the ability to choose among different desires or intentions by going 'meta-level'."
+    },
+    {
+      "@id": "rdfs:member",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": [
+        "A member of the subject resource.",
+        "In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula or syuzhet (G7)."
       ],
+      "rdfs:isDefinedBy": {
+        "@id": "rdfs:"
+      },
+      "rdfs:label": "member",
+      "skos:example": "The fabula of Battle of Hogwarts in Harry Potter and the Deathly Hallows orders events as follows:\nrdf:_1 Voldemort casts the \"Avada Kedavra\" curse.\nrdf:_2 Harry casts \"Expelliarmus\"\nrdf:_3 The spells collide in midair, etc."
+    },
+    {
+      "@id": "ecrm:P141_assigned",
+      "@type": "owl:ObjectProperty",
+      "skos:example": [
+        "Relationship assignment for Ron and Hermione (E13) assigned Ron (G1) [to romantic love between Ron and Hermione (G4)].",
+        "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned “friendship” (E55) [to the work Harry Potter and the Philosopher's Stone (F1)]."
+      ]
+    },
+    {
+      "@id": "golem:G3_Psychological_State",
+      "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Setting is the narrative universe in which a story unfolds, encompassing the spatial, cultural, and social contexts that shape characters and events. It defines the situation and surroundings relevant to the narrative. Defining a setting for a Work is useful for its comparative and historical analysis with respect to other works. It is particularly apt to specify differences between canonical and fanfiction works that have Alternate Universe settings."
+        "@value": "A psychological state is a temporal mental condition that may change over time but possesses relatively constant qualities, such as emotions, motivations, beliefs, and goals."
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "G12 Setting"
+        "@value": "G3 Psychological State"
       },
       "rdfs:subClassOf": [
         {
-          "@id": "dlp_extDnS:situation"
+          "@id": "dol:state"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb24"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb53"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb25"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb54"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb26"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb58"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb27"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb28"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb29"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb62"
         }
       ],
-      "skos:example": "The Wizarding World for the Harry Potter novels. \nThe “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle-class Dublin\" (Ryan, 2015)."
+      "skos:example": "Ron's jealousy (Yule Ball).\nIn the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for Hermione and his insecurity. Seeing Hermione arriving at the ball with Viktor Krum, Ron lashes out and criticizes Hermione. His anger reveals his jealousy (chapter 23 of Harry Potter and The Goblet of Fire)."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb24",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb53",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:satisfies"
-      },
-      "owl:someValuesFrom": {
-        "@id": "lrmoo:F1_Work"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb25",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting-for"
-      },
-      "owl:someValuesFrom": {
-        "@id": "dol:time-interval"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb26",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting-for"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G13_Narrative_Location"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb27",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting-for"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G16_Object"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb28",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting-for"
+        "@id": "dlp_funct:state-of"
       },
       "owl:someValuesFrom": {
         "@id": "golem:G1_Character"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb29",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb54",
       "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting-for"
+      "owl:allValuesFrom": {
+        "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb55"
       },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
+      "owl:onProperty": {
+        "@id": "dlp_temp:follows"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb55",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "golem:G3_Psychological_State"
+          },
+          {
+            "@id": "golem:G5_Narrative_Event"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb58",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb59"
+      },
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-includes"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb59",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "golem:G3_Psychological_State"
+          },
+          {
+            "@id": "golem:G5_Narrative_Event"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb62",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb63"
+      },
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-overlaps"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb63",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "golem:G3_Psychological_State"
+          },
+          {
+            "@id": "golem:G5_Narrative_Event"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "dlp_extDnS:modal-target",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, it relates a narrative function (G10) or narrative role (G11) to their target sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to specify the relationship roles (G6) of a social relationship (G4).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "modal target"
+      }
+    },
+    {
+      "@id": "golem:GP0_has_feature",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "golem:GP0i_is_feature_of"
+      },
+      "rdfs:comment": "Indicates that a narrative or character has certain features.",
+      "rdfs:domain": {
+        "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb1"
+      },
+      "rdfs:label": "has feature",
+      "rdfs:range": {
+        "@id": "golem:G2_Feature"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "dul_region:hasRegion"
+      },
+      "skos:example": [
+        "Harry Potter (G1) has feature bravery (G17).",
+        "The text of Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) (F2) hasFeature third-person limited \nperspective (G18)."
+      ]
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb1",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "ecrm:E89_Propositional_Object"
+          },
+          {
+            "@id": "golem:G1_Character"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "dlp_extDnS:played-by",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "played-by"
+      }
+    },
+    {
+      "@id": "dlp_extDnS:involved-in",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "involved in"
+      },
+      "skos:example": "Ron (G1) involved in the romantic love between Ron and Hermione (G4)."
+    },
+    {
+      "@id": "ecrm:P67_refers_to",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that a narrative unit (G9) refers to a specific narrative event (G5)",
+      "skos:example": "The hyleme “Voldemort casts the ‘Avada Kedavra’ curse” (G9) refers to the event “Harry heard the high voice shriek [...]: ‘Avada Kedavra!’” (G5)."
+    },
+    {
+      "@id": "dcterms:source",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "dlp_extDnS:satisfies",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, this property links  a setting (G12) to  a work (F1).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "satisfies"
+      },
+      "skos:example": "The setting of \"Wizarding community rivalries during the Triwizard Tournament\" (G12) satisfies the work Harry Potter and the Goblet of Fire (F1)."
+    },
+    {
+      "@id": "vann:preferredNamespaceUri",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "rdf:language",
+      "rdfs:comment": "The language component of a CompoundLiteral.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdf:"
+      },
+      "rdfs:label": "language",
+      "rdfs:seeAlso": {
+        "@id": "https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"
+      }
+    },
+    {
+      "@id": "dlp_spat:participant-place-of",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "participant place of"
       }
     },
     {
@@ -167,345 +290,22 @@
       "rdfs:label": "label"
     },
     {
-      "@id": "dlp_extDnS:setting-for",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, links a narrative setting (G12) to various elements such as location (G13), time, character (G1), object (G16), or event (G5).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "setting for"
-      },
-      "skos:example": [
-        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Harry Potter (G1).",
-        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Quidditch World Cup campsite (G13).",
-        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Triwizard Tournament (G5)."
-      ]
-    },
-    {
-      "@id": "ecrm:E89_Propositional_Object",
+      "@id": "dol:time-interval",
       "@type": "owl:Class",
-      "rdfs:subClassOf": {
-        "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb14"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb14",
-      "@type": "owl:Restriction",
-      "owl:allValuesFrom": {
-        "@id": "golem:G18_Textual_Feature"
-      },
-      "owl:onProperty": {
-        "@id": "golem:GP0_has_feature"
-      }
-    },
-    {
-      "@id": "ecrm:E58_Measurement_Unit",
-      "@type": "owl:Class",
-      "rdfs:comment": "This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.\n\nThis type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.\n\nSystème International (SI) units or internationally recognized non-SI terms should be used whenever possible, such as those defined by ISO80000:2009. Archaic Measurement Units used in historical records should be preserved.",
-      "rdfs:label": "E58 Measurement Unit",
-      "skos:example": "word counts, kudos."
-    },
-    {
-      "@id": "dlp_extDnS:social-relationship",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "dlp_csm:geographical-place"
-        },
-        {
-          "@id": "dlp_csm:non-physical-place"
-        },
-        {
-          "@id": "dlp_extDnS:agentive-social-object"
-        },
-        {
-          "@id": "dlp_extDnS:course"
-        },
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "dlp_extDnS:situation"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        }
-      ],
-      "rdfs:label": "social relationship"
-    },
-    {
-      "@id": "ecrm:E54_Dimension",
-      "@type": "owl:Class",
-      "skos:example": "The word count and kudos on AO3 (https://archiveofourown.org/works)"
-    },
-    {
-      "@id": "skos:notation",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dcterms:issued",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_extDnS:agentive-social-object",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "dlp_extDnS:course"
-        },
-        {
-          "@id": "dlp_extDnS:description"
-        },
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "agentive social object"
-      }
-    },
-    {
-      "@id": "dc:description",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dcterms:created",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_temp:temporally-includes",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that a general event (G5) contains one or more sub-events (G5) or psychological states (G3).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "temporally includes"
-      },
-      "skos:example": [
-        "The Battle of Hogwarts (G5) temporally includes the death of Voldemort (G5).",
-        "The Yule Ball in Harry Potter and the Goblet of Fire (movie, 2005) (G5) temporally includes Ron's jealousy (G3)."
-      ]
-    },
-    {
-      "@id": "dc:created",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "rdfs:seeAlso",
-      "rdfs:comment": "Further information about the subject resource.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdfs:"
-      },
-      "rdfs:label": "seeAlso"
-    },
-    {
-      "@id": "golem:G14_Narrative-Stoff",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        }
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (golem:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G14 Narrative-Stoff"
-      },
+      "rdfs:comment": "A time-interval or time-span in a narrative refers to a duration or a specific time point during which events take place. It encompasses the beginning, end, and the length of time between them, allowing for the placement of actions on a chronological timeline. It can represent broad periods, like an era, or specific moments, like a single date or time.",
+      "rdfs:label": "Time Interval",
       "rdfs:subClassOf": [
         {
-          "@id": "ecrm:E28_Conceptual_Object"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb18"
         },
         {
-          "@id": "dlp_extDnS:description"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb36"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb19"
         }
       ],
-      "skos:example": "Apollo and Zephyros love Hyacinthus. While Apollo and Hyacinthus are playing a game with a discus, Zephyros uses the wind to change its direction, causing the discus to hit Hyacinthus and resulting in his death. Afterward, Hyacinthus transforms into a flower."
+      "skos:example": "July 31, 1980 (Harry Potter's birthday)"
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb36",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P130i_features_are_also_found_on"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G7_Narrative_Sequence"
-      }
-    },
-    {
-      "@id": "rdf:nil",
-      "rdfs:comment": "The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdf:"
-      },
-      "rdfs:label": "nil"
-    },
-    {
-      "@id": "dlp_csm:duration-of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": "duration of"
-    },
-    {
-      "@id": "dlp_csm:non-physical-place",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "dlp_extDnS:course"
-        },
-        {
-          "@id": "dlp_extDnS:description"
-        },
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "dlp_extDnS:situation"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:label": "non physical place"
-    },
-    {
-      "@id": "golem:G5_Narrative_Event",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A narrative event is a unit inferred from a span of text and it can express a change of state, a process, or a state of things that supports the story, as defined by its temporality and sequentiality.. Events can be either external, like actions taken by characters, or psychological, involving changes in thoughts or feelings, which are distinct from a psychological state (cf. Gius and Vauth, 2022). Types of events can be specified using ecrm:E55_Type."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G5 Narrative Event"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "dol:perdurant"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb66"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb67"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb68"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb69"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb70"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb71"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb72"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb73"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb74"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb75"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb76"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb77"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb78"
-        }
-      ],
-      "skos:example": "\"There was a clatter as the basilisk fangs cascaded out of Hermione’s arms [process event]. Running at Ron [process event], she flung them around his neck and kissed him full on the mouth [change of state]. Ron threw away the fangs and broomstick [process event] he was holding and responded with such enthusiasm that he lifted Hermione off her feet [change of state].\""
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb66",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:participant"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G1_Character"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb67",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb18",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:setting"
@@ -515,176 +315,143 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb68",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb19",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_spat:participant-place"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G13_Narrative_Location"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb69",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:follows"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G3_Psychological_State"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb70",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:follows"
+        "@id": "dlp_temp:temporal-location-of"
       },
       "owl:someValuesFrom": {
         "@id": "golem:G5_Narrative_Event"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb71",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:precedes"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G3_Psychological_State"
-      }
+      "@id": "dc:title",
+      "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb72",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:precedes"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
+      "@id": "dc:date",
+      "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb73",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-included-in"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G3_Psychological_State"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb74",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-included-in"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb75",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-includes"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G3_Psychological_State"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb76",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-includes"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb77",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-overlaps"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G3_Psychological_State"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb78",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-overlaps"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
-    },
-    {
-      "@id": "dlp_csm:geographical-place",
+      "@id": "golem:G7_Narrative_Sequence",
       "@type": "owl:Class",
-      "owl:disjointWith": [
+      "owl:disjointWith": {
+        "@id": "golem:G13_Narrative_Location"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G7 Narrative Sequence"
+      },
+      "rdfs:subClassOf": [
         {
           "@id": "dlp_extDnS:course"
         },
         {
-          "@id": "dlp_extDnS:description"
+          "@id": "rdf:Seq"
         },
         {
-          "@id": "dlp_extDnS:role"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb84"
         },
         {
-          "@id": "dlp_extDnS:situation"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb85"
         },
         {
-          "@id": "golem:G10_Narrative_Function"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb86"
         },
         {
-          "@id": "golem:G11_Narrative_Role"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb87"
         },
         {
-          "@id": "golem:G12_Setting"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb88"
         },
         {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb89"
         }
       ],
-      "rdfs:label": "Geographical place"
+      "skos:example": "Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).\n\nFabula (sequence of hylemes, a type of G9_Narrative_Unit): \nH1: [Apollo] loves [Hyacinthus] (durative-constant)\nH2: Zephyros loves Hyacinthus (durative-constant)\nH3: [Hyacinthus] loves [Apollo] (durative-initial)\nH4: [Apollo and Hyacinthus] play the game of discus (single-event)\nH5: Zephyros is the West Wind. (durative-constant)\n[H6: Zephyros causes the wind to change. (single-event)]\nH7: The discus hits Hyacinthus (single-event)\nH8: Apollo fails to save Hyacinthus (single-event)\nH9: [Hyacinthus] is dead (durative-resultative)\n[H10: Hyacinthus is a flower (durative-resultative)]\n\nSyuthet (sequence of hylemes, a type of G9_Narrative_Unit): \nH4: [Apollo and Hyacinthus] play the game of discus (single-event)\nH6: Zephyros causes the wind to change. (single-event)\nH7: The discus hits Hyacinthus (single-event)\nH8: Apollo fails to save Hyacinthus (single-event)\nH9: [Hyacinthus] is dead (durative-resultative)\nH10: Hyacinthus is a flower (durative-resultative)\nH1: [Apollo] loves [Hyacinthus] (durative-constant)\nH3: [Hyacinthus] loves [Apollo] (durative-initial)\nH2: Zephyros loves Hyacinthus (durative-constant)\nH5: Zephyros is the West Wind. (durative-constant)"
     },
     {
-      "@id": "dcterms:bibliographicCitation",
-      "@type": "owl:AnnotationProperty"
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb84",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P130_shows_features_of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G14_Narrative-Stoff"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb85",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:d-used-by"
+      },
+      "owl:someValuesFrom": {
+        "@id": "lrmoo:F1_Work"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb86",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:modal-target-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G10_Narrative_Function"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb87",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:modal-target-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G11_Narrative_Role"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb88",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:sequences"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb89",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "rdfs:member"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G9_Narrative_Unit"
+      }
+    },
+    {
+      "@id": "ecrm:P127_has_broader_term",
+      "@type": "owl:ObjectProperty",
+      "skos:example": "\"Friendship\" (E55) has broader term \"topic\" (E55)."
+    },
+    {
+      "@id": "ecrm:E58_Measurement_Unit",
+      "@type": "owl:Class",
+      "rdfs:comment": "This class is a specialization of E55 Type and comprises the types of measurement units: feet, inches, centimetres, litres, lumens, etc.\n\nThis type is used categorically in the model without reference to instances of it, i.e. the model does not foresee the description of instances of instances of E58 Measurement Unit, e.g. “instances of cm”.\n\nSystème International (SI) units or internationally recognized non-SI terms should be used whenever possible, such as those defined by ISO80000:2009. Archaic Measurement Units used in historical records should be preserved.",
+      "rdfs:label": "E58 Measurement Unit",
+      "skos:example": "word counts, kudos."
     },
     {
       "@id": "golem:G4_Social_Relationship",
       "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        }
-      ],
+      "owl:disjointWith": {
+        "@id": "golem:G13_Narrative_Location"
+      },
       "rdfs:comment": {
         "@language": "en",
         "@value": "“A social description defining roles for the interaction of cognitive agents (DOLCE-Lite-Plus, 2005)” or dlp:agentive-social-objects. Characters are involved in social relationships."
@@ -698,19 +465,19 @@
           "@id": "dlp_extDnS:social-relationship"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb63"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb66"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb64"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb67"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb65"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb68"
         }
       ],
       "skos:example": "Romantic love between Ron and Hermione, which can be inferred from the paragraph below:\n\"There was a clatter as the basilisk fangs cascaded out of Hermione’s arms. Running at Ron, she flung them around his neck and kissed him full on the mouth. Ron threw away the fangs and broomstick he was holding and responded with such enthusiasm that he lifted Hermione off her feet\" (chapter 31 in Harry Potter and the Deathly Hallows)."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb63",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb66",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:d-uses"
@@ -720,7 +487,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb64",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb67",
       "@type": "owl:Restriction",
       "owl:allValuesFrom": {
         "@id": "golem:G6_Relationship_Role"
@@ -730,7 +497,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb65",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb68",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:involves"
@@ -740,145 +507,183 @@
       }
     },
     {
-      "@id": "dlp_extDnS:course",
+      "@id": "ecrm:E89_Propositional_Object",
       "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "dlp_extDnS:description"
-        },
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "dlp_extDnS:situation"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "course"
+      "rdfs:subClassOf": {
+        "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb17"
       }
     },
     {
-      "@id": "golem:GP0i_is_feature_of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "Indicates that a narrative or character has certain features.",
-      "rdfs:domain": {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb17",
+      "@type": "owl:Restriction",
+      "owl:allValuesFrom": {
+        "@id": "golem:G18_Textual_Feature"
+      },
+      "owl:onProperty": {
+        "@id": "golem:GP0_has_feature"
+      }
+    },
+    {
+      "@id": "golem:G17_Character_Feature",
+      "@type": "owl:Class",
+      "owl:disjointWith": {
+        "@id": "golem:G18_Textual_Feature"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Character traits or features are stable aspects defining a character's identity, including biographical (e.g., birth, death), physical (e.g., hair color, scars), and psychological features (e.g., personality). These three subcategories are specified using ecrm:E55_Type."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G17 Character Feature"
+      },
+      "rdfs:subClassOf": {
         "@id": "golem:G2_Feature"
       },
-      "rdfs:label": "is feature of",
+      "skos:example": "Harry Potter’s bravery as inferred from the sentence\n“Harry screwed up his courage” (chapter 17 of Harry Potter and the Philosopher’s Stone)."
+    },
+    {
+      "@id": "ecrm:E54_Dimension",
+      "@type": "owl:Class",
+      "skos:example": "The word count and kudos on AO3 (https://archiveofourown.org/works)"
+    },
+    {
+      "@id": "dlp_temp:temporally-overlaps",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that two narrative events (G5) or psychological states (G3) overlap at some point in time.",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "temporally overlaps"
+      },
+      "skos:example": "Ron’s jealousy (G3) temporally overlaps with Hermione’s arrival at the ball with Viktor Krum (G5)."
+    },
+    {
+      "@id": "dol:generic-location",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "In GOLEM, specifies the location (G13) of an enduring entity, such as a character (G1) or object (G16), within the narrative."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "generic location"
+      }
+    },
+    {
+      "@id": "lrmoo:R5_has_component",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "lrmoo:R5i_is_component_of"
+      },
+      "rdfs:comment": [
+        "In GOLEM, it indicates that an expression (such as a text) contains a specific component, like a word, sentence, or paragraph.",
+        "Quantification: many to many (0,n:0,n)\n\n  Scope note:\n  This property associates an instance of an F2 Expression X with a structural component Y that conveys a part of the overall work realized by X, such as volumes, chapters, or sections. This property is transitive, asymmetric and irreflexive.\n  Any part of an expression that conveys complete propositions, such as a single phrase, can be documented using the more general property P148 has component (is component of).\n  Any part of an expression that does not completely follow meaningful boundaries, such as lines or pages of text or portions visible on images, can be documented using the property P106 is composed of (forms part of), and not with R5 has component (is component of). Fragments, in particular, can be documented with the more specific property R15 has fragment (is fragment of).\n  This property does not cover the relationship that exists between expressions that are realisations of different works, where one is re-used in a new, larger expression. Such a relationship is modelled by R75 incorporates (is incorporated in)  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."
+      ],
+      "rdfs:domain": {
+        "@id": "lrmoo:F2_Expression"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "R5 has component"
+      },
       "rdfs:range": {
-        "@id": "ecrm:E28_Conceptual_Object"
+        "@id": "lrmoo:F2_Expression"
       },
       "rdfs:subPropertyOf": {
-        "@id": "dul_region:isRegionFor"
+        "@id": "ecrm:P148_has_component"
+      },
+      "skos:example": "Text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2) has component a paragraph in Harry Potter and the Deathly Hallows (F2)."
+    },
+    {
+      "@id": "dcterms:creator",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "ecrm:E55_Type",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": [
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb14"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb15"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb16"
+        }
+      ],
+      "skos:example": "The Tag categories on AO3, e.g. character tag or relationship tag."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb14",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P127_has_broader_term"
+      },
+      "owl:someValuesFrom": {
+        "@id": "ecrm:E55_Type"
       }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb15",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P127i_has_narrower_term"
+      },
+      "owl:someValuesFrom": {
+        "@id": "ecrm:E55_Type"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb16",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P2i_is_type_of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "ecrm:E1_CRM_Entity"
+      }
+    },
+    {
+      "@id": "dlp_funct:has-state",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "Participation in a state  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
+        },
+        "In GOLEM, indicates the psychological state (G3) of a character (G1)."
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "has-state"
+      },
+      "skos:example": "Ron in Harry Potter and the Goblet of Fire (G1) has state “jealousy” (G3) during the event Yule Ball (G5)."
+    },
+    {
+      "@id": "dlp_extDnS:predecessor",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": "predecessor",
+      "skos:example": "Harry's life at the Dursleys (G12) is predecessor of the Wizarding World (G12)."
+    },
+    {
+      "@id": "rdfs:isDefinedBy",
+      "rdfs:comment": "The defininition of the subject resource.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdfs:"
+      },
+      "rdfs:label": "isDefinedBy"
     },
     {
       "@id": "vs:term_status",
       "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "rdf:Seq",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "The class of ordered containers."
-      },
-      "rdfs:isDefinedBy": {
-        "@id": "rdf:"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Seq"
-      }
-    },
-    {
-      "@id": "dcterms:source",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "ecrm:P91_has_unit",
-      "@type": "owl:ObjectProperty",
-      "skos:example": [
-        "Kudos (E54) has unit kudos (E58). (Smile as Bright as the Sun as You Fade into Darkness from AO3)",
-        "Word count (E54) has unit word count (E58)."
-      ]
-    },
-    {
-      "@id": "xsd:date",
-      "@type": "rdfs:Datatype"
-    },
-    {
-      "@id": "dol:participant-in",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "participant in"
-      },
-      "skos:example": [
-        "Harry Potter (G1) participant in the Battle of Hogwarts (G5).",
-        "The egg (G16) participant in the event in which Cedric gives Harry a hint (G5) (chapter 24 of Harry Potter and the Goblet of Fire)."
-      ]
-    },
-    {
-      "@id": "vann:preferredNamespacePrefix",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "rdf:direction",
-      "rdfs:comment": "The base direction component of a CompoundLiteral.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdf:"
-      },
-      "rdfs:label": "direction",
-      "rdfs:seeAlso": {
-        "@id": "https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"
-      }
-    },
-    {
       "@id": "golem:G1_Character",
       "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
+      "owl:disjointWith": {
+        "@id": "golem:G16_Object"
+      },
       "rdfs:comment": {
         "@language": "en",
         "@value": "“Character is a text- or media-based figure in a storyworld, usually human or human-like,” understood through readers’ knowledge of real people (Jannidis, 2019). Readers attribute to characters mental states such as intentions and beliefs, and consider them to engage in actions. Characters can have specific functional roles within narratives, such as protagonist or antagonist, influencing how readers perceive and interpret the story."
@@ -895,37 +700,37 @@
           "@id": "dlp_extDnS:agentive-social-object"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb41"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb44"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb42"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb45"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb43"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb46"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb44"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb47"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb45"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb48"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb46"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb49"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb47"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb50"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb48"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb51"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb49"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb52"
         }
       ],
       "skos:example": "Harry Potter in the novel *Harry Potter and the Philosopher's Stone*."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb41",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb44",
       "@type": "owl:Restriction",
       "owl:allValuesFrom": {
         "@id": "golem:G17_Character_Feature"
@@ -935,7 +740,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb42",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb45",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "ecrm:P130_shows_features_of"
@@ -945,7 +750,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb43",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb46",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dol:participant-in"
@@ -955,7 +760,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb44",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb47",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:involved-in"
@@ -965,7 +770,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb45",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb48",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:plays"
@@ -975,7 +780,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb46",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb49",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:plays"
@@ -985,7 +790,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb47",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb50",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:setting"
@@ -995,7 +800,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb48",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb51",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:uses"
@@ -1005,7 +810,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb49",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb52",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "golem:GP1_is_character_in"
@@ -1013,708 +818,6 @@
       "owl:someValuesFrom": {
         "@id": "lrmoo:F1_Work"
       }
-    },
-    {
-      "@id": "dlp_extDnS:satisfied-by",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "satisfied by"
-      }
-    },
-    {
-      "@id": "rdfs:member",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": [
-        "A member of the subject resource.",
-        "In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula or syuzhet (G7)."
-      ],
-      "rdfs:isDefinedBy": {
-        "@id": "rdfs:"
-      },
-      "rdfs:label": "member",
-      "skos:example": "The fabula of Battle of Hogwarts in Harry Potter and the Deathly Hallows orders events as follows:\nrdf:_1 Voldemort casts the \"Avada Kedavra\" curse.\nrdf:_2 Harry casts \"Expelliarmus\"\nrdf:_3 The spells collide in midair, etc."
-    },
-    {
-      "@id": "vann:preferredNamespaceUri",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "golem:G18_Textual_Feature",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Textual features are the elements or characteristics found in a narrative or fictions. These features include narrative style, like the tone and writing techniques employed by the author, as well as the point of view (POV) that determines the perspective from which the story is told, such as first-person or third-person. Textual features also contain the voice reflecting authors' attitude, the diction referring to the authors' choice of words, etc. Taxonomies of textual features can be further specified using ecrm:E55_Type."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G18 Textual Feature"
-      },
-      "rdfs:subClassOf": {
-        "@id": "golem:G2_Feature"
-      },
-      "skos:example": "Stream of consciousness, first-person perspective"
-    },
-    {
-      "@id": "dlp_csm:collection-role",
-      "rdfs:comment": "A role only played by collections."
-    },
-    {
-      "@id": "ecrm:E55_Type",
-      "@type": "owl:Class",
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb11"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb12"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb13"
-        }
-      ],
-      "skos:example": "The Tag categories on AO3, e.g. character tag or relationship tag."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb11",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P127_has_broader_term"
-      },
-      "owl:someValuesFrom": {
-        "@id": "ecrm:E55_Type"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb12",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P127i_has_narrower_term"
-      },
-      "owl:someValuesFrom": {
-        "@id": "ecrm:E55_Type"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb13",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P2i_is_type_of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "ecrm:E1_CRM_Entity"
-      }
-    },
-    {
-      "@id": "dc:date",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_extDnS:description",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "dlp_extDnS:situation"
-        },
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        }
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "description"
-      }
-    },
-    {
-      "@id": "golem:GP1_is_character_in",
-      "@type": "owl:ObjectProperty",
-      "owl:inverseOf": {
-        "@id": "golem:GP1i_has_Character"
-      },
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Indicates that a character appears in a work."
-      },
-      "rdfs:domain": {
-        "@id": "golem:G1_Character"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "is character in"
-      },
-      "rdfs:range": {
-        "@id": "lrmoo:F1_Work"
-      },
-      "skos:example": "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)."
-    },
-    {
-      "@id": "dc:title",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_extDnS:played-by",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "played-by"
-      }
-    },
-    {
-      "@id": "dcterms:publisher",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "ecrm:P141_assigned",
-      "@type": "owl:ObjectProperty",
-      "skos:example": [
-        "Relationship assignment for Ron and Hermione (E13) assigned Ron (G1) [to romantic love between Ron and Hermione (G4)].",
-        "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned “friendship” (E55) [to the work Harry Potter and the Philosopher's Stone (F1)]."
-      ]
-    },
-    {
-      "@id": "dlp_temp:temporally-overlaps",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that two narrative events (G5) or psychological states (G3) overlap at some point in time.",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "temporally overlaps"
-      },
-      "skos:example": "Ron’s jealousy (G3) temporally overlaps with Hermione’s arrival at the ball with Viktor Krum (G5)."
-    },
-    {
-      "@id": "dlp_extDnS:modal-target-of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "modal target of"
-      },
-      "skos:example": [
-        "Proppian function “Victory” (G10) is the modal target of the fabula (G7_Narrative_Sequence) of Harry Potter and the Deathly Hallows (Rowling, 2007).",
-        "“Hero” (G11) is modal target of the narrative sequence (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)."
-      ]
-    },
-    {
-      "@id": "dlp_extDnS:sequenced-by",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "sequenced-by"
-      }
-    },
-    {
-      "@id": "ecrm:P2_has_type",
-      "@type": "owl:ObjectProperty",
-      "skos:example": "Narrative function “Victory” (G10) has type “Proppian function” (E55)"
-    },
-    {
-      "@id": "dcterms:hasVersion",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_csm:duration",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that a narrative event (G5) has a specific duration.",
-      "rdfs:label": "duration",
-      "skos:example": "The Battle of Hogwarts (G5) has *duration* several hours (time-interval)."
-    },
-    {
-      "@id": "dlp_extDnS:plays",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, an endurant, such as a narrative unit or a character, plays a role in a (dlp:)description, such as a narrative function (G10) or relationship role (G11).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "plays"
-      },
-      "skos:example": [
-        "Ron (G1) plays relationship role \"lover\" (G4).",
-        "The hyper-hyleme \"Harry defeats Voldemort” (G9) plays proppian function \"Victory\" (G10)."
-      ]
-    },
-    {
-      "@id": "lrmoo:R5i_is_component_of",
-      "@type": "owl:ObjectProperty",
-      "owl:inverseOf": {
-        "@id": "lrmoo:R5_has_component"
-      },
-      "rdfs:comment": "Quantification: many to many (0,n:0,n)\n\nScope note:\nThis property associates an instance of an F2 Expression X with a structural component Y that conveys a part of the overall work realized by X, such as volumes, chapters, or sections. This property is transitive, asymmetric and irreflexive.\nAny part of an expression that conveys complete propositions, such as a single phrase, can be documented using the more general property P148 has component (is component of).\nAny part of an expression that does not completely follow meaningful boundaries, such as lines or pages of text or portions visible on images, can be documented using the property P106 is composed of (forms part of), and not with R5 has component (is component of). Fragments, in particular, can be documented with the more specific property R15 has fragment (is fragment of).\nThis property does not cover the relationship that exists between expressions that are realisations of different works, where one is re-used in a new, larger expression. Such a relationship is modelled by R75 incorporates (is incorporated in)  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html)).",
-      "rdfs:domain": {
-        "@id": "lrmoo:F2_Expression"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "R5i is component of"
-      },
-      "rdfs:range": {
-        "@id": "lrmoo:F2_Expression"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "ecrm:P148i_is_component_of"
-      }
-    },
-    {
-      "@id": "dlp_extDnS:situation",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G10_Narrative_Function"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:label": "situation"
-    },
-    {
-      "@id": "golem:G15_Fandom",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A fandom is a group of fans who share a common interest in a particular work or topic, such as a book or movie, and engage in fan activities like discussions or creating fan works."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G15 Fandom"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "ecrm:E28_Conceptual_Object"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb37"
-        }
-      ],
-      "skos:example": "The entity identified by the label “Harry Potter - J. K. Rowling” on AO3."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb37",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P130i_features_are_also_found_on"
-      },
-      "owl:someValuesFrom": {
-        "@id": "lrmoo:F1_Work"
-      }
-    },
-    {
-      "@id": "dlp_extDnS:successor",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "Specifies the order between two entities, where one is the successor or predecessor of the other.",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "successor"
-      }
-    },
-    {
-      "@id": "dlp_temp:temporal-location-of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "temporal location of"
-      }
-    },
-    {
-      "@id": "dlp_spat:participant-place",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "In GOLEM, indicates the location (G13) where a narrative event (G5) took place."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "participant place"
-      },
-      "skos:example": "The Quidditch World Cup match (G5) has participant place Quidditch World Cup Campsite (G13)."
-    },
-    {
-      "@id": "dlp_extDnS:d-used-by",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "d-used-by"
-      }
-    },
-    {
-      "@id": "dlp_extDnS:sequences",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order.",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "sequences"
-      },
-      "skos:example": "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events"
-    },
-    {
-      "@id": "dc:creator",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "golem:G6_Relationship_Role",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A relationship role refers to the functional role a character plays within the context of their interactions with other characters, serving as a descriptive counterpart to their enduring qualities, with characters participating in events (perdurants)."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G6 Relationship Role"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb79"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb80"
-        }
-      ],
-      "skos:example": "Lover (both Ron and Hermione in the “Ron and Hermione” romantic relationship).\nBeloved (both Ron and Hermione in the “Ron and Hermione” romantic relationship)."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb79",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:d-used-by"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G4_Social_Relationship"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb80",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:played-by"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G1_Character"
-      }
-    },
-    {
-      "@id": "ecrm:P16_used_specific_object",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that an object (G16) is used in a narrative event (G5), or a source is used in an observation or inference process (E13)."
-    },
-    {
-      "@id": "dlp_extDnS:reconstructed-flux",
-      "rdfs:comment": "Reconstructed fluxes are fluxes that only contain accomplishments as members."
-    },
-    {
-      "@id": "golem:G9_Narrative_Unit",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A narrative unit is the minimal or fundamental component of narrative structure that articulates actions, states, or thematic elements within a story. The advantage of having narrative unit as a concept distinct from that of narrative event (G5) is that narrative units can be propositional objects formulated differently from how events are presented in the narrative. For example, hylemes (Zgoll et al., 2023; Pannach, 2023) are narrative units (statements) composed of a subject, predicate, and optional object. They represent the fundamental building blocks of any narrative structure, describing actions, states, or information present within a narrative , such as \"Apollo loves Hyacinthus.\""
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G9 Narrative Unit"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "ecrm:E89_Propositional_Object"
-        },
-        {
-          "@id": "dlp_extDnS:description"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb87"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb88"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb89"
-        }
-      ],
-      "skos:example": "A hyleme such as \"Apollo loves Hyacinthus\"."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb87",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "ecrm:P67_refers_to"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb88",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:proper-part-of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "lrmoo:F1_Work"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb89",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:plays"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G10_Narrative_Function"
-      }
-    },
-    {
-      "@id": "golem:G2_Feature",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A feature in the context of narrative refers to a distinct element or characteristic that contributes to the structure and meaning of a story. Features include character traits and textual elements.\nTaxonomies of features can be further specified using ecrm:E55_Type."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G2 Feature"
-      },
-      "rdfs:subClassOf": {
-        "@id": "dul_region:Region"
-      },
-      "skos:example": "Style, theme, literary devices"
-    },
-    {
-      "@id": "ecrm:P130_shows_features_of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In the GOLEM ontology, it indicates that a Stoff variant exhibits features of the Stoff, such as a Character-Stoff or Narrative-Stoff.",
-      "skos:example": [
-        "Harry Potter (character) who appears in Harry Potter and the Philosopher's Stone (movie, 2001) (G1)  shows features of Harry Potter Stoff (G0).",
-        "The Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007) (G7) shows features of Battle of Hogwarts Stoff (G14)."
-      ]
-    },
-    {
-      "@id": "golem:G16_Object",
-      "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "An object refers to a persistent item that plays a significant role in the story but is not a character."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G16 Object"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "ecrm:E28_Conceptual_Object"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb38"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb39"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb40"
-        }
-      ],
-      "skos:example": "The Elder Wand carried by Harry Potter."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb38",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:generic-location"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G13_Narrative_Location"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb39",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G12_Setting"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb40",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:used-by"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G1_Character"
-      }
-    },
-    {
-      "@id": "dlp_extDnS:flux",
-      "rdfs:comment": "Fluxes are processes that (also) contain accomplishments as constituents. In other words, fluxes emerge out of accomplishments."
-    },
-    {
-      "@id": "golem:G10_Narrative_Function",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G11_Narrative_Role"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A narrative function refers to the functional roles that narrative units play within a story. For instance, the Proppian function (Propp, 1968) \"Villain causes harm or injury\" can be illustrated by the narrative unit where Zephyros causes Hyacinthus's death."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G10 Narrative Function"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "dlp_extDnS:role"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb18"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb19"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb20"
-        }
-      ],
-      "skos:example": "Functions identified by Propp, Campbell, or Greimas (Greimas, 1983)."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb18",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:d-used-by"
-      },
-      "owl:someValuesFrom": {
-        "@id": "lrmoo:F1_Work"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb19",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:modal-target"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G7_Narrative_Sequence"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb20",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:played-by"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G9_Narrative_Unit"
-      }
-    },
-    {
-      "@id": "rdf:language",
-      "rdfs:comment": "The language component of a CompoundLiteral.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdf:"
-      },
-      "rdfs:label": "language",
-      "rdfs:seeAlso": {
-        "@id": "https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"
-      }
-    },
-    {
-      "@id": "rdfs:isDefinedBy",
-      "rdfs:comment": "The defininition of the subject resource.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdfs:"
-      },
-      "rdfs:label": "isDefinedBy"
-    },
-    {
-      "@id": "dol:proper-part",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that an entity is proper part of a larger entity. For example, a child location (G13) is proper part of a larger parent location (G13).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "proper part"
-      },
-      "skos:example": [
-        "Harry Potter and the Deathly Hallows (Rowling, 2007) (F1) has proper part Hyleme “Harry’s triumph, as Voldemort dies from his rebounded curse” (G9).",
-        "Hogwarts School of Witchcraft and Wizardry (G13) has proper part Forbidden Forest (G13)."
-      ]
-    },
-    {
-      "@id": "rdfs:comment",
-      "rdfs:comment": "A description of the subject resource.",
-      "rdfs:isDefinedBy": {
-        "@id": "rdfs:"
-      },
-      "rdfs:label": "comment"
     },
     {
       "@id": "lrmoo:F2_Expression",
@@ -1735,19 +838,19 @@
           "@id": "ecrm:E73_Information_Object"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb6"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb9"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb7"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb10"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb8"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb11"
         }
       ],
       "skos:example": "The text of the English version of *Harry Potter and the Philosopher's Stone*."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb6",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb9",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "lrmoo:R3i_realises"
@@ -1757,7 +860,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb7",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb10",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "lrmoo:R5_has_component"
@@ -1767,7 +870,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb8",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb11",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "ecrm:P16i_was_used_for"
@@ -1777,29 +880,32 @@
       }
     },
     {
-      "@id": "dlp_extDnS:involved-in",
+      "@id": "dlp_temp:temporally-included-in",
       "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "involved in"
-      },
-      "skos:example": "Ron (G1) involved in the romantic love between Ron and Hermione (G4)."
+      "rdfs:label": "temporally included in"
     },
     {
-      "@id": "dlp_extDnS:d-uses",
+      "@id": "xsd:date",
+      "@type": "rdfs:Datatype"
+    },
+    {
+      "@id": "dlp_extDnS:sequenced-by",
       "@type": "owl:ObjectProperty",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."
-      },
       "rdfs:label": {
         "@language": "en",
-        "@value": "d-uses"
+        "@value": "sequenced-by"
+      }
+    },
+    {
+      "@id": "rdf:direction",
+      "rdfs:comment": "The base direction component of a CompoundLiteral.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdf:"
       },
-      "skos:example": [
-        "Harry Potter and the Deathly Hallows (Rowling, 2007) (F1) d-uses the fabula of Harry Potter and the Deathly Hallows (G7).",
-        "Romantic love between Ron and Hermione (G4) d-uses the role \"lover\" (G6)."
-      ]
+      "rdfs:label": "direction",
+      "rdfs:seeAlso": {
+        "@id": "https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties"
+      }
     },
     {
       "@id": "dol:generic-location-of",
@@ -1814,6 +920,24 @@
       ]
     },
     {
+      "@id": "ecrm:P2_has_type",
+      "@type": "owl:ObjectProperty",
+      "skos:example": "Narrative function “Victory” (G10) has type “Proppian function” (E55)"
+    },
+    {
+      "@id": "dlp_extDnS:plays",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, an endurant, such as a narrative unit or a character, plays a role in a (dlp:)description, such as a narrative function (G10) or relationship role (G11).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "plays"
+      },
+      "skos:example": [
+        "Ron (G1) plays relationship role \"lover\" (G4).",
+        "The hyper-hyleme \"Harry defeats Voldemort” (G9) plays proppian function \"Victory\" (G10)."
+      ]
+    },
+    {
       "@id": "dol:proper-part-of",
       "@type": "owl:ObjectProperty",
       "rdfs:label": {
@@ -1822,106 +946,117 @@
       }
     },
     {
-      "@id": "dlp_funct:state-of",
+      "@id": "dlp_extDnS:successor",
       "@type": "owl:ObjectProperty",
-      "rdfs:comment": [
-        "In GOLEM, indicates the psychological state (G3) of a character (G1).",
-        "Participation in a state ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
-      ],
+      "rdfs:comment": "Specifies the order between two entities, where one is the successor or predecessor of the other.",
       "rdfs:label": {
         "@language": "en",
-        "@value": "state-of"
+        "@value": "successor"
       }
     },
     {
-      "@id": "dlp_extDnS:satisfies",
+      "@id": "dlp_csm:duration-of",
       "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, this property links  a setting (G12) to  a work (F1).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "satisfies"
-      },
-      "skos:example": "The setting of \"Wizarding community rivalries during the Triwizard Tournament\" (G12) satisfies the work Harry Potter and the Goblet of Fire (F1)."
+      "rdfs:label": "duration of"
     },
     {
-      "@id": "golem:G11_Narrative_Role",
+      "@id": "golem:G9_Narrative_Unit",
       "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G12_Setting"
-        },
-        {
-          "@id": "golem:G13_Narrative_Location"
-        },
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G1_Character"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
+      "owl:disjointWith": {
+        "@id": "golem:G5_Narrative_Event"
+      },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (gc:G1)."
+        "@value": "A narrative unit is the minimal or fundamental component of narrative structure that articulates actions, states, or thematic elements within a story. The advantage of having narrative unit as a concept distinct from that of narrative event (G5) is that narrative units can be propositional objects formulated differently from how events are presented in the narrative. For example, hylemes (Zgoll et al., 2023; Pannach, 2023) are narrative units (statements) composed of a subject, predicate, and optional object. They represent the fundamental building blocks of any narrative structure, describing actions, states, or information present within a narrative , such as \"Apollo loves Hyacinthus.\""
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "G11 Narrative Role"
+        "@value": "G9 Narrative Unit"
       },
       "rdfs:subClassOf": [
         {
-          "@id": "dlp_extDnS:role"
+          "@id": "ecrm:E89_Propositional_Object"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb21"
+          "@id": "dlp_extDnS:description"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb22"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb90"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb23"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb91"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb92"
         }
       ],
-      "skos:example": "Narrator, dramatis personae from Propp Ontology (Pannach et al., 2021) or *commedia dell’arte*."
+      "skos:example": "A hyleme such as \"Apollo loves Hyacinthus\"."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb21",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb90",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:d-used-by"
+        "@id": "ecrm:P67_refers_to"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb91",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:proper-part-of"
       },
       "owl:someValuesFrom": {
         "@id": "lrmoo:F1_Work"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb22",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb92",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:modal-target"
+        "@id": "dlp_extDnS:plays"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G7_Narrative_Sequence"
+        "@id": "golem:G10_Narrative_Function"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb23",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:played-by"
+      "@id": "rdf:nil",
+      "rdfs:comment": "The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdf:"
       },
-      "owl:someValuesFrom": {
+      "rdfs:label": "nil"
+    },
+    {
+      "@id": "dlp_extDnS:used-by",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, describes a character's (G1) use of an object (G16) in a narrative event (G5) or narrative unit (G9).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "used-by"
+      }
+    },
+    {
+      "@id": "golem:GP1i_has_Character",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Indicates that a character appears in a work.",
+      "rdfs:domain": {
+        "@id": "lrmoo:F1_Work"
+      },
+      "rdfs:label": "has character",
+      "rdfs:range": {
         "@id": "golem:G1_Character"
       }
+    },
+    {
+      "@id": "dlp_csm:duration",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that a narrative event (G5) has a specific duration.",
+      "rdfs:label": "duration",
+      "skos:example": "The Battle of Hogwarts (G5) has *duration* several hours (time-interval)."
     },
     {
       "@id": "dol:participant",
@@ -1936,211 +1071,17 @@
       }
     },
     {
-      "@id": "ecrm:P90_has_value",
-      "@type": "owl:DatatypeProperty",
-      "rdfs:comment": "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive.",
-      "rdfs:label": "P90 has value",
-      "rdfs:range": {
-        "@id": "rdfs:Literal"
-      },
-      "skos:example": [
-        "Kudos (E54) has value 59 (E60).\n(Smile as Bright as the Sun as You Fade into Darkness from AO3)",
-        "Word count (E54) has value 1,337 (E60)."
-      ]
-    },
-    {
-      "@id": "golem:G13_Narrative_Location",
-      "@type": "owl:Class",
-      "owl:disjointWith": [
-        {
-          "@id": "golem:G14_Narrative-Stoff"
-        },
-        {
-          "@id": "golem:G4_Social_Relationship"
-        },
-        {
-          "@id": "golem:G6_Relationship_Role"
-        },
-        {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
-        }
-      ],
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "A narrative location is the spatial context in which events unfold—serving as the immediate frame of action within a story. It is a non-agentive social object shaped by the narrative structure. While it may derive features from real-world locations, it exists solely as an entity within the narrative domain."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G13 Narrative Location"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "dlp_extDnS:non-agentive-social-object"
-        },
-        {
-          "@id": "ecrm:E28_Conceptual_Object"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb30"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb31"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb32"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb33"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb34"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb35"
-        }
-      ],
-      "skos:example": "'England' or the 'Forbidden Forest' as depicted in the Harry Potter series—both conceived and situated within the fictional narrative context.\" ."
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb30",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:generic-location-of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G16_Object"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb31",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:generic-location-of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G1_Character"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb32",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:proper-part"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G13_Narrative_Location"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb33",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dol:proper-part-of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G13_Narrative_Location"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb34",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:setting"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G12_Setting"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb35",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_spat:participant-place-of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
-      }
-    },
-    {
-      "@id": "dcterms:status",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_funct:has-state",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": [
-        {
-          "@language": "en",
-          "@value": "Participation in a state  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
-        },
-        "In GOLEM, indicates the psychological state (G3) of a character (G1)."
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "has-state"
-      },
-      "skos:example": "Ron in Harry Potter and the Goblet of Fire (G1) has state “jealousy” (G3) during the event Yule Ball (G5)."
-    },
-    {
-      "@id": "skos:prefLabel",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "golem:GP0_has_feature",
-      "@type": "owl:ObjectProperty",
-      "owl:inverseOf": {
-        "@id": "golem:GP0i_is_feature_of"
-      },
-      "rdfs:comment": "Indicates that a narrative or character has certain features.",
-      "rdfs:domain": {
-        "@id": "ecrm:E28_Conceptual_Object"
-      },
-      "rdfs:label": "has feature",
-      "rdfs:range": {
-        "@id": "golem:G2_Feature"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "dul_region:hasRegion"
-      },
-      "skos:example": [
-        "Harry Potter (G1) has feature bravery (G17).",
-        "The text of Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) (F2) hasFeature third-person limited \nperspective (G18)."
-      ]
-    },
-    {
-      "@id": "dlp_temp:precedes",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "precedes"
-      }
-    },
-    {
-      "@id": "ecrm:E28_Conceptual_Object",
-      "@type": "owl:Class",
-      "rdfs:subClassOf": {
-        "@id": "dlp_extDnS:social-object"
-      }
-    },
-    {
       "@id": "dcterms:identifier",
       "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "dcterms:license",
-      "@type": "owl:AnnotationProperty"
+      "@id": "ecrm:P16_used_specific_object",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that an object (G16) is used in a narrative event (G5), or a source is used in an observation or inference process (E13)."
     },
     {
-      "@id": "dlp_extDnS:used-by",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, describes a character's (G1) use of an object (G16) in a narrative event (G5) or narrative unit (G9).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "used-by"
-      }
+      "@id": "dlp_extDnS:reconstructed-flux",
+      "rdfs:comment": "Reconstructed fluxes are fluxes that only contain accomplishments as members."
     },
     {
       "@id": "dlp_temp:follows",
@@ -2165,164 +1106,159 @@
       ]
     },
     {
-      "@id": "dlp_extDnS:role",
+      "@id": "dlp_extDnS:flux",
+      "rdfs:comment": "Fluxes are processes that (also) contain accomplishments as constituents. In other words, fluxes emerge out of accomplishments."
+    },
+    {
+      "@id": "golem:G12_Setting",
       "@type": "owl:Class",
-      "owl:disjointWith": [
+      "owl:disjointWith": {
+        "@id": "golem:G13_Narrative_Location"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Setting is the narrative universe in which a story unfolds, encompassing the spatial, cultural, and social contexts that shape characters and events. It defines the situation and surroundings relevant to the narrative. Defining a setting for a Work is useful for its comparative and historical analysis with respect to other works. It is particularly apt to specify differences between canonical and fanfiction works that have Alternate Universe settings."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G12 Setting"
+      },
+      "rdfs:subClassOf": [
         {
           "@id": "dlp_extDnS:situation"
         },
         {
-          "@id": "golem:G12_Setting"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb27"
         },
         {
-          "@id": "golem:G13_Narrative_Location"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb28"
         },
         {
-          "@id": "golem:G14_Narrative-Stoff"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb29"
         },
         {
-          "@id": "golem:G1_Character"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb30"
         },
         {
-          "@id": "golem:G4_Social_Relationship"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb31"
         },
         {
-          "@id": "golem:G7_Narrative_Sequence"
-        },
-        {
-          "@id": "golem:G9_Narrative_Unit"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb32"
         }
       ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "role"
-      }
+      "skos:example": "The Wizarding World for the Harry Potter novels. \nThe “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle-class Dublin\" (Ryan, 2015)."
     },
     {
-      "@id": "dlp_extDnS:predecessor",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": "predecessor",
-      "skos:example": "Harry's life at the Dursleys (G12) is predecessor of the Wizarding World (G12)."
-    },
-    {
-      "@id": "golem:G7_Narrative_Sequence",
-      "@type": "owl:Class",
-      "owl:disjointWith": {
-        "@id": "golem:G9_Narrative_Unit"
-      },
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "G7 Narrative Sequence"
-      },
-      "rdfs:subClassOf": [
-        {
-          "@id": "dlp_extDnS:course"
-        },
-        {
-          "@id": "rdf:Seq"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb81"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb82"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb83"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb84"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb85"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb86"
-        }
-      ],
-      "skos:example": "Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).\n\nFabula (sequence of hylemes, a type of G9_Narrative_Unit): \nH1: [Apollo] loves [Hyacinthus] (durative-constant)\nH2: Zephyros loves Hyacinthus (durative-constant)\nH3: [Hyacinthus] loves [Apollo] (durative-initial)\nH4: [Apollo and Hyacinthus] play the game of discus (single-event)\nH5: Zephyros is the West Wind. (durative-constant)\n[H6: Zephyros causes the wind to change. (single-event)]\nH7: The discus hits Hyacinthus (single-event)\nH8: Apollo fails to save Hyacinthus (single-event)\nH9: [Hyacinthus] is dead (durative-resultative)\n[H10: Hyacinthus is a flower (durative-resultative)]\n\nSyuthet (sequence of hylemes, a type of G9_Narrative_Unit): \nH4: [Apollo and Hyacinthus] play the game of discus (single-event)\nH6: Zephyros causes the wind to change. (single-event)\nH7: The discus hits Hyacinthus (single-event)\nH8: Apollo fails to save Hyacinthus (single-event)\nH9: [Hyacinthus] is dead (durative-resultative)\nH10: Hyacinthus is a flower (durative-resultative)\nH1: [Apollo] loves [Hyacinthus] (durative-constant)\nH3: [Hyacinthus] loves [Apollo] (durative-initial)\nH2: Zephyros loves Hyacinthus (durative-constant)\nH5: Zephyros is the West Wind. (durative-constant)"
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb81",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb27",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "ecrm:P130_shows_features_of"
-      },
-      "owl:someValuesFrom": {
-        "@id": "golem:G14_Narrative-Stoff"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb82",
-      "@type": "owl:Restriction",
-      "owl:onProperty": {
-        "@id": "dlp_extDnS:d-used-by"
+        "@id": "dlp_extDnS:satisfies"
       },
       "owl:someValuesFrom": {
         "@id": "lrmoo:F1_Work"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb83",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb28",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:modal-target-of"
+        "@id": "dlp_extDnS:setting-for"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G10_Narrative_Function"
+        "@id": "dol:time-interval"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb84",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb29",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:modal-target-of"
+        "@id": "dlp_extDnS:setting-for"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G11_Narrative_Role"
+        "@id": "golem:G13_Narrative_Location"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb85",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb30",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_extDnS:sequences"
+        "@id": "dlp_extDnS:setting-for"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G16_Object"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb31",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:setting-for"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G1_Character"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb32",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:setting-for"
       },
       "owl:someValuesFrom": {
         "@id": "golem:G5_Narrative_Event"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb86",
+      "@id": "dcterms:issued",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "ecrm:P91_has_unit",
+      "@type": "owl:ObjectProperty",
+      "skos:example": [
+        "Kudos (E54) has unit kudos (E58). (Smile as Bright as the Sun as You Fade into Darkness from AO3)",
+        "Word count (E54) has unit word count (E58)."
+      ]
+    },
+    {
+      "@id": "golem:G16_Object",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "An object refers to a persistent item that plays a significant role in the story but is not a character."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G16 Object"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "ecrm:E28_Conceptual_Object"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb41"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb42"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb43"
+        }
+      ],
+      "skos:example": "The Elder Wand carried by Harry Potter."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb41",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "rdfs:member"
+        "@id": "dol:generic-location"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G9_Narrative_Unit"
+        "@id": "golem:G13_Narrative_Location"
       }
     },
     {
-      "@id": "dol:time-interval",
-      "@type": "owl:Class",
-      "rdfs:comment": "A time-interval or time-span in a narrative refers to a duration or a specific time point during which events take place. It encompasses the beginning, end, and the length of time between them, allowing for the placement of actions on a chronological timeline. It can represent broad periods, like an era, or specific moments, like a single date or time.",
-      "rdfs:label": "Time Interval",
-      "rdfs:subClassOf": [
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb15"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb16"
-        }
-      ],
-      "skos:example": "July 31, 1980 (Harry Potter's birthday)"
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb15",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb42",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:setting"
@@ -2332,54 +1268,22 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb16",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb43",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_temp:temporal-location-of"
+        "@id": "dlp_extDnS:used-by"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G5_Narrative_Event"
+        "@id": "golem:G1_Character"
       }
     },
     {
-      "@id": "lrmoo:R3_is_realised_in",
-      "@type": "owl:ObjectProperty",
-      "owl:inverseOf": {
-        "@id": "lrmoo:R3i_realises"
-      },
-      "rdfs:comment": [
-        {
-          "@language": "en",
-          "@value": "Quantification: one to many, necessary, dependent (1,n:1,1)\n\nScope note: \n\nThis property associates an instance of F2 Expression with an instance of F1 Work. This property expresses the association that exists between an expression and the work that this expression conveys. Our factual knowledge of how a given work is historically realised into expressions is often limited. Therefore, this property makes it possible to express the association between an instance of F2 Expression and the instance of F1 Work it conveys without identifying the particular instances of F2 Expression that were part of a chain of derivation from the source."
-        },
-        "In GOLEM, a narrative or idea (work) is realized in a specific expression, such as a text, movie, performance, or other medium."
-      ],
-      "rdfs:domain": {
-        "@id": "lrmoo:F1_Work"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "R3 is realised in"
-      },
-      "rdfs:range": {
-        "@id": "lrmoo:F2_Expression"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "ecrm:P130_shows_features_of"
-      },
-      "skos:example": "The work Harry Potter and the Deathly Hallows (F1) is realised in the text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2)."
+      "@id": "dc:license",
+      "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "dol:generic-location",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "In GOLEM, specifies the location (G13) of an enduring entity, such as a character (G1) or object (G16), within the narrative."
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "generic location"
-      }
+      "@id": "dcterms:publisher",
+      "@type": "owl:AnnotationProperty"
     },
     {
       "@id": "https://w3id.org/golem/ontology",
@@ -2452,6 +1356,108 @@
       "vs:term_status": "stable"
     },
     {
+      "@id": "dlp_extDnS:setting",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": [
+        "In GOLEM, links a narrative setting (G12) to various elements such as location (G13), time, character (G1), object (G16), or event (G5).",
+        "The relation between a situation and the entities that constitute it. (At least some of, or all) such entities must be classified by concepts defined by the description that the situation is supposed to satisfy ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "setting"
+      }
+    },
+    {
+      "@id": "dlp_temp:temporally-includes",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that a general event (G5) contains one or more sub-events (G5) or psychological states (G3).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "temporally includes"
+      },
+      "skos:example": [
+        "The Battle of Hogwarts (G5) temporally includes the death of Voldemort (G5).",
+        "The Yule Ball in Harry Potter and the Goblet of Fire (movie, 2005) (G5) temporally includes Ron's jealousy (G3)."
+      ]
+    },
+    {
+      "@id": "golem:G0_Character-Stoff",
+      "@type": "owl:Class",
+      "owl:disjointWith": [
+        {
+          "@id": "golem:G1_Character"
+        },
+        {
+          "@id": "lrmoo:F1_Work"
+        },
+        {
+          "@id": "golem:G9_Narrative_Unit"
+        }
+      ],
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The concept of Character-Stoff is derived from the German term Erzählstoff, referring to narrative material (Zgoll et al, 2020). Character-Stoff represents the infinite potential of a character across all known and unknown variations, extending beyond any singular depiction. It encompasses all possible versions, features, actions, and roles of a character across time and media, while remaining open to reinterpretation and transformation. This polymorphous nature allows for endless modifications. Thus, Character-Stoff is an ever-evolving, inexhaustible phenomenon, impossible to outline in full."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G0 Character-Stoff"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "ecrm:E28_Conceptual_Object"
+        },
+        {
+          "@id": "dlp_extDnS:social-object"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb20"
+        }
+      ],
+      "skos:example": "Harry Potter. \nThe Harry Potter Stoff includes not only the known versions from books, films, and fan works, but also potential reinterpretations in future media or cultural contexts. Any imaginary version of Harry Potter could be potentially true, as the Character-Stoff allows for infinite variations and reinterpretations."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb20",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P130i_features_are_also_found_on"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G1_Character"
+      }
+    },
+    {
+      "@id": "dcterms:hasVersion",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "rdfs:seeAlso",
+      "rdfs:comment": "Further information about the subject resource.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdfs:"
+      },
+      "rdfs:label": "seeAlso"
+    },
+    {
+      "@id": "dcterms:status",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "dlp_extDnS:d-uses",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "d-uses"
+      },
+      "skos:example": [
+        "Harry Potter and the Deathly Hallows (Rowling, 2007) (F1) d-uses the fabula of Harry Potter and the Deathly Hallows (G7).",
+        "Romantic love between Ron and Hermione (G4) d-uses the role \"lover\" (G6)."
+      ]
+    },
+    {
       "@id": "lrmoo:F1_Work",
       "@type": "owl:Class",
       "rdfs:comment": [
@@ -2476,25 +1482,25 @@
           "@id": "dlp_extDnS:description"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb1"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb4"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb2"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb5"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb3"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb6"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb4"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb7"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb5"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb8"
         }
       ],
       "skos:example": "*Harry Potter and the Philosopher's Stone* (movie, 2001)."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb1",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb4",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "lrmoo:R3_is_realised_in"
@@ -2504,7 +1510,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb2",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb5",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "ecrm:P130_shows_features_of"
@@ -2514,7 +1520,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb3",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb6",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dol:proper-part"
@@ -2524,7 +1530,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb4",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb7",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:d-uses"
@@ -2534,7 +1540,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb5",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb8",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "dlp_extDnS:satisfied-by"
@@ -2544,104 +1550,146 @@
       }
     },
     {
-      "@id": "ecrm:P127_has_broader_term",
+      "@id": "ecrm:P177_assigned_property_of_type",
       "@type": "owl:ObjectProperty",
-      "skos:example": "\"Friendship\" (E55) has broader term \"topic\" (E55)."
+      "skos:example": "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned property of type “topic” (E55)."
     },
     {
-      "@id": "lrmoo:R5_has_component",
-      "@type": "owl:ObjectProperty",
-      "owl:inverseOf": {
-        "@id": "lrmoo:R5i_is_component_of"
+      "@id": "rdfs:comment",
+      "rdfs:comment": "A description of the subject resource.",
+      "rdfs:isDefinedBy": {
+        "@id": "rdfs:"
       },
-      "rdfs:comment": [
-        "In GOLEM, it indicates that an expression (such as a text) contains a specific component, like a word, sentence, or paragraph.",
-        "Quantification: many to many (0,n:0,n)\n\n  Scope note:\n  This property associates an instance of an F2 Expression X with a structural component Y that conveys a part of the overall work realized by X, such as volumes, chapters, or sections. This property is transitive, asymmetric and irreflexive.\n  Any part of an expression that conveys complete propositions, such as a single phrase, can be documented using the more general property P148 has component (is component of).\n  Any part of an expression that does not completely follow meaningful boundaries, such as lines or pages of text or portions visible on images, can be documented using the property P106 is composed of (forms part of), and not with R5 has component (is component of). Fragments, in particular, can be documented with the more specific property R15 has fragment (is fragment of).\n  This property does not cover the relationship that exists between expressions that are realisations of different works, where one is re-used in a new, larger expression. Such a relationship is modelled by R75 incorporates (is incorporated in)  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."
-      ],
-      "rdfs:domain": {
-        "@id": "lrmoo:F2_Expression"
-      },
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "R5 has component"
-      },
-      "rdfs:range": {
-        "@id": "lrmoo:F2_Expression"
-      },
-      "rdfs:subPropertyOf": {
-        "@id": "ecrm:P148_has_component"
-      },
-      "skos:example": "Text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2) has component a paragraph in Harry Potter and the Deathly Hallows (F2)."
+      "rdfs:label": "comment"
     },
     {
-      "@id": "golem:G0_Character-Stoff",
+      "@id": "dcterms:license",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "vann:preferredNamespacePrefix",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "ecrm:P140_assigned_attribute_to",
+      "@type": "owl:ObjectProperty",
+      "skos:example": [
+        "Relationship assignment for Ron and Hermione (E13) assigned attribute to romantic love between Ron and Hermione (G4).",
+        "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned attribute to the work Harry Potter and the Philosopher's Stone (Rowling, 1997) (F1)."
+      ]
+    },
+    {
+      "@id": "rdf:Seq",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "The concept of Character-Stoff is derived from the German term Erzählstoff, referring to narrative material (Zgoll et al, 2020). Character-Stoff represents the infinite potential of a character across all known and unknown variations, extending beyond any singular depiction. It encompasses all possible versions, features, actions, and roles of a character across time and media, while remaining open to reinterpretation and transformation. This polymorphous nature allows for endless modifications. Thus, Character-Stoff is an ever-evolving, inexhaustible phenomenon, impossible to outline in full."
+        "@value": "The class of ordered containers."
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "rdf:"
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "G0 Character-Stoff"
+        "@value": "Seq"
+      }
+    },
+    {
+      "@id": "dc:creator",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "golem:G11_Narrative_Role",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A narrative role refers to the functional roles that characters play within a story. Roles are only played by characters (gc:G1)."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G11 Narrative Role"
       },
       "rdfs:subClassOf": [
         {
-          "@id": "ecrm:E28_Conceptual_Object"
+          "@id": "dlp_extDnS:role"
         },
         {
-          "@id": "dlp_extDnS:social-object"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb24"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb17"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb25"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb26"
         }
       ],
-      "skos:example": "Harry Potter. \nThe Harry Potter Stoff includes not only the known versions from books, films, and fan works, but also potential reinterpretations in future media or cultural contexts. Any imaginary version of Harry Potter could be potentially true, as the Character-Stoff allows for infinite variations and reinterpretations."
+      "skos:example": "Narrator, dramatis personae from Propp Ontology (Pannach et al., 2021) or *commedia dell’arte*."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb17",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb24",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "ecrm:P130i_features_are_also_found_on"
+        "@id": "dlp_extDnS:d-used-by"
+      },
+      "owl:someValuesFrom": {
+        "@id": "lrmoo:F1_Work"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb25",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:modal-target"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G7_Narrative_Sequence"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb26",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:played-by"
       },
       "owl:someValuesFrom": {
         "@id": "golem:G1_Character"
       }
     },
     {
-      "@id": "dlp_extDnS:involves",
-      "@type": "owl:ObjectProperty",
+      "@id": "golem:G14_Narrative-Stoff",
+      "@type": "owl:Class",
+      "owl:disjointWith": {
+        "@id": "golem:G15_Fandom"
+      },
       "rdfs:comment": {
         "@language": "en",
-        "@value": "In GOLEM, indicates that a character is involved in a social relationship."
+        "@value": "Narrative Stoff refers to the fundamental materials that form the basis of a narrative. It contains a chronological sequence of events (golem:G7_Narrative_Sequence) that could be manifested across various narratives and media. This concept highlights the potential variations of narrative units within different contexts."
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "involves"
-      }
-    },
-    {
-      "@id": "dlp_spat:participant-place-of",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "participant place of"
-      }
-    },
-    {
-      "@id": "dlp_extDnS:uses",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, describes a character's (G1) use of an object (G16) in a narrative event (G5) or narrative unit (G9).",
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "uses"
+        "@value": "G14 Narrative-Stoff"
       },
-      "skos:example": "Harry Potter (G1) uses the Elder Wand (G16) in the Battle of Hogwarts."
+      "rdfs:subClassOf": [
+        {
+          "@id": "ecrm:E28_Conceptual_Object"
+        },
+        {
+          "@id": "dlp_extDnS:description"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb39"
+        }
+      ],
+      "skos:example": "Apollo and Zephyros love Hyacinthus. While Apollo and Hyacinthus are playing a game with a discus, Zephyros uses the wind to change its direction, causing the discus to hit Hyacinthus and resulting in his death. Afterward, Hyacinthus transforms into a flower."
     },
     {
-      "@id": "ecrm:P67_refers_to",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, indicates that a narrative unit (G9) refers to a specific narrative event (G5)",
-      "skos:example": "The hyleme “Voldemort casts the ‘Avada Kedavra’ curse” (G9) refers to the event “Harry heard the high voice shriek [...]: ‘Avada Kedavra!’” (G5)."
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb39",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P130i_features_are_also_found_on"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G7_Narrative_Sequence"
+      }
     },
     {
       "@id": "lrmoo:R3i_realises",
@@ -2668,181 +1716,207 @@
       }
     },
     {
-      "@id": "golem:G3_Psychological_State",
+      "@id": "golem:G10_Narrative_Function",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "A psychological state is a temporal mental condition that may change over time but possesses relatively constant qualities, such as emotions, motivations, beliefs, and goals."
+        "@value": "A narrative function refers to the functional roles that narrative units play within a story. For instance, the Proppian function (Propp, 1968) \"Villain causes harm or injury\" can be illustrated by the narrative unit where Zephyros causes Hyacinthus's death."
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "G3 Psychological State"
+        "@value": "G10 Narrative Function"
       },
       "rdfs:subClassOf": [
         {
-          "@id": "dol:state"
+          "@id": "dlp_extDnS:role"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb50"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb21"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb51"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb22"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb55"
-        },
-        {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb59"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb23"
         }
       ],
-      "skos:example": "Ron's jealousy (Yule Ball).\nIn the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for Hermione and his insecurity. Seeing Hermione arriving at the ball with Viktor Krum, Ron lashes out and criticizes Hermione. His anger reveals his jealousy (chapter 23 of Harry Potter and The Goblet of Fire)."
+      "skos:example": "Functions identified by Propp, Campbell, or Greimas (Greimas, 1983)."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb50",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb21",
       "@type": "owl:Restriction",
       "owl:onProperty": {
-        "@id": "dlp_funct:state-of"
+        "@id": "dlp_extDnS:d-used-by"
       },
       "owl:someValuesFrom": {
-        "@id": "golem:G1_Character"
+        "@id": "lrmoo:F1_Work"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb51",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb22",
       "@type": "owl:Restriction",
-      "owl:allValuesFrom": {
-        "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb52"
-      },
       "owl:onProperty": {
-        "@id": "dlp_temp:follows"
+        "@id": "dlp_extDnS:modal-target"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G7_Narrative_Sequence"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb52",
-      "owl:unionOf": {
-        "@list": [
-          {
-            "@id": "golem:G3_Psychological_State"
-          },
-          {
-            "@id": "golem:G5_Narrative_Event"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb55",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb23",
       "@type": "owl:Restriction",
-      "owl:allValuesFrom": {
-        "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb56"
-      },
       "owl:onProperty": {
-        "@id": "dlp_temp:temporally-includes"
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb56",
-      "owl:unionOf": {
-        "@list": [
-          {
-            "@id": "golem:G3_Psychological_State"
-          },
-          {
-            "@id": "golem:G5_Narrative_Event"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb59",
-      "@type": "owl:Restriction",
-      "owl:allValuesFrom": {
-        "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb60"
+        "@id": "dlp_extDnS:played-by"
       },
-      "owl:onProperty": {
-        "@id": "dlp_temp:temporally-overlaps"
+      "owl:someValuesFrom": {
+        "@id": "golem:G9_Narrative_Unit"
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb60",
-      "owl:unionOf": {
-        "@list": [
-          {
-            "@id": "golem:G3_Psychological_State"
-          },
-          {
-            "@id": "golem:G5_Narrative_Event"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "golem:GP1i_has_Character",
+      "@id": "dlp_temp:temporal-location-of",
       "@type": "owl:ObjectProperty",
-      "rdfs:comment": "Indicates that a character appears in a work.",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "temporal location of"
+      }
+    },
+    {
+      "@id": "dlp_extDnS:uses",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, describes a character's (G1) use of an object (G16) in a narrative event (G5) or narrative unit (G9).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "uses"
+      },
+      "skos:example": "Harry Potter (G1) uses the Elder Wand (G16) in the Battle of Hogwarts."
+    },
+    {
+      "@id": "dlp_extDnS:involves",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "In GOLEM, indicates that a character is involved in a social relationship."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "involves"
+      }
+    },
+    {
+      "@id": "skos:prefLabel",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "skos:notation",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "ecrm:P130_shows_features_of",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In the GOLEM ontology, it indicates that a Stoff variant exhibits features of the Stoff, such as a Character-Stoff or Narrative-Stoff.",
+      "skos:example": [
+        "Harry Potter (character) who appears in Harry Potter and the Philosopher's Stone (movie, 2001) (G1)  shows features of Harry Potter Stoff (G0).",
+        "The Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007) (G7) shows features of Battle of Hogwarts Stoff (G14)."
+      ]
+    },
+    {
+      "@id": "dol:proper-part",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that an entity is proper part of a larger entity. For example, a child location (G13) is proper part of a larger parent location (G13).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "proper part"
+      },
+      "skos:example": [
+        "Harry Potter and the Deathly Hallows (Rowling, 2007) (F1) has proper part Hyleme “Harry’s triumph, as Voldemort dies from his rebounded curse” (G9).",
+        "Hogwarts School of Witchcraft and Wizardry (G13) has proper part Forbidden Forest (G13)."
+      ]
+    },
+    {
+      "@id": "dlp_extDnS:d-used-by",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "d-used-by"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb93",
+      "@type": "owl:AllDisjointClasses",
+      "owl:members": {
+        "@list": [
+          {
+            "@id": "golem:G6_Relationship_Role"
+          },
+          {
+            "@id": "golem:G10_Narrative_Function"
+          },
+          {
+            "@id": "golem:G11_Narrative_Role"
+          },
+          {
+            "@id": "golem:G13_Narrative_Location"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "lrmoo:R3_is_realised_in",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "lrmoo:R3i_realises"
+      },
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "Quantification: one to many, necessary, dependent (1,n:1,1)\n\nScope note: \n\nThis property associates an instance of F2 Expression with an instance of F1 Work. This property expresses the association that exists between an expression and the work that this expression conveys. Our factual knowledge of how a given work is historically realised into expressions is often limited. Therefore, this property makes it possible to express the association between an instance of F2 Expression and the instance of F1 Work it conveys without identifying the particular instances of F2 Expression that were part of a chain of derivation from the source."
+        },
+        "In GOLEM, a narrative or idea (work) is realized in a specific expression, such as a text, movie, performance, or other medium."
+      ],
       "rdfs:domain": {
         "@id": "lrmoo:F1_Work"
       },
-      "rdfs:label": "has character",
-      "rdfs:range": {
-        "@id": "golem:G1_Character"
-      }
-    },
-    {
-      "@id": "dcterms:creator",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "dlp_extDnS:life-cycle",
-      "rdfs:comment": "The course of events typical of the life of an object (kind)."
-    },
-    {
-      "@id": "golem:G17_Character_Feature",
-      "@type": "owl:Class",
-      "owl:disjointWith": {
-        "@id": "golem:G18_Textual_Feature"
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "R3 is realised in"
       },
+      "rdfs:range": {
+        "@id": "lrmoo:F2_Expression"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ecrm:P130_shows_features_of"
+      },
+      "skos:example": "The work Harry Potter and the Deathly Hallows (F1) is realised in the text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2)."
+    },
+    {
+      "@id": "dlp_extDnS:setting-for",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, links a narrative setting (G12) to various elements such as location (G13), time, character (G1), object (G16), or event (G5).",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "setting for"
+      },
+      "skos:example": [
+        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Harry Potter (G1).",
+        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Quidditch World Cup campsite (G13).",
+        "Wizarding community rivalries during the Triwizard Tournament (G12) is setting for Triwizard Tournament (G5)."
+      ]
+    },
+    {
+      "@id": "golem:G2_Feature",
+      "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Character traits or features are stable aspects defining a character's identity, including biographical (e.g., birth, death), physical (e.g., hair color, scars), and psychological features (e.g., personality). These three subcategories are specified using ecrm:E55_Type."
+        "@value": "A feature in the context of narrative refers to a distinct element or characteristic that contributes to the structure and meaning of a story. Features include character traits and textual elements.\nTaxonomies of features can be further specified using ecrm:E55_Type."
       },
       "rdfs:label": {
         "@language": "en",
-        "@value": "G17 Character Feature"
+        "@value": "G2 Feature"
       },
       "rdfs:subClassOf": {
-        "@id": "golem:G2_Feature"
+        "@id": "dul_region:Region"
       },
-      "skos:example": "Harry Potter’s bravery as inferred from the sentence\n“Harry screwed up his courage” (chapter 17 of Harry Potter and the Philosopher’s Stone)."
-    },
-    {
-      "@id": "dlp_temp:temporal-location",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": [
-        "Analytical location holding between physical perdurants and temporal regions  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).",
-        "In GOLEM, describes the specific time point at which a narrative event (G5) occurs."
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "temporal location"
-      },
-      "skos:example": "The Yule Ball in *Harry Potter and the Goblet of Fire* (movie, 2005) (G5) has temporal location Christmas Eve (time-interval)."
-    },
-    {
-      "@id": "dc:license",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "skos:example",
-      "@type": "owl:AnnotationProperty"
-    },
-    {
-      "@id": "ecrm:P140_assigned_attribute_to",
-      "@type": "owl:ObjectProperty",
-      "skos:example": [
-        "Relationship assignment for Ron and Hermione (E13) assigned attribute to romantic love between Ron and Hermione (G4).",
-        "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned attribute to the work Harry Potter and the Philosopher's Stone (Rowling, 1997) (F1)."
-      ]
+      "skos:example": "Style, theme, literary devices"
     },
     {
       "@id": "ecrm:E13_Attribute_Assignment",
@@ -2860,16 +1934,16 @@
       },
       "rdfs:subClassOf": [
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb9"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb12"
         },
         {
-          "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb10"
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb13"
         }
       ],
       "skos:example": "Assigning the topic “friendship” to the work Harry Potter and the Philosopher's Stone."
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb9",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb12",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "ecrm:P141_assigned"
@@ -2879,7 +1953,7 @@
       }
     },
     {
-      "@id": "_:n43ae1f1b737245548d0fdb39e48725cdb10",
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb13",
       "@type": "owl:Restriction",
       "owl:onProperty": {
         "@id": "ecrm:P177_assigned_property_of_type"
@@ -2889,39 +1963,573 @@
       }
     },
     {
-      "@id": "ecrm:P177_assigned_property_of_type",
-      "@type": "owl:ObjectProperty",
-      "skos:example": "The topic assignment for Harry Potter and the Philosopher's Stone (E13) assigned property of type “topic” (E55)."
+      "@id": "dcterms:created",
+      "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "dlp_extDnS:modal-target",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": "In GOLEM, it relates a narrative function (G10) or narrative role (G11) to their target sequence of narrative events (dlp:perdurants), like fabula or syuzhet (G7_Narrative_Sequence). This property is useful both to link tropes to the whole course of action of a story and to retrieve all the narrative functions associated with the events of a story. It can also be used to specify the relationship roles (G6) of a social relationship (G4).",
+      "@id": "golem:G6_Relationship_Role",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A relationship role refers to the functional role a character plays within the context of their interactions with other characters, serving as a descriptive counterpart to their enduring qualities, with characters participating in events (perdurants)."
+      },
       "rdfs:label": {
         "@language": "en",
-        "@value": "modal target"
+        "@value": "G6 Relationship Role"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "dlp_extDnS:role"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb82"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb83"
+        }
+      ],
+      "skos:example": "Lover (both Ron and Hermione in the “Ron and Hermione” romantic relationship).\nBeloved (both Ron and Hermione in the “Ron and Hermione” romantic relationship)."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb82",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:d-used-by"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G4_Social_Relationship"
       }
     },
     {
-      "@id": "dlp_temp:temporally-included-in",
-      "@type": "owl:ObjectProperty",
-      "rdfs:label": "temporally included in"
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb83",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:played-by"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G1_Character"
+      }
     },
     {
-      "@id": "dlp_extDnS:setting",
+      "@id": "dlp_funct:state-of",
       "@type": "owl:ObjectProperty",
       "rdfs:comment": [
-        "In GOLEM, links a narrative setting (G12) to various elements such as location (G13), time, character (G1), object (G16), or event (G5).",
-        "The relation between a situation and the entities that constitute it. (At least some of, or all) such entities must be classified by concepts defined by the description that the situation is supposed to satisfy ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
+        "In GOLEM, indicates the psychological state (G3) of a character (G1).",
+        "Participation in a state ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html))."
       ],
       "rdfs:label": {
         "@language": "en",
-        "@value": "setting"
+        "@value": "state-of"
       }
     },
     {
-      "@id": "dlp_extDnS:rational-physical-object",
-      "rdfs:comment": "In this ontology, a rational object is encoded as having the ability to internally represent meta-descriptions (descriptions that have other descriptions playing roles used by them). Other theories of rational agency assume desires and intentions for these objects, but in principle any agent can have desires and intentions: the very difference seems to be the ability to choose among different desires or intentions by going 'meta-level'."
+      "@id": "dlp_temp:temporal-location",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": [
+        "Analytical location holding between physical perdurants and temporal regions  ([DOLCE-Lite-Plus, 2005](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html)).",
+        "In GOLEM, describes the specific time point at which a narrative event (G5) occurs."
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "temporal location"
+      },
+      "skos:example": "The Yule Ball in *Harry Potter and the Goblet of Fire* (movie, 2005) (G5) has temporal location Christmas Eve (time-interval)."
+    },
+    {
+      "@id": "dc:created",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "skos:example",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "golem:GP0i_is_feature_of",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "Indicates that a narrative or character has certain features.",
+      "rdfs:domain": {
+        "@id": "golem:G2_Feature"
+      },
+      "rdfs:label": "is feature of",
+      "rdfs:range": {
+        "@id": "ecrm:E28_Conceptual_Object"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "dul_region:isRegionFor"
+      }
+    },
+    {
+      "@id": "golem:G15_Fandom",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A fandom is a group of fans who share a common interest in a particular work or topic, such as a book or movie, and engage in fan activities like discussions or creating fan works."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G15 Fandom"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "ecrm:E28_Conceptual_Object"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb40"
+        }
+      ],
+      "skos:example": "The entity identified by the label “Harry Potter - J. K. Rowling” on AO3."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb40",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "ecrm:P130i_features_are_also_found_on"
+      },
+      "owl:someValuesFrom": {
+        "@id": "lrmoo:F1_Work"
+      }
+    },
+    {
+      "@id": "golem:G13_Narrative_Location",
+      "@type": "owl:Class",
+      "owl:disjointWith": {
+        "@id": "dlp_csm:non-physical-place"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A narrative location is the spatial context in which events unfold—serving as the immediate frame of action within a story. It is a non-agentive social object shaped by the narrative structure. While it may derive features from real-world locations, it exists solely as an entity within the narrative domain."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G13 Narrative Location"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "dlp_extDnS:non-agentive-social-object"
+        },
+        {
+          "@id": "ecrm:E28_Conceptual_Object"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb33"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb34"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb35"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb36"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb37"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb38"
+        }
+      ],
+      "skos:example": "'England' or the 'Forbidden Forest' as depicted in the Harry Potter series—both conceived and situated within the fictional narrative context.\" ."
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb33",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:generic-location-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G16_Object"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb34",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:generic-location-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G1_Character"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb35",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:proper-part"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G13_Narrative_Location"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb36",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:proper-part-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G13_Narrative_Location"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb37",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:setting"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G12_Setting"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb38",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_spat:participant-place-of"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "dlp_extDnS:sequences",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": "In GOLEM, indicates that a fabula or syuzhet (G7) sequences narrative events in a specific order.",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "sequences"
+      },
+      "skos:example": "The fabula and syuzhet (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (J. K. Rowling, 2007) sequences a series of individual events"
+    },
+    {
+      "@id": "dc:description",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "golem:G5_Narrative_Event",
+      "@type": "owl:Class",
+      "owl:disjointWith": {
+        "@id": "golem:G3_Psychological_State"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A narrative event is a unit inferred from a span of text and it can express a change of state, a process, or a state of things that supports the story, as defined by its temporality and sequentiality.. Events can be either external, like actions taken by characters, or psychological, involving changes in thoughts or feelings, which are distinct from a psychological state (cf. Gius and Vauth, 2022). Types of events can be specified using ecrm:E55_Type."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G5 Narrative Event"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "dol:perdurant"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb69"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb70"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb71"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb72"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb73"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb74"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb75"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb76"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb77"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb78"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb79"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb80"
+        },
+        {
+          "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb81"
+        }
+      ],
+      "skos:example": "\"There was a clatter as the basilisk fangs cascaded out of Hermione’s arms [process event]. Running at Ron [process event], she flung them around his neck and kissed him full on the mouth [change of state]. Ron threw away the fangs and broomstick [process event] he was holding and responded with such enthusiasm that he lifted Hermione off her feet [change of state].\""
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb69",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dol:participant"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G1_Character"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb70",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_extDnS:setting"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G12_Setting"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb71",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_spat:participant-place"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G13_Narrative_Location"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb72",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:follows"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G3_Psychological_State"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb73",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:follows"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb74",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:precedes"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G3_Psychological_State"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb75",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:precedes"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb76",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-included-in"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G3_Psychological_State"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb77",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-included-in"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb78",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-includes"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G3_Psychological_State"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb79",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-includes"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb80",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-overlaps"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G3_Psychological_State"
+      }
+    },
+    {
+      "@id": "_:ne3f6aa587a6a450db1e3459a9146759fb81",
+      "@type": "owl:Restriction",
+      "owl:onProperty": {
+        "@id": "dlp_temp:temporally-overlaps"
+      },
+      "owl:someValuesFrom": {
+        "@id": "golem:G5_Narrative_Event"
+      }
+    },
+    {
+      "@id": "dlp_extDnS:modal-target-of",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "modal target of"
+      },
+      "skos:example": [
+        "Proppian function “Victory” (G10) is the modal target of the fabula (G7_Narrative_Sequence) of Harry Potter and the Deathly Hallows (Rowling, 2007).",
+        "“Hero” (G11) is modal target of the narrative sequence (G7) of Battle of Hogwarts in Harry Potter and the Deathly Hallows (Rowling, 2007)."
+      ]
+    },
+    {
+      "@id": "dlp_temp:precedes",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "precedes"
+      }
+    },
+    {
+      "@id": "golem:G18_Textual_Feature",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Textual features are the elements or characteristics found in a narrative or fictions. These features include narrative style, like the tone and writing techniques employed by the author, as well as the point of view (POV) that determines the perspective from which the story is told, such as first-person or third-person. Textual features also contain the voice reflecting authors' attitude, the diction referring to the authors' choice of words, etc. Taxonomies of textual features can be further specified using ecrm:E55_Type."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "G18 Textual Feature"
+      },
+      "rdfs:subClassOf": {
+        "@id": "golem:G2_Feature"
+      },
+      "skos:example": "Stream of consciousness, first-person perspective"
+    },
+    {
+      "@id": "ecrm:E28_Conceptual_Object",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "dlp_extDnS:social-object"
+      }
+    },
+    {
+      "@id": "dlp_extDnS:satisfied-by",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "satisfied by"
+      }
+    },
+    {
+      "@id": "golem:GP1_is_character_in",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "golem:GP1i_has_Character"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Indicates that a character appears in a work."
+      },
+      "rdfs:domain": {
+        "@id": "golem:G1_Character"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "is character in"
+      },
+      "rdfs:range": {
+        "@id": "lrmoo:F1_Work"
+      },
+      "skos:example": "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)."
+    },
+    {
+      "@id": "dol:participant-in",
+      "@type": "owl:ObjectProperty",
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "participant in"
+      },
+      "skos:example": [
+        "Harry Potter (G1) participant in the Battle of Hogwarts (G5).",
+        "The egg (G16) participant in the event in which Cedric gives Harry a hint (G5) (chapter 24 of Harry Potter and the Goblet of Fire)."
+      ]
+    },
+    {
+      "@id": "dlp_spat:participant-place",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "In GOLEM, indicates the location (G13) where a narrative event (G5) took place."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "participant place"
+      },
+      "skos:example": "The Quidditch World Cup match (G5) has participant place Quidditch World Cup Campsite (G13)."
+    },
+    {
+      "@id": "dcterms:bibliographicCitation",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "ecrm:P90_has_value",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive.",
+      "rdfs:label": "P90 has value",
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      },
+      "skos:example": [
+        "Kudos (E54) has value 59 (E60).\n(Smile as Bright as the Sun as You Fade into Darkness from AO3)",
+        "Word count (E54) has value 1,337 (E60)."
+      ]
+    },
+    {
+      "@id": "lrmoo:R5i_is_component_of",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "lrmoo:R5_has_component"
+      },
+      "rdfs:comment": "Quantification: many to many (0,n:0,n)\n\nScope note:\nThis property associates an instance of an F2 Expression X with a structural component Y that conveys a part of the overall work realized by X, such as volumes, chapters, or sections. This property is transitive, asymmetric and irreflexive.\nAny part of an expression that conveys complete propositions, such as a single phrase, can be documented using the more general property P148 has component (is component of).\nAny part of an expression that does not completely follow meaningful boundaries, such as lines or pages of text or portions visible on images, can be documented using the property P106 is composed of (forms part of), and not with R5 has component (is component of). Fragments, in particular, can be documented with the more specific property R15 has fragment (is fragment of).\nThis property does not cover the relationship that exists between expressions that are realisations of different works, where one is re-used in a new, larger expression. Such a relationship is modelled by R75 incorporates (is incorporated in)  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html)).",
+      "rdfs:domain": {
+        "@id": "lrmoo:F2_Expression"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "R5i is component of"
+      },
+      "rdfs:range": {
+        "@id": "lrmoo:F2_Expression"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "ecrm:P148i_is_component_of"
+      }
     }
   ]
 }
