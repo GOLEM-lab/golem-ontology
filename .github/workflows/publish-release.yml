@@ -88,7 +88,7 @@ jobs:
             else
               echo "Comparing:"
               echo "  before: $before"
-              echo "  after:  $after"
+              echo "  after: $after"
 
               mapfile -t ttl_files < <(
                 git diff --name-only "$before" "$after" |
@@ -138,30 +138,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 4. Prepare PyLODE CSS
-      #
-      # The authoritative/shared CSS remains at the repository root.
-      # A copy is placed in the release directory because the
-      # generated HTML refers to pylode.css relatively.
-      # ------------------------------------------------------------
-
-      - name: Prepare PyLODE CSS
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          release_dir="${{ steps.release.outputs.release_dir }}"
-
-          if [ ! -f "pylode.css" ]; then
-            echo "ERROR: Root pylode.css does not exist."
-            exit 1
-          fi
-
-          cp "pylode.css" "$release_dir/pylode.css"
-
-
-      # ------------------------------------------------------------
-      # 5. Set up Python for PyLODE
+      # 4. Set up Python for PyLODE
       #
       # PyLODE is installed directly rather than through the
       # pylode-to-pages GitHub Action.
@@ -188,7 +165,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 6. Generate PyLODE documentation
+      # 5. Generate PyLODE documentation
       # ------------------------------------------------------------
 
       - name: Generate PyLODE documentation
@@ -219,7 +196,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 7. Clean PyLODE auxiliary output
+      # 6. Clean PyLODE auxiliary output
       # ------------------------------------------------------------
 
       - name: Clean PyLODE auxiliary output
@@ -243,7 +220,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 8. Determine the newest release
+      # 7. Determine the newest release
       # ------------------------------------------------------------
 
       - name: Find latest release
@@ -269,7 +246,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 9. Update stable aliases
+      # 8. Update stable aliases
       # ------------------------------------------------------------
 
       - name: Update stable aliases
@@ -316,12 +293,9 @@ jobs:
           cp "$latest_jsonld" current/golem.jsonld
           cp "$latest_html" current/golem.html
 
-          # current/golem.html refers to pylode.css relatively.
-          cp pylode.css current/pylode.css
-
 
       # ------------------------------------------------------------
-      # 10. Commit generated release artifacts
+      # 9. Commit generated release artifacts
       # ------------------------------------------------------------
 
       - name: Commit generated release artifacts
@@ -343,7 +317,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 11. Prepare GitHub Pages publication tree
+      # 10. Prepare GitHub Pages publication tree
       # ------------------------------------------------------------
 
       - name: Prepare GitHub Pages site
@@ -364,9 +338,6 @@ jobs:
             touch public/.nojekyll
           fi
 
-          # Shared PyLODE stylesheet.
-          cp pylode.css public/
-
           # Versioned releases.
           cp -a releases public/
 
@@ -378,7 +349,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 12. Deploy publication tree to gh-pages
+      # 11. Deploy publication tree to gh-pages
       # ------------------------------------------------------------
 
       - name: Deploy to GitHub Pages
