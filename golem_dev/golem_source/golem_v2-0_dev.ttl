@@ -1011,28 +1011,8 @@ golem:G1_Character rdf:type owl:Class ;
                                      owl:someValuesFrom golem:G0_Character-Stoff
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty dol:participant-in ;
-                                     owl:someValuesFrom golem:G5_Narrative_Event
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty dlp_extDnS:involved-in ;
-                                     owl:someValuesFrom golem:G4_Social_Relationship
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty dlp_extDnS:plays ;
-                                     owl:someValuesFrom golem:G11_Narrative_Role
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty dlp_extDnS:plays ;
-                                     owl:someValuesFrom golem:G6_Relationship_Role
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty dlp_extDnS:setting ;
-                                     owl:someValuesFrom golem:G12_Setting
-                                   ] ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty dlp_extDnS:uses ;
-                                     owl:someValuesFrom golem:G16_Object
+                                     owl:allValuesFrom golem:G12_Setting
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty golem:GP1_is_character_in ;
