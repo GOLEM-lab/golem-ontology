@@ -1,4 +1,4 @@
-# test for deploying!
+# comment for test !! ! ! ! !!
 
 @prefix : <https://w3id.org/golem/ontology#> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
