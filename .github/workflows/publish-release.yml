@@ -317,47 +317,76 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 10. Prepare GitHub Pages publication tree
+      # 10. Checkout gh-pages separately
       # ------------------------------------------------------------
 
-      - name: Prepare GitHub Pages site
+      - name: Checkout gh-pages for deployment
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-deploy
+          fetch-depth: 0
+
+
+      # ------------------------------------------------------------
+      # 11. Synchronize published ontology files
+      #
+      # Replace only current/ and releases/ on gh-pages.
+      # Preserve index.html, CNAME, .nojekyll, stylesheets,
+      # and any other website-specific files.
+      # ------------------------------------------------------------
+
+      - name: Synchronize ontology files to gh-pages
         shell: bash
         run: |
           set -euo pipefail
 
-          rm -rf public
-          mkdir -p public
+          deploy_dir="$GITHUB_WORKSPACE/gh-pages-deploy"
 
-          # Public root files.
-          cp index.html public/
-          cp CNAME public/
+          echo "Removing previously published ontology directories..."
+          rm -rf "$deploy_dir/current" "$deploy_dir/releases"
 
-          if [ -f .nojekyll ]; then
-            cp .nojekyll public/
+          echo "Copying current ontology aliases..."
+          cp -a "$GITHUB_WORKSPACE/current" "$deploy_dir/current"
+
+          echo "Copying versioned ontology releases..."
+          cp -a "$GITHUB_WORKSPACE/releases" "$deploy_dir/releases"
+
+          echo "Files to publish:"
+          find "$deploy_dir/current" "$deploy_dir/releases" \
+            -maxdepth 4 -type f | sort
+
+          echo "Verifying website files are preserved..."
+          test -f "$deploy_dir/index.html"
+          test -f "$deploy_dir/CNAME"
+
+          echo "Website files remain in place."
+
+
+      # ------------------------------------------------------------
+      # 12. Commit and push the deployment
+      # ------------------------------------------------------------
+
+      - name: Commit and push gh-pages updates
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          deploy_dir="$GITHUB_WORKSPACE/gh-pages-deploy"
+
+          git -C "$deploy_dir" config \
+            user.name "github-actions[bot]"
+
+          git -C "$deploy_dir" config \
+            user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git -C "$deploy_dir" add -- current releases
+
+          if git -C "$deploy_dir" diff --cached --quiet; then
+            echo "No changes to published ontology files."
           else
-            touch public/.nojekyll
+            git -C "$deploy_dir" commit \
+              -m "Deploy GOLEM ontology artifacts"
+
+            git -C "$deploy_dir" push origin HEAD:gh-pages
           fi
-
-          # Versioned releases.
-          cp -a releases public/
-
-          # Stable aliases.
-          cp -a current public/
-
-          echo "GitHub Pages publication tree:"
-          find public -maxdepth 4 -type f | sort
-
-
-      # ------------------------------------------------------------
-      # 11. Deploy publication tree to gh-pages
-      # ------------------------------------------------------------
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./public
-          enable_jekyll: false
-          force_orphan: true
-          commit_message: "Deploy GOLEM ontology site"
