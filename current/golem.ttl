@@ -58,7 +58,13 @@ Created by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM
 
 ### Overview
 
-Ontology of fiction and narrative, developed as an extension of [Erlangen-CRM](http://erlangen-crm.org/) and aligned with [DOLCE-Lite-Plus](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html). GOLEM also reuses selected constructs from LRMoo, while preserving their original namespace and modelling the required classes and relations.
+## GOLEM
+
+Ontology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).
+
+It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes.
+
+GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.
 
 Narrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.
 
