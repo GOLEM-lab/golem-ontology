@@ -1,29 +1,25 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="GOLEM is an ontology for narrative and fiction, designed to represent narrative elements and their relationships across domains and cultural contexts.">
   <meta name="theme-color" content="#f7f7f2">
   <title>GOLEM — Ontology for Narrative and Fiction</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="website/style/index.css">
 </head>
 
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="GOLEM home">
-      <span class="brand-mark" aria-hidden="true">G</span>
-      <span class="brand-name">GOLEM</span>
+      <span class="brand-name">GOLEM Lab</span>
     </a>
 
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a href="#ontology">Ontology</a>
-      <a href="#research">Research</a>
-      <a href="#cite">Cite</a>
-      <a class="nav-external"
-         href="https://github.com/GOLEM-lab/golem-ontology/wiki">
+      <a href="#resources">Resources</a>
+      <a href="#releases">Releases</a>
+      <a href="#references">References</a>
+      <a class="nav-external" href="https://github.com/GOLEM-lab/golem-ontology/wiki">
         Wiki <span aria-hidden="true">↗</span>
       </a>
     </nav>
@@ -32,27 +28,11 @@
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">
-          KNOWLEDGE REPRESENTATION · NARRATIVE STUDIES
-        </p>
-
-        <h1>Making the structure of stories <em>explicit.</em></h1>
+        <h1>GOLEM Ontology</h1>
 
         <p class="hero-intro">
-          GOLEM is an ontology for narrative and fiction. It provides
-          a formal framework for representing characters, events,
-          relationships, settings, and other elements of storytelling
-          as interconnected systems.
+          A computational ontology for narrative and fiction
         </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="current/golem.html">
-            Explore the ontology <span aria-hidden="true">↗</span>
-          </a>
-          <a class="button button-secondary" href="#ontology">
-            Browse data formats
-          </a>
-        </div>
 
         <div class="hero-meta">
           <span class="status-dot" aria-hidden="true"></span>
@@ -60,124 +40,102 @@
           <strong>v2.0</strong>
           <span class="meta-divider" aria-hidden="true">/</span>
           <span>RDF-based knowledge representation</span>
+          <span class="meta-divider" aria-hidden="true">/</span>
+          <span>OWL expressivity</span>
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Abstract illustration of connected narrative elements">
-        <div class="visual-orbit orbit-one"></div>
-        <div class="visual-orbit orbit-two"></div>
-        <div class="visual-line line-one"></div>
-        <div class="visual-line line-two"></div>
-        <div class="visual-line line-three"></div>
-
-        <div class="node node-central">
-          <span class="node-symbol">G</span>
-          <span class="node-label">Narrative</span>
-        </div>
-
-        <div class="node node-character">
-          <span class="node-icon">01</span>
-          <span class="node-label">Character</span>
-        </div>
-
-        <div class="node node-event">
-          <span class="node-icon">02</span>
-          <span class="node-label">Event</span>
-        </div>
-
-        <div class="node node-context">
-          <span class="node-icon">03</span>
-          <span class="node-label">Context</span>
-        </div>
-
-        <p class="visual-caption">Elements in relation, not isolation.</p>
+      <div class="hero-visual" aria-label="GOLEM Lab logo">
+        <img src="website/images/logo.png" alt="GOLEM Lab" class="hero-logo">
       </div>
     </section>
 
-    <section class="principles" aria-label="GOLEM at a glance">
-      <div class="principle">
-        <span class="principle-number">01</span>
-        <div>
-          <h2>Formal</h2>
-          <p>Explicit concepts, properties, and semantic relations.</p>
-        </div>
-      </div>
+    <section class="about" id="about">
+      <h2>About</h2>
 
-      <div class="principle">
-        <span class="principle-number">02</span>
-        <div>
-          <h2>Interconnected</h2>
-          <p>Narrative elements understood through their relationships.</p>
-        </div>
-      </div>
+      <p>
+        The GOLEM ontology models fiction and narrative as an extension of the
+        <a href="http://erlangen-crm.org/" target="_blank" rel="noopener noreferrer">Erlangen CRM</a>
+        and is aligned with the
+        <a href="https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html"
+           target="_blank" rel="noopener noreferrer">DOLCE-Lite-Plus Ecosystem</a>.
+        It adopts a
+        <a href="https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html"
+           target="_blank" rel="noopener noreferrer">DOLCE+DnS Ultralite (DUL)</a>
+        design pattern for modelling textual and character attributes. GOLEM also
+        reuses selected constructs from
+        <a href="https://cidoc-crm.org/lrmoo/" target="_blank" rel="noopener noreferrer">LRMoo</a>,
+        preserving their original namespace and introducing only the additional
+        classes and relations required for its modelling purposes.
+      </p>
 
-      <div class="principle">
-        <span class="principle-number">03</span>
-        <div>
-          <h2>Cross-domain</h2>
-          <p>A reusable framework for comparing different narratives.</p>
-        </div>
-      </div>
+      <p>
+        Narrative phenomena can be viewed as interconnected systems in which
+        components influence one another. Understanding narratives therefore
+        requires analyzing their elements in relation to each other and within
+        their broader context, rather than in isolation
+        (<a href="https://golemlab.eu/publications/complexity/"
+            target="_blank" rel="noopener noreferrer">Pianzola, 2018</a>).
+        Formal ontologies provide a structured approach to representing the
+        essential elements of storytelling through explicit concepts, constraints,
+        and relationships. This is particularly relevant in literary studies,
+        where quantitative and probabilistic methods can struggle to account for
+        the semantic richness and intensional qualities of texts
+        (<a href="https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1"
+            target="_blank" rel="noopener noreferrer">Ciotti, 2016</a>).
+        Ontology modelling makes narrative structures explicit and computable.
+      </p>
+
+      <p>
+        The GOLEM project develops an ontology that models narratives and fiction
+        independently of their specific domains. It seeks to establish a common
+        ground for representing how key elements of narrative structure—including
+        events, characters, social relationships, and settings—interrelate.
+        Through a modularisation approach, GOLEM aims to create a comprehensive
+        library of modules covering these narrative components, including
+        characters, relationships, events, settings, and narrative inference.
+        The ontology also supports comparative studies across cultural contexts,
+        providing a framework for exploring cumulative cultural evolution and
+        how narratives evolve over time
+        (<a href="https://ceur-ws.org/Vol-2723/short8.pdf"
+            target="_blank" rel="noopener noreferrer">Pianzola et al., 2020</a>).
+      </p>
+
+      <p>
+        GOLEM v2.0 introduces a major architectural and semantic refactoring.
+        It adopts Erlangen CRM as its CRM foundation and reuses selected LRMoo
+        constructs through a lightweight strategy, avoiding the import of the
+        full LRMoo and CRM OWL dependency chain. The feature model has been
+        revised through the DUL Region pattern, with <code>G2_Feature</code>
+        represented as a region and <code>GP0_has_feature</code> aligned with
+        the corresponding region relation. The revision also removes
+        <code>dol:generically-dependent-on</code>, avoiding an unnecessary
+        semantic commitment where dependencies can instead be addressed through
+        provenance mechanisms. These changes reduce the ontology's import
+        closure while preserving its intended semantics and improving
+        computational tractability and maintainability. Detailed descriptions
+        of the individual modules are available in the GOLEM ontology
+        <a href="https://github.com/GOLEM-lab/golem-ontology/wiki"
+           target="_blank" rel="noopener noreferrer">documentation</a> on GitHub.
+      </p>
     </section>
 
-    <section class="section section-about" id="about">
+    <section class="section section-ontology" id="resources">
       <div class="section-heading">
-        <p class="eyebrow">01 — THE PROJECT</p>
-        <h2>A shared conceptual ground for stories.</h2>
-      </div>
-
-      <div class="about-content">
-        <p class="lead">
-          Stories are more than collections of characters and events.
-          Their meaning emerges from the relationships between their
-          components and the contexts in which they unfold.
-        </p>
-
-        <div class="about-detail">
-          <p>
-            GOLEM develops a formal, domain-independent model of
-            narrative and fiction. By making narrative concepts and
-            relationships explicit, the ontology supports consistent
-            knowledge representation and computational analysis.
-          </p>
-          <p>
-            Its modular approach aims to provide a reusable library
-            of narrative components, including characters, events,
-            settings, social relationships, and narrative inference.
-            This creates a foundation for comparative research across
-            texts, genres, and cultural contexts.
-          </p>
-          <a class="text-link"
-             href="https://github.com/GOLEM-lab/golem-ontology/wiki">
-            Explore the ontology modules <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-ontology" id="ontology">
-      <div class="section-heading section-heading-wide">
-        <div>
-          <p class="eyebrow">02 — THE ONTOLOGY</p>
-          <h2>Explore the published resources.</h2>
-        </div>
-        <p class="section-description">
-          Read the documentation online or access the ontology in
-          machine-readable formats for reuse, integration, and analysis.
-        </p>
+        <h2>Published resources</h2>
       </div>
 
       <div class="resource-grid">
-        <article class="resource-card resource-featured">
+        <article class="resource-card">
           <div class="card-topline">
-            <span class="card-label">START HERE</span>
+            <span class="card-label">SIGNATURE</span>
             <span class="card-version">v2.0</span>
           </div>
           <div class="card-icon" aria-hidden="true">↗</div>
-          <h3>Formal documentation</h3>
+          <h3>pyLODE documentation</h3>
           <p>
-            Browse the ontology's classes, properties, definitions,
-            and semantic relationships.
+            Browse the ontology's classes, properties
+            and relationships.
           </p>
           <a class="card-link" href="current/golem.html">
             Read the documentation <span aria-hidden="true">→</span>
@@ -186,14 +144,14 @@
 
         <article class="resource-card">
           <div class="card-topline">
-            <span class="card-label">FOR DEVELOPERS</span>
+            <span class="card-label">SOURCE CODE</span>
             <span class="card-version">RDF</span>
           </div>
           <div class="card-icon card-icon-text" aria-hidden="true">&lt;/&gt;</div>
-          <h3>Ontology serializations</h3>
+          <h3>Serialization formats</h3>
           <p>
-            Access the current ontology in formats suitable for
-            semantic-web tools and applications.
+            Access the ontology in formats suitable for
+            semantic-web tools and standard data science workflows.
           </p>
           <div class="format-links">
             <a href="current/golem.ttl">Turtle <span>TTL</span></a>
@@ -204,31 +162,25 @@
 
         <article class="resource-card">
           <div class="card-topline">
-            <span class="card-label">RESEARCH</span>
+            <span class="card-label">FRAMEWORK</span>
             <span class="card-version">MODULES</span>
           </div>
           <div class="card-icon" aria-hidden="true">⌘</div>
-          <h3>Conceptual modules</h3>
+          <h3>Ontology modules</h3>
           <p>
-            Learn how GOLEM models narrative components and how
+            Explore the ontology's components and how
             individual modules fit into the larger framework.
           </p>
-          <a class="card-link"
-             href="https://github.com/GOLEM-lab/golem-ontology/wiki">
+          <a class="card-link" href="https://github.com/GOLEM-lab/golem-ontology/wiki">
             Browse the wiki <span aria-hidden="true">→</span>
           </a>
         </article>
       </div>
     </section>
 
-    <section class="section section-version" id="versions">
+    <section class="section" id="releases">
       <div class="section-heading">
-        <p class="eyebrow">03 — VERSION HISTORY</p>
-        <h2>Releases and documentation.</h2>
-        <p class="section-description">
-          Access version-specific documentation and source files.
-          The current aliases above always point to the latest release.
-        </p>
+        <h2>Releases</h2>
       </div>
 
       <div class="release-list">
@@ -262,37 +214,26 @@
           </div>
         </article>
       </div>
-
-      <p class="version-footnote">
-        Version 2.0 introduces a major architectural and semantic
-        refactoring. Consult its documentation when migrating from
-        earlier versions.
-      </p>
     </section>
 
     <section class="section section-research" id="research">
       <div class="research-copy">
-        <p class="eyebrow">04 — RESEARCH CONTEXT</p>
-        <h2>From narrative theory to computable knowledge.</h2>
+        <h2>Foundations and interoperability</h2>
         <p>
-          GOLEM connects formal ontology engineering with literary
-          studies, digital humanities, and computational approaches
-          to cultural evolution. Its conceptualization treats
-          narratives as structured systems whose components can be
-          studied in relation to one another.
+          GOLEM builds on upper-level ontological foundations and aligns with established external frameworks to ensure semantic accuracy and interoperability.
         </p>
-        <a class="text-link"
-           href="https://golemlab.eu/publications/complexity/">
-          Read about narrative complexity <span aria-hidden="true">→</span>
-        </a>
       </div>
 
       <aside class="research-panel">
-        <p class="panel-label">FOUNDATIONS & ALIGNMENTS</p>
+        <p class="panel-label">EXTERNAL FRAMEWORKS</p>
         <ul>
           <li>
+            <span>DOLCE-Lite-Plus</span>
+            <span class="alignment-tag">Foundational alignment</span>
+          </li>
+          <li>
             <span>DOLCE+DnS Ultralite</span>
-            <span class="alignment-tag">Design pattern</span>
+            <span class="alignment-tag">Modeling pattern</span>
           </li>
           <li>
             <span>Erlangen CRM</span>
@@ -302,57 +243,171 @@
             <span>LRMoo</span>
             <span class="alignment-tag">Selected constructs</span>
           </li>
-          <li>
-            <span>RDF / OWL</span>
-            <span class="alignment-tag">Representation</span>
-          </li>
         </ul>
-        <p class="panel-footnote">
-          GOLEM v2.0 uses selected constructs from related ontologies
-          while limiting unnecessary dependency chains.
-        </p>
       </aside>
     </section>
 
-    <section class="citation-section" id="cite">
-      <div>
-        <p class="eyebrow">05 — CITATION</p>
-        <h2>Build on this work.</h2>
-        <p>
-          If you use GOLEM in your research, please cite the ontology
-          and consult the relevant release documentation.
-        </p>
-      </div>
+    <section class="citation-section" id="references">
+      <h2>References</h2>
 
       <div class="citation-card">
-        <p class="citation-label">SUGGESTED CITATION</p>
+        <p class="citation-label">CITATION</p>
         <p class="citation-text">
           Pianzola, F., Pannach, F., Cheng, L., Yang, X., &amp;
           Scotti, L. (2024). <em>GOLEM Ontology for Narrative and Fiction.</em>
         </p>
-        <a class="doi-link" href="https://doi.org/10.5281/zenodo.14911392">
-          DOI: 10.5281/zenodo.14911392 <span aria-hidden="true">↗</span>
+        <a class="doi-link" href="https://doi.org/10.3390/h14100193">
+          DOI: 10.3390/h14100193 <span aria-hidden="true">↗</span>
         </a>
       </div>
-    </section>
 
-    <section class="closing-banner">
-      <div>
-        <p class="eyebrow">OPEN RESEARCH RESOURCE</p>
-        <h2>Explore the ontology. Follow the relationships.</h2>
+      <div class="citation-card">
+        <p class="citation-label">BIBLIOGRAPHY</p>
+
+        <p class="citation-text">
+          Abbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.),
+          <em>The living handbook of narratology</em>. Hamburg University.
+        </p>
+
+        <p class="citation-text">
+          Bartalesi, V., Meghini, C., &amp; Metilli, D. (2017).
+          A conceptualisation of narratives and its expression in the ecrm.
+          <em>International Journal of Metadata, Semantics and Ontologies, 12</em>(1), 35–46.
+          <a class="doi-link" href="https://doi.org/10.1504/IJMSO.2017.10005083">
+            https://doi.org/10.1504/IJMSO.2017.10005083
+          </a>
+        </p>
+
+        <p class="citation-text">
+          Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P.,
+          Ore, C.-E., Stead, S., &amp; Velios, A. (2024, October).
+          <em>Conceptual reference model (CIDOC ecrm), version 7.3</em>
+          (Tech. rep.). CIDOC ecrm-SIG.
+        </p>
+
+        <p class="citation-text">
+          Carroll, N. (2015). Interpretation. In
+          <em>The Routledge companion to philosophy of literature</em>
+          (pp. 302–312). Routledge.
+        </p>
+
+        <p class="citation-text">
+          Chaturvedi, S., Srivastava, S., Daume III, H., &amp; Dyer, C. (2015).
+          Modeling dynamic relationships between characters in literary novels.
+          <em>arXiv preprint arXiv:1511.09376</em>.
+          <a class="doi-link" href="http://arxiv.org/abs/1511.09376">
+            http://arxiv.org/abs/1511.09376
+          </a>
+        </p>
+
+        <p class="citation-text">
+          Ciotti, F. (2016). Toward a formal ontology for narrative.
+          <em>MATLIT: Materialidades da Literatura, 4</em>(1), 29–44.
+        </p>
+
+        <p class="citation-text">
+          Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., &amp;
+          Theodoridou, M. (2023, October).
+          <em>ecrmsci: The scientific observation model</em> (Tech. rep.).
+          CIDOC ecrm-SIG.
+        </p>
+
+        <p class="citation-text">
+          Jannidis, F. (2019). Character. In P. Hühn et al. (Eds.),
+          <em>The living handbook of narratology</em>. Hamburg University.
+        </p>
+
+        <p class="citation-text">
+          Kukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.),
+          <em>The living handbook of narratology</em>. Hamburg University.
+        </p>
+
+        <p class="citation-text">
+          Lea, K. M. (1962).
+          <em>Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage</em>
+          (Vol. 1). Russell &amp; Russell.
+        </p>
+
+        <p class="citation-text">
+          Mika, P., &amp; Gangemi, A. (2016). Descriptions of social relations.
+          <em>Benefits, 1</em>, 14.
+          <a class="doi-link" href="https://doi.org/10.3390/benefits1010014">
+            https://doi.org/10.3390/benefits1010014
+          </a>
+        </p>
+
+        <p class="citation-text">
+          Pannach, F. (2023, July).
+          “Orpheus came to his end by being struck by a thunderbolt”:
+          Annotating events in mythological sequences. In
+          <em>Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)</em>
+          (pp. 10–18).
+        </p>
+
+        <p class="citation-text">
+          Pannach, F. A. K. (2024).
+          <em>Narrative echoes across time and space.</em>
+        </p>
+
+        <p class="citation-text">
+          Pannach, F., Sporleder, C., May, W., Krishnan, A., &amp; Sewchurran, A. (2021).
+          Of lions and Yakshis. <em>Semantic Web, 12</em>(2), 219–239.
+        </p>
+
+        <p class="citation-text">
+          Propp, V. (1968). <em>Morphology of the folktale.</em>
+          University of Texas Press.
+        </p>
+
+        <p class="citation-text">
+          Pianzola, F. (2018). Looking at narrative as a complex system:
+          The proteus principle. In <em>Narrating complexity</em>
+          (pp. 101–122).
+        </p>
+
+        <p class="citation-text">
+          Pianzola, F., Acerbi, A., &amp; Rebora, S. (2020).
+          Cultural accumulation and improvement in online fan fiction.
+          In <em>CEUR Workshop Proceedings</em> (Vol. 2723).
+          CEUR-WS.org.
+        </p>
+
+        <p class="citation-text">
+          Ryan, M.-L. (2019). Space. In P. Hühn et al. (Eds.),
+          <em>The living handbook of narratology</em>. Hamburg University.
+        </p>
+
+        <p class="citation-text">
+          Sanfilippo, E. M., &amp; Ferrario, R. (2024).
+          <em>D3.1—Observations modeling: State of the art.</em>
+        </p>
+
+        <p class="citation-text">
+          Schöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., &amp; Klee, A. (2022).
+          Smart modelling for literary history.
+          <em>International Journal of Humanities and Arts Computing, 16</em>(1), 78–93.
+        </p>
+
+        <p class="citation-text">
+          Zgoll, A., Cuperly, B., &amp; Cöster-Gilbert, A. (2023).
+          In search of Dumuzi: An introduction to holistic narratology.
+          In <em>The shape of stories</em> (pp. 285–350). Brill.
+        </p>
+
+        <p class="citation-text">
+          Zgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe.
+          In <em>Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident</em>
+          (pp. 9–82).
+        </p>
       </div>
-      <a class="button button-light" href="current/golem.html">
-        Open GOLEM v2.0 <span aria-hidden="true">↗</span>
-      </a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <a class="footer-brand" href="#top">GOLEM</a>
-    <p>Ontology for Narrative and Fiction</p>
+    <a class="footer-brand" href="#top">GOLEM Lab</a>
+    <p>GOLEM Ontology</p>
     <div class="footer-links">
       <a href="https://github.com/GOLEM-lab/golem-ontology">GitHub</a>
-      <a href="https://github.com/GOLEM-lab/golem-ontology/wiki">Wiki</a>
       <a href="https://doi.org/10.5281/zenodo.14911392">Zenodo</a>
     </div>
   </footer>
