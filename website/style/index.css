@@ -335,6 +335,17 @@ main,
   gap: 1rem;
 }
 
+.section-ontology a {
+  border-bottom: 1px solid var(--teal);
+  color: var(--teal);
+}
+
+
+.section-ontology a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+
 .resource-card {
   display: flex;
   min-width: 0;
@@ -445,6 +456,12 @@ main,
 .format-links a:hover {
   border-color: var(--teal);
   color: var(--teal);
+}
+
+.format-links a:hover,
+.format-links a:hover span {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 
@@ -601,11 +618,21 @@ main,
   line-height: 1.7;
 }
 
-.doi-link {
+.doi-link,
+.citation-text .doi-link,
+.citation-card > .doi-link {
+  display: inline-block;
   color: var(--teal);
-  font-size: 0.82rem;
+  font-size: 0.82rem !important;
   font-weight: 700;
+  font-family: var(--font-sans, sans-serif);
+  line-height: 1.4;
   overflow-wrap: anywhere;
+}
+
+.citation-section a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
 }
 
 
