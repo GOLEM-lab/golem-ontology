@@ -1,12 +1,12 @@
 /* =========================================================
-   Contents (follows the order of index.html)
+   Contents
    1. Tokens & fonts
    2. Base
    3. Shared layout
    4. Header
    5. Hero
    6. About
-   7. Published resources
+   7. Published resources (incl. ontology IRIs)
    8. Releases
    9. Foundations and interoperability
   10. References
@@ -316,10 +316,7 @@ main,
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.about a:hover {
-  border-bottom-color: var(--gold);
-  color: var(--gold);
-}
+
 
 
 /* 7. Published resources
@@ -329,21 +326,78 @@ main,
   background: var(--surface-soft);
 }
 
+/* Ontology IRIs: open ruled band, distinct from the resource cards */
+.iri-block {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.7fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 0;
+  border-block: 1px solid var(--line);
+}
+
+.iri-intro .panel-label {
+  margin-bottom: 0.6rem;
+}
+
+.iri-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.iri-list {
+  margin: 0;
+  padding: 0;
+}
+
+.iri-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.iri-row:first-child {
+  padding-top: 0;
+}
+
+.iri-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.iri-row dt {
+  flex: 0 0 6.75rem;
+  padding: 0.18rem 0.45rem;
+  border-radius: 3px;
+  background: var(--teal-pale);
+  color: var(--teal-dark);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.iri-row dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.iri-row code {
+  color: var(--ink);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-}
-
-.section-ontology a {
-  border-bottom: 1px solid var(--teal);
-  color: var(--teal);
-}
-
-
-.section-ontology a:hover {
-  border-bottom-color: var(--gold);
-  color: var(--gold);
 }
 
 .resource-card {
@@ -456,12 +510,6 @@ main,
 .format-links a:hover {
   border-color: var(--teal);
   color: var(--teal);
-}
-
-.format-links a:hover,
-.format-links a:hover span {
-  border-color: var(--gold);
-  color: var(--gold);
 }
 
 
@@ -618,21 +666,11 @@ main,
   line-height: 1.7;
 }
 
-.doi-link,
-.citation-text .doi-link,
-.citation-card > .doi-link {
-  display: inline-block;
+.doi-link {
   color: var(--teal);
-  font-size: 0.82rem !important;
+  font-size: 0.82rem;
   font-weight: 700;
-  font-family: var(--font-sans, sans-serif);
-  line-height: 1.4;
   overflow-wrap: anywhere;
-}
-
-.citation-section a:hover {
-  border-bottom-color: var(--gold);
-  color: var(--gold);
 }
 
 
@@ -690,6 +728,11 @@ main,
 
   .hero-visual {
     width: min(100%, 360px);
+  }
+
+  .iri-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
   }
 
   .resource-grid {
@@ -753,6 +796,17 @@ main,
   }
 
   /* Resources */
+  .iri-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .iri-row dt {
+    flex: none;
+    padding-inline: 0.6rem;
+  }
+
   .resource-grid {
     grid-template-columns: minmax(0, 1fr);
   }
