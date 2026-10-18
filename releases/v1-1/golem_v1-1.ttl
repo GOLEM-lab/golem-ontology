@@ -2,14 +2,14 @@
 @prefix golem: <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix dlp_csm: <http://www.ontologydesignpatterns.org/ont/dlp/> .
+@prefix dlp_csm: <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#> .
 @prefix dlp_temp: <http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#> .
 @prefix dlp_spat: <http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#> .
 @prefix dlp_funct: <http://www.ontologydesignpatterns.org/ont/dlp/FunctionalParticipation.owl#> .
 @prefix dlp_extDnS: <http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#> .
 @prefix dlp_lite: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
-@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/> .
-@prefix crm: <http://erlangen-crm.org/240307/> .
+@prefix dul: <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
 @prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -23,9 +23,8 @@
 
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
                                    owl:versionIRI <https://w3id.org/golem/ontology/v1.1> ;
-                                   owl:imports dlp_csm:CommonSenseMapping.owl ,
-                                               dul:DUL.owl ,
-                                               <http://erlangen-crm.org/240307/> ,
+                                   owl:imports <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl> ,
+                                               <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl> ,
                                                <https://cidoc-crm.org/extensions/lrmoo/owl/> ;
                                    dc:created "2024-10-10"^^xsd:date ;
                                    dc:creator "GOLEM Lab" ;

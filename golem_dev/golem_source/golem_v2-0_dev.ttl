@@ -1,4 +1,3 @@
-@prefix : <https://w3id.org/golem/ontology#> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -23,7 +22,7 @@
 
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
                                    owl:versionIRI <https://w3id.org/golem/ontology/v2.0> ;
-                                   owl:priorVersion <https://doi.org/10.5281/zenodo.14911392> ;
+                                   owl:priorVersion <https://doi.org/10.5281/zenodo.14911393> ;
                                    owl:versionInfo "2.0.0" ;
                                    owl:imports <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl> ,
                                                <http://erlangen-crm.org/240307/> ,
@@ -58,11 +57,7 @@ Created by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM
 
 ## GOLEM
 
-Ontology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).
-
-It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes.
-
-GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.
+Ontology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html). It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes. GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.
 
 Narrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.
 
@@ -83,9 +78,9 @@ Furthermore, the ontology contributes to comparative studies by providing a stru
 
 Abbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.
 
-Bartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the ecrm. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083
+Bartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.087692
 
-Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC ecrm), version 7.3 (Tech. rep.). CIDOC ecrm-SIG.
+Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.
 
 Carroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.
 
@@ -93,7 +88,7 @@ Chaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynam
 
 Ciotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.
 
-Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). ecrmsci: The scientific observation model (Tech. rep.). CIDOC ecrm-SIG.
+Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.
 
 Jannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.
 
@@ -101,7 +96,7 @@ Kukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of na
 
 Lea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.
 
-Mika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14. https://doi.org/10.3390/benefits1010014
+Mika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14.
 
 Pannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).
 
@@ -748,7 +743,7 @@ ecrm:E13_Attribute_Assignment rdf:type owl:Class ;
                               rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
-All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values ([CIDOC-ecrm version 7.1.3, 2024](https://cidoc-ecrm.org/html/cidoc_ecrm_v7.1.3.html))."""@en ,
+All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ,
                                                       "In GOLEM, an attribute assignment is a framework for modeling observations and inference-making processes. It involves the act of assigning a property to an entity or asserting a relationship between concepts. It is the activity of making a statement that links an attribute to a subject." ;
                                         rdfs:label "E13 Attribute Assignment"@en ;
                                         skos:example "Assigning the topic “friendship” to the work Harry Potter and the Philosopher's Stone." .
@@ -984,7 +979,7 @@ golem:G16_Object rdf:type owl:Class ;
                                    owl:onProperty dlp_extDnS:used-by ;
                                    owl:someValuesFrom golem:G1_Character
                                  ] ;
-                 rdfs:comment "An object refers to a persistent item that plays a significant role in the story but is not a character."@en ;
+                 rdfs:comment "An object refers to a persistent item that has a narrative significance in the story and, although it may also play narrative roles, is distinct from a character."@en ;
                  rdfs:label "G16 Object"@en ;
                  skos:example "The Elder Wand carried by Harry Potter." .
 
