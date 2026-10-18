@@ -2,7 +2,281 @@
 <html>
   <head>
     <title>GOLEM Ontology</title>
-    <link href="pylode.css" rel="stylesheet" type="text/css">
+    <style>
+        #pylode {
+            position: fixed;
+            top: 205px;
+            left: -150px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        #profile {
+            font-style: italic;
+            font-size: 1.25em;
+            color: darkred!important;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        #metadata ul,
+        #classes ul {
+            list-style-type: none;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-left: -40px;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+#toc {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    border: solid 1px navy;
+    font-size: small;
+    width: 180px;
+}
+#toc h3 {
+    margin-top: 5px;
+}
+
+#toc ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#toc .first > li {
+    margin-top: 5px;
+}
+
+#toc .second,
+#toc .third {
+    padding-left: 10px;
+}
+
+#content {
+    width: calc(100% - 150px);
+}
+
+.hover_property {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: dashed 1px;
+}
+
+.setclass {
+    list-style-type: none;
+}
+
+code{
+    word-wrap: break-word;
+  }
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+td {
+    word-wrap: break-word;
+}
+#legend table.entity {
+    width: 25%;
+}
+	</style>
     <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png">
     <link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -134,7 +408,7 @@
             <dt>
               <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
             </dt>
-            <dd><p>gc</p></dd>
+            <dd><p>golem</p></dd>
           </div>
           <div>
             <dt>
@@ -869,13 +1143,58 @@ They cannot be destroyed. They exist as long as they can be found on at least on
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
                 <span>
-                  <a href="#G15_Fandom">G15 Fandom</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object">social object</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G13_Narrative_Location">G13 Narrative Location</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G14_Narrative-Stoff">G14 Narrative-Stoff</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G15_Fandom">G15 Fandom</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G16_Object">G16 Object</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G1_Character">G1 Character</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
           </table>
@@ -1276,17 +1595,6 @@ They may be intellectual products or physical things. They may, for instance, ha
                 </ul>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#G16_Object">G16 Object</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
           </table>
         </div>
         <div class="property entity" id="E73InformationObject">
@@ -1416,6 +1724,30 @@ This class also comprises items that are “about” something in the sense of a
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#GP0_has_feature">has feature</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">only</span>
+                      <span>
+                        <span>
+                          <a href="#G18_Textual_Feature">G18 Textual Feature</a>
+                          <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                        </span>
+                      </span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
@@ -1423,24 +1755,6 @@ This class also comprises items that are “about” something in the sense of a
                   <li>
                     <span>
                       <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G14_Narrative-Stoff">G14 Narrative-Stoff</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G1_Character">G1 Character</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -1463,7 +1777,7 @@ This class also comprises items that are “about” something in the sense of a
             <tr>
               <th>IRI</th>
               <td>
-                <code>http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship</code>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-relationship</code>
               </td>
             </tr>
             <tr>
@@ -1547,7 +1861,7 @@ This class also comprises items that are “about” something in the sense of a
                       <span class="cardinality">some</span>
                       <span>
                         <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object">http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object</a>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#geographical-object">dlp_csm:geographical-object</a>
                           <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                         </span>
                       </span>
@@ -1891,7 +2205,7 @@ This class also comprises items that are “about” something in the sense of a
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences">sequences</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequenced-by">sequenced-by</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -1960,7 +2274,7 @@ This class also comprises items that are “about” something in the sense of a
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequenced-by">sequenced-by</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences">sequences</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -2286,6 +2600,17 @@ This class also comprises items that are “about” something in the sense of a
                 </span>
               </td>
             </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
           </table>
         </div>
         <div class="property entity" id="course">
@@ -2319,7 +2644,7 @@ This class also comprises items that are “about” something in the sense of a
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequenced-by">sequenced-by</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences">sequences</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
@@ -2340,22 +2665,11 @@ This class also comprises items that are “about” something in the sense of a
                   </li>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequences">sequences</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#sequenced-by">sequenced-by</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
                   </li>
                 </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
               </td>
             </tr>
           </table>
@@ -2485,12 +2799,6 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-used-by">d-used-by</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
                       <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target">modal target</a>
                       <sup class="sup-op" title="OWL Object Property">op</sup>
                     </span>
@@ -2510,12 +2818,6 @@ This class also comprises items that are “about” something in the sense of a
               </th>
               <td>
                 <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses">d-uses</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
                   <li>
                     <span>
                       <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#modal-target-of">modal target of</a>
@@ -2657,6 +2959,12 @@ This class also comprises items that are “about” something in the sense of a
                 <ul>
                   <li>
                     <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
                       <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
@@ -2664,12 +2972,6 @@ This class also comprises items that are “about” something in the sense of a
                   <li>
                     <span>
                       <a href="#G15_Fandom">G15 Fandom</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G16_Object">G16 Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -2750,7 +3052,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">E89 Propositional Object</a>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3189,7 +3491,17 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object">http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object</a>
+                <ul>
+                  <li>
+                    <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#non-agentive-social-object">dlp_extDnS:non-agentive-social-object</a>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
               </td>
             </tr>
             <tr>
@@ -3350,7 +3662,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">E89 Propositional Object</a>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3491,20 +3803,10 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.cidoc-crm.org/cidoc-crm/E70_Thing">E70 Thing</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object">social object</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
             <tr>
@@ -3614,7 +3916,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G18TextualFeature">
+        <div class="property entity" id="G18_Textual_Feature">
           <h3>G18 Textual Feature
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -3685,7 +3987,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">E89 Propositional Object</a>
+                      <a href="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">E28 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3726,6 +4028,25 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
               </th>
               <td>
                 <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#GP0_has_feature">has feature</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">only</span>
+                          <span>
+                            <span>
+                              <a href="#G17CharacterFeature">G17 Character Feature</a>
+                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                            </span>
+                          </span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
                   <li>
                     <span>
                       <span>
@@ -3914,7 +4235,7 @@ Taxonomies of features can be further specified using crm:E55_Type.</p></td>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region">http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</a>
+                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region">dul:Region</a>
               </td>
             </tr>
             <tr>
@@ -3953,7 +4274,7 @@ Taxonomies of features can be further specified using crm:E55_Type.</p></td>
                   </li>
                   <li>
                     <span>
-                      <a href="#G18TextualFeature">G18 Textual Feature</a>
+                      <a href="#G18_Textual_Feature">G18 Textual Feature</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -3984,8 +4305,8 @@ Taxonomies of features can be further specified using crm:E55_Type.</p></td>
                 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
               </th>
               <td>
-                <pre>Ron’s jealousy (Yule Ball).
-In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling for Hermione and his insecurity. Seeing Hermione arriving at the ball with Viktor Krum, Ron lashes out and criticizes Hermione. His anger reveals his jealousy (chapter 23 of Harry Potter and The Goblet of Fire).</pre>
+                <pre>Ron's jealousy (Yule Ball).
+In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for Hermione and his insecurity. Seeing Hermione arriving at the ball with Viktor Krum, Ron lashes out and criticizes Hermione. His anger reveals his jealousy (chapter 23 of Harry Potter and The Goblet of Fire).</pre>
               </td>
             </tr>
             <tr>
@@ -4032,105 +4353,10 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
                           <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
-                          <span class="cardinality">some</span>
+                          <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="#G3_Psychological_State">G3 Psychological State</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#follows">follows</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes">precedes</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G3_Psychological_State">G3 Psychological State</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#precedes">precedes</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in">temporally included in</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G3_Psychological_State">G3 Psychological State</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-included-in">temporally included in</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
+                              <a href="ndfe5dda4a97241059c5acef9b11ccc14b55">ndfe5dda4a97241059c5acef9b11ccc14b55</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -4146,29 +4372,10 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
                           <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
-                          <span class="cardinality">some</span>
+                          <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="#G3_Psychological_State">G3 Psychological State</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-includes">temporally includes</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
+                              <a href="ndfe5dda4a97241059c5acef9b11ccc14b59">ndfe5dda4a97241059c5acef9b11ccc14b59</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -4184,29 +4391,10 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
                           <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
-                          <span class="cardinality">some</span>
+                          <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="#G3_Psychological_State">G3 Psychological State</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporally-overlaps">temporally overlaps</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
+                              <a href="ndfe5dda4a97241059c5acef9b11ccc14b63">ndfe5dda4a97241059c5acef9b11ccc14b63</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -4251,7 +4439,7 @@ In the Yule Ball scene, Ron’s jealousy stems from his unacknowledged feeling f
               </th>
               <td>
                 <span>
-                  <a href="http://www.loa-cnr.it/ontologies/ExtendedDnS.owl#social-relationship">social relationship</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-relationship">social relationship</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -4761,7 +4949,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                 <ul>
                   <li>
                     <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">course</a>
+                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept">concept</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -6157,17 +6345,6 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  (<a href="
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
@@ -6210,17 +6387,6 @@ An instance of E54 Dimension is specific to an instance of E70 Thing  (<a href="
                   <li><p>In GOLEM, indicates that a narrative unit (G9) refers to a specific narrative event (G5).</p></li>
                   <li><p>This property documents that an instance of E89 Propositional Object makes a statement about an instance of E1 CRM Entity. P67 refers to (is referred to by) has the P67.1 has type link to an instance of E55 Type. This is intended to allow a more detailed description of the type of reference. This differs from P129 is about (is subject of), which describes the primary subject or subjects of the instance of E89 Propositional Object  (<a href="https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html">CIDOC-CRM version 7.1.3, 2024</a>).</p></li>
                 </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="http://www.w3.org/2002/07/owl#topObjectProperty">topObjectProperty</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
               </td>
             </tr>
             <tr>
@@ -6924,20 +7090,10 @@ from his rebounded curse” (G9).</pre>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept">concept</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role">role</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept">concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
             <tr>
@@ -7007,20 +7163,10 @@ from his rebounded curse” (G9).</pre>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept">concept</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#role">role</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#concept">concept</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -7522,7 +7668,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">course</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant">perdurant</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -7533,7 +7679,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant">perdurant</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">course</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -7576,7 +7722,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant">perdurant</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">course</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -7587,7 +7733,7 @@ and the Goblet of Fire (F1).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">course</a>
+                  <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#perdurant">perdurant</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -8521,7 +8667,7 @@ perspective (G18).</pre>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
               </th>
               <td>
-                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion">http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion</a>
+                <a href="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#hasRegion">dul:hasRegion</a>
               </td>
             </tr>
             <tr>
@@ -9056,6 +9202,10 @@ perspective (G18).</pre>
       <div id="namespaces">
         <h2>Namespaces</h2>
         <dl>
+          <dt id="crm">crm</dt>
+          <dd>
+            <code>http://www.cidoc-crm.org/cidoc-crm/</code>
+          </dd>
           <dt id="dc">dc</dt>
           <dd>
             <code>http://purl.org/dc/elements/1.1/</code>
@@ -9064,13 +9214,41 @@ perspective (G18).</pre>
           <dd>
             <code>http://purl.org/dc/terms/</code>
           </dd>
-          <dt id="dlp">dlp</dt>
+          <dt id="dlp_csm">dlp_csm</dt>
           <dd>
-            <code>http://www.ontologydesignpatterns.org/ont/dlp/</code>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl#</code>
+          </dd>
+          <dt id="dlp_extDnS">dlp_extDnS</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#</code>
+          </dd>
+          <dt id="dlp_funct">dlp_funct</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/FunctionalParticipation.owl#</code>
+          </dd>
+          <dt id="dlp_lite">dlp_lite</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#</code>
+          </dd>
+          <dt id="dlp_spat">dlp_spat</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/SpatialRelations.owl#</code>
+          </dd>
+          <dt id="dlp_temp">dlp_temp</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#</code>
+          </dd>
+          <dt id="dul">dul</dt>
+          <dd>
+            <code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#</code>
           </dd>
           <dt id="golem">golem</dt>
           <dd>
             <code>https://w3id.org/golem/ontology#</code>
+          </dd>
+          <dt id="lrmoo">lrmoo</dt>
+          <dd>
+            <code>http://iflastandards.info/ns/lrm/lrmoo/</code>
           </dd>
           <dt id="owl">owl</dt>
           <dd>
@@ -9273,7 +9451,7 @@ perspective (G18).</pre>
               <a href="#G17CharacterFeature">G17 Character Feature</a>
             </li>
             <li>
-              <a href="#G18TextualFeature">G18 Textual Feature</a>
+              <a href="#G18_Textual_Feature">G18 Textual Feature</a>
             </li>
             <li>
               <a href="#G1_Character">G1 Character</a>
@@ -9604,16 +9782,40 @@ perspective (G18).</pre>
           </h4>
           <ul class="second">
             <li>
+              <a href="#crm">crm</a>
+            </li>
+            <li>
               <a href="#dc">dc</a>
             </li>
             <li>
               <a href="#dcterms">dcterms</a>
             </li>
             <li>
-              <a href="#dlp">dlp</a>
+              <a href="#dlp_csm">dlp_csm</a>
+            </li>
+            <li>
+              <a href="#dlp_extDnS">dlp_extDnS</a>
+            </li>
+            <li>
+              <a href="#dlp_funct">dlp_funct</a>
+            </li>
+            <li>
+              <a href="#dlp_lite">dlp_lite</a>
+            </li>
+            <li>
+              <a href="#dlp_spat">dlp_spat</a>
+            </li>
+            <li>
+              <a href="#dlp_temp">dlp_temp</a>
+            </li>
+            <li>
+              <a href="#dul">dul</a>
             </li>
             <li>
               <a href="#golem">golem</a>
+            </li>
+            <li>
+              <a href="#lrmoo">lrmoo</a>
             </li>
             <li>
               <a href="#owl">owl</a>
