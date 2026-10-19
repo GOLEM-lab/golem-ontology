@@ -646,7 +646,6 @@ golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
 
 ###  ecrm:P90_has_value
 ecrm:P90_has_value rdf:type owl:DatatypeProperty ;
-                    rdfs:range rdfs:Literal ;
                     rdfs:comment "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive." ;
                     rdfs:label "P90 has value" ;
                     skos:example """Kudos (E54) has value 59 (E60).
@@ -664,27 +663,7 @@ ecrm:P90_has_value rdf:type owl:DatatypeProperty ;
 ###  lrmoo:F1_Work
 lrmoo:F1_Work rdf:type owl:Class ;  
               rdfs:subClassOf ecrm:E89_Propositional_Object ,            
-                              dlp_extDnS:description ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty lrmoo:R3_is_realised_in ;
-                                owl:someValuesFrom lrmoo:F2_Expression
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ecrm:P130_shows_features_of ;
-                                owl:someValuesFrom golem:G15_Fandom
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dol:proper-part ;
-                                owl:someValuesFrom golem:G9_Narrative_Unit
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_extDnS:d-uses ;
-                                owl:someValuesFrom golem:G7_Narrative_Sequence
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_extDnS:satisfied-by ;
-                                owl:someValuesFrom golem:G12_Setting
-                              ] ;
+                              dlp_extDnS:description ;
               rdfs:comment
 """Scope note:
 
@@ -700,20 +679,7 @@ The main purpose of this class is to enable bringing together intellectually equ
 
 ###  lrmoo:F2_Expression
 lrmoo:F2_Expression rdf:type owl:Class ;
-                    rdfs:subClassOf ecrm:E73_Information_Object ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty lrmoo:R3i_realises ;
-                                      owl:someValuesFrom lrmoo:F1_Work
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty lrmoo:R5_has_component ;
-                                      owl:someValuesFrom lrmoo:F2_Expression
-                                    ] ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty ecrm:P16i_was_used_for ;
-                                      owl:someValuesFrom ecrm:E13_Attribute_Assignment
-                                    ] ;
-                    
+                    rdfs:subClassOf ecrm:E73_Information_Object ;
                       rdfs:comment  
 """Scope note:
 
@@ -731,15 +697,6 @@ An instance of F2 Expression which includes spoken or written text may be multip
 
 ###  ecrm:E13_Attribute_Assignment
 ecrm:E13_Attribute_Assignment rdf:type owl:Class ;
-                              rdfs:subClassOf 
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty ecrm:P141_assigned ;
-                                                owl:someValuesFrom ecrm:E1_CRM_Entity
-                                              ] ,
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty ecrm:P177_assigned_property_of_type ;
-                                                owl:someValuesFrom ecrm:E55_Type
-                                              ] ;
                               rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
@@ -758,18 +715,6 @@ ecrm:E54_Dimension rdf:type owl:Class ;
 
 ###  ecrm:E55_Type
 ecrm:E55_Type rdf:type owl:Class ;
-              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                owl:onProperty ecrm:P127_has_broader_term ;
-                                owl:someValuesFrom ecrm:E55_Type
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ecrm:P127i_has_narrower_term ;
-                                owl:someValuesFrom ecrm:E55_Type
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty ecrm:P2i_is_type_of ;
-                                owl:someValuesFrom ecrm:E1_CRM_Entity
-                              ] ;
               skos:example "The Tag categories on AO3, e.g. character tag or relationship tag." .
 
 ###  ecrm:E58_Measurement_Unit
@@ -794,15 +739,6 @@ ecrm:E89_Propositional_Object rdf:type owl:Class ;
 
 ###  dol:time-interval
 dol:time-interval rdf:type owl:Class ;
-                        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                          owl:onProperty dlp_extDnS:setting ;
-                                          owl:someValuesFrom golem:G12_Setting
-                                        ] ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty dlp_temp:temporal-location-of ;
-                                          owl:someValuesFrom golem:G5_Narrative_Event
-                                        ] ;
-                        
                         rdfs:comment "A time-interval or time-span in a narrative refers to a duration or a specific time point during which events take place. It encompasses the beginning, end, and the length of time between them, allowing for the placement of actions on a chronological timeline. It can represent broad periods, like an era, or specific moments, like a single date or time." ;
                         rdfs:label "Time Interval" ;
                         skos:example "July 31, 1980 (Harry Potter's birthday)" .
