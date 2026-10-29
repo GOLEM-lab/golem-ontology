@@ -624,7 +624,7 @@ golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
 
 ###  golem:GP1_is_character_in
 golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
-                          owl:inverseOf golem:GP1i_has_Character ;
+                          owl:inverseOf golem:GP1i_has_character ;
                           rdfs:domain golem:G1_Character ;
                           rdfs:range lrmoo:F1_Work ;
                           rdfs:comment "Indicates that a character appears in a work."@en ;
@@ -632,8 +632,8 @@ golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
                           skos:example "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)." .
 
 
-###  golem:GP1i_has_Character
-golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
+###  golem:GP1i_has_character
+golem:GP1i_has_character rdf:type owl:ObjectProperty ;
                          rdfs:domain lrmoo:F1_Work ;
                          rdfs:range golem:G1_Character ;
                          rdfs:comment "Indicates that a character appears in a work." ;
