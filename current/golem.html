@@ -313,7 +313,7 @@ td {
     "https://schema.org/description": [
       {
         "@language": "en",
-        "@value": "# Golem Ontology for Narrative and Fiction\n                                 \n\n### GOLEM v2.0\n\nCreated by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM lab](https://golemlab.eu/)), October 10, 2024\n\n[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n### Overview\n\n## GOLEM\n\nOntology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).\n\nIt adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes.\n\nGOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.\n\nNarrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.\n\nIn literary studies, traditional quantitative and probabilistic methods often struggle to account for the semantic richness and intensional qualities of texts ([Ciotti, 2016](https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1)). In contrast, ontology modeling highlights the complexities of narrative structure, making these elements explicit and computable.\n\nThe GOLEM project developed an ontology that models narratives and fiction independently of their specific domains. To achieve this, the project seeks to identify a common ground that defines how key elements of narrative structure—such as events, characters, social relationships, and settings—interrelate. By employing a modularization approach, GOLEM will create a comprehensive library of modules that encapsulate these narrative components, including modules for characters, relationships, events, settings, and narrative inference.\n\nGOLEM v2.0 introduces a major architectural and semantic refactoring of the ontology. The ontology now adopts Erlangen CRM as its CRM foundation and uses a lightweight reuse strategy for selected LRMoo constructs, avoiding the import of the full LRMoo and CRM OWL dependency chain. The feature model has been revised through the DUL Region pattern, with G2_Feature represented as a region and GP0_has_feature aligned with the corresponding region relation.\n\nThe v2.0 revision further removes the use of dol:generically-dependent-on, avoiding an unnecessary semantic commitment where the relevant dependencies can instead be addressed through provenance mechanisms.\nThese changes substantially reduce the ontology's import closure while preserving the intended semantics of the GOLEM conceptualization and improving computational tractability and maintainability.\n\nThe detailed description of each module can be read in the [GitHub](https://github.com/GOLEM-lab/golem-ontology/wiki).\n\nFurthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time ([Pianzola et al., 2020](https://ceur-ws.org/Vol-2723/short8.pdf)).\n\n### References\n\nAbbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nBartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the ecrm. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083\n\nBekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC ecrm), version 7.3 (Tech. rep.). CIDOC ecrm-SIG.\n\nCarroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.\n\nChaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynamic relationships between characters in literary novels. *arXiv preprint arXiv:1511.09376*. http://arxiv.org/abs/1511.09376\n\nCiotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.\n\nDoerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). ecrmsci: The scientific observation model (Tech. rep.). CIDOC ecrm-SIG.\n\nJannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nKukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nLea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.\n\nMika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14. https://doi.org/10.3390/benefits1010014\n\nPannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).\n\nPannach, F. A. K. (2024). Narrative echoes across time and space.\n\nPannach, F., Sporleder, C., May, W., Krishnan, A., & Sewchurran, A. (2021). Of lions and Yakshis. *Semantic Web*, 12(2), 219-239.\n\nPropp, V. (1968). *Morphology of the folktale*. University of Texas Press.\n\nPianzola, F. (2018). Looking at narrative as a complex system: The proteus principle. In *Narrating complexity* (pp. 101-122).\n\nPianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.\n\nRyan, M.-L. (2019). Space. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nSanfilippo, E. M., & Ferrario, R. (2024). D3.1—Observations modeling: State of the art.\n\nSchöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., & Klee, A. (2022). Smart modelling for literary history. *International Journal of Humanities and Arts Computing*, 16(1), 78–93.\n\nZgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An introduction to holistic narratology. In *The shape of stories* (pp. 285-350). Brill.\n\nZgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82)."
+        "@value": "# Golem Ontology for Narrative and Fiction\n                                 \n\n### GOLEM v2.0\n\nCreated by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM lab](https://golemlab.eu/)), October 10, 2024\n\n[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)\n\n### Overview\n\n## GOLEM\n\nOntology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html). It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes. GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.\n\nNarrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.\n\nIn literary studies, traditional quantitative and probabilistic methods often struggle to account for the semantic richness and intensional qualities of texts ([Ciotti, 2016](https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1)). In contrast, ontology modeling highlights the complexities of narrative structure, making these elements explicit and computable.\n\nThe GOLEM project developed an ontology that models narratives and fiction independently of their specific domains. To achieve this, the project seeks to identify a common ground that defines how key elements of narrative structure—such as events, characters, social relationships, and settings—interrelate. By employing a modularization approach, GOLEM will create a comprehensive library of modules that encapsulate these narrative components, including modules for characters, relationships, events, settings, and narrative inference.\n\nGOLEM v2.0 introduces a major architectural and semantic refactoring of the ontology. The ontology now adopts Erlangen CRM as its CRM foundation and uses a lightweight reuse strategy for selected LRMoo constructs, avoiding the import of the full LRMoo and CRM OWL dependency chain. The feature model has been revised through the DUL Region pattern, with G2_Feature represented as a region and GP0_has_feature aligned with the corresponding region relation.\n\nThe v2.0 revision further removes the use of dol:generically-dependent-on, avoiding an unnecessary semantic commitment where the relevant dependencies can instead be addressed through provenance mechanisms.\nThese changes substantially reduce the ontology's import closure while preserving the intended semantics of the GOLEM conceptualization and improving computational tractability and maintainability.\n\nThe detailed description of each module can be read in the [GitHub](https://github.com/GOLEM-lab/golem-ontology/wiki).\n\nFurthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time ([Pianzola et al., 2020](https://ceur-ws.org/Vol-2723/short8.pdf)).\n\n### References\n\nAbbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nBartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.087692\n\nBekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.\n\nCarroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.\n\nChaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynamic relationships between characters in literary novels. *arXiv preprint arXiv:1511.09376*. http://arxiv.org/abs/1511.09376\n\nCiotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.\n\nDoerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.\n\nJannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nKukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nLea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.\n\nMika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14.\n\nPannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).\n\nPannach, F. A. K. (2024). Narrative echoes across time and space.\n\nPannach, F., Sporleder, C., May, W., Krishnan, A., & Sewchurran, A. (2021). Of lions and Yakshis. *Semantic Web*, 12(2), 219-239.\n\nPropp, V. (1968). *Morphology of the folktale*. University of Texas Press.\n\nPianzola, F. (2018). Looking at narrative as a complex system: The proteus principle. In *Narrating complexity* (pp. 101-122).\n\nPianzola, F., Acerbi, A., & Rebora, S. (2020). Cultural accumulation and improvement in online fan fiction. In *CEUR Workshop Proceedings* (Vol. 2723). CEUR-WS. org.\n\nRyan, M.-L. (2019). Space. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.\n\nSanfilippo, E. M., & Ferrario, R. (2024). D3.1—Observations modeling: State of the art.\n\nSchöch, C., Hinzmann, M., Röttgermann, J., Dietz, K., & Klee, A. (2022). Smart modelling for literary history. *International Journal of Humanities and Arts Computing*, 16(1), 78–93.\n\nZgoll, A., Cuperly, B., & Cöster-Gilbert, A. (2023). In search of Dumuzi: An introduction to holistic narratology. In *The shape of stories* (pp. 285-350). Brill.\n\nZgoll, C. (2020). Myths as polymorphous and polystratic Erzählstoffe. In *Mythische Sphärenwechsel: Methodisch neue Zugänge zu antiken Mythen in Orient und Okzident* (pp. 9-82)."
       }
     ],
     "https://schema.org/license": [
@@ -421,7 +421,7 @@ td {
               <a class="hover_property" href="http://www.w3.org/2002/07/owl#priorVersion" title="The annotation property that indicates the predecessor ontology of a given ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Prior Version</a>
             </dt>
             <dd>
-              <a href="https://doi.org/10.5281/zenodo.14911392">https://doi.org/10.5281/zenodo.14911392</a>
+              <a href="https://doi.org/10.5281/zenodo.14911393">https://doi.org/10.5281/zenodo.14911393</a>
             </dd>
           </div>
           <div>
@@ -448,9 +448,7 @@ td {
 <p><a href="https://creativecommons.org/licenses/by/4.0/legalcode">CC BY 4.0</a></p>
 <h3>Overview</h3>
 <h2>GOLEM</h2>
-<p>Ontology of fiction and narrative, developed as an extension of the <a href="http://erlangen-crm.org/">Erlangen CRM</a> and aligned with the <a href="https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html">DOLCE-Lite-Plus Ecosystem</a>.</p>
-<p>It adopts a <a href="https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html">DOLCE+DnS Ultralite</a> design pattern for modelling textual and character attributes.</p>
-<p>GOLEM also reuses selected constructs from <a href="https://cidoc-crm.org/lrmoo/">LRMoo</a> while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.</p>
+<p>Ontology of fiction and narrative, developed as an extension of the <a href="http://erlangen-crm.org/">Erlangen CRM</a> and aligned with the <a href="https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html">DOLCE-Lite-Plus Ecosystem</a>. It adopts a <a href="https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html">DOLCE+DnS Ultralite</a> design pattern for modelling textual and character attributes. GOLEM also reuses selected constructs from <a href="https://cidoc-crm.org/lrmoo/">LRMoo</a> while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.</p>
 <p>Narrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation (<a href="https://golemlab.eu/publications/complexity/">Pianzola, 2018</a>). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.</p>
 <p>In literary studies, traditional quantitative and probabilistic methods often struggle to account for the semantic richness and intensional qualities of texts (<a href="https://impactum-journals.uc.pt/matlit/article/download/2182-8830_4-1_2/1932?inline=1">Ciotti, 2016</a>). In contrast, ontology modeling highlights the complexities of narrative structure, making these elements explicit and computable.</p>
 <p>The GOLEM project developed an ontology that models narratives and fiction independently of their specific domains. To achieve this, the project seeks to identify a common ground that defines how key elements of narrative structure—such as events, characters, social relationships, and settings—interrelate. By employing a modularization approach, GOLEM will create a comprehensive library of modules that encapsulate these narrative components, including modules for characters, relationships, events, settings, and narrative inference.</p>
@@ -461,16 +459,16 @@ These changes substantially reduce the ontology's import closure while preservin
 <p>Furthermore, the ontology contributes to comparative studies by providing a structured framework for analyzing narratives across different cultural contexts. It enhances our understanding of cumulative cultural evolution in narratives, allowing for a more nuanced exploration of how narratives evolve and grows cumulatively over time (<a href="https://ceur-ws.org/Vol-2723/short8.pdf">Pianzola et al., 2020</a>).</p>
 <h3>References</h3>
 <p>Abbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), <em>The living handbook of narratology</em>. Hamburg University.</p>
-<p>Bartalesi, V., Meghini, C., &amp; Metilli, D. (2017). A conceptualisation of narratives and its expression in the ecrm. <em>International Journal of Metadata, Semantics and Ontologies</em>, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083</p>
-<p>Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., &amp; Velios, A. (2024, October). Conceptual reference model (CIDOC ecrm), version 7.3 (Tech. rep.). CIDOC ecrm-SIG.</p>
+<p>Bartalesi, V., Meghini, C., &amp; Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. <em>International Journal of Metadata, Semantics and Ontologies</em>, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.087692</p>
+<p>Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., &amp; Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.</p>
 <p>Carroll, N. (2015). Interpretation. In <em>The Routledge companion to philosophy of literature</em> (pp. 302–312). Routledge.</p>
 <p>Chaturvedi, S., Srivastava, S., Daume III, H., &amp; Dyer, C. (2015). Modeling dynamic relationships between characters in literary novels. <em>arXiv preprint arXiv:1511.09376</em>. http://arxiv.org/abs/1511.09376</p>
 <p>Ciotti, F. (2016). Toward a formal ontology for narrative. <em>MATLIT: Materialidades da Literatura</em>, 4(1), 29-44.</p>
-<p>Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., &amp; Theodoridou, M. (2023, October). ecrmsci: The scientific observation model (Tech. rep.). CIDOC ecrm-SIG.</p>
+<p>Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., &amp; Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.</p>
 <p>Jannidis, F. (2019). Character. In P. Hühn et al. (Eds.), <em>The living handbook of narratology</em>. Hamburg University.</p>
 <p>Kukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), <em>The living handbook of narratology</em>. Hamburg University.</p>
 <p>Lea, K. M. (1962). <em>Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage</em> (Vol. 1). Russell &amp; Russell.</p>
-<p>Mika, P., &amp; Gangemi, A. (2016). Descriptions of social relations. <em>Benefits</em>, 1, 14. https://doi.org/10.3390/benefits1010014</p>
+<p>Mika, P., &amp; Gangemi, A. (2016). Descriptions of social relations. <em>Benefits</em>, 1, 14.</p>
 <p>Pannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In <em>Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)</em> (pp. 10-18).</p>
 <p>Pannach, F. A. K. (2024). Narrative echoes across time and space.</p>
 <p>Pannach, F., Sporleder, C., May, W., Krishnan, A., &amp; Sewchurran, A. (2021). Of lions and Yakshis. <em>Semantic Web</em>, 12(2), 219-239.</p>
@@ -502,43 +500,20 @@ These changes substantially reduce the ontology's import closure while preservin
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td>
-                <ul>
-                  <li><p>Scope note:</p>
+              <td><p>Scope note:</p>
 <p>This class comprises distinct intellectual ideas conveyed in artistic and intellectual creations, such a poems, stories or musical compositions.
 A Work is the outcome of an intellectual process of one or more persons. Inherent to the notion of work is the existence of recognisable realizations of the work in the form of one or more expressions. Works are often regarded as finished and discrete e.g. when declared as such by the creator of the work or based on the elaboration or logical coherence of its content. However, works may be recognized as existing but unfinished e.g. if the creators deliberately or accidentally never explicitly finished a particular Expression but have left behind partial expressions.
 In the absence of explicit information about the initial conception, which is rarely available, the first expression created constitutes witness of the beginning of existence of a Work.
 A Work can evolve over time, such as through revised editions. A Work may be elaborated by one or more Actors simultaneously, in parallel, or over time. Additional expressions of a Work can continue to be created over time.
 The boundaries of a Work have nothing to do with the value of the intellectual achievement but only with the dominance of a concept.
-The main purpose of this class is to enable bringing together intellectually equivalent Expressions in order to display to a user all available alternatives of the same intellectual or artistic content  (<a href="https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html">LRMoo version1.0, 2024</a>).</p></li>
-                  <li><p>“A Work is the outcome of an intellectual process of one or more persons. Inherent to the notion of work is the existence of recognisable realizations of the work in the form of one or more expressions.”. In GOLEM, a Work is a specific variant of a narrative Stoff. It includes specific characters, events, themes, and settings that are organized in a particular way (e.g. syuzhet).</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
-              </th>
-              <td>
-                <pre>*Harry Potter and the Philosopher's Stone* (movie, 2001).</pre>
-              </td>
+The main purpose of this class is to enable bringing together intellectually equivalent Expressions in order to display to a user all available alternatives of the same intellectual or artistic content  (<a href="https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html">LRMoo version1.0, 2024</a>).</p></td>
             </tr>
             <tr>
               <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://erlangen-crm.org/240307/E89_Propositional_Object">ecrm:E89_Propositional_Object</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description">dlp_extDnS:description</a>
-                  </li>
-                </ul>
+                <a href="http://erlangen-crm.org/240307/E89_Propositional_Object">ecrm:E89_Propositional_Object</a>
               </td>
             </tr>
             <tr>
@@ -546,20 +521,10 @@ The main purpose of this class is to enable bringing together intellectually equ
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in">R3 is realised in</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#GP1i_has_Character">has character</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in">R3 is realised in</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
             <tr>
@@ -567,124 +532,21 @@ The main purpose of this class is to enable bringing together intellectually equ
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://iflastandards.info/ns/lrm/lrmoo/R3i_realises">R3i realises</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#GP1_is_character_in">is character in</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="http://iflastandards.info/ns/lrm/lrmoo/R3i_realises">R3i realises</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://iflastandards.info/ns/lrm/lrmoo/R3_is_realised_in">R3 is realised in</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">F2 Expression</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://erlangen-crm.org/240307/P130_shows_features_of">ecrm:P130_shows_features_of</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G15_Fandom">G15 Fandom</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#proper-part">proper part</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G9_Narrative_Unit">G9 Narrative Unit</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#d-uses">d-uses</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#satisfied-by">satisfied by</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G12_Setting">G12 Setting</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="#G19_Work">G19 Work</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -704,25 +566,12 @@ The main purpose of this class is to enable bringing together intellectually equ
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td>
-                <ul>
-                  <li><p>Scope note:</p>
+              <td><p>Scope note:</p>
 <p>This class comprises the intellectual or artistic realisations of Works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms. The substance of F2 Expression is signs.
 An Expression is the outcome of the intellectual or creative process of realizing a Work. Subsequent expressions conveying the same work may be created over time.
 Expressions do not depend on a specific physical carrier and can exist on one or more carriers simultaneously. As far as bibliographic practice is concerned, only instances of F2 Expression that are externalised on physical carriers other than both the creator’s brain and an auditor’s brain are taken into account.
 The form of F2 Expression is an inherent characteristic of the F2 Expression. Differences in form imply different Expressions (e.g., from text to spoken word, a transcript of a recording). Similarly, differences in language or means of performance imply different Expressions (e.g., translations or arrangements for different instruments). Thus, if a text is revised or modified, the result is considered to be a new F2 Expression. While theoretically any change in signs will result in a new Expression, conventionally the context and use will determine the rules for distinguishing among expressions.
-An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object. This allows for the association of the E56 Language of the text with the instance of F2 Expression by using the property P72 has language (is language of) (<a href="https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html">LRMoo version1.0, 2024</a>).</p></li>
-                  <li><p>In GOLEM, an expression is the realization of a work, reflecting how a story is conveyed through specific forms such as texts, audio, movies, or other visual media.</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
-              </th>
-              <td>
-                <pre>The text of the English version of *Harry Potter and the Philosopher's Stone*.</pre>
-              </td>
+An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object. This allows for the association of the E56 Language of the text with the instance of F2 Expression by using the property P72 has language (is language of) (<a href="https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html">LRMoo version1.0, 2024</a>).</p></td>
             </tr>
             <tr>
               <th>
@@ -788,65 +637,13 @@ An instance of F2 Expression which includes spoken or written text may be multip
             </tr>
             <tr>
               <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://iflastandards.info/ns/lrm/lrmoo/R3i_realises">R3i realises</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://iflastandards.info/ns/lrm/lrmoo/R5_has_component">R5 has component</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">F2 Expression</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <a href="http://erlangen-crm.org/240307/P16i_was_used_for">ecrm:P16i_was_used_for</a>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E13_Attribute_Assignment">E13 Attribute Assignment</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
+                <span>
+                  <a href="#G20_Expression">G20 Expression</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
               </td>
             </tr>
           </table>
@@ -871,7 +668,7 @@ An instance of F2 Expression which includes spoken or written text may be multip
                   <li><p>This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
-All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values (<a href="https://cidoc-ecrm.org/html/cidoc_ecrm_v7.1.3.html">CIDOC-ecrm version 7.1.3, 2024</a>).</p></li>
+All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values (<a href="https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html">CIDOC-CRM version 7.1.3, 2024</a>).</p></li>
                   <li><p>In GOLEM, an attribute assignment is a framework for modeling observations and inference-making processes. It involves the act of assigning a property to an entity or asserting a relationship between concepts. It is the activity of making a statement that links an attribute to a subject.</p></li>
                 </ul>
               </td>
@@ -882,130 +679,6 @@ All properties assigned in such an action can also be seen as directly relating 
               </th>
               <td>
                 <pre>Assigning the topic “friendship” to the work Harry Potter and the Philosopher's Stone.</pre>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://erlangen-crm.org/240307/P141_assigned">ecrm:P141_assigned</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E1_CRM_Entity">ecrm:E1_CRM_Entity</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://erlangen-crm.org/240307/P177_assigned_property_of_type">ecrm:P177_assigned_property_of_type</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E55_Type">ecrm:E55_Type</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="E28_Conceptual_Object">
-          <h3>E28_Conceptual_Object
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://erlangen-crm.org/240307/E28_Conceptual_Object</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-              </th>
-              <td>
-                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object">dlp_extDnS:social-object</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#GP0i_is_feature_of">is feature of</a>
-                  <sup class="sup-op" title="OWL Object Property">op</sup>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G13_Narrative_Location">G13 Narrative Location</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G14_Narrative-Stoff">G14 Narrative-Stoff</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G15_Fandom">G15 Fandom</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G16_Object">G16 Object</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G1_Character">G1 Character</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
               </td>
             </tr>
           </table>
@@ -1050,66 +723,6 @@ All properties assigned in such an action can also be seen as directly relating 
                 <pre>The Tag categories on AO3, e.g. character tag or relationship tag.</pre>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://erlangen-crm.org/240307/P127_has_broader_term">ecrm:P127_has_broader_term</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E55_Type">ecrm:E55_Type</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <a href="http://erlangen-crm.org/240307/P127i_has_narrower_term">ecrm:P127i_has_narrower_term</a>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E55_Type">ecrm:E55_Type</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <a href="http://erlangen-crm.org/240307/P2i_is_type_of">ecrm:P2i_is_type_of</a>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="http://erlangen-crm.org/240307/E1_CRM_Entity">ecrm:E1_CRM_Entity</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
           </table>
         </div>
         <div class="property entity" id="E58MeasurementUnit">
@@ -1141,64 +754,6 @@ All properties assigned in such an action can also be seen as directly relating 
             </tr>
           </table>
         </div>
-        <div class="property entity" id="E89_Propositional_Object">
-          <h3>E89_Propositional_Object
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://erlangen-crm.org/240307/E89_Propositional_Object</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <span>
-                  <span>
-                    <span>
-                      <a href="#GP0_has_feature">has feature</a>
-                      <sup class="sup-op" title="OWL Object Property">op</sup>
-                    </span>
-                    <span>
-                      <span class="cardinality">only</span>
-                      <span>
-                        <span>
-                          <a href="#G18_Textual_Feature">G18 Textual Feature</a>
-                          <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                        </span>
-                      </span>
-                    </span><br>
-                  </span>
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="#G9_Narrative_Unit">G9 Narrative Unit</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="TimeInterval">
           <h3>Time Interval
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1224,94 +779,9 @@ All properties assigned in such an action can also be seen as directly relating 
                 <pre>July 31, 1980 (Harry Potter's birthday)</pre>
               </td>
             </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
-              </th>
-              <td>
-                <ul>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#setting">setting</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G12_Setting">G12 Setting</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/TemporalRelations.owl#temporal-location-of">temporal location of</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                </ul>
-              </td>
-            </tr>
           </table>
         </div>
-        <div class="property entity" id="Seq">
-          <h3>Seq
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">The RDF Concepts Vocabulary (RDF)</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td><p>The class of ordered containers.</p></td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-              </th>
-              <td>
-                <span>
-                  <a href="#G7_Narrative_Sequence">G7 Narrative Sequence</a>
-                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                </span>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="property entity" id="G0_Character-Stoff">
+        <div class="property entity" id="G0Character-Stoff">
           <h3>G0 Character-Stoff
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1345,7 +815,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                 <ul>
                   <li>
                     <span>
-                      <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                      <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -1428,7 +898,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -1529,7 +999,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -1580,7 +1050,7 @@ The Harry Potter Stoff includes not only the known versions from books, films, a
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G12_Setting">
+        <div class="property entity" id="G12Setting">
           <h3>G12 Setting
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1631,7 +1101,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -1775,7 +1245,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                   </li>
                   <li>
                     <span>
-                      <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                      <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -1875,7 +1345,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G12_Setting">G12 Setting</a>
+                              <a href="#G12Setting">G12 Setting</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -1907,7 +1377,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G14_Narrative-Stoff">
+        <div class="property entity" id="G14Narrative-Stoff">
           <h3>G14 Narrative-Stoff
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -1940,7 +1410,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <ul>
                   <li>
                     <span>
-                      <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                      <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -1973,7 +1443,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G15_Fandom">
+        <div class="property entity" id="G15Fandom">
           <h3>G15 Fandom
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -2004,7 +1474,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
               </th>
               <td>
                 <span>
-                  <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                  <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2021,7 +1491,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                       <span class="cardinality">some</span>
                       <span>
                         <span>
-                          <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                          <a href="#G19_Work">G19 Work</a>
                           <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                         </span>
                       </span>
@@ -2047,7 +1517,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>An object refers to a persistent item that plays a significant role in the story but is not a character.</p></td>
+              <td><p>An object refers to a persistent item that has a narrative significance in the story and, although it may also play narrative roles, is distinct from a character.</p></td>
             </tr>
             <tr>
               <th>
@@ -2063,7 +1533,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
               </th>
               <td>
                 <span>
-                  <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                  <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -2104,7 +1574,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G12_Setting">G12 Setting</a>
+                              <a href="#G12Setting">G12 Setting</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2175,7 +1645,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G18_Textual_Feature">
+        <div class="property entity" id="G18TextualFeature">
           <h3>G18 Textual Feature
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -2213,6 +1683,322 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
             </tr>
           </table>
         </div>
+        <div class="property entity" id="G19_Work">
+          <h3>G19 Work
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#G19_Work</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, a Work is a specific variant of a narrative Stoff. It includes specific characters, events, themes, and settings that are organized in a particular way (e.g. syuzhet).</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>*Harry Potter and the Philosopher's Stone* (movie, 2001).</pre>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description">dlp_extDnS:description</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP1i_has_character">has character</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP1_is_character_in">is character in</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="G20_Expression">
+          <h3>G20 Expression
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#G20_Expression</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, an expression is the realization of a work, reflecting how a story is conveyed through specific forms such as texts, audio, movies, or other visual media.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>The text of the English version of *Harry Potter and the Philosopher's Stone*.</pre>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression">F2 Expression</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <span>
+                  <span>
+                    <span>
+                      <a href="#GP0_has_feature">has feature</a>
+                      <sup class="sup-op" title="OWL Object Property">op</sup>
+                    </span>
+                    <span>
+                      <span class="cardinality">only</span>
+                      <span>
+                        <span>
+                          <a href="#G18TextualFeature">G18 Textual Feature</a>
+                          <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                        </span>
+                      </span>
+                    </span><br>
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="SequencePosition">
+          <h3>Sequence Position
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#G22_Sequence_Position</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>A position within exactly one narrative sequence (G7), identifying exactly one narrative unit (G9) and ordered relative to the other positions of the same sequence.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">dlp_extDnS:course</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP2_has_member">has member</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP2i_member_of">member of</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/restriction" title="Convenience property for things that subclass owl:Restriction. Defined in Ontology Documentation Profile">Restriction</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="#GP2_has_member">has member</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">exactly</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#component-of">component of</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">exactly</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#direct-successor">direct successor</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <span>
+                        <span>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#direct-predecessor">direct predecessor</a>
+                          <sup class="sup-op" title="OWL Object Property">op</sup>
+                        </span>
+                        <span>
+                          <span class="cardinality">max</span>
+                          <span>1</span>
+                        </span><br>
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="G21_Conceptual_Object">
+          <h3>G21 Conceptual Object
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#G21_Conceptual_Object</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                  </li>
+                  <li>
+                    <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#social-object">dlp_extDnS:social-object</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+              </th>
+              <td>
+                <ul>
+                  <li>
+                    <span>
+                      <a href="#G0Character-Stoff">G0 Character-Stoff</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G13_Narrative_Location">G13 Narrative Location</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G14Narrative-Stoff">G14 Narrative-Stoff</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G15Fandom">G15 Fandom</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G16_Object">G16 Object</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <a href="#G1_Character">G1 Character</a>
+                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                    </span>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="G1_Character">
           <h3>G1 Character
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -2246,7 +2032,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                 <ul>
                   <li>
                     <span>
-                      <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                      <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -2273,7 +2059,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
               </th>
               <td>
                 <span>
-                  <a href="#GP1i_has_Character">has character</a>
+                  <a href="#GP1i_has_character">has character</a>
                   <sup class="sup-op" title="OWL Object Property">op</sup>
                 </span>
               </td>
@@ -2314,83 +2100,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#participant-in">participant in</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G5_Narrative_Event">G5 Narrative Event</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#involved-in">involved in</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G4_Social_Relationship">G4 Social Relationships</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays">plays</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G11NarrativeRole">G11 Narrative Role</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#plays">plays</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G6_Relationship_Role">G6 Relationship Role</a>
+                              <a href="#G0Character-Stoff">G0 Character-Stoff</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2406,29 +2116,10 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
-                          <span class="cardinality">some</span>
+                          <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="#G12_Setting">G12 Setting</a>
-                              <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                            </span>
-                          </span>
-                        </span><br>
-                      </span>
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <span>
-                        <span>
-                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#uses">uses</a>
-                          <sup class="sup-op" title="OWL Object Property">op</sup>
-                        </span>
-                        <span>
-                          <span class="cardinality">some</span>
-                          <span>
-                            <span>
-                              <a href="#G16_Object">G16 Object</a>
+                              <a href="#G12Setting">G12 Setting</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2447,7 +2138,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2530,7 +2221,7 @@ Taxonomies of features can be further specified using ecrm:E55_Type.</p></td>
                   </li>
                   <li>
                     <span>
-                      <a href="#G18_Textual_Feature">G18 Textual Feature</a>
+                      <a href="#G18TextualFeature">G18 Textual Feature</a>
                       <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                     </span>
                   </li>
@@ -2609,7 +2300,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="na2e86411b5634bcdbd004f51dc316ebeb55">na2e86411b5634bcdbd004f51dc316ebeb55</a>
+                              <a href="n850a4bc5b90747d9ba2d121714663f81b42">n850a4bc5b90747d9ba2d121714663f81b42</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2628,7 +2319,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="na2e86411b5634bcdbd004f51dc316ebeb59">na2e86411b5634bcdbd004f51dc316ebeb59</a>
+                              <a href="n850a4bc5b90747d9ba2d121714663f81b46">n850a4bc5b90747d9ba2d121714663f81b46</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2647,7 +2338,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
                           <span class="cardinality">only</span>
                           <span>
                             <span>
-                              <a href="na2e86411b5634bcdbd004f51dc316ebeb63">na2e86411b5634bcdbd004f51dc316ebeb63</a>
+                              <a href="n850a4bc5b90747d9ba2d121714663f81b50">n850a4bc5b90747d9ba2d121714663f81b50</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -2660,7 +2351,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
             </tr>
           </table>
         </div>
-        <div class="property entity" id="G4_Social_Relationship">
+        <div class="property entity" id="G4SocialRelationships">
           <h3>G4 Social Relationships
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
           </h3>
@@ -2831,7 +2522,7 @@ In the Yule Ball scene, Ron's jealousy stems from his unacknowledged feeling for
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G12_Setting">G12 Setting</a>
+                              <a href="#G12Setting">G12 Setting</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3104,7 +2795,7 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G4_Social_Relationship">G4 Social Relationships</a>
+                              <a href="#G4SocialRelationships">G4 Social Relationships</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3151,7 +2842,7 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
               </th>
-              <td><p>G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as "plot" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant).</p></td>
+              <td><p>G7 Narrative Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. A narrative sequence is a dlp:course composed (dlp:component) of sequence positions. Each position identifies exactly one narrative unit (golem:G9) through golem:GP2_has_member and is ordered with respect to the other positions of the same sequence. Order is stated on positions, and not directly between narrative units, because the same unit can occur in several sequences and take a different place in each. A narrative sequence also orders (dlp:sequences) a set of temporal entities called events (dlp:perdurant). Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a narrative sequence whose positions identify narrative units (golem:G9) and that orders (dlp:sequences) a set of events (dlp:perdurant). Another type is syuzhet, often translated as "plot" or "discourse". Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense. As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a narrative sequence whose positions identify the same kind of narrative units, placed in the order in which the narrative presents them, and that orders (dlp:sequences) a set of events (dlp:perdurant).</p></td>
             </tr>
             <tr>
               <th>
@@ -3190,17 +2881,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
               </th>
               <td>
-                <ul>
-                  <li>
-                    <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">dlp_extDnS:course</a>
-                  </li>
-                  <li>
-                    <span>
-                      <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq">Seq</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
-                  </li>
-                </ul>
+                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#course">dlp_extDnS:course</a>
               </td>
             </tr>
             <tr>
@@ -3220,7 +2901,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G14_Narrative-Stoff">G14 Narrative-Stoff</a>
+                              <a href="#G14Narrative-Stoff">G14 Narrative-Stoff</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3239,7 +2920,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3308,14 +2989,14 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                     <span>
                       <span>
                         <span>
-                          <a href="http://www.w3.org/2000/01/rdf-schema#member">member</a>
+                          <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#component">component</a>
                           <sup class="sup-op" title="OWL Object Property">op</sup>
                         </span>
                         <span>
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="#G9_Narrative_Unit">G9 Narrative Unit</a>
+                              <a href="#SequencePosition">Sequence Position</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -3360,15 +3041,34 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
               <td>
                 <ul>
                   <li>
-                    <span>
-                      <a href="http://erlangen-crm.org/240307/E89_Propositional_Object">ecrm:E89_Propositional_Object</a>
-                      <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-                    </span>
+                    <a href="http://erlangen-crm.org/240307/E89_Propositional_Object">ecrm:E89_Propositional_Object</a>
                   </li>
                   <li>
                     <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#description">dlp_extDnS:description</a>
                   </li>
                 </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP2i_member_of">member of</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#GP2_has_member">has member</a>
+                  <sup class="sup-op" title="OWL Object Property">op</sup>
+                </span>
               </td>
             </tr>
             <tr>
@@ -3407,7 +3107,7 @@ H5: Zephyros is the West Wind. (durative-constant)</pre>
                           <span class="cardinality">some</span>
                           <span>
                             <span>
-                              <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                              <a href="#G19_Work">G19 Work</a>
                               <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                             </span>
                           </span>
@@ -4116,6 +3816,63 @@ This property does not cover the relationship that exists between expressions th
             </tr>
           </table>
         </div>
+        <div class="property entity" id="component">
+          <h3>component
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#component</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, relates a narrative sequence (G7) to its sequence positions, each of which identifies one narrative unit (G9) through golem:GP2_has_member. It cannot relate G7 directly to G9: a course can only have courses as parts, and G9 is a description.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>The syuzhet of the fanfiction Smile as Bright as the Sun as You Fade into Darkness (a G7 Narrative Sequence) has as components its sequence positions:
+ex:syuzhet dlp_extDnS:component ex:syu_1 , ex:syu_2 .
+where ex:syu_1 holds the hyleme &quot;Apollo and Hyacinthus play the game of discus&quot; and ex:syu_2 holds &quot;Zephyros causes the wind to change&quot;.</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="componentof">
+          <h3>component of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#component-of</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, relates a sequence position to the narrative sequence (G7) it belongs to. Each position has exactly one owning sequence.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
+              </th>
+              <td>
+                <pre>The second position of the syuzhet belongs to the syuzhet:
+                        ex:syu_2 dlp_extDnS:component-of ex:syuzhet .</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
         <div class="property entity" id="d-uses">
           <h3>d-uses
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -4333,6 +4090,38 @@ This property does not cover the relationship that exists between expressions th
               </th>
               <td>
                 <pre>Harry's life at the Dursleys (G12) is predecessor of the Wizarding World (G12).</pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="directsuccessor">
+          <h3>direct successor
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#direct-successor</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, relates a sequence position to the position that immediately follows it within the same narrative sequence (G7). A position has at most one direct successor.</p></td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="directpredecessor">
+          <h3>direct predecessor
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#direct-predecessor</code>
               </td>
             </tr>
           </table>
@@ -4791,49 +4580,6 @@ This property does not cover the relationship that exists between expressions th
             </tr>
           </table>
         </div>
-        <div class="property entity" id="member">
-          <h3>member
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-          </h3>
-          <table>
-            <tr>
-              <th>IRI</th>
-              <td>
-                <code>http://www.w3.org/2000/01/rdf-schema#member</code>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2000/01/rdf-schema#">The RDF Schema vocabulary (RDFS)</a>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-              </th>
-              <td>
-                <ul>
-                  <li><p>A member of the subject resource.</p></li>
-                  <li><p>In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula or syuzhet (G7).</p></li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#example" title="An example of the use of a concept. Defined in SKOS Vocabulary">Example</a>
-              </th>
-              <td>
-                <pre>The fabula of Battle of Hogwarts in Harry Potter and the Deathly Hallows orders events as follows:
-rdf:_1 Voldemort casts the &quot;Avada Kedavra&quot; curse.
-rdf:_2 Harry casts &quot;Expelliarmus&quot;
-rdf:_3 The spells collide in midair, etc.</pre>
-              </td>
-            </tr>
-          </table>
-        </div>
         <div class="property entity" id="GP0_has_feature">
           <h3>has feature
             <sup class="sup-op" title="OWL Object Property">op</sup>
@@ -4881,12 +4627,12 @@ perspective (G18).</pre>
               </th>
               <td>
                 <span>
-                  <a href="#G1_Character">G1 Character</a>
+                  <a href="#G20_Expression">G20 Expression</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
                 <span class="cardinality">or</span>
                 <span>
-                  <a href="http://erlangen-crm.org/240307/E89_Propositional_Object">ecrm:E89_Propositional_Object</a>
+                  <a href="#G1_Character">G1 Character</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -4946,7 +4692,12 @@ perspective (G18).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://erlangen-crm.org/240307/E28_Conceptual_Object">ecrm:E28_Conceptual_Object</a>
+                  <a href="#G1_Character">G1 Character</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+                <span class="cardinality">or</span>
+                <span>
+                  <a href="#G20_Expression">G20 Expression</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -4995,14 +4746,14 @@ perspective (G18).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                  <a href="#G19_Work">G19 Work</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
             </tr>
           </table>
         </div>
-        <div class="property entity" id="GP1i_has_Character">
+        <div class="property entity" id="GP1i_has_character">
           <h3>has character
             <sup class="sup-op" title="OWL Object Property">op</sup>
           </h3>
@@ -5010,7 +4761,7 @@ perspective (G18).</pre>
             <tr>
               <th>IRI</th>
               <td>
-                <code>https://w3id.org/golem/ontology#GP1i_has_Character</code>
+                <code>https://w3id.org/golem/ontology#GP1i_has_character</code>
               </td>
             </tr>
             <tr>
@@ -5025,7 +4776,7 @@ perspective (G18).</pre>
               </th>
               <td>
                 <span>
-                  <a href="http://iflastandards.info/ns/lrm/lrmoo/F1_Work">F1 Work</a>
+                  <a href="#G19_Work">G19 Work</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -5037,6 +4788,98 @@ perspective (G18).</pre>
               <td>
                 <span>
                   <a href="#G1_Character">G1 Character</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GP2_has_member">
+          <h3>has member
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#GP2_has_member</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+              </th>
+              <td><p>In GOLEM, relates a position of a narrative sequence (G7) to the narrative unit (G9) placed at that position.</p></td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#references">dlp_extDnS:references</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SequencePosition">Sequence Position</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#G9_Narrative_Unit">G9 Narrative Unit</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="GP2i_member_of">
+          <h3>member of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>https://w3id.org/golem/ontology#GP2i_member_of</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+              </th>
+              <td>
+                <a href="http://www.ontologydesignpatterns.org/ont/dlp/ExtendedDnS.owl#referenced-by">dlp_extDnS:referenced-by</a>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#G9_Narrative_Unit">G9 Narrative Unit</a>
+                  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+              </th>
+              <td>
+                <span>
+                  <a href="#SequencePosition">Sequence Position</a>
                   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
                 </span>
               </td>
@@ -5077,14 +4920,6 @@ perspective (G18).</pre>
                     <pre>Word count (E54) has value 1,337 (E60).</pre>
                   </li>
                 </ul>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-              </th>
-              <td>
-                <a href="http://www.w3.org/2000/01/rdf-schema#Literal">Literal</a>
               </td>
             </tr>
           </table>
@@ -5296,6 +5131,19 @@ perspective (G18).</pre>
               <th>IRI</th>
               <td>
                 <code>http://purl.org/dc/terms/status</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="modified">
+          <h3>modified
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/modified</code>
               </td>
             </tr>
           </table>
@@ -5553,9 +5401,6 @@ perspective (G18).</pre>
               <a href="#E13AttributeAssignment">E13 Attribute Assignment</a>
             </li>
             <li>
-              <a href="#E28_Conceptual_Object">E28_Conceptual_Object</a>
-            </li>
-            <li>
               <a href="#E54_Dimension">E54_Dimension</a>
             </li>
             <li>
@@ -5565,16 +5410,10 @@ perspective (G18).</pre>
               <a href="#E58MeasurementUnit">E58 Measurement Unit</a>
             </li>
             <li>
-              <a href="#E89_Propositional_Object">E89_Propositional_Object</a>
-            </li>
-            <li>
               <a href="#TimeInterval">Time Interval</a>
             </li>
             <li>
-              <a href="#Seq">Seq</a>
-            </li>
-            <li>
-              <a href="#G0_Character-Stoff">G0 Character-Stoff</a>
+              <a href="#G0Character-Stoff">G0 Character-Stoff</a>
             </li>
             <li>
               <a href="#G10NarrativeFunction">G10 Narrative Function</a>
@@ -5583,16 +5422,16 @@ perspective (G18).</pre>
               <a href="#G11NarrativeRole">G11 Narrative Role</a>
             </li>
             <li>
-              <a href="#G12_Setting">G12 Setting</a>
+              <a href="#G12Setting">G12 Setting</a>
             </li>
             <li>
               <a href="#G13_Narrative_Location">G13 Narrative Location</a>
             </li>
             <li>
-              <a href="#G14_Narrative-Stoff">G14 Narrative-Stoff</a>
+              <a href="#G14Narrative-Stoff">G14 Narrative-Stoff</a>
             </li>
             <li>
-              <a href="#G15_Fandom">G15 Fandom</a>
+              <a href="#G15Fandom">G15 Fandom</a>
             </li>
             <li>
               <a href="#G16_Object">G16 Object</a>
@@ -5601,7 +5440,19 @@ perspective (G18).</pre>
               <a href="#G17CharacterFeature">G17 Character Feature</a>
             </li>
             <li>
-              <a href="#G18_Textual_Feature">G18 Textual Feature</a>
+              <a href="#G18TextualFeature">G18 Textual Feature</a>
+            </li>
+            <li>
+              <a href="#G19_Work">G19 Work</a>
+            </li>
+            <li>
+              <a href="#G20_Expression">G20 Expression</a>
+            </li>
+            <li>
+              <a href="#SequencePosition">Sequence Position</a>
+            </li>
+            <li>
+              <a href="#G21_Conceptual_Object">G21 Conceptual Object</a>
             </li>
             <li>
               <a href="#G1_Character">G1 Character</a>
@@ -5613,7 +5464,7 @@ perspective (G18).</pre>
               <a href="#G3PsychologicalState">G3 Psychological State</a>
             </li>
             <li>
-              <a href="#G4_Social_Relationship">G4 Social Relationships</a>
+              <a href="#G4SocialRelationships">G4 Social Relationships</a>
             </li>
             <li>
               <a href="#G5_Narrative_Event">G5 Narrative Event</a>
@@ -5698,6 +5549,12 @@ perspective (G18).</pre>
               <a href="#properpartof">proper part of</a>
             </li>
             <li>
+              <a href="#component">component</a>
+            </li>
+            <li>
+              <a href="#componentof">component of</a>
+            </li>
+            <li>
               <a href="#d-uses">d-uses</a>
             </li>
             <li>
@@ -5726,6 +5583,12 @@ perspective (G18).</pre>
             </li>
             <li>
               <a href="#predecessor">predecessor</a>
+            </li>
+            <li>
+              <a href="#directsuccessor">direct successor</a>
+            </li>
+            <li>
+              <a href="#directpredecessor">direct predecessor</a>
             </li>
             <li>
               <a href="#satisfies">satisfies</a>
@@ -5785,9 +5648,6 @@ perspective (G18).</pre>
               <a href="#temporallyoverlaps">temporally overlaps</a>
             </li>
             <li>
-              <a href="#member">member</a>
-            </li>
-            <li>
               <a href="#GP0_has_feature">has feature</a>
             </li>
             <li>
@@ -5797,7 +5657,13 @@ perspective (G18).</pre>
               <a href="#GP1_is_character_in">is character in</a>
             </li>
             <li>
-              <a href="#GP1i_has_Character">has character</a>
+              <a href="#GP1i_has_character">has character</a>
+            </li>
+            <li>
+              <a href="#GP2_has_member">has member</a>
+            </li>
+            <li>
+              <a href="#GP2i_member_of">member of</a>
             </li>
           </ul>
         </li>
@@ -5863,6 +5729,9 @@ perspective (G18).</pre>
             </li>
             <li>
               <a href="#status">status</a>
+            </li>
+            <li>
+              <a href="#modified">modified</a>
             </li>
             <li>
               <a href="#preferredNamespacePrefix">preferred namespace prefix</a>
