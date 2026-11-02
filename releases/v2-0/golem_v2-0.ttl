@@ -1,3 +1,6 @@
+# comment for test !! ! ! ! !!
+
+@prefix : <https://w3id.org/golem/ontology#> .
 @prefix golem: <https://w3id.org/golem/ontology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -22,7 +25,7 @@
 
 <https://w3id.org/golem/ontology> rdf:type owl:Ontology ;
                                    owl:versionIRI <https://w3id.org/golem/ontology/v2.0> ;
-                                   owl:priorVersion <https://doi.org/10.5281/zenodo.14911393> ;
+                                   owl:priorVersion <https://doi.org/10.5281/zenodo.14911392> ;
                                    owl:versionInfo "2.0.0" ;
                                    owl:imports <http://www.ontologydesignpatterns.org/ont/dlp/CommonSenseMapping.owl> ,
                                                <http://erlangen-crm.org/240307/> ,
@@ -57,7 +60,11 @@ Created by Pianzola, F., Pannach, F., Cheng, L., Yang, X, and Scotti, L. ([GOLEM
 
 ## GOLEM
 
-Ontology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html). It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes. GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.
+Ontology of fiction and narrative, developed as an extension of the [Erlangen CRM](http://erlangen-crm.org/) and aligned with the [DOLCE-Lite-Plus Ecosystem](https://www.w3.org/2001/sw/BestPractices/WNET/DLP3941_daml.html).
+
+It adopts a [DOLCE+DnS Ultralite](https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/ontologydesignpatterns.org/ont--dul--DUL--owl/2021.06.07-182648/ont--dul--DUL--owl_type=pyLodeDoc.html) design pattern for modelling textual and character attributes.
+
+GOLEM also reuses selected constructs from [LRMoo](https://cidoc-crm.org/lrmoo/) while preserving their original namespace and introducing only the additional classes and relations required for its modelling purposes.
 
 Narrative phenomena can be viewed as interconnected systems in which various components influence one another. Understanding the properties of narratives requires analyzing them in relation to each other and within their broader context, rather than in isolation ([Pianzola, 2018](https://golemlab.eu/publications/complexity/)). Formal ontologies provide a structured and systematic approach to representing the essential elements of storytelling. By capturing relevant concepts, constraints, and interrelationships among narrative elements, ontology ensures a consistent and explicit representation of the narrative domain.
 
@@ -78,9 +85,9 @@ Furthermore, the ontology contributes to comparative studies by providing a stru
 
 Abbott, H. P. (2019). Narrativity. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.
 
-Bartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the CRM. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.087692
+Bartalesi, V., Meghini, C., & Metilli, D. (2017). A conceptualisation of narratives and its expression in the ecrm. *International Journal of Metadata, Semantics and Ontologies*, 12(1), 35-46. https://doi.org/10.1504/IJMSO.2017.10005083
 
-Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC CRM), version 7.3 (Tech. rep.). CIDOC CRM-SIG.
+Bekiari, C., Bruseker, G., Canning, E., Doerr, M., Michon, P., Ore, C.-E., Stead, S., & Velios, A. (2024, October). Conceptual reference model (CIDOC ecrm), version 7.3 (Tech. rep.). CIDOC ecrm-SIG.
 
 Carroll, N. (2015). Interpretation. In *The Routledge companion to philosophy of literature* (pp. 302–312). Routledge.
 
@@ -88,7 +95,7 @@ Chaturvedi, S., Srivastava, S., Daume III, H., & Dyer, C. (2015). Modeling dynam
 
 Ciotti, F. (2016). Toward a formal ontology for narrative. *MATLIT: Materialidades da Literatura*, 4(1), 29-44.
 
-Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). CRMsci: The scientific observation model (Tech. rep.). CIDOC CRM-SIG.
+Doerr, M., Kritsotaki, A., Rousakis, Y., Hiebel, G., & Theodoridou, M. (2023, October). ecrmsci: The scientific observation model (Tech. rep.). CIDOC ecrm-SIG.
 
 Jannidis, F. (2019). Character. In P. Hühn et al. (Eds.), *The living handbook of narratology*. Hamburg University.
 
@@ -96,7 +103,7 @@ Kukkonen, K. (2019). Plot. In P. Hühn et al. (Eds.), *The living handbook of na
 
 Lea, K. M. (1962). *Italian popular comedy: A study in the commedia dell'arte, 1560–1620 with special reference to the English stage* (Vol. 1). Russell & Russell.
 
-Mika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14.
+Mika, P., & Gangemi, A. (2016). Descriptions of social relations. *Benefits*, 1, 14. https://doi.org/10.3390/benefits1010014
 
 Pannach, F. (2023, July). “Orpheus came to his end by being struck by a thunderbolt”: Annotating events in mythological sequences. In *Proceedings of the 17th Linguistic Annotation Workshop (LAW-XVII)* (pp. 10-18).
 
@@ -188,10 +195,6 @@ dcterms:source rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/dc/terms/status
 dcterms:status rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/modified
-dcterms:modified rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -424,21 +427,6 @@ dol:proper-part rdf:type owl:ObjectProperty ;
 dol:proper-part-of rdf:type owl:ObjectProperty ;
                         rdfs:label "proper part of"@en .
 
-### dlp_extDnS:component
-dlp_extDnS:component rdf:type owl:ObjectProperty ;
-                     rdfs:comment "In GOLEM, relates a narrative sequence (G7) to its sequence positions, each of which identifies one narrative unit (G9) through golem:GP2_has_member. It cannot relate G7 directly to G9: a course can only have courses as parts, and G9 is a description."@en ;
-                     rdfs:label "component"@en ;
-                     skos:example """The syuzhet of the fanfiction Smile as Bright as the Sun as You Fade into Darkness (a G7 Narrative Sequence) has as components its sequence positions:
-ex:syuzhet dlp_extDnS:component ex:syu_1 , ex:syu_2 .
-where ex:syu_1 holds the hyleme \"Apollo and Hyacinthus play the game of discus\" and ex:syu_2 holds \"Zephyros causes the wind to change\".""" .
-
-## dlp_extDnS:component-of
-dlp_extDnS:component-of rdf:type owl:ObjectProperty ;
-                        rdfs:comment "In GOLEM, relates a sequence position to the narrative sequence (G7) it belongs to. Each position has exactly one owning sequence."@en ;
-                        rdfs:label "component of"@en ;
-                        skos:example """The second position of the syuzhet belongs to the syuzhet:
-                        ex:syu_2 dlp_extDnS:component-of ex:syuzhet .""" .
-
 ###  dlp_extDnS:d-uses
 dlp_extDnS:d-uses rdf:type owl:ObjectProperty ;
                   rdfs:comment "This property links a (dlp:)description, such as a work (F1) or relationship (G4), to a (dlp:)role, like a narrative function (G10) or a relationship role (G6). It also  links a work (F1) to a (dlp:)course, like fabula or syuzhet (G7_Narrative_Sequence)."@en ;
@@ -491,19 +479,6 @@ dlp_extDnS:successor rdf:type owl:ObjectProperty ;
 dlp_extDnS:predecessor rdf:type owl:ObjectProperty ;
                         rdfs:label "predecessor" ;
                         skos:example "Harry's life at the Dursleys (G12) is predecessor of the Wizarding World (G12)." .
-
-
-###  dlp_extDnS:direct-successor
-dlp_extDnS:direct-successor rdf:type owl:ObjectProperty ;
-                            rdfs:comment "In GOLEM, relates a sequence position to the position that immediately follows it within the same narrative sequence (G7). A position has at most one direct successor."@en ;
-                            rdfs:label "direct successor"@en .
-   
-
-
-###  dlp_extDnS:direct-predecessor
-dlp_extDnS:direct-predecessor rdf:type owl:ObjectProperty ;
-                              rdfs:label "direct predecessor"@en .
-
 
 ###  dlp_extDnS:satisfies
 dlp_extDnS:satisfies rdf:type owl:ObjectProperty ;
@@ -615,6 +590,19 @@ dlp_temp:temporally-overlaps rdf:type owl:ObjectProperty ;
                               rdfs:label "temporally overlaps"@en ;
                               skos:example "Ron’s jealousy (G3) temporally overlaps with Hermione’s arrival at the ball with Viktor Krum (G5)." .
 
+### RDFS ###
+
+###  http://www.w3.org/2000/01/rdf-schema#member
+rdfs:member rdf:type owl:ObjectProperty ;
+            rdfs:comment "A member of the subject resource." ,
+                         "In GOLEM, describes the sequence or order of items within a (dlp:)course, like fabula or syuzhet (G7)." ;
+            rdfs:isDefinedBy rdfs: ;
+            rdfs:label "member" ;
+            skos:example """The fabula of Battle of Hogwarts in Harry Potter and the Deathly Hallows orders events as follows:
+rdf:_1 Voldemort casts the \"Avada Kedavra\" curse.
+rdf:_2 Harry casts \"Expelliarmus\"
+rdf:_3 The spells collide in midair, etc.""" .
+
 
 ### GOLEM ###
 
@@ -623,7 +611,7 @@ golem:GP0_has_feature rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf dul_region:hasRegion ;
                       owl:inverseOf golem:GP0i_is_feature_of ;
                       rdfs:domain [ rdf:type owl:Class ;
-                                    owl:unionOf ( golem:G20_Expression
+                                    owl:unionOf ( ecrm:E89_Propositional_Object
                                                   golem:G1_Character )
                                   ] ;
                       rdfs:range golem:G2_Feature ;
@@ -637,48 +625,26 @@ perspective (G18).""" .
 golem:GP0i_is_feature_of rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf dul_region:isRegionFor ;
                          rdfs:domain golem:G2_Feature ;
-                         rdfs:range [ rdf:type owl:Class ;
-                                    owl:unionOf ( golem:G20_Expression
-                                                  golem:G1_Character )
-                                  ] ;
+                         rdfs:range ecrm:E28_Conceptual_Object ;
                          rdfs:comment "Indicates that a narrative or character has certain features." ;
                          rdfs:label "is feature of" .
 
 ###  golem:GP1_is_character_in
 golem:GP1_is_character_in rdf:type owl:ObjectProperty ;
-                          owl:inverseOf golem:GP1i_has_character ;
+                          owl:inverseOf golem:GP1i_has_Character ;
                           rdfs:domain golem:G1_Character ;
-                          rdfs:range golem:G19_Work ;
+                          rdfs:range lrmoo:F1_Work ;
                           rdfs:comment "Indicates that a character appears in a work."@en ;
                           rdfs:label "is character in"@en ;
                           skos:example "Harry Potter (G1) *is character in* *Harry Potter and the Philosopher's Stone* (movie, 2001) (F1)." .
 
 
-###  golem:GP1i_has_character
-golem:GP1i_has_character rdf:type owl:ObjectProperty ;
-                         rdfs:domain golem:G19_Work ;
+###  golem:GP1i_has_Character
+golem:GP1i_has_Character rdf:type owl:ObjectProperty ;
+                         rdfs:domain lrmoo:F1_Work ;
                          rdfs:range golem:G1_Character ;
                          rdfs:comment "Indicates that a character appears in a work." ;
                          rdfs:label "has character" .
-
-                         
-###  golem:GP2_has_member  
-golem:GP2_has_member rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf dlp_extDnS:references ;
-                     owl:inverseOf golem:GP2i_member_of ;
-                     rdfs:domain golem:G22_Sequence_Position ;
-                     rdfs:range  golem:G9_Narrative_Unit ;
-                     rdfs:label "has member"@en ;
-                     rdfs:comment "In GOLEM, relates a position of a narrative sequence (G7) to the narrative unit (G9) placed at that position."@en .
-
-
-###  golem:GP2i_member_of 
-golem:GP2i_member_of rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf dlp_extDnS:referenced-by ;
-                    rdfs:domain golem:G9_Narrative_Unit ;
-                    rdfs:range golem:G22_Sequence_Position ;
-                    rdfs:label "member of"@en .
-
 
 
 #################################################################
@@ -687,6 +653,7 @@ golem:GP2i_member_of rdf:type owl:ObjectProperty ;
 
 ###  ecrm:P90_has_value
 ecrm:P90_has_value rdf:type owl:DatatypeProperty ;
+                    rdfs:range rdfs:Literal ;
                     rdfs:comment "This property allows an instance of E54 Dimension to be approximated by an instance of E60 Number primitive." ;
                     rdfs:label "P90 has value" ;
                     skos:example """Kudos (E54) has value 59 (E60).
@@ -703,7 +670,28 @@ ecrm:P90_has_value rdf:type owl:DatatypeProperty ;
 
 ###  lrmoo:F1_Work
 lrmoo:F1_Work rdf:type owl:Class ;  
-              rdfs:subClassOf ecrm:E89_Propositional_Object ;            
+              rdfs:subClassOf ecrm:E89_Propositional_Object ,            
+                              dlp_extDnS:description ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty lrmoo:R3_is_realised_in ;
+                                owl:someValuesFrom lrmoo:F2_Expression
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ecrm:P130_shows_features_of ;
+                                owl:someValuesFrom golem:G15_Fandom
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dol:proper-part ;
+                                owl:someValuesFrom golem:G9_Narrative_Unit
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dlp_extDnS:d-uses ;
+                                owl:someValuesFrom golem:G7_Narrative_Sequence
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dlp_extDnS:satisfied-by ;
+                                owl:someValuesFrom golem:G12_Setting
+                              ] ;
               rdfs:comment
 """Scope note:
 
@@ -712,36 +700,64 @@ A Work is the outcome of an intellectual process of one or more persons. Inheren
 In the absence of explicit information about the initial conception, which is rarely available, the first expression created constitutes witness of the beginning of existence of a Work.
 A Work can evolve over time, such as through revised editions. A Work may be elaborated by one or more Actors simultaneously, in parallel, or over time. Additional expressions of a Work can continue to be created over time.
 The boundaries of a Work have nothing to do with the value of the intellectual achievement but only with the dominance of a concept.
-The main purpose of this class is to enable bringing together intellectually equivalent Expressions in order to display to a user all available alternatives of the same intellectual or artistic content  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."""@en ;
-              rdfs:label "F1 Work"@en .            
-              
+The main purpose of this class is to enable bringing together intellectually equivalent Expressions in order to display to a user all available alternatives of the same intellectual or artistic content  ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."""@en ,
+                          "“A Work is the outcome of an intellectual process of one or more persons. Inherent to the notion of work is the existence of recognisable realizations of the work in the form of one or more expressions.”. In GOLEM, a Work is a specific variant of a narrative Stoff. It includes specific characters, events, themes, and settings that are organized in a particular way (e.g. syuzhet)."@en ;
+              rdfs:label "F1 Work"@en ;            
+              skos:example "*Harry Potter and the Philosopher's Stone* (movie, 2001)." .
 
 ###  lrmoo:F2_Expression
 lrmoo:F2_Expression rdf:type owl:Class ;
-                    rdfs:subClassOf ecrm:E73_Information_Object ;
-                    rdfs:comment  
+                    rdfs:subClassOf ecrm:E73_Information_Object ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty lrmoo:R3i_realises ;
+                                      owl:someValuesFrom lrmoo:F1_Work
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty lrmoo:R5_has_component ;
+                                      owl:someValuesFrom lrmoo:F2_Expression
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty ecrm:P16i_was_used_for ;
+                                      owl:someValuesFrom ecrm:E13_Attribute_Assignment
+                                    ] ;
+                    
+                      rdfs:comment  
 """Scope note:
 
 This class comprises the intellectual or artistic realisations of Works in the form of identifiable immaterial objects, such as texts, poems, jokes, musical or choreographic notations, movement pattern, sound pattern, images, multimedia objects, or any combination of such forms. The substance of F2 Expression is signs.
 An Expression is the outcome of the intellectual or creative process of realizing a Work. Subsequent expressions conveying the same work may be created over time.
 Expressions do not depend on a specific physical carrier and can exist on one or more carriers simultaneously. As far as bibliographic practice is concerned, only instances of F2 Expression that are externalised on physical carriers other than both the creator’s brain and an auditor’s brain are taken into account.
 The form of F2 Expression is an inherent characteristic of the F2 Expression. Differences in form imply different Expressions (e.g., from text to spoken word, a transcript of a recording). Similarly, differences in language or means of performance imply different Expressions (e.g., translations or arrangements for different instruments). Thus, if a text is revised or modified, the result is considered to be a new F2 Expression. While theoretically any change in signs will result in a new Expression, conventionally the context and use will determine the rules for distinguishing among expressions.
-An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object. This allows for the association of the E56 Language of the text with the instance of F2 Expression by using the property P72 has language (is language of) ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."""@en ;
-                    rdfs:label "F2 Expression"@en .
+An instance of F2 Expression which includes spoken or written text may be multiply instantiated as an instance of E33 Linguistic Object. This allows for the association of the E56 Language of the text with the instance of F2 Expression by using the property P72 has language (is language of) ([LRMoo version1.0, 2024](https://www.cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.0.html))."""@en ,
+                          "In GOLEM, an expression is the realization of a work, reflecting how a story is conveyed through specific forms such as texts, audio, movies, or other visual media." ;
+                    rdfs:label "F2 Expression"@en ;  
+                    skos:example "The text of the English version of *Harry Potter and the Philosopher's Stone*." .
 
 
 ### ECRM ###
 
 ###  ecrm:E13_Attribute_Assignment
 ecrm:E13_Attribute_Assignment rdf:type owl:Class ;
+                              rdfs:subClassOf 
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty ecrm:P141_assigned ;
+                                                owl:someValuesFrom ecrm:E1_CRM_Entity
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty ecrm:P177_assigned_property_of_type ;
+                                                owl:someValuesFrom ecrm:E55_Type
+                                              ] ;
                               rdfs:comment """This class comprises the actions of making assertions about one property of an object or any single relation between two items or concepts. The type of the property asserted to hold between two items or concepts can be described by the property P177 assigned property of type (is type of property assigned): E55 Type.
 For example, the class describes the actions of people making propositions and statements during certain scientific/scholarly procedures, e.g. the person and date when a condition statement was made, an identifier was assigned, the museum object was measured, etc. Which kinds of such assignments and statements need to be documented explicitly in structures of a schema rather than free text, depends on whether this information should be accessible by structured queries.
 This class allows for the documentation of how the respective assignment came about, and whose opinion it was. Note that all instances of properties described in a knowledge base are the opinion of someone. Per default, they are the opinion of the team maintaining the knowledge base. This fact must not individually be registered for all instances of properties provided by the maintaining team, because it would result in an endless recursion of whose opinion was the description of an opinion. Therefore, the use of instances of E13 Attribute Assignment marks the fact that the maintaining team is in general neutral to the validity of the respective assertion, but registers someone else’s opinion and how it came about.
-All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values ([CIDOC-CRM version 7.1.3, 2024](https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html))."""@en ,
+All properties assigned in such an action can also be seen as directly relating the respective pair of items or concepts. Multiple use of instances of E13 Attribute Assignment may possibly lead to a collection of contradictory values ([CIDOC-ecrm version 7.1.3, 2024](https://cidoc-ecrm.org/html/cidoc_ecrm_v7.1.3.html))."""@en ,
                                                       "In GOLEM, an attribute assignment is a framework for modeling observations and inference-making processes. It involves the act of assigning a property to an entity or asserting a relationship between concepts. It is the activity of making a statement that links an attribute to a subject." ;
                                         rdfs:label "E13 Attribute Assignment"@en ;
                                         skos:example "Assigning the topic “friendship” to the work Harry Potter and the Philosopher's Stone." .
-  
+
+###  ecrm:E28_Conceptual_Object
+ecrm:E28_Conceptual_Object rdf:type owl:Class ;
+                            rdfs:subClassOf dlp_extDnS:social-object .   
 
 ###  ecrm:E54_Dimension
 ecrm:E54_Dimension rdf:type owl:Class ;
@@ -749,6 +765,18 @@ ecrm:E54_Dimension rdf:type owl:Class ;
 
 ###  ecrm:E55_Type
 ecrm:E55_Type rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty ecrm:P127_has_broader_term ;
+                                owl:someValuesFrom ecrm:E55_Type
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ecrm:P127i_has_narrower_term ;
+                                owl:someValuesFrom ecrm:E55_Type
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty ecrm:P2i_is_type_of ;
+                                owl:someValuesFrom ecrm:E1_CRM_Entity
+                              ] ;
               skos:example "The Tag categories on AO3, e.g. character tag or relationship tag." .
 
 ###  ecrm:E58_Measurement_Unit
@@ -761,30 +789,53 @@ Système International (SI) units or internationally recognized non-SI terms sho
                           rdfs:label "E58 Measurement Unit" ;
                           skos:example "word counts, kudos." .
 
+###  ecrm:E89_Propositional_Object
+ecrm:E89_Propositional_Object rdf:type owl:Class ;
+                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty golem:GP0_has_feature ;
+                                                owl:allValuesFrom golem:G18_Textual_Feature
+                                              ] . 
 
 
 ### DLP ###            
 
 ###  dol:time-interval
 dol:time-interval rdf:type owl:Class ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty dlp_extDnS:setting ;
+                                          owl:someValuesFrom golem:G12_Setting
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty dlp_temp:temporal-location-of ;
+                                          owl:someValuesFrom golem:G5_Narrative_Event
+                                        ] ;
+                        
                         rdfs:comment "A time-interval or time-span in a narrative refers to a duration or a specific time point during which events take place. It encompasses the beginning, end, and the length of time between them, allowing for the placement of actions on a chronological timeline. It can represent broad periods, like an era, or specific moments, like a single date or time." ;
                         rdfs:label "Time Interval" ;
                         skos:example "July 31, 1980 (Harry Potter's birthday)" .
 
+
+### RDF ###
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq
+rdf:Seq rdf:type owl:Class ;
+        rdfs:comment "The class of ordered containers."@en ;
+        rdfs:isDefinedBy rdf: ;
+        rdfs:label "Seq"@en .
 
 
 ### GOLEM ###
 
 ###  golem:G0_Character-Stoff
 golem:G0_Character-Stoff rdf:type owl:Class ;
-                          rdfs:subClassOf golem:G21_Conceptual_Object ,
+                          rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                           dlp_extDnS:social-object ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty ecrm:P130i_features_are_also_found_on ;
                                             owl:someValuesFrom golem:G1_Character
                                           ] ;
                           owl:disjointWith golem:G1_Character ,
-                                           golem:G19_Work ,
+                                           lrmoo:F1_Work ,
                                            golem:G9_Narrative_Unit ;               
                           rdfs:comment "The concept of Character-Stoff is derived from the German term Erzählstoff, referring to narrative material (Zgoll et al, 2020). Character-Stoff represents the infinite potential of a character across all known and unknown variations, extending beyond any singular depiction. It encompasses all possible versions, features, actions, and roles of a character across time and media, while remaining open to reinterpretation and transformation. This polymorphous nature allows for endless modifications. Thus, Character-Stoff is an ever-evolving, inexhaustible phenomenon, impossible to outline in full."@en ;
                           rdfs:label "G0 Character-Stoff"@en ;
@@ -797,7 +848,7 @@ golem:G10_Narrative_Function rdf:type owl:Class ;
                               rdfs:subClassOf dlp_extDnS:role ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty dlp_extDnS:d-used-by ;
-                                                owl:someValuesFrom golem:G19_Work
+                                                owl:someValuesFrom lrmoo:F1_Work
                                               ] ,
                                               [ rdf:type owl:Restriction ;
                                                 owl:onProperty dlp_extDnS:modal-target ;
@@ -816,7 +867,7 @@ golem:G11_Narrative_Role rdf:type owl:Class ;
                          rdfs:subClassOf dlp_extDnS:role ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty dlp_extDnS:d-used-by ;
-                                           owl:someValuesFrom golem:G19_Work
+                                           owl:someValuesFrom lrmoo:F1_Work
                                          ] ,
                                          [ rdf:type owl:Restriction ;
                                            owl:onProperty dlp_extDnS:modal-target ;
@@ -835,7 +886,7 @@ golem:G12_Setting rdf:type owl:Class ;
                   rdfs:subClassOf dlp_extDnS:situation ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty dlp_extDnS:satisfies ;
-                                    owl:someValuesFrom golem:G19_Work
+                                    owl:someValuesFrom lrmoo:F1_Work
                                   ] ,
                                   [ rdf:type owl:Restriction ;
                                     owl:onProperty dlp_extDnS:setting-for ;
@@ -866,7 +917,7 @@ The “setting of “Eveline” [by J. Joyce] is early 20th-century lower-middle
 ###  golem:G13_Narrative_Location
 golem:G13_Narrative_Location rdf:type owl:Class ;
                              rdfs:subClassOf dlp_extDnS:non-agentive-social-object ,
-                                              golem:G21_Conceptual_Object,
+                                              ecrm:E28_Conceptual_Object,
                                              [ rdf:type owl:Restriction ;
                                                owl:onProperty dol:generic-location-of ;
                                                owl:someValuesFrom golem:G16_Object
@@ -898,7 +949,7 @@ golem:G13_Narrative_Location rdf:type owl:Class ;
 
 ###  golem:G14_Narrative-Stoff
 golem:G14_Narrative-Stoff rdf:type owl:Class ;
-                          rdfs:subClassOf golem:G21_Conceptual_Object ,
+                          rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                           dlp_extDnS:description ,
                                           [ rdf:type owl:Restriction ;
                                             owl:onProperty ecrm:P130i_features_are_also_found_on ;
@@ -911,10 +962,10 @@ golem:G14_Narrative-Stoff rdf:type owl:Class ;
 
 ###  golem:G15_Fandom
 golem:G15_Fandom rdf:type owl:Class ;
-                 rdfs:subClassOf golem:G21_Conceptual_Object ,
+                 rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty ecrm:P130i_features_are_also_found_on ;
-                                   owl:someValuesFrom golem:G19_Work
+                                   owl:someValuesFrom lrmoo:F1_Work
                                  ] ;
                  rdfs:comment "A fandom is a group of fans who share a common interest in a particular work or topic, such as a book or movie, and engage in fan activities like discussions or creating fan works."@en ;
                  rdfs:label "G15 Fandom"@en ;
@@ -922,7 +973,7 @@ golem:G15_Fandom rdf:type owl:Class ;
 
 ###  golem:G16_Object
 golem:G16_Object rdf:type owl:Class ;
-                 rdfs:subClassOf golem:G21_Conceptual_Object ,
+                 rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty dol:generic-location ;
                                    owl:someValuesFrom golem:G13_Narrative_Location
@@ -935,7 +986,7 @@ golem:G16_Object rdf:type owl:Class ;
                                    owl:onProperty dlp_extDnS:used-by ;
                                    owl:someValuesFrom golem:G1_Character
                                  ] ;
-                 rdfs:comment "An object refers to a persistent item that has a narrative significance in the story and, although it may also play narrative roles, is distinct from a character."@en ;
+                 rdfs:comment "An object refers to a persistent item that plays a significant role in the story but is not a character."@en ;
                  rdfs:label "G16 Object"@en ;
                  skos:example "The Elder Wand carried by Harry Potter." .
 
@@ -955,67 +1006,9 @@ golem:G18_Textual_Feature rdf:type owl:Class ;
                           rdfs:label "G18 Textual Feature"@en ;
                           skos:example "Stream of consciousness, first-person perspective" .
 
-
-### golem:G19_Work
-golem:G19_Work rdf:type owl:Class ;
-               rdfs:subClassOf lrmoo:F1_Work ,
-                               dlp_extDnS:description ;
-               rdfs:comment "In GOLEM, a Work is a specific variant of a narrative Stoff. It includes specific characters, events, themes, and settings that are organized in a particular way (e.g. syuzhet)."@en ;                
-               rdfs:label "G19 Work"@en ;
-               skos:example "*Harry Potter and the Philosopher's Stone* (movie, 2001)." .  
-
-
-### golem:G20_Expression
-golem:G20_Expression rdf:type owl:Class ;
-                     rdfs:subClassOf lrmoo:F2_Expression ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty golem:GP0_has_feature ;
-                                       owl:allValuesFrom golem:G18_Textual_Feature
-                                     ] ;
-                     rdfs:comment "In GOLEM, an expression is the realization of a work, reflecting how a story is conveyed through specific forms such as texts, audio, movies, or other visual media."@en ;                
-                     rdfs:label "G20 Expression"@en ;
-                     skos:example "The text of the English version of *Harry Potter and the Philosopher's Stone*." .
-
-
-### golem:G22_Sequence_Position
-golem:G22_Sequence_Position rdf:type owl:Class ;
-                            rdfs:subClassOf dlp_extDnS:course ,
-                            # Exactly one narrative unit per position
-                                [ rdf:type owl:Restriction ;
-                                owl:onProperty golem:GP2_has_member ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass golem:G9_Narrative_Unit
-                                ] ,
-                                # Exactly one owning narrative sequence
-                                [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_extDnS:component-of ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass golem:G7_Narrative_Sequence
-                                ],
-                                # At most one immediate successor
-                                [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_extDnS:direct-successor ;
-                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                ] ,
-                                # At most one immediate predecessor
-                                [ rdf:type owl:Restriction ;
-                                owl:onProperty dlp_extDnS:direct-predecessor ;
-                                owl:maxCardinality "1"^^xsd:nonNegativeInteger
-                                ]  ;
-                            rdfs:label "Sequence Position"@en ;
-                            rdfs:comment "A position within exactly one narrative sequence (G7), identifying exactly one narrative unit (G9) and ordered relative to the other positions of the same sequence."@en .
-
-
-### golem:G21_Conceptual_Object
-golem:G21_Conceptual_Object rdf:type owl:Class ;
-                            rdfs:subClassOf ecrm:E28_Conceptual_Object ,
-                                            dlp_extDnS:social-object ;
-                            rdfs:label "G21 Conceptual Object"@en .
-
-
 ###  golem:G1_Character
 golem:G1_Character rdf:type owl:Class ;
-                   rdfs:subClassOf golem:G21_Conceptual_Object ,
+                   rdfs:subClassOf ecrm:E28_Conceptual_Object ,
                                    dlp_extDnS:agentive-social-object ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty golem:GP0_has_feature ;
@@ -1026,12 +1019,32 @@ golem:G1_Character rdf:type owl:Class ;
                                      owl:someValuesFrom golem:G0_Character-Stoff
                                    ] ,
                                    [ rdf:type owl:Restriction ;
+                                     owl:onProperty dol:participant-in ;
+                                     owl:someValuesFrom golem:G5_Narrative_Event
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty dlp_extDnS:involved-in ;
+                                     owl:someValuesFrom golem:G4_Social_Relationship
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty dlp_extDnS:plays ;
+                                     owl:someValuesFrom golem:G11_Narrative_Role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty dlp_extDnS:plays ;
+                                     owl:someValuesFrom golem:G6_Relationship_Role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty dlp_extDnS:setting ;
-                                     owl:allValuesFrom golem:G12_Setting
+                                     owl:someValuesFrom golem:G12_Setting
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty dlp_extDnS:uses ;
+                                     owl:someValuesFrom golem:G16_Object
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty golem:GP1_is_character_in ;
-                                     owl:someValuesFrom golem:G19_Work
+                                     owl:someValuesFrom lrmoo:F1_Work
                                    ] ;
                    owl:disjointWith golem:G16_Object ;                
                    rdfs:comment "“Character is a text- or media-based figure in a storyworld, usually human or human-like,” understood through readers’ knowledge of real people (Jannidis, 2019). Readers attribute to characters mental states such as intentions and beliefs, and consider them to engage in actions. Characters can have specific functional roles within narratives, such as protagonist or antagonist, influencing how readers perceive and interpret the story."@en ;
@@ -1173,13 +1186,14 @@ Beloved (both Ron and Hermione in the “Ron and Hermione” romantic relationsh
 ###  golem:G7_Narrative_Sequence
 golem:G7_Narrative_Sequence rdf:type owl:Class ;
                             rdfs:subClassOf dlp_extDnS:course ,
+                                            rdf:Seq ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty ecrm:P130_shows_features_of ;
                                               owl:someValuesFrom golem:G14_Narrative-Stoff
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty dlp_extDnS:d-used-by ;
-                                              owl:someValuesFrom golem:G19_Work
+                                              owl:someValuesFrom lrmoo:F1_Work
                                             ] ,
                                             [ rdf:type owl:Restriction ;
                                               owl:onProperty dlp_extDnS:modal-target-of ;
@@ -1194,11 +1208,11 @@ golem:G7_Narrative_Sequence rdf:type owl:Class ;
                                               owl:someValuesFrom golem:G5_Narrative_Event
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty dlp_extDnS:component ;
-                                              owl:someValuesFrom golem:G22_Sequence_Position
+                                              owl:onProperty rdfs:member ;
+                                              owl:someValuesFrom golem:G9_Narrative_Unit
                                             ] ;
                             owl:disjointWith golem:G13_Narrative_Location ;                
-                            rdfs:comment "G7 Narrative Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. A narrative sequence is a dlp:course composed (dlp:component) of sequence positions. Each position identifies exactly one narrative unit (golem:G9) through golem:GP2_has_member and is ordered with respect to the other positions of the same sequence. Order is stated on positions, and not directly between narrative units, because the same unit can occur in several sequences and take a different place in each. A narrative sequence also orders (dlp:sequences) a set of temporal entities called events (dlp:perdurant). Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a narrative sequence whose positions identify narrative units (golem:G9) and that orders (dlp:sequences) a set of events (dlp:perdurant). Another type is syuzhet, often translated as \"plot\" or \"discourse\". Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense. As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a narrative sequence whose positions identify the same kind of narrative units, placed in the order in which the narrative presents them, and that orders (dlp:sequences) a set of events (dlp:perdurant)."@en ;
+                            rdfs:comment "G7_Narrative_Sequences can take various forms, including sequences of functions, such as Proppian functions (Propp, 1968), sequences of motifs, or hyleme sequences like fabula and syuzhet. Specifically, a type of narrative sequence is fabula, which refers to the sequence of events of a narrative in chronological and causal order (Abbott, 2019). It represents the underlying structure of the story or what happens in it. Since the concept of fabula is mainly defined in relation to that of syuzhet, its conceptual function is to express a specific ordering of some narrative units. Accordingly, the fabula is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant). Another type is syuzhet, often translated as \"plot\" or “discourse”. Syuzhet encompasses how events are presented and organized within a narrative (Kukkonen, 2019; Abbott, 2019). It involves the specific ordering and techniques used to articulate the story, reflecting the author’s design and organization to achieve particular aesthetic and cognitive-emotional effects, like suspense.  As for fabula, the conceptual function of syuzhet is to express a specific ordering of some narrative units. Accordingly, the syuzhet is a sequence (rdf:Seq) of narrative units (gc:G9) that orders (dlp:sequences) a set of temporal entities called events (dlp: perdurant)."@en ;
                             rdfs:label "G7 Narrative Sequence"@en ;
                             skos:example """Text: “1) I used to love this boy, and (2) he used to love me. (3) But I failed, he has been dead for years, and I am a god…(4) We were in a sunny field playing, as we both loved sports. He grabbed a diskus...He ran laughing to catch it. He should have gotten it, but in those last moments it felt like years....(5) A slight change in the wind destroyed everything. Instead of catching the diskus,it hit his head... I tried everything. Everything. Magic, all forms of healing. (6) But I could not bring him back. Me, the god of healing, failed…(7) and in its place a flower, more beautiful than royal phonecian, was born…(8) I dared Zephyros, the West Wind, who also loved Hyacinthus. I dared him to take him away from me. My greed caused his death” (fanfiction story [Smile as Bright as the Sun as You Fade into Darkness](https://archiveofourown.org/works/38717322/chapters/96804426) from AO3).
 
@@ -1236,7 +1250,7 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty dol:proper-part-of ;
-                                          owl:someValuesFrom golem:G19_Work
+                                          owl:someValuesFrom lrmoo:F1_Work
                                         ] ,
                                         [ rdf:type owl:Restriction ;
                                           owl:onProperty dlp_extDnS:plays ;
@@ -1257,3 +1271,27 @@ golem:G9_Narrative_Unit rdf:type owl:Class ;
       golem:G13_Narrative_Location
    ) .
 
+
+#################################################################
+#    Annotations
+#################################################################
+
+dlp_extDnS:flux rdfs:comment "Fluxes are processes that (also) contain accomplishments as constituents. In other words, fluxes emerge out of accomplishments." .
+
+dlp_extDnS:rational-physical-object rdfs:comment "In this ontology, a rational object is encoded as having the ability to internally represent meta-descriptions (descriptions that have other descriptions playing roles used by them). Other theories of rational agency assume desires and intentions for these objects, but in principle any agent can have desires and intentions: the very difference seems to be the ability to choose among different desires or intentions by going 'meta-level'." .
+
+dlp_extDnS:reconstructed-flux rdfs:comment "Reconstructed fluxes are fluxes that only contain accomplishments as members." .
+
+rdf:direction rdfs:comment "The base direction component of a CompoundLiteral." ;
+              rdfs:isDefinedBy rdf: ;
+              rdfs:label "direction" ;
+              rdfs:seeAlso <https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties> .
+
+rdf:language rdfs:comment "The language component of a CompoundLiteral." ;
+             rdfs:isDefinedBy rdf: ;
+             rdfs:label "language" ;
+             rdfs:seeAlso <https://www.w3.org/TR/json-ld11/#the-rdf-compoundliteral-class-and-the-rdf-language-and-rdf-direction-properties> .
+
+rdf:nil rdfs:comment "The empty list, with no items in it. If the rest of a list is nil then the list has no more items in it." ;
+        rdfs:isDefinedBy rdf: ;
+        rdfs:label "nil" .
