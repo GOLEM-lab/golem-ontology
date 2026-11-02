@@ -14,13 +14,10 @@
 #
 # Requirements:
 #   - Java
+#   - ROBOT JAR
 #
 # Usage:
-#   ./scripts/owl2dl_validator/validate.sh <ontology.ttl>
-#
-# Example:
-#   ./scripts/owl2dl_validator/validate.sh \
-#       golem_dev/golem_source/golem_v2-0_dev_new_classes_owl2dl.ttl
+#   ./scripts/owl2dl_validator/validate.sh <ontology.ttl> <robot.jar>
 #
 # Optional environment variables:
 #   ROBOT_MEMORY=4G
@@ -34,8 +31,6 @@ set -Eeuo pipefail
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd -- "$SCRIPT_DIR/../.." && pwd)"
-
-ROBOT_JAR="$SCRIPT_DIR/tools/robot.jar"
 
 MEMORY="${ROBOT_MEMORY:-4G}"
 
@@ -52,12 +47,13 @@ error() {
 # Arguments
 # ------------------------------------------------------------
 
-if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 <ontology.ttl>" >&2
+if [[ $# -ne 2 ]]; then
+    echo "Usage: $0 <ontology.ttl> <robot.jar>" >&2
     exit 1
 fi
 
 SOURCE="$1"
+ROBOT_JAR="$2"
 
 [[ -f "$SOURCE" ]] \
     || error "Ontology source not found: $SOURCE"
@@ -65,9 +61,15 @@ SOURCE="$1"
 [[ "${SOURCE,,}" == *.ttl ]] \
     || error "The input file must have a .ttl extension: $SOURCE"
 
-# Resolve source to an absolute path.
+[[ -f "$ROBOT_JAR" ]] \
+    || error "ROBOT JAR not found: $ROBOT_JAR"
+
+# Resolve paths to absolute paths.
 SOURCE_DIR="$(cd -- "$(dirname -- "$SOURCE")" && pwd)"
 SOURCE="$SOURCE_DIR/$(basename -- "$SOURCE")"
+
+ROBOT_DIR="$(cd -- "$(dirname -- "$ROBOT_JAR")" && pwd)"
+ROBOT_JAR="$ROBOT_DIR/$(basename -- "$ROBOT_JAR")"
 
 # ------------------------------------------------------------
 # Dependency checks
@@ -75,9 +77,6 @@ SOURCE="$SOURCE_DIR/$(basename -- "$SOURCE")"
 
 command -v java >/dev/null 2>&1 \
     || error "Java is required but was not found in PATH."
-
-[[ -f "$ROBOT_JAR" ]] \
-    || error "ROBOT executable not found: $ROBOT_JAR"
 
 # ------------------------------------------------------------
 # Temporary workspace (RAM-backed)
