@@ -123,6 +123,7 @@ jobs:
           echo "ttl_filename=$ttl_filename" >> "$GITHUB_OUTPUT"
 
 
+      
       # ------------------------------------------------------------
       # 3. Validate OWL 2 DL profile
       # ------------------------------------------------------------
@@ -133,6 +134,25 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Download ROBOT
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          ROBOT_VERSION="1.9.11"
+          ROBOT_JAR="$RUNNER_TEMP/robot.jar"
+
+          echo "Downloading ROBOT ${ROBOT_VERSION}..."
+
+          curl -fL \
+            "https://github.com/ontodev/robot/releases/download/v${ROBOT_VERSION}/robot.jar" \
+            -o "$ROBOT_JAR"
+
+          test -s "$ROBOT_JAR"
+
+          echo "ROBOT downloaded successfully:"
+          ls -lh "$ROBOT_JAR"
+
       - name: Validate OWL 2 DL profile
         shell: bash
         env:
@@ -141,11 +161,15 @@ jobs:
           set -euo pipefail
 
           ttl_file="${{ steps.release.outputs.ttl_file }}"
+          robot_jar="$RUNNER_TEMP/robot.jar"
 
           echo "Validating OWL 2 DL profile:"
           echo "  Ontology: $ttl_file"
 
-          ./scripts/owl2dl_validator/validate.sh "$ttl_file"    
+          ./scripts/owl2dl_validator/validate.sh \
+            "$ttl_file" \
+            "$robot_jar"
+
 
 
       # ------------------------------------------------------------
