@@ -124,7 +124,32 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 3. Generate RDF/XML and JSON-LD serializations
+      # 3. Validate OWL 2 DL profile
+      # ------------------------------------------------------------
+
+      - name: Set up Java for OWL 2 DL validation
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Validate OWL 2 DL profile
+        shell: bash
+        env:
+          ROBOT_MEMORY: 4G
+        run: |
+          set -euo pipefail
+
+          ttl_file="${{ steps.release.outputs.ttl_file }}"
+
+          echo "Validating OWL 2 DL profile:"
+          echo "  Ontology: $ttl_file"
+
+          ./scripts/owl2dl_validator/validate.sh "$ttl_file"    
+
+
+      # ------------------------------------------------------------
+      # 4. Generate RDF/XML and JSON-LD serializations
       # ------------------------------------------------------------
 
       - name: Generate RDF serializations
@@ -138,7 +163,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 4. Set up Python for PyLODE
+      # 5. Set up Python for PyLODE
       #
       # PyLODE is installed directly rather than through the
       # pylode-to-pages GitHub Action.
@@ -165,7 +190,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 5. Generate PyLODE documentation
+      # 6. Generate PyLODE documentation
       # ------------------------------------------------------------
 
       - name: Generate PyLODE documentation
@@ -196,7 +221,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 6. Clean PyLODE auxiliary output
+      # 7. Clean PyLODE auxiliary output
       # ------------------------------------------------------------
 
       - name: Clean PyLODE auxiliary output
@@ -220,7 +245,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 7. Determine the newest release
+      # 8. Determine the newest release
       # ------------------------------------------------------------
 
       - name: Find latest release
@@ -246,7 +271,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 8. Update stable aliases
+      # 9. Update stable aliases
       # ------------------------------------------------------------
 
       - name: Update stable aliases
@@ -295,7 +320,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 9. Commit generated release artifacts
+      # 10. Commit generated release artifacts
       # ------------------------------------------------------------
 
       - name: Commit generated release artifacts
@@ -317,7 +342,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 10. Checkout gh-pages separately
+      # 11. Checkout gh-pages separately
       # ------------------------------------------------------------
 
       - name: Checkout gh-pages for deployment
@@ -329,7 +354,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 11. Synchronize published ontology files
+      # 12. Synchronize published ontology files
       #
       # Replace only current/ and releases/ on gh-pages.
       # Preserve index.html, CNAME, .nojekyll, stylesheets,
@@ -364,7 +389,7 @@ jobs:
 
 
       # ------------------------------------------------------------
-      # 12. Commit and push the deployment
+      # 13. Commit and push the deployment
       # ------------------------------------------------------------
 
       - name: Commit and push gh-pages updates
