@@ -9,7 +9,7 @@
 @prefix dol: <http://www.ontologydesignpatterns.org/ont/dlp/DOLCE-Lite.owl#> .
 @prefix dul_region: <http://www.ontologydesignpatterns.org/cp/owl/region.owl#> .
 @prefix ecrm: <http://erlangen-crm.org/240307/> .
-@prefix lrmoo: <http://iflastandards.info/ns/lrm/lrmoo/> . 
+@prefix lrm: <http://iflastandards.info/ns/lrm/lrmoo/> . 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -255,14 +255,14 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-### LRMoo ###
+### LRM ###
 
-###  lrmoo:R3_is_realised_in
-lrmoo:R3_is_realised_in rdf:type owl:ObjectProperty ;
+###  lrm:R3_is_realised_in
+lrm:R3_is_realised_in rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf ecrm:P130_shows_features_of ;
-                                  owl:inverseOf lrmoo:R3i_realises ;
-                                  rdfs:domain lrmoo:F1_Work ;
-                                  rdfs:range lrmoo:F2_Expression ;
+                                  owl:inverseOf lrm:R3i_realises ;
+                                  rdfs:domain lrm:F1_Work ;
+                                  rdfs:range lrm:F2_Expression ;
                                   rdfs:comment """Quantification: one to many, necessary, dependent (1,n:1,1)
 
 Scope note: 
@@ -272,11 +272,11 @@ This property associates an instance of F2 Expression with an instance of F1 Wor
                                   rdfs:label "R3 is realised in"@en ;
                                   skos:example "The work Harry Potter and the Deathly Hallows (F1) is realised in the text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2)." .
 
-###  lrmoo:R3i_realises
-lrmoo:R3i_realises rdf:type owl:ObjectProperty ;
+###  lrm:R3i_realises
+lrm:R3i_realises rdf:type owl:ObjectProperty ;
                             rdfs:subPropertyOf ecrm:P130i_features_are_also_found_on ;
-                            rdfs:domain lrmoo:F2_Expression ;
-                            rdfs:range lrmoo:F1_Work ;
+                            rdfs:domain lrm:F2_Expression ;
+                            rdfs:range lrm:F1_Work ;
                             rdfs:comment """Quantification of the inverse property: one to many, necessary, dependent (1,n:1,1)
 
 Scope note of the inverse property:
@@ -298,12 +298,12 @@ Examples of the inverse property:
                           rdfs:label "R3i realises"@en .
 
 
-### lrmoo:R5_has_component
-lrmoo:R5_has_component rdf:type owl:ObjectProperty ;
+### lrm:R5_has_component
+lrm:R5_has_component rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf ecrm:P148_has_component ;
-                        owl:inverseOf lrmoo:R5i_is_component_of ;
-                        rdfs:domain lrmoo:F2_Expression ;
-                        rdfs:range lrmoo:F2_Expression ;
+                        owl:inverseOf lrm:R5i_is_component_of ;
+                        rdfs:domain lrm:F2_Expression ;
+                        rdfs:range lrm:F2_Expression ;
                         rdfs:comment "In GOLEM, it indicates that an expression (such as a text) contains a specific component, like a word, sentence, or paragraph." ,
   """Quantification: many to many (0,n:0,n)
 
@@ -315,12 +315,12 @@ lrmoo:R5_has_component rdf:type owl:ObjectProperty ;
                         rdfs:label "R5 has component"@en ;
                         skos:example "Text of Harry Potter and the Deathly Hallows (Rowling, 2007) (F2) has component a paragraph in Harry Potter and the Deathly Hallows (F2)." .
 
-###  lrmoo:R5i_is_component_of
-lrmoo:R5i_is_component_of rdf:type owl:ObjectProperty ;
+###  lrm:R5i_is_component_of
+lrm:R5i_is_component_of rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf ecrm:P148i_is_component_of ;
-                          owl:inverseOf lrmoo:R5_has_component ;
-                          rdfs:domain lrmoo:F2_Expression ;
-                          rdfs:range lrmoo:F2_Expression ;
+                          owl:inverseOf lrm:R5_has_component ;
+                          rdfs:domain lrm:F2_Expression ;
+                          rdfs:range lrm:F2_Expression ;
                           rdfs:comment  
 """Quantification: many to many (0,n:0,n)
 
@@ -699,10 +699,10 @@ ecrm:P90_has_value rdf:type owl:DatatypeProperty ;
 #################################################################
 
 
-### LRMoo ###
+### lrm ###
 
-###  lrmoo:F1_Work
-lrmoo:F1_Work rdf:type owl:Class ;  
+###  lrm:F1_Work
+lrm:F1_Work rdf:type owl:Class ;  
               rdfs:subClassOf ecrm:E89_Propositional_Object ;            
               rdfs:comment
 """Scope note:
@@ -716,8 +716,8 @@ The main purpose of this class is to enable bringing together intellectually equ
               rdfs:label "F1 Work"@en .            
               
 
-###  lrmoo:F2_Expression
-lrmoo:F2_Expression rdf:type owl:Class ;
+###  lrm:F2_Expression
+lrm:F2_Expression rdf:type owl:Class ;
                     rdfs:subClassOf ecrm:E73_Information_Object ;
                     rdfs:comment  
 """Scope note:
@@ -958,7 +958,7 @@ golem:G18_Textual_Feature rdf:type owl:Class ;
 
 ### golem:G19_Work
 golem:G19_Work rdf:type owl:Class ;
-               rdfs:subClassOf lrmoo:F1_Work ,
+               rdfs:subClassOf lrm:F1_Work ,
                                dlp_extDnS:description ;
                rdfs:comment "In GOLEM, a Work is a specific variant of a narrative Stoff. It includes specific characters, events, themes, and settings that are organized in a particular way (e.g. syuzhet)."@en ;                
                rdfs:label "G19 Work"@en ;
@@ -967,7 +967,7 @@ golem:G19_Work rdf:type owl:Class ;
 
 ### golem:G20_Expression
 golem:G20_Expression rdf:type owl:Class ;
-                     rdfs:subClassOf lrmoo:F2_Expression ,
+                     rdfs:subClassOf lrm:F2_Expression ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty golem:GP0_has_feature ;
                                        owl:allValuesFrom golem:G18_Textual_Feature
